@@ -1,0 +1,26 @@
+{
+  "name": "skorporaal.11ty",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "clean": "del _site",
+    "dev:postcss": "postcss src/_assets/**/*.css -o src/static/styles.min.css --watch --verbose",
+    "dev:11ty": "eleventy --serve --watch",
+    "build:postcss": "NODE_ENV=production postcss src/_assets/**/*.css -o src/static/styles.min.css",
+    "build:11ty": "ELEVENTY_ENV=production eleventy",
+    "start": "run-p dev:*",
+    "build": "run-s clean build:*"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "@tailwindcss/typography": "^0.5.2",
+    "autoprefixer": "^10.4.7",
+    "cssnano": "^5.1.7",
+    "del-cli": "^4.0.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.13",
+    "postcss-cli": "^9.1.0",
+    "prettier": "^2.6.2",
+    "tailwindcss": "^3.0.24"
+  }
+}

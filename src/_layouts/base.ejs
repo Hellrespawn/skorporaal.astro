@@ -1,0 +1,12 @@
+<% if (typeof title === 'string' && title) { title = "There was a title..." }
+else { title = "There was no title." } %>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("/components/head") %>
+  </head>
+  <body>
+    <h2><%= title %></h2>
+  </body>
+</html>
