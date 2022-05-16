@@ -1,13 +1,14 @@
 ---
 layout: base.ejs
+title: skorporaal.com
 ---
 
 <main class="flex flex-row">
-  <% for (const column of ["about", "list"]) {%>
-  <section
-    class="flex h-screen w-[50%] flex-col justify-center"
-  >
-    <%- include(`/components/${column}`) %>
+  <section class="flex h-screen w-1/2 flex-col items-center justify-center">
+    <%- include(`/components/about`) %>
   </section>
-  <% } %>
+
+  <section class="flex w-1/2 flex-col justify-start">
+    <%- include(`/components/list`) %>
+  </section>
 </main>

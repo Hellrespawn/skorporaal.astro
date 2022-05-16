@@ -3,13 +3,13 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "clean": "del _site",
+    "clean": "del-cli _site",
     "dev:postcss": "postcss src/_assets/**/*.css -o src/static/styles.min.css --watch --verbose",
     "dev:11ty": "eleventy --serve --watch",
     "build:postcss": "postcss src/_assets/**/*.css -o src/static/styles.min.css",
     "build:11ty": "eleventy",
-    "start": "run-p dev:*",
-    "build": "run-s clean build:*"
+    "start": "npm-run-all clean --parallel dev:*",
+    "build": "npm-run-all clean build:*"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",

@@ -11,5 +11,6 @@ module.exports = function (eleventyConfig) {
     },
     templateFormats: ['html', 'md', 'ejs'],
     passthroughFileCopy: true,
+    markdownTemplateEngine: "ejs"
   };
 };
