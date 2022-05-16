@@ -1,5 +1,5 @@
-<% if (typeof title === 'string' && title) { title = "There was a title..." }
-else { title = "There was no title." } %>
+<% if (!(typeof title === 'string') || !title) { title = "NO TITLE SPECIFIED" }
+%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,6 +7,6 @@ else { title = "There was no title." } %>
     <%- include("/components/head") %>
   </head>
   <body>
-    <h2><%= title %></h2>
+    <%- content %>
   </body>
 </html>

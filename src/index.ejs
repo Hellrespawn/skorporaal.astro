@@ -2,4 +2,12 @@
 layout: base.ejs
 ---
 
-<h1>Hello, world!</h1>
+<main class="flex flex-row">
+  <% for (const column of ["about", "list"]) {%>
+  <section
+    class="flex h-screen w-[50%] flex-col justify-center"
+  >
+    <%- include(`/components/${column}`) %>
+  </section>
+  <% } %>
+</main>

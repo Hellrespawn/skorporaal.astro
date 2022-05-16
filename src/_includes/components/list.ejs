@@ -1,0 +1,8 @@
+<ul class="overflow-y-scroll">
+  <% for (let i = 0; i < 20; i++) {%>
+  <li>
+    <%- include("/components/title", { post: {title: `This is a title with
+    number ${i}`}}) %>
+  </li>
+  <% } %>
+</ul>
