@@ -1,6 +1,6 @@
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/static');
-  eleventyConfig.setUseGitIgnore(false);
+  eleventyConfig.setUseGitIgnore(true);
 
   return {
     dir: {
