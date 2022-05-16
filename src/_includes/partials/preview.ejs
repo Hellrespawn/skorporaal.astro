@@ -1,0 +1,21 @@
+<% let color = "bg-primary-500"; if (typeof type === "string" && type ===
+"recipe") { color = "bg-accent-500"; } %>
+
+<li>
+  <a
+    href="<%= item.url %>"
+    class="block overflow-x-hidden whitespace-nowrap border-t border-x-gray-200"
+  >
+    <div
+      class="flex flex-row items-baseline gap-2 py-4 transition-all duration-100 hover:pl-4"
+    >
+      <!-- Colored Dot -->
+      <div
+        class="<%= color %> inline-block h-2 w-2 shrink-0 rounded-full"
+      ></div>
+
+      <!-- Title -->
+      <h3><%= item.data.title %></h3>
+    </div>
+  </a>
+</li>

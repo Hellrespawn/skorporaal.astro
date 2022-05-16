@@ -1,8 +1,9 @@
 ---
-layout: 'markdown.ejs'
-title: Andijviestamppot met Zalm
-categories:
-  - Cookbook
+title: 'Andijviestamppot met Zalm lange lange superlange titel titel titel lange lange superlange titel titel titel'
+permalink: /<%= this.slugify(title) %>/
+layout: recipe.ejs
+tags:
+  - recipe
 ---
 
 Bron: <https://www.ah.nl/allerhande/recept/R-R1194541/andijviestamppot-met-zalm>

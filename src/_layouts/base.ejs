@@ -1,23 +1,21 @@
-<%
-if (!(typeof title === 'string') || !title) {
-  title = "NO TITLE SPECIFIED";
-}
+<% if (!(typeof title === 'string') || !title) { title = "NO TITLE SPECIFIED"; }
 %>
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <%- include("/partials/head") %>
 
-<head>
-  <%- include("/partials/head") %>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet">
-
-</head>
-
-<body class="bg-gray-50 text-gray-900">
-  <%- content %>
-</body>
-
+  <body class="bg-gray-50 text-gray-900">
+    <%- console.log() %>
+    <%- content %>
+  </body>
 </html>

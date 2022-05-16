@@ -1,14 +1,15 @@
 <ul>
-  <% for (let i = 0; i < 20; i++) {%>
-  <li>
-    <%-
-    include("/partials/title", { post:
-      {
-        title: `This is a title with number ${i}`,
-        type: Math.random(0, 1) > 0.5 ? "recipe" : "post"
-      }
-    })
-    %>
-  </li>
-  <% } %>
+  <% for (const recipe of collections.recipe) {%> <%-
+  include("/partials/preview", { item: recipe, type: "recipe" }) %> <% } %>
+
+
+  <% for (const placeholder of placeholders) { %>
+    <%- include("/partials/preview", {
+      item: {
+        url: "#",
+        data: { title: placeholder}
+        },
+      type: "post"
+    }) %>
+  <% }%>
 </ul>

@@ -1,8 +1,9 @@
 ---
-layout: 'markdown.ejs'
 title: Simpele Teriyaki
-categories:
-  - Cookbook
+permalink: /<%= this.slugify(title) %>/
+layout: recipe.ejs
+tags:
+  - recipe
 ---
 
 Stef Korporaal <skorporaal.com>
