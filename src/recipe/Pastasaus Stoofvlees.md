@@ -11,32 +11,32 @@ Stef Korporaal <skorporaal.com>
 ## Ingrediënten Vlees
 
 | Ingredient: | Hoeveelheid: | Staat:          | kcal: |
-| ----------- | ------------ | --------------- | ----- |
-| stoofvlees  | 800g         | bijv. riblappen | 1320  |
-| bloem       | 2el (20g)    |                 | 70    |
-| champignons | 400g         | in plakjes      | 80    |
-| olie        | 2el (20ml)   |                 | 160   |
-|             |              | totaal:         | 1630  |
+| ----------- | ------------ | --------------- | ----: |
+| stoofvlees  | 800g         | bijv. riblappen |  1320 |
+| bloem       | 2el (20g)    |                 |    70 |
+| champignons | 400g         | in plakjes      |    80 |
+| olie        | 2el (20ml)   |                 |   160 |
+|             |              | totaal:         |  1630 |
 
 ## Ingrediënten Groenten
 
 | Ingredient: | Hoeveelheid: | Staat:   | kcal: |
-| ----------- | ------------ | -------- | ----- |
-| ui          | 2            | gesneden | 48    |
-| paprika     | 2            | gesneden | 40    |
-| winterpeen  | 1            | geraspt  | 80    |
-| knoflook    | 3 tenen      | geperst  | 24    |
-|             |              | totaal:  | 192   |
+| ----------- | ------------ | -------- | ----: |
+| ui          | 2            | gesneden |    48 |
+| paprika     | 2            | gesneden |    40 |
+| winterpeen  | 1            | geraspt  |    80 |
+| knoflook    | 3 tenen      | geperst  |    24 |
+|             |              | totaal:  |   192 |
 
 ## Ingrediënten Saus
 
 | Ingredient:        | Hoeveelheid:   | Staat:           | kcal: |
-| ------------------ | -------------- | ---------------- | ----- |
-| tomatenpuree       | 1 blikje (70g) |                  | 64    |
-| witte wijn         | 250ml          |                  | 200   |
-| gezeefde tomaten   | 1 pak (500g)   |                  | 190   |
-| blik tomaten       | 1 blik (400g)  |                  | 120   |
-| melk               | 250ml          |                  | 120   |
+| ------------------ | -------------- | ---------------- | ----: |
+| tomatenpuree       | 1 blikje (70g) |                  |    64 |
+| witte wijn         | 250ml          |                  |   200 |
+| gezeefde tomaten   | 1 pak (500g)   |                  |   190 |
+| blik tomaten       | 1 blik (400g)  |                  |   120 |
+| melk               | 250ml          |                  |   120 |
 | bouillon           | 200ml          | rund of kip      |       |
 | laurierblad        | 2              |                  |       |
 | zuur               | 1 el           | azijn of citroen |       |
@@ -45,7 +45,7 @@ Stef Korporaal <skorporaal.com>
 | basilicum          | 1 el           |                  |       |
 | oregano            | 1 el           |                  |       |
 | tijm               | 1 el           |                  |       |
-|                    |                | totaal:          | 694   |
+|                    |                | totaal:          |   694 |
 
 Totaal aantal calorieën: 2516 kcal
 

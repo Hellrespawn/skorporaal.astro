@@ -3,15 +3,18 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "clean": "del-cli _site src/static/styles.min.css",
+    "clean:tailwind": "del-cli src/static/styles.min.css",
+    "clean:site": "del-cli _site",
     "dev:postcss": "postcss src/_assets/**/*.css -o src/static/styles.min.css --watch --verbose",
     "dev:11ty": "eleventy --serve --watch",
     "build:postcss": "postcss src/_assets/**/*.css -o src/static/styles.min.css",
     "build:11ty": "eleventy",
     "format:prettier": "prettier ./src --write",
-    "start": "npm-run-all clean build:* --parallel dev:*",
+    "clean": "npm-run-all --parallel clean:*",
+    "dev": "npm-run-all clean build:* --parallel dev:*",
     "build": "npm-run-all clean build:*",
-    "format": "npm-run-all format:*"
+    "format": "npm-run-all format:*",
+    "start": "npm run dev"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",

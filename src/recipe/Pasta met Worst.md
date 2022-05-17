@@ -11,19 +11,19 @@ Stef Korporaal <skorporaal.com>
 ## Ingrediënten
 
 | Ingredient:    | Hoeveelheid:            | Staat:      | kcal: |
-| -------------- | ----------------------- | ----------- | ----- |
-| braadworst     | 200g (2 stuks)          | Uitgeknepen | 540   |
-| pasta          | 200g (droog, vers 250g) |             | 700   |
-| ui             | 0.5                     | gesneden    | 12    |
-| paprika        | 1                       | gesneden    | 20    |
-| champignons    | 200g                    | gesneden    | 40    |
-| witte wijn     | 125ml                   |             | 100   |
-| venkelzaad     | 1 tl                    |             | 5     |
-| oregano        | 1 el                    |             | 5     |
-| knoflookpoeder | 1 tl                    |             | 5     |
-| citroensap     | 0.5 citroen             |             | 5     |
-| olijfolie      | 1 el                    |             | 80    |
-|                |                         | totaal:     | 1512  |
+| -------------- | ----------------------- | ----------- | ----: |
+| braadworst     | 200g (2 stuks)          | Uitgeknepen |   540 |
+| pasta          | 200g (droog, vers 250g) |             |   700 |
+| ui             | 0.5                     | gesneden    |    12 |
+| paprika        | 1                       | gesneden    |    20 |
+| champignons    | 200g                    | gesneden    |    40 |
+| witte wijn     | 125ml                   |             |   100 |
+| venkelzaad     | 1 tl                    |             |     5 |
+| oregano        | 1 el                    |             |     5 |
+| knoflookpoeder | 1 tl                    |             |     5 |
+| citroensap     | 0.5 citroen             |             |     5 |
+| olijfolie      | 1 el                    |             |    80 |
+|                |                         | totaal:     |  1512 |
 
 Calorieën per maaltijd: 756 kcal
 

@@ -11,20 +11,20 @@ Stef Korporaal <skorporaal.com>
 ## Ingrediënten
 
 | Ingredient: | Hoeveelheid:   | Staat:   | kcal: |
-| ----------- | -------------- | -------- | ----- |
-| kipdijfilet | 300g (3 stuks) |          | 465   |
-| sojasaus    | 3 el           |          | 15    |
-| mirin       | 1 el           |          | 24    |
-| rijstazijn  | 1 el           |          | 12    |
-| bloem       | 1 el           |          | 20    |
-| ei          | 1              |          | 60    |
-| panko       | 60g            |          | 220   |
-| ui          | 0.5            | gesneden | 12    |
-| paprika     | 1              | gesneden | 20    |
-| champignons | 200g           | gesneden | 40    |
-| bosui       | 100g           | gesneden | 20    |
-| olie        | 3 el           |          | 240   |
-|             |                | totaal:  | 1148  |
+| ----------- | -------------- | -------- | ----: |
+| kipdijfilet | 300g (3 stuks) |          |   465 |
+| sojasaus    | 3 el           |          |    15 |
+| mirin       | 1 el           |          |    24 |
+| rijstazijn  | 1 el           |          |    12 |
+| bloem       | 1 el           |          |    20 |
+| ei          | 1              |          |    60 |
+| panko       | 60g            |          |   220 |
+| ui          | 0.5            | gesneden |    12 |
+| paprika     | 1              | gesneden |    20 |
+| champignons | 200g           | gesneden |    40 |
+| bosui       | 100g           | gesneden |    20 |
+| olie        | 3 el           |          |   240 |
+|             |                | totaal:  |  1148 |
 
 Calorieën per portie: 574 kcal +
 

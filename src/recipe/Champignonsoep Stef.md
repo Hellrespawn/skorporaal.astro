@@ -11,20 +11,20 @@ Stef Korporaal <skorporaal.com>
 ## Ingrediënten
 
 | Ingredient:        | Hoeveelheid: | Staat:         | kcal: |
-| ------------------ | ------------ | -------------- | ----- |
-| boter              | 100g         |                | 750   |
-| bloem              | 45g          |                | 160   |
-| ui                 | 1            | gesnipperd     | 24    |
-| witte champignons  | 250 g        | gesnipperd     | 50    |
-| luxe champignons   | 250 g        | grove plakken  | 50    |
-| witte wijn         | 100ml        |                | 80    |
-| kookroom           | 250ml        | 20% melkvet    | 512   |
-| melk               | 150ml        |                | 135   |
+| ------------------ | ------------ | -------------- | ----: |
+| boter              | 100g         |                |   750 |
+| bloem              | 45g          |                |   160 |
+| ui                 | 1            | gesnipperd     |    24 |
+| witte champignons  | 250 g        | gesnipperd     |    50 |
+| luxe champignons   | 250 g        | grove plakken  |    50 |
+| witte wijn         | 100ml        |                |    80 |
+| kookroom           | 250ml        | 20% melkvet    |   512 |
+| melk               | 150ml        |                |   135 |
 | rundvleesbouillon  | 400ml        | van een blokje |       |
 | peterselie         | handjevol    | fijngesneden   |       |
 | basilicum          | 1 el         | gedroogd       |       |
 | worcestershiresaus | 1 tl         |                |       |
-|                    |              | totaal:        | 1761  |
+|                    |              | totaal:        |  1761 |
 
 Calorieën per kom: 1761 / 8 = 220 1/8 kcal
 

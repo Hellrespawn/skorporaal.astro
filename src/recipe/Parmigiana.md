@@ -11,34 +11,34 @@ Stef Korporaal <skorporaal.com>
 ## Ingrediënten Saus
 
 | Ingredient:     | Hoeveelheid: | Staat:     | kcal: |
-| --------------- | ------------ | ---------- | ----- |
-| ui              | 0.5          | gesnipperd | 12    |
-| knoflook        | 2 tenen      | geperst    | 10    |
-| gepelde tomaten | 1 blik       |            | 100   |
-| kippenbouillon  | 100ml        |            | 4     |
-| bruine suiker   | 1 el         |            | 50    |
-| oregano         | 1 el         | gedroogd   | 1     |
-| olijfolie       | 0.5 el       |            | 40    |
-|                 |              | totaal:    | 217   |
+| --------------- | ------------ | ---------- | ----: |
+| ui              | 0.5          | gesnipperd |    12 |
+| knoflook        | 2 tenen      | geperst    |    10 |
+| gepelde tomaten | 1 blik       |            |   100 |
+| kippenbouillon  | 100ml        |            |     4 |
+| bruine suiker   | 1 el         |            |    50 |
+| oregano         | 1 el         | gedroogd   |     1 |
+| olijfolie       | 0.5 el       |            |    40 |
+|                 |              | totaal:    |   217 |
 
 ## Ingrediënten Schnitzel
 
 | Ingredient:           | Hoeveelheid: | Staat:     | kcal: |
-| --------------------- | ------------ | ---------- | ----- |
-| krokante kipschnitzel | 2            |            | 468   |
-| jonge kaas            | 1 plak       |            | 120   |
-| italiaanse kaas       | ~10g         | geraspt    | 40    |
-| champignons           | 100g         | in plakjes | 20    |
-| olijfolie             | 2el          |            | 160   |
-|                       |              | totaal:    | 808   |
+| --------------------- | ------------ | ---------- | ----: |
+| krokante kipschnitzel | 2            |            |   468 |
+| jonge kaas            | 1 plak       |            |   120 |
+| italiaanse kaas       | ~10g         | geraspt    |    40 |
+| champignons           | 100g         | in plakjes |    20 |
+| olijfolie             | 2el          |            |   160 |
+|                       |              | totaal:    |   808 |
 
 ## Ingrediënten Pasta
 
 | Ingredient: | Hoeveelheid: | Staat:   | kcal: |
-| ----------- | ------------ | -------- | ----- |
-| pasta       | 100g         | gedroogd | 350   |
-| boter       | 1 el         |          | 80    |
-|             |              | totaal:  | 430   |
+| ----------- | ------------ | -------- | ----: |
+| pasta       | 100g         | gedroogd |   350 |
+| boter       | 1 el         |          |    80 |
+|             |              | totaal:  |   430 |
 
 Totaal aantal calorieën: 1455 kcal
 

@@ -11,25 +11,25 @@ Stef Korporaal <skorporaal.com>; Adam Ragusea
 ## Ingrediënten Schnitzel
 
 | Ingredient: | Hoeveelheid:   | Staat:                          | kcal: |
-| ----------- | -------------- | ------------------------------- | ----- |
-| filetlapjes | 2 stuks (250g) |                                 | 325   |
-| ei          | 1-2 stuks      | geklutst, optioneel met mosterd | 120   |
-| bloem       | 1-2 el         |                                 | 45    |
-| beschuit    | 3-4 stuks      | vermalen                        | 175   |
-| bakvet/ghee | 3 el           |                                 | 200   |
-|             |                | totaal:                         | 865   |
+| ----------- | -------------- | ------------------------------- | ----: |
+| filetlapjes | 2 stuks (250g) |                                 |   325 |
+| ei          | 1-2 stuks      | geklutst, optioneel met mosterd |   120 |
+| bloem       | 1-2 el         |                                 |    45 |
+| beschuit    | 3-4 stuks      | vermalen                        |   175 |
+| bakvet/ghee | 3 el           |                                 |   200 |
+|             |                | totaal:                         |   865 |
 
 ## Ingrediënten Komkommersalade
 
 | Ingredient:   | Hoeveelheid: | kcal: |
-| ------------- | ------------ | ----- |
-| komkommer     | 1 stuk       | 25    |
-| rode ui       | 0.5 stuks    | 10    |
-| crème fraîche | 100g         | 290   |
-| suiker        | 0.5el        | 30    |
+| ------------- | ------------ | ----: |
+| komkommer     | 1 stuk       |    25 |
+| rode ui       | 0.5 stuks    |    10 |
+| crème fraîche | 100g         |   290 |
+| suiker        | 0.5el        |    30 |
 | azijn         | 1 tl         |       |
 | dille         | snuf         |       |
-|               | totaal:      | 360   |
+|               | totaal:      |   360 |
 
 Calorieën per portie: 305 / 2 = 613 kcal
 

@@ -11,21 +11,21 @@ Stef Korporaal <skorporaal.com>
 ## Ingrediënten
 
 | Ingredient:   | Hoeveelheid: | Staat:        | kcal: |
-| ------------- | ------------ | ------------- | ----- |
-| kipfilet      | 300g         | grote stukken | 330   |
-| sojasaus      | 50g          |               | 25    |
-| mirin         | 25g          |               | 60    |
-| rijstazijn    | 25g          |               | 30    |
-| bruine suiker | 25g          |               | 100   |
-| knoflook      | 1 teen       | geperst       | 8     |
-| maizena       | 1 el         |               | 40    |
-| ui            | 1            | gesneden      | 24    |
-| champignon    | 250g         | gesneden      | 50    |
-| paprika       | 1 paprika    | gesneden      | 20    |
-| bosui         | 4-5          | gesneden      | 30    |
-| doperwten     | 100g         |               | 70    |
-| olie          | 3el          | bijv. sesam   | 240   |
-|               |              | totaal:       | 1070  |
+| ------------- | ------------ | ------------- | ----: |
+| kipfilet      | 300g         | grote stukken |   330 |
+| sojasaus      | 50g          |               |    25 |
+| mirin         | 25g          |               |    60 |
+| rijstazijn    | 25g          |               |    30 |
+| bruine suiker | 25g          |               |   100 |
+| knoflook      | 1 teen       | geperst       |     8 |
+| maizena       | 1 el         |               |    40 |
+| ui            | 1            | gesneden      |    24 |
+| champignon    | 250g         | gesneden      |    50 |
+| paprika       | 1 paprika    | gesneden      |    20 |
+| bosui         | 4-5          | gesneden      |    30 |
+| doperwten     | 100g         |               |    70 |
+| olie          | 3el          | bijv. sesam   |   240 |
+|               |              | totaal:       |  1070 |
 
 Calorieën per portie: 535 kcal +
 

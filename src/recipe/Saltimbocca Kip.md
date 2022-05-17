@@ -11,19 +11,19 @@ Stef Korporaal <skorporaal.com>
 ## Ingrediënten
 
 | Ingredient:          | Hoeveelheid:               | Staat:        | kcal: |
-| -------------------- | -------------------------- | ------------- | ----- |
-| kipfilet             | 400g (2 filets)            |               | 440   |
-| prosciutto crudo     | 4 plakken (60g)            |               | 120   |
-| doperwten            | 200g                       |               | 130   |
-| champignons          | 250g                       | plakjes       | 40    |
-| knoflook             | 2 teen                     | geperst       | 16    |
-| kookroom             | 250ml                      |               | 512   |
-| pasta                | 250g (vers) / 200g (droog) |               | 700   |
-| harde italiaane kaas | 20g                        | geraspt       | 120   |
-| olie                 | 2 el                       |               | 160   |
+| -------------------- | -------------------------- | ------------- | ----: |
+| kipfilet             | 400g (2 filets)            |               |   440 |
+| prosciutto crudo     | 4 plakken (60g)            |               |   120 |
+| doperwten            | 200g                       |               |   130 |
+| champignons          | 250g                       | plakjes       |    40 |
+| knoflook             | 2 teen                     | geperst       |    16 |
+| kookroom             | 250ml                      |               |   512 |
+| pasta                | 250g (vers) / 200g (droog) |               |   700 |
+| harde italiaane kaas | 20g                        | geraspt       |   120 |
+| olie                 | 2 el                       |               |   160 |
 | citroen              | 1/2                        | rasp en sap   |       |
 | salie                |                            | droog of vers |       |
-|                      |                            | totaal:       | 2238  |
+|                      |                            | totaal:       |  2238 |
 
 Calorieën per portie: (2238 \* 0.8) / 2 = 895 1/5 kcal
 

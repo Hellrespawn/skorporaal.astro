@@ -11,17 +11,17 @@ Stef Korporaal <skorporaal.com>
 ## Ingrediënten
 
 | Ingredient:    | Hoeveelheid: | Staat:               | kcal: |
-| -------------- | ------------ | -------------------- | ----- |
-| rundergehakt   | 500g         |                      | 1150  |
-| ui             | 1            | halve ringen         | 24    |
-| paprika        | 2            | reepjes              | 40    |
-| champignons    | 200g         | plakjes              | 40    |
-| tomatenpuree   | 2 el         |                      | 64    |
-| kaas           | 25g          | blokjes/grof geraspt | 120   |
+| -------------- | ------------ | -------------------- | ----: |
+| rundergehakt   | 500g         |                      |  1150 |
+| ui             | 1            | halve ringen         |    24 |
+| paprika        | 2            | reepjes              |    40 |
+| champignons    | 200g         | plakjes              |    40 |
+| tomatenpuree   | 2 el         |                      |    64 |
+| kaas           | 25g          | blokjes/grof geraspt |   120 |
 | bouillon       | 75-100ml     |                      |       |
 | knoflookpoeder | 1 el         |                      |       |
 | uienpoeder     | 1 el         |                      |       |
-|                |              | totaal:              | 1438  |
+|                |              | totaal:              |  1438 |
 
 Calorieën per portie: 1438 / 3 = 479 1/3 kcal
 

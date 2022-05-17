@@ -13,12 +13,12 @@ Aangepast door Stef Korporaal <skorporaal.com>.
 ## Ingrediënten per persoon
 
 | Ingredient:           | Hoeveelheid: | kcal: |
-| --------------------- | ------------ | ----- |
-| aardappel             | 250g         | 220   |
-| boter                 | 1 á 2 el     | 100   |
-| room                  | 60 ml        | 120   |
+| --------------------- | ------------ | ----: |
+| aardappel             | 250g         |   220 |
+| boter                 | 1 á 2 el     |   100 |
+| room                  | 60 ml        |   120 |
 | kruiden / smaakmakers | naar smaak   |       |
-|                       | totaal       | 440   |
+|                       | totaal       |   440 |
 
 ## Bereiding
 

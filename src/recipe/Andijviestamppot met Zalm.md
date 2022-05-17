@@ -13,18 +13,18 @@ Aangepast door Stef Korporaal <skorporaal.com>.
 ## Ingrediënten
 
 | Ingredient:             | Hoeveelheid:    | Staat:                 | kcal: |
-| ----------------------- | --------------- | ---------------------- | ----- |
-| andijvie                | 250g            | fijngesneden           | 40    |
-| aardappel, iets kruimig | 600g            | geschild               | 520   |
-| ui                      | 1               | gesnipperd             | 24    |
-| knoflook                | 2 teen          | geperst                | 16    |
-| zalm                    | 2 filets (300g) |                        | 660   |
-| kappertjes              | 2 tl            | optioneel fijngesneden | 8     |
-| ansjovisfilets          | 1 blikje (50g)  |                        | 110   |
-| melk                    | 200 ml          |                        | 90    |
-| boter                   | 10g             |                        | 75    |
+| ----------------------- | --------------- | ---------------------- | ----: |
+| andijvie                | 250g            | fijngesneden           |    40 |
+| aardappel, iets kruimig | 600g            | geschild               |   520 |
+| ui                      | 1               | gesnipperd             |    24 |
+| knoflook                | 2 teen          | geperst                |    16 |
+| zalm                    | 2 filets (300g) |                        |   660 |
+| kappertjes              | 2 tl            | optioneel fijngesneden |     8 |
+| ansjovisfilets          | 1 blikje (50g)  |                        |   110 |
+| melk                    | 200 ml          |                        |    90 |
+| boter                   | 10g             |                        |    75 |
 | chilivlokken            |                 |                        |       |
-|                         |                 | totaal:                | 1553  |
+|                         |                 | totaal:                |  1553 |
 
 Totaal aantal calorieën per portie: 777 kcal
 

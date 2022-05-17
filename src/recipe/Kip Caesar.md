@@ -11,29 +11,29 @@ Stef Korporaal <skorporaal.com>; Adam Ragusea
 ## Ingrediënten Dressing
 
 | Ingredient:        | Hoeveelheid: | Staat:   | kcal: |
-| ------------------ | ------------ | -------- | ----- |
-| knoflook           | 1 teen       | geperst  | 10    |
-| mayonaise          | 20 ml        |          | 140   |
-| ansjovis           | 2 stuks      | vermalen | 20    |
-| citroensap         | 0.5          |          | 10    |
-| olijfolie          | 50 ml        |          | 400   |
-| worcestershiresaus | 1 tl         |          | 10    |
-|                    |              | totaal:  | 590   |
+| ------------------ | ------------ | -------- | ----: |
+| knoflook           | 1 teen       | geperst  |    10 |
+| mayonaise          | 20 ml        |          |   140 |
+| ansjovis           | 2 stuks      | vermalen |    20 |
+| citroensap         | 0.5          |          |    10 |
+| olijfolie          | 50 ml        |          |   400 |
+| worcestershiresaus | 1 tl         |          |    10 |
+|                    |              | totaal:  |   590 |
 
 ## Ingrediënten Overig
 
 | Ingredient:      | Hoeveelheid: | Staat:     | kcal: |
-| ---------------- | ------------ | ---------- | ----- |
-| baby romaine     | 2 stuks      | gescheurd  | 20    |
-| ui               | 0.5          | gesnipperd | 24    |
-| kippenpoot       | 2 stuks/500g | verdeeld   | 480   |
-| pistolets        | 2 stuks      |            | 260   |
-| parmezaanse kaas | 10 g         | schilfers  | 40    |
-| olie             | 1.5el        |            | 80    |
-| boter            | 1.5el        |            | 80    |
+| ---------------- | ------------ | ---------- | ----: |
+| baby romaine     | 2 stuks      | gescheurd  |    20 |
+| ui               | 0.5          | gesnipperd |    24 |
+| kippenpoot       | 2 stuks/500g | verdeeld   |   480 |
+| pistolets        | 2 stuks      |            |   260 |
+| parmezaanse kaas | 10 g         | schilfers  |    40 |
+| olie             | 1.5el        |            |    80 |
+| boter            | 1.5el        |            |    80 |
 | citroenrasp      |              |            |       |
 | salie            |              |            |       |
-|                  |              | totaal:    | 984   |
+|                  |              | totaal:    |   984 |
 
 Calorieën per portie: 1574 / 2 = 787 kcal
 

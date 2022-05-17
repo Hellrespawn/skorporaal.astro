@@ -11,18 +11,18 @@ Stef Korporaal <skorporaal.com>
 ## Ingrediënten
 
 | Ingredient:        | Hoeveelheid: | Staat:         | kcal: |
-| ------------------ | ------------ | -------------- | ----- |
-| kookroom           | 250ml        |                | 520   |
-| rundvleesbouillon  | 200ml        | van een blokje | 4     |
-| sjalot             | 1            | gesnipperd     | 12    |
-| knoflook           | 1 teen       | geperst        | 8     |
-| champignons        | 400g         | plakjes        | 80    |
-| bloem              | 1 el         |                | 35    |
-| peterselie         | 2 el         | fijngehakt     | 10    |
-| roomboter          | 10g          |                | 75    |
-| worcestershiresaus | 1 tl         |                | 5     |
-| citroensap         | 0.25 citroen |                | 5     |
-|                    |              | totaal:        | 754   |
+| ------------------ | ------------ | -------------- | ----: |
+| kookroom           | 250ml        |                |   520 |
+| rundvleesbouillon  | 200ml        | van een blokje |     4 |
+| sjalot             | 1            | gesnipperd     |    12 |
+| knoflook           | 1 teen       | geperst        |     8 |
+| champignons        | 400g         | plakjes        |    80 |
+| bloem              | 1 el         |                |    35 |
+| peterselie         | 2 el         | fijngehakt     |    10 |
+| roomboter          | 10g          |                |    75 |
+| worcestershiresaus | 1 tl         |                |     5 |
+| citroensap         | 0.25 citroen |                |     5 |
+|                    |              | totaal:        |   754 |
 
 ## Bereiding
 

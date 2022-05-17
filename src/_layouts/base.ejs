@@ -12,10 +12,12 @@
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap"
       rel="stylesheet"
     />
+
+    <%- include("/scripts/dark-mode") %>
   </head>
 
   <body class="bg-gray-50 text-gray-900 dark:bg-gray-800 dark:text-gray-50">
-    <%- include("/partials/theme-toggle") %> <%- console.log() %> <%- content %>
-    <%- include("/components/footer") %>
+    <%- include("/partials/theme-toggle") %> <%- content %> <%-
+    include("/components/footer") %>
   </body>
 </html>
