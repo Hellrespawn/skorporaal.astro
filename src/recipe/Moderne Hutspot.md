@@ -1,7 +1,7 @@
 ---
 title: Moderne hutspot
 permalink: /<%= this.slugify(title) %>/
-layout: recipe.ejs
+layout: markdown.ejs
 tags:
   - recipe
 ---

@@ -1,7 +1,7 @@
 ---
 title: 'Hele aardappelpuree'
 permalink: /<%= this.slugify(title) %>/
-layout: recipe.ejs
+layout: markdown.ejs
 tags:
   - recipe
 ---

@@ -1,7 +1,7 @@
 ---
 title: Pastasaus Stoofvlees
 permalink: /<%= this.slugify(title) %>/
-layout: recipe.ejs
+layout: markdown.ejs
 tags:
   - recipe
 ---

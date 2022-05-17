@@ -1,7 +1,7 @@
 ---
 title: Saltimbocca met kip
 permalink: /<%= this.slugify(title) %>/
-layout: recipe.ejs
+layout: markdown.ejs
 tags:
   - recipe
 ---

@@ -6,26 +6,23 @@ module.exports = {
   content: ['./src/**/*.html', './src/**/*.ejs'],
   darkMode: 'class',
   theme: {
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      gray: colors.stone,
-      primary: colors.teal, // teal, cyan or sky?
-      accent: colors.orange, // orange, amber, custom gold?
-    },
-    extend: {
-      keyframes: {
-        blink: {
-          '50%': {
-            opacity: '0',
-          },
+    keyframes: {
+      blink: {
+        '50%': {
+          opacity: '0',
         },
       },
-      animation: {
-        blink: 'blink 530ms step-start infinite alternate',
+    },
+    animation: {
+      blink: 'blink 530ms step-start infinite alternate',
+    },
+    extend: {
+      colors: {
+        primary: colors.teal, // teal, cyan or sky?
+        accent: colors.orange, // orange, amber, custom gold?
       },
       fontFamily: {
-        sans: ['"Nunito"', ...defaultTheme.fontFamily.mono],
+        sans: ['"Nunito"', ...defaultTheme.fontFamily.sans],
       },
     },
   },

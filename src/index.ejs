@@ -1,14 +1,16 @@
 ---
 layout: base.ejs
-title: skorporaal.com
+title: Home
 ---
 
-<main class="flex flex-row">
-  <section class="flex h-screen w-1/2 flex-col items-center justify-center">
+<main class="flex flex-col md:flex-row">
+  <section
+    class="flex flex-col items-center justify-center md:h-screen md:w-1/2"
+  >
     <%- include(`/components/about`) %>
   </section>
 
-  <section class="flex w-1/2 flex-col justify-start">
+  <section class="flex flex-col justify-start px-4 md:w-1/2 md:px-0">
     <%- include(`/components/list`) %>
   </section>
 </main>

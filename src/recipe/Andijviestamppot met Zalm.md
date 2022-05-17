@@ -1,7 +1,7 @@
 ---
-title: 'Andijviestamppot met Zalm lange lange superlange titel titel titel lange lange superlange titel titel titel'
+title: 'Andijviestamppot met Zalm'
 permalink: /<%= this.slugify(title) %>/
-layout: recipe.ejs
+layout: markdown.ejs
 tags:
   - recipe
 ---

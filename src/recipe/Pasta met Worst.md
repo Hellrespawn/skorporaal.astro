@@ -1,7 +1,7 @@
 ---
 title: Pasta met Worst
 permalink: /<%= this.slugify(title) %>/
-layout: recipe.ejs
+layout: markdown.ejs
 tags:
   - recipe
 ---

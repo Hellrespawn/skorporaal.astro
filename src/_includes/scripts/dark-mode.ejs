@@ -1,7 +1,7 @@
 <script>
   const darkMode =
     // `??` only triggers on undefined, not on false.
-    localStorage.darkMode === 'true' ??
+    (localStorage.darkMode && localStorage.darkMode === 'true') ??
     (window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches);
 

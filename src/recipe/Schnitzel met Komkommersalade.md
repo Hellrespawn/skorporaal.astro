@@ -1,7 +1,7 @@
 ---
 title: Schnitzel met Komkommersalade
 permalink: /<%= this.slugify(title) %>/
-layout: recipe.ejs
+layout: markdown.ejs
 tags:
   - recipe
 ---
