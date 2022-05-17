@@ -14,8 +14,8 @@
     />
   </head>
 
-  <body class="bg-gray-50 text-gray-900">
-    <%- console.log() %>
-    <%- content %>
+  <body class="bg-gray-50 text-gray-900 dark:bg-gray-800 dark:text-gray-50">
+    <%- include("/partials/theme-toggle") %> <%- console.log() %> <%- content %>
+    <%- include("/components/footer") %>
   </body>
 </html>

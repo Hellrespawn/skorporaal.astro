@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "clean": "del-cli _site",
+    "clean": "del-cli _site src/static/styles.min.css",
     "dev:postcss": "postcss src/_assets/**/*.css -o src/static/styles.min.css --watch --verbose",
     "dev:11ty": "eleventy --serve --watch",
     "build:postcss": "postcss src/_assets/**/*.css -o src/static/styles.min.css",

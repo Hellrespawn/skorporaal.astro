@@ -4,6 +4,7 @@ const colors = require('tailwindcss/colors');
 module.exports = {
   plugins: [require('@tailwindcss/typography')],
   content: ['./src/**/*.html', './src/**/*.ejs'],
+  darkMode: 'class',
   theme: {
     colors: {
       transparent: 'transparent',
