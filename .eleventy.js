@@ -8,12 +8,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./postcss.config.cjs');
   eleventyConfig.addWatchTarget('./src/_assets/styles.css');
 
-  const nunjucksEnvironment = new Nunjucks.Environment(
-    new Nunjucks.FileSystemLoader('src/_includes')
-  );
-
-  eleventyConfig.setLibrary('njk', nunjucksEnvironment);
-
   eleventyConfig.addFilter('filterPosts', (posts) =>
     posts.filter((post) => typeof post.data.tags !== 'undefined')
   );

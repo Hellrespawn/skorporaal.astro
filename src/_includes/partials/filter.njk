@@ -1,18 +1,14 @@
 {% from "macro.njk" import dot %}
 
 <ul class="flex flex-row">
-  {% for name, type,
-  color in getFilters() %}
+  {% for name, type, color in getFilters() %}
 
-    <li
-    :class="filter !== '{{ type }}' && 'opacity-50'" class="transition-[opacity] duration-100 hover:opacity-75 py-4 pr-8 last:pr-0"
+  <li
+    :class="filter !== '{{ type }}' && 'opacity-50'"
+    class="py-4 pr-8 transition-[opacity] duration-100 last:pr-0 hover:opacity-75"
   >
-      <button @click="toggle('{{ type }}')">
-        {{ dot(color) }}
-        {{ name }}
-      </button>
-    </li>
+    <button @click="toggle('{{ type }}')">{{ dot(color) }} {{ name }}</button>
+  </li>
 
   {% endfor %}
-
 </ul>

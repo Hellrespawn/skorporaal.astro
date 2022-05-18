@@ -9,7 +9,7 @@
     "dev:11ty": "eleventy --serve --watch",
     "build:postcss": "postcss src/_assets/**/*.css -o src/static/styles.min.css",
     "build:11ty": "eleventy",
-    "format:prettier": "prettier ./src --write",
+    "format:prettier": "prettier --write ./src/**/*",
     "clean": "npm-run-all --parallel clean:*",
     "dev": "npm-run-all --parallel dev:*",
     "dev-clean": "npm-run-all clean build:* --parallel dev:*",
