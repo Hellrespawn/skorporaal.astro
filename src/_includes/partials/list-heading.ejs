@@ -1,16 +1,15 @@
-<% const color = item.data.tags.includes("recipe") ? "bg-accent-500" :
-"bg-primary-500" %> <% const date = item.data.date ?
+<% const date = item.data.date ?
 item.data.date.toLocaleDateString(
   'nl-NL',
   {dateStyle: 'short'}
 ) : "A long time ago..."
 %>
 
-<li>
+<li class="<%- item.data.tags.join(' ') %>" x-show="!filter || $el.classList.contains(filter)">
   <a href="<%= item.url %>" class="block overflow-x-hidden whitespace-nowrap border-t border-gray-200 dark:border-gray-700">
     <div class="flex flex-row items-baseline gap-2 py-4 pr-2 transition-[padding-left] duration-100 hover:pl-2">
       <!-- Colored Dot -->
-      <div class="<%- color %> inline-block h-2 w-2 shrink-0 rounded-full"></div>
+      <%- include("/partials/dot", { color }) %>
 
       <!-- Title -->
       <h3 class="flex-grow"><%= item.data.title %></h3>
