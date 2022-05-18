@@ -1,0 +1,18 @@
+{% from "macro.njk" import dot %}
+
+<li class="{{ item.data.tags | join(' ') }}" x-show="!filter || $el.classList.contains(filter)">
+  <a href="{{ item.url }}" class="block overflow-x-hidden whitespace-nowrap border-t border-gray-200 dark:border-gray-700">
+    <div class="flex flex-row items-baseline gap-2 py-4 pr-2 transition-[padding-left] duration-100 hover:pl-2">
+      <!-- Colored Dot -->
+      {{ dot(item | getPostColor) }}
+
+      <!-- Title -->
+      <h3 class="flex-grow">{{ item.data.title }}</h3>
+
+      <!-- Date -->
+      <div class="flex-shrink overflow-hidden text-sm text-zinc-400 dark:text-zinc-500">
+        {{ item.data.date | formatDate }}
+      </div>
+    </div>
+  </a>
+</li>

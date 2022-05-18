@@ -3,7 +3,7 @@ const colors = require('tailwindcss/colors');
 
 module.exports = {
   plugins: [require('@tailwindcss/typography')],
-  content: ['./src/**/*.html', './src/**/*.ejs'],
+  content: ['./src/**/*.{html,njk}', './.eleventy.js', ],
   darkMode: 'class',
   theme: {
     keyframes: {

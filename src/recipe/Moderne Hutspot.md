@@ -1,7 +1,7 @@
 ---
 title: Moderne hutspot
-permalink: /<%= this.slugify(title) %>/
-layout: markdown.ejs
+permalink: /{{ title | slugify }}/
+layout: markdown.njk
 tags:
   - recipe
 ---

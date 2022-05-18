@@ -11,7 +11,8 @@
     "build:11ty": "eleventy",
     "format:prettier": "prettier ./src --write",
     "clean": "npm-run-all --parallel clean:*",
-    "dev": "npm-run-all clean build:* --parallel dev:*",
+    "dev": "npm-run-all --parallel dev:*",
+    "dev-clean": "npm-run-all clean build:* --parallel dev:*",
     "build": "npm-run-all clean build:*",
     "format": "npm-run-all format:*",
     "start": "npm run dev"

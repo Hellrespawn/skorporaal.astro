@@ -1,0 +1,18 @@
+<div
+  x-data="{
+    filter: '',
+
+    toggle(val) {
+      this.filter === val ? this.filter = '' : this.filter = val
+    }
+  }"
+  >
+
+  {% include 'partials/filter.njk' %}
+
+  <ul>
+    {% for item in collections.all | filterPosts | reverse %}
+      {% include "partials/list-heading.njk" %}
+    {% endfor %}
+  </ul>
+</div>

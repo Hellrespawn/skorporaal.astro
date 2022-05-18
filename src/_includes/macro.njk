@@ -1,0 +1,9 @@
+{% macro icon(name, classes = '') %}
+    <div class="flex h-12 w-12 items-center justify-center rounded-full bg-zinc-800 p-2 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-900 {{ classes }}">
+        {% include "icons/" + name + ".svg" %}
+    </div>
+{% endmacro %}
+
+{% macro dot(color) %}
+    <div class="{{ color }} inline-block h-2 w-2 shrink-0 rounded-full"></div>
+{% endmacro %}

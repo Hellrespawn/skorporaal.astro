@@ -1,0 +1,9 @@
+{% from "macro.njk" import icon %}
+
+<div
+  x-data
+  @click="toggleDarkMode()"
+  class="fixed bottom-4 left-4 cursor-pointer"
+>
+  {{ icon('sun', 'shadow-md shadow-zinc-400 dark:shadow-zinc-900') }}
+</div>

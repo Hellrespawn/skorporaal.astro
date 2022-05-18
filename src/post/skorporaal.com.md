@@ -1,7 +1,7 @@
 ---
 title: 'skorporaal.com'
-permalink: /<%= this.slugify(title) %>/
-layout: markdown.ejs
+permalink: /{{ title | slugify }}/
+layout: markdown.njk
 date: 2022-05-17
 tags:
   - post

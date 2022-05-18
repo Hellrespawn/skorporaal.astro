@@ -1,7 +1,7 @@
 ---
 title: Pasta met Worst
-permalink: /<%= this.slugify(title) %>/
-layout: markdown.ejs
+permalink: /{{ title | slugify }}/
+layout: markdown.njk
 tags:
   - recipe
 ---
