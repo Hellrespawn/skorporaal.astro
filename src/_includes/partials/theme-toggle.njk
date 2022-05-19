@@ -1,9 +1,26 @@
 {% from "macro.njk" import icon %}
 
-<div
-  x-data
-  @click="toggleDarkMode()"
-  class="absolute md:fixed bottom-8 md:bottom-4 left-4 cursor-pointer"
+<button
+  x-data="{
+    darkMode: document.documentElement.classList.contains('dark'),
+
+    // Arrow functions don't bind this, so we must use
+    // `function toggle() { ... }` or shorthand `toggle() { ... }`
+    toggle() {
+      localStorage.darkMode = this.darkMode = document.documentElement.classList.toggle('dark');
+    }
+  }"
+  tabindex="0"
+  @click="toggle()"
+  @keydown.enter.prevent="toggle()"
+  class="absolute bottom-8 left-4 cursor-pointer md:fixed md:bottom-4"
+  aria-label="toggle theme"
 >
-  {{ icon('sun', 'md:shadow-md md:shadow-zinc-400 md:dark:shadow-zinc-900') }}
-</div>
+  <div x-show="darkMode">
+    {{ icon('sun', 'md:shadow-md md:shadow-zinc-400 md:dark:shadow-zinc-900') }}
+  </div>
+  <div x-show="!darkMode">
+    {{ icon('moon', 'md:shadow-md md:shadow-zinc-400 md:dark:shadow-zinc-900')
+    }}
+  </div>
+</button>

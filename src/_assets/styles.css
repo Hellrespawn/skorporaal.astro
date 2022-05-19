@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .fancy-links {
+    @apply bg-gradient-to-r from-accent-200 to-accent-200 bg-[length:auto_33%] bg-[center_bottom_1px] bg-no-repeat  dark:from-primary-700 dark:to-primary-700;
+  }
+
+  .reset-text-color {
+    @apply text-zinc-700 no-underline dark:text-zinc-300;
+  }
+}

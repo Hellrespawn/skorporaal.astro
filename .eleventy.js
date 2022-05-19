@@ -1,4 +1,5 @@
 const Nunjucks = require('nunjucks');
+const filters = require('./util/filter.js');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/static');
@@ -7,20 +8,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./tailwind.config.cjs');
   eleventyConfig.addWatchTarget('./postcss.config.cjs');
   eleventyConfig.addWatchTarget('./src/_assets/styles.css');
+  eleventyConfig.addWatchTarget('./src/static/styles.min.css');
 
-  eleventyConfig.addFilter('filterPosts', (posts) =>
-    posts.filter((post) => typeof post.data.tags !== 'undefined')
-  );
-
-  eleventyConfig.addFilter('getPostColor', (post) =>
-    post.data.tags.includes('recipe') ? 'bg-accent-500' : 'bg-primary-500'
-  );
-
-  eleventyConfig.addFilter('formatDate', (date) =>
-    date
-      ? date.toLocaleDateString('nl-NL', { dateStyle: 'short' })
-      : 'A long time ago...'
-  );
+  // Filters
+  Object.entries(filters).forEach(([name, filter]) => {
+    eleventyConfig.addFilter(name, filter);
+  });
 
   return {
     dir: {
