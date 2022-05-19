@@ -22,11 +22,6 @@ module.exports = function (eleventyConfig) {
       : 'A long time ago...'
   );
 
-  eleventyConfig.addNunjucksGlobal('getFilters', () => [
-    ['Recipes', 'recipe', 'bg-accent-500'],
-    ['Posts', 'post', 'bg-primary-500'],
-  ]);
-
   return {
     dir: {
       input: './src',

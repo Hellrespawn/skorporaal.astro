@@ -1,7 +1,9 @@
 {% from "macro.njk" import dot %}
 
+{% set filters = [['Recipes', 'recipe', 'bg-accent-500'], ['Posts', 'post', 'bg-primary-500']] %}
+
 <ul class="flex flex-row">
-  {% for name, type, color in getFilters() %}
+  {% for name, type, color in filters %}
 
   <li
     :class="filter !== '{{ type }}' && 'opacity-50'"
