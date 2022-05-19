@@ -1,9 +1,5 @@
 ---
 title: 'Andijviestamppot met Zalm'
-permalink: /{{ title | slugify }}/
-layout: markdown.njk
-tags:
-  - recipe
 ---
 
 Bron: <https://www.ah.nl/allerhande/recept/R-R1194541/andijviestamppot-met-zalm>

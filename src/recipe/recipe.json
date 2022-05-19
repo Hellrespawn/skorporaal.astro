@@ -1,0 +1,5 @@
+{
+  "layout": "markdown.njk",
+  "permalink": "/recipe/{{ title | slugify }}/",
+  "tags": ["recipe"]
+}

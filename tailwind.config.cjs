@@ -3,7 +3,7 @@ const colors = require('tailwindcss/colors');
 
 module.exports = {
   plugins: [require('@tailwindcss/typography')],
-  content: ['./src/**/*.{html,njk,css}', './util/**/*.js'],
+  content: ['./src/**/*.{html,njk,css,json}', './util/**/*.js'],
   darkMode: 'class',
   theme: {
     keyframes: {
@@ -18,8 +18,8 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: colors.teal, // teal, cyan or sky?
-        accent: colors.orange, // orange, amber, custom gold?
+        primary: colors.cyan, // teal, cyan or sky?
+        accent: colors.amber, // orange, amber, custom gold?
       },
       fontFamily: {
         sans: ['"Nunito"', ...defaultTheme.fontFamily.sans],

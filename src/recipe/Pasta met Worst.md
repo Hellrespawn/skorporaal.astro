@@ -1,9 +1,5 @@
 ---
 title: Pasta met Worst
-permalink: /{{ title | slugify }}/
-layout: markdown.njk
-tags:
-  - recipe
 ---
 
 Stef Korporaal <skorporaal.com>

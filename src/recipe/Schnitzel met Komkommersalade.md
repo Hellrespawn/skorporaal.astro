@@ -1,9 +1,5 @@
 ---
 title: Schnitzel met Komkommersalade
-permalink: /{{ title | slugify }}/
-layout: markdown.njk
-tags:
-  - recipe
 ---
 
 Stef Korporaal <skorporaal.com>; Adam Ragusea

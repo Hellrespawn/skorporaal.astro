@@ -1,9 +1,5 @@
 ---
 title: 'Champignonsoep Stef'
-permalink: /{{ title | slugify }}/
-layout: markdown.njk
-tags:
-  - recipe
 ---
 
 Stef Korporaal <skorporaal.com>

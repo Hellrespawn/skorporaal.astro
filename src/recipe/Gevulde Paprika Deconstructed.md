@@ -1,9 +1,5 @@
 ---
 title: 'Deconstructed Gevulde Paprika'
-permalink: /{{ title | slugify }}/
-layout: markdown.njk
-tags:
-  - recipe
 ---
 
 Stef Korporaal <skorporaal.com>

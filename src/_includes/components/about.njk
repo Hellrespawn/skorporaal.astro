@@ -2,7 +2,7 @@
 
 <div class="p-8 md:p-12">
   <div
-    class="prose-a:fancy-links prose-a:reset-text-color prose prose-zinc prose-teal mb-8 dark:prose-invert md:prose-lg"
+    class="prose-a:fancy-link prose-a:reset-text-color prose prose-zinc prose-teal mb-8 dark:prose-invert"
   >
     <h1 class="whitespace-nowrap font-mono">
       skorporaal.com<span class="inline-block -translate-x-1 animate-blink"
@@ -10,7 +10,7 @@
       >
     </h1>
     <p>
-      Hello! My name is Stef Korporaal. I am currently a student of Software
+      Hello! My name is {{ site.name }}. I am currently a student of Software
       Development at the
       <a href="https://www.amsterdamuas.com"
         >Amsterdam University of Applied Sciences</a
@@ -32,7 +32,7 @@
         class="flex w-min flex-row items-center rounded-full bg-zinc-200 dark:bg-zinc-700"
         target="_blank"
         rel="nofollower noreferrer noopener"
-        href="https://github.com/Hellrespawn"
+        href="{{ site.github }}"
       >
         {{ icon('github') }}
         <div class="pl-4 pr-6 underline">Hellrespawn</div>

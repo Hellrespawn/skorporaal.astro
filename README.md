@@ -1,22 +1,10 @@
 # skorporaal.11ty
 
-## Filters
+This repo holds my personal site and cookbook. More information about the site, including attribution, can be found in `./src/portfolio/skorporaal.com.md`.
 
-```js
-eleventyConfig.setEjsOptions({ context: eleventyConfig.javascriptFunctions });
-```
+## To do
 
-This passes an object which holds 11ty universal filters into `this` inside EJS files.
-
-## Attribution
-
-- Left Arrow and Sun icons from [Hero Icons](https://heroicons.com/)
-- Github Icon from [Feather Icons](https://feathericons.com/)
-- Design inspiration from [Fuck I Wish I Knew That.](https://fuckiwishiknewth.at/)
-
-## TODO
-
-- Work with global data for site config , read about using JS in data cascade.
-- Learn about pagination
-- Use Alpine to filter posts
-- Write about skorporaal.com
+- TODO Dark and light mode themes for prism
+- TODO Learn about pagination
+- TODO Write about skorporaal.com
+- TODO Local versions of CDN stuff

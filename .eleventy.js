@@ -1,7 +1,32 @@
-const Nunjucks = require('nunjucks');
+const directoryOutputPlugin = require('@11ty/eleventy-plugin-directory-output');
+const externalLinks = require('markdown-it-external-links');
 const filters = require('./util/filter.js');
+const markdownIt = require('markdown-it');
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 module.exports = function (eleventyConfig) {
+  // Markdown
+  const options = {
+    html: true,
+    breaks: true,
+    linkify: true,
+  };
+
+  const md = markdownIt(options);
+  md.use(externalLinks, {
+    externalClassName: null,
+    internalClassName: null,
+    externalTarget: '_blank',
+    externalRel: 'noopener noreferrer nofollow',
+  });
+
+  eleventyConfig.setLibrary('md', md);
+
+  // Filters
+  Object.entries(filters).forEach(([name, filter]) => {
+    eleventyConfig.addFilter(name, filter);
+  });
+
   eleventyConfig.addPassthroughCopy('src/static');
   eleventyConfig.setUseGitIgnore(true);
 
@@ -10,10 +35,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./src/_assets/styles.css');
   eleventyConfig.addWatchTarget('./src/static/styles.min.css');
 
-  // Filters
-  Object.entries(filters).forEach(([name, filter]) => {
-    eleventyConfig.addFilter(name, filter);
-  });
+  eleventyConfig.setQuietMode(true);
+  eleventyConfig.addPlugin(directoryOutputPlugin);
+  eleventyConfig.addPlugin(syntaxHighlight);
 
   return {
     dir: {

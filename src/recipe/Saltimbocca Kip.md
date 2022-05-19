@@ -1,9 +1,5 @@
 ---
 title: Saltimbocca met kip
-permalink: /{{ title | slugify }}/
-layout: markdown.njk
-tags:
-  - recipe
 ---
 
 Stef Korporaal <skorporaal.com>

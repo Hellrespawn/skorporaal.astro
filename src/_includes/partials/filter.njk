@@ -1,15 +1,15 @@
 {% from "macro.njk" import dot %}
 
-{% set filters = [['Recipes', 'recipe', 'bg-accent-500'], ['Portfolio', 'portfolio', 'bg-primary-500']] %}
-
 <ul class="flex flex-row">
-  {% for name, type, color in filters %}
+  {% for category, data in categoryData %}
 
   <li
-    :class="filter !== '{{ type }}' && 'opacity-50'"
+    :class="filter !== '{{ category }}' && 'opacity-50'"
     class="py-4 pr-8 transition-[opacity] duration-100 last:pr-0 hover:opacity-75"
   >
-    <button @click="toggle('{{ type }}')">{{ dot(color) }} {{ name }}</button>
+    <button @click="toggle('{{ category }}')">
+      {{ dot(data.color) }} {{ data.name }}
+    </button>
   </li>
 
   {% endfor %}

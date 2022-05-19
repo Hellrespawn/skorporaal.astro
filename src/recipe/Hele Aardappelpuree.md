@@ -1,9 +1,5 @@
 ---
 title: 'Hele aardappelpuree'
-permalink: /{{ title | slugify }}/
-layout: markdown.njk
-tags:
-  - recipe
 ---
 
 Bron: <https://weaselle.tumblr.com/post/189359419975/my-perfect-mashed-potatoes>

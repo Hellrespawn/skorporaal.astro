@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @layer utilities {
-  .fancy-links {
-    @apply bg-gradient-to-r from-accent-200 to-accent-200 bg-[length:auto_33%] bg-[center_bottom_1px] bg-no-repeat  dark:from-primary-700 dark:to-primary-700;
+  .fancy-link {
+    @apply bg-gradient-to-r from-accent-200 to-accent-200 bg-[length:auto_36%] bg-[center_bottom_1px] bg-no-repeat  dark:from-primary-700 dark:to-primary-700;
   }
 
   .reset-text-color {

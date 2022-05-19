@@ -1,0 +1,5 @@
+{
+  "recipe": { "color": "bg-accent-500", "name": "Recipes" },
+  "portfolio": { "color": "bg-primary-500", "name": "Portfolio" },
+  "article": { "color": "bg-zinc-500", "name": "Articles" }
+}
