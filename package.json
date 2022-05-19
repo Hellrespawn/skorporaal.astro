@@ -5,10 +5,10 @@
   "scripts": {
     "clean:tailwind": "del-cli src/static/styles.min.css",
     "clean:11ty": "del-cli _site",
-    "dev:postcss": "postcss src/_assets/**/*.css -o src/static/styles.min.css --watch --verbose",
+    "dev:postcss": "postcss --ext .out.css src/_assets/**/*.css -d src/static/ --watch --verbose",
     "dev:11ty": "eleventy --serve --watch",
-    "build:postcss": "NODE_ENV=production postcss src/_assets/**/*.css -o src/static/styles.min.css",
-    "build:11ty": "ELEVENTY_ENV=production eleventy",
+    "build:postcss": "postcss --ext .out.css --env production src/_assets/**/*.css -d src/static/",
+    "build:11ty": "eleventy",
     "format:prettier": "prettier --write ./src/**/*",
     "clean": "npm-run-all --parallel clean:*",
     "dev": "npm-run-all --parallel dev:*",

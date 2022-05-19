@@ -3,8 +3,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="{{ site.description }}" />
 
-<link rel="stylesheet" href="/static/styles.min.css" />
-
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -12,13 +10,11 @@
   href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap"
   rel="stylesheet"
 />
+<link rel="icon" href="/static/favicon.png">
+<link rel="stylesheet" href="/static/styles.out.css" />
+<link rel="stylesheet" href="/static/prism-vsc-dark-plus.out.css" />
 
-<link
-  href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css"
-  rel="stylesheet"
-/>
-
-<script defer src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js"></script>
+<script defer src="/static/alpine.js"></script>
 
 <script>
   {% include 'scripts/initDarkMode.js' %}

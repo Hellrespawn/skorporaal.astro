@@ -9,10 +9,12 @@ This site is powered by [Eleventy](https://www.11ty.dev/), [Alpine](https://alpi
 
 - General design was imitated from [Fuck I Wish I Knew That](https://fuckiwishiknewth.at/).
 
-- Fancy links inspired by [chrissy.dev](https://www.chrissy.dev/)
+- Fancy links and source code structure inspired by [chrissy.dev](https://www.chrissy.dev/)
 
 - Sun-, moon- and left arrow icons from [Hero Icons](https://heroicons.com/)
 
 - GitHub icon from [Feather Icons](https://feathericons.com/)
+
+- Favicon from [Twemoji](https://twemoji.twitter.com/) via [favicon.io](https://favicon.io)
 
 - [Nunito](https://github.com/googlefonts/nunito) by Vernon Adams
