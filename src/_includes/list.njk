@@ -7,11 +7,11 @@
     }
   }"
 >
-  {% include 'partials/filter.njk' %}
+  {% include 'filter.njk' %}
 
   <ul>
     {% for item in collections.all | filterPosts | reverse %}
-      {% include "partials/list-heading.njk" %}
+      {% include "list-heading.njk" %}
     {% endfor %}
   </ul>
 </div>
