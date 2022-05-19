@@ -17,7 +17,7 @@ Stef Korporaal <skorporaal.com>
 |               |              | totaal:           |  1561 |
 
 [^1]: Kan ook vervangen worden door 1kg gemengde wortel/ui. Scheid dan de ui van de wortel, voor zover mogelijk
-[^2]: Naar keuze, groente aanbevolen
+[^2]: Naar keuze, kip of groente aanbevolen
 
 Calorieën per portie: 1561 / 3 = 520 1/3 kcal
 

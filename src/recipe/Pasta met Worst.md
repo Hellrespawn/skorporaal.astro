@@ -2,7 +2,7 @@
 title: Pasta met Worst
 ---
 
-Stef Korporaal <skorporaal.com>
+Geïnspireerd door de [Bloke Pasta](https://sortedfood.com/recipe/12543) van SortedFood, uit [deze video](https://www.youtube.com/watch?v=PQiO1wgv94k).
 
 ## Ingrediënten
 
@@ -29,10 +29,10 @@ Calorieën per maaltijd: 756 kcal
 
 1. Knijp de braadworst in kleine "gehaktballetjes" uit. Bak deze rondom in de olijfolie totdat ze goudbruin zijn. Verwijder ze uit de pan, maar probeer zoveel mogelijk vet te laten liggen.
 
-1. Bak de gesneden ui, paprika en champignons in het overgebleven vet tot de gewenste gaarheid. Voeg het venkelzaad, de oregano en knoflookpoeder toe. Wees voorzichtig, vooral met het venkelzaad, je kan altijd meer toevoegen! Bak kort mee.
+1. Bak de gesneden ui, paprika en champignons in het overgebleven vet tot de gewenste gaarheid. Voeg het venkelzaad, de oregano en knoflookpoeder toe. Wees voorzichtig met de hoeveelheid, vooral met het venkelzaad, je kan altijd meer toevoegen! Bak kort mee.
 
 1. Voeg de wijn toe aan de groente. Laat het pruttelen tot de wijn voor de helft gereduceerd is.
 
-1. Voeg de pasta toe aan de pan. Roer om. Voeg peper, zout en citroensap toe naar smaak. Voeg pastawater toe totdat de saus de gewenste consistentie bereikt. Het zetmeel in de pasta zal de saus blijven indikken, maak het dus iets "natter" dan eigenlijk gewenst.
+1. Voeg de pasta toe aan de pan. Roer om. Voeg peper, zout en citroensap toe naar smaak. Voeg pastawater toe totdat de saus de gewenste consistentie bereikt. Het zetmeel in de pasta zal de saus blijven indikken na het koken, maak het dus iets natter dan eigenlijk gewenst.
 
 1. Serveer met harde italiaanse kaas.

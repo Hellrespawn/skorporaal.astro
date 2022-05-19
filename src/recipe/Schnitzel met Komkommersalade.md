@@ -2,9 +2,13 @@
 title: Schnitzel met Komkommersalade
 ---
 
-Stef Korporaal <skorporaal.com>; Adam Ragusea
+Dit is een licht aangepaste versie van [dit recept](https://www.youtube.com/watch?v=4eGNy2E7CVs) van Adam Ragusea.
 
-## Ingrediënten Schnitzel
+## Ingrediënten
+
+Filetlapjes à la minute kunnen ook gebruikt worden, snij ze dan niet doormidden. Kipfilet is ook een optie.
+
+## Schnitzel
 
 | Ingredient: | Hoeveelheid:   | Staat:                          | kcal: |
 | ----------- | -------------- | ------------------------------- | ----: |
@@ -15,7 +19,7 @@ Stef Korporaal <skorporaal.com>; Adam Ragusea
 | bakvet/ghee | 3 el           |                                 |   200 |
 |             |                | totaal:                         |   865 |
 
-## Ingrediënten Komkommersalade
+## Komkommersalade
 
 | Ingredient:   | Hoeveelheid: | kcal: |
 | ------------- | ------------ | ----: |

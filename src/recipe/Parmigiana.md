@@ -4,7 +4,9 @@ title: Kip Parmigiana
 
 Stef Korporaal <skorporaal.com>
 
-## Ingrediënten Saus
+## Ingrediënten
+
+### Saus
 
 | Ingredient:     | Hoeveelheid: | Staat:     | kcal: |
 | --------------- | ------------ | ---------- | ----: |
@@ -17,7 +19,7 @@ Stef Korporaal <skorporaal.com>
 | olijfolie       | 0.5 el       |            |    40 |
 |                 |              | totaal:    |   217 |
 
-## Ingrediënten Schnitzel
+### Schnitzel
 
 | Ingredient:           | Hoeveelheid: | Staat:     | kcal: |
 | --------------------- | ------------ | ---------- | ----: |
@@ -28,7 +30,7 @@ Stef Korporaal <skorporaal.com>
 | olijfolie             | 2el          |            |   160 |
 |                       |              | totaal:    |   808 |
 
-## Ingrediënten Pasta
+### Pasta
 
 | Ingredient: | Hoeveelheid: | Staat:   | kcal: |
 | ----------- | ------------ | -------- | ----: |
