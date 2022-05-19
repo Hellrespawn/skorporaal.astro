@@ -10,4 +10,5 @@ This repo holds my personal site and cookbook. More information about the site, 
 - TODO Write about skorporaal.com
 - TODO Language tag (dutch for recipe, english otherwise)
 - TODO Markdown math rendering
+- TODO Recepten schrijven voor Andijvie-spek, kippensoep, tomatensoep, champignonsoep van Oma, Hachee papke.
 - TODO? Local versions of font

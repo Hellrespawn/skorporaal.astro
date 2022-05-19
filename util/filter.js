@@ -1,10 +1,19 @@
+function sortPost(left, right) {
+  const order =
+    right.data.date?.getTime() ?? 0 - left.data.date?.getTime() ?? 0;
+
+  if (isNaN(order)) {
+    return left.data.title.localeCompare(right.data.title);
+  }
+
+  return order;
+}
+
 module.exports = {
   filterPosts: (posts) =>
     posts
       .filter((post) => typeof post.data.tags !== 'undefined')
-      .sort(
-        (a, b) => a.data.date?.getTime() ?? 0 - b.data.date?.getTime() ?? 0
-      ),
+      .sort(sortPost),
 
   formatDate: (date) =>
     date
