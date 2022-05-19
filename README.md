@@ -4,8 +4,11 @@ This repo holds my personal site and cookbook. More information about the site, 
 
 ## To do
 
+- TODO Remove divs inside button (a11y)
+- TODO Remove h3 from list-heading and rename it
 - TODO Nicer github link
 - TODO 404 page
+- TODO Markdown layout title with author and date
 - TODO Learn about pagination
 - TODO Write about skorporaal.com
 - TODO Language tag (dutch for recipe, english otherwise)
