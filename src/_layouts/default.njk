@@ -1,0 +1,15 @@
+---
+layout: 'base.njk'
+---
+
+<main class="flex flex-col md:flex-row">
+  <section
+    class="flex flex-col items-center justify-center p-8 md:h-screen md:w-1/2 md:p-12"
+  >
+    {% include 'about.njk' %}
+  </section>
+
+  {{ content | safe }}
+</main>
+
+{% include 'footer.njk' %}

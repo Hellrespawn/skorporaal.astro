@@ -1,5 +1,3 @@
-{% from "macro.njk" import icon %}
-
 <div class="flex flex-row justify-center">
-  <a x-data @click="history.back()" href="/"> {{ icon('left-arrow') }} </a>
+   {% include "back-button.njk" %}
 </div>

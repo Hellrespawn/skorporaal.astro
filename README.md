@@ -4,7 +4,6 @@ This repo holds my personal site and cookbook. More information about the site, 
 
 ## To do
 
-- TODO 404 page
 - TODO Markdown layout title with author and date
 - TODO Learn about pagination
 - TODO Write about skorporaal.com
@@ -18,3 +17,4 @@ This repo holds my personal site and cookbook. More information about the site, 
 - DONE Remove divs inside button (a11y)
 - DONE Remove h3 from list-heading and rename it
 - DONE Nicer github link
+- DONE 404 page

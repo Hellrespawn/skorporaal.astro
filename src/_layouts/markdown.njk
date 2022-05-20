@@ -2,16 +2,14 @@
 layout: 'base.njk'
 ---
 
-<div class="flex flex-col items-center px-4">
-  <main>
-    <nav class="border-b border-zinc-200 py-8 dark:border-zinc-700">
-      {% include 'top-bar.njk' %}
-    </nav>
-    <article
-      class="prose-a:fancy-link prose-a:reset-text-color prose prose-zinc prose-teal py-8 dark:prose-invert"
-    >
-      <h1>{{ title }}</h1>
-      {{ content | safe }}
-    </article>
-  </main>
-</div>
+<main class="flex flex-col items-center px-4">
+  <nav class="py-8">{% include 'top-bar.njk' %}</nav>
+  <article
+    class="prose-a:fancy-link prose-a:reset-text-color prose prose-zinc prose-teal border-t border-zinc-200 py-8 dark:prose-invert dark:border-zinc-700"
+  >
+    <h1>{{ title }}</h1>
+    {{ content | safe }}
+  </article>
+</main>
+
+{% include 'footer.njk' %}
