@@ -15,15 +15,19 @@ I was not looking to build a SPA however, so using a static site generator seeme
 
 One option that seemed promising was [Astro](https://astro.build/), which is a component-based static site generator, however the oft-changing API and poor error reporting made me put it aside.
 
-I eventually settled on Eleventy, which is a quite popular, if minimal SSG. What this lacks compared to frontend-frameworks is built-in scoped styles and code, hence the following.
+I eventually settled on Eleventy, which is a quite popular, if minimal SSG. I like the flexibility it provides. What it lacks compared to frontend-frameworks is built-in scoped styles and code. Which led me to the following...
 
 ### Tailwind
 
-Tailwind is a CSS framework that lets you compose styles directly in your markup. I had played around with it before and quite liked it. In this instance, it emulates scoped styles within our templates.
+Tailwind is a CSS framework that lets you compose styles directly in your markup. It comes with great defaults and is just close enough to regular CSS that I'm never worried about not being able to translate one to the other. In this instance, it emulates scoped styles within our templates.
 
 ### Alpine
 
 Alpine is a lightweight, reactive JavaScript framework. Like Tailwind it is applied directly into the markup and is automatically scoped into HTML elements. I was not familiar with these sort of frameworks, so I don't have a lot of grounds for comparison, but working with Alpine is quite nice.
+
+## a11y
+
+I have tried to make this site at least somewhat accessible, having applied a lot of the items on [the A11Y Project](https://www.a11yproject.com/checklist/).
 
 ## Attribution
 
