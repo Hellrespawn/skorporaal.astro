@@ -4,6 +4,7 @@ This repo holds my personal site and cookbook. More information about the site, 
 
 ## To do
 
+- FIXME width jumps around when filtering on narrow screen.
 - TODO Learn about pagination
 - TODO Write about skorporaal.com
 - TODO Markdown math rendering
@@ -19,3 +20,4 @@ This repo holds my personal site and cookbook. More information about the site, 
 - DONE Markdown layout title with author and date
 - DONE Put dates in `<time>`-element
 - Done Language tag (dutch for recipe, english otherwise)
+- DONE Remove Alpine dependency, added TypeScript

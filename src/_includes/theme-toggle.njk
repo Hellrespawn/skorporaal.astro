@@ -1,25 +1,15 @@
 {% from "macro.njk" import icon %}
 
 <button
-  x-data="{
-    darkMode: document.documentElement.classList.contains('dark'),
-
-    // Arrow functions don't bind this, so we must use
-    // `function toggle() { ... }` or shorthand `toggle() { ... }`
-    toggle() {
-      localStorage.darkMode = this.darkMode = document.documentElement.classList.toggle('dark');
-    }
-  }"
+  id="darkModeButton"
   tabindex="0"
-  @click="toggle()"
-  @keydown.enter.prevent="toggle()"
   class="absolute bottom-8 left-4 cursor-pointer md:fixed md:bottom-4"
   aria-label="toggle theme"
 >
-  <span x-show="darkMode">
+  <span id="lightModeIcon">
     {{ icon('sun', 'md:shadow-md md:shadow-zinc-400 md:dark:shadow-zinc-900') }}
   </span>
-  <span x-show="!darkMode">
+  <span id="darkModeIcon">
     {{ icon('moon', 'md:shadow-md md:shadow-zinc-400 md:dark:shadow-zinc-900')
     }}
   </span>

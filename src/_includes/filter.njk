@@ -5,13 +5,10 @@
   {% for category, data in categoryData %}
 
   <li
-    :class="filter !== '{{ category }}' && 'opacity-50'"
+    id="{{ 'filter' + (category | title) }}"
     class="my-4 mr-8 transition-[opacity] duration-100 last:mr-0 hover:opacity-75 active:opacity-100"
   >
-    <button
-      class="flex flex-row items-baseline"
-      @click="toggle('{{ category }}')"
-    >
+    <button class="flex flex-row items-baseline">
       {{ dot(category) }} <span class="ml-2">{{ data.name }}</span>
     </button>
   </li>

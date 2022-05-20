@@ -1,15 +1,7 @@
-<div
-  x-data="{
-    filter: '',
-
-    toggle(tag) {
-      this.filter === tag ? this.filter = '' : this.filter = tag
-    }
-  }"
->
+<div>
   {% include 'filter.njk' %}
 
-  <ul>
+  <ul id="postList">
     {% for item in collections.all | filterPosts %}
       {% include "list-item.njk" %}
     {% endfor %}

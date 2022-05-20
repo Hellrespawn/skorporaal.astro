@@ -1,9 +1,6 @@
 {% from "macro.njk" import dot with context %}
 
-<li
-  class="{{ item.data.tags | join(' ') }}"
-  x-show="!filter || $el.classList.contains(filter)"
->
+<li class="{{ item.data.tags | join(' ') }}">
   <!-- Same px as filter -->
   <a
     href="{{ item.url }}"
