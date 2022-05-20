@@ -1,4 +1,4 @@
-{% from "macro.njk" import dot %}
+{% from "macro.njk" import dot with context %}
 
 <li
   class="{{ item.data.tags | join(' ') }}"
@@ -10,7 +10,7 @@
   >
     <!-- Colored Dot -->
     {% set tag = item.data.tags[0] %}
-    {{ dot(categoryData[tag].color) }}
+    {{ dot(tag) }}
 
     <!-- Title -->
     <p class="flex-grow pl-2">{{ item.data.title }}</p>

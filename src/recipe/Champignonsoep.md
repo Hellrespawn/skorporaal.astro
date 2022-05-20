@@ -1,8 +1,10 @@
 ---
-title: 'Champignonsoep Stef'
+title: 'Champignonsoep'
+authors:
+  - Kelly Turnbull
 ---
 
-Stef Korporaal <skorporaal.com>
+Dit is een aangepaste versie van [dit recept](https://coelasquid.tumblr.com/post/12880718110/as-long-as-were-sharing-recipes-this-is-my) door Kelly Turnbull.
 
 ## Ingrediënten
 

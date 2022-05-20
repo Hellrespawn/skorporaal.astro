@@ -1,4 +1,4 @@
-{% from "macro.njk" import dot %}
+{% from "macro.njk" import dot with context %}
 
 <ul class="flex flex-row">
   {% for category, data in categoryData %}
@@ -8,7 +8,7 @@
     class="py-4 pr-8 transition-[opacity] duration-100 last:pr-0 hover:opacity-75 active:opacity-100"
   >
     <button class="flex flex-row items-baseline" @click="toggle('{{ category }}')">
-      {{ dot(data.color) }} <span class="pl-2">{{ data.name }}</span>
+      {{ dot(category) }} <span class="pl-2">{{ data.name }}</span>
     </button>
   </li>
 

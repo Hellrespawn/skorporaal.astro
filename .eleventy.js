@@ -1,24 +1,24 @@
 const directoryOutputPlugin = require('@11ty/eleventy-plugin-directory-output');
-const externalLinks = require('markdown-it-external-links');
 const filters = require('./util/filter.js');
 const markdownIt = require('markdown-it');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 module.exports = function (eleventyConfig) {
   // Markdown
-  const options = {
+  const md = markdownIt({
     html: true,
     breaks: true,
     linkify: true,
-  };
+  });
 
-  const md = markdownIt(options);
-  md.use(externalLinks, {
+  md.use(require('markdown-it-external-links'), {
     externalClassName: null,
     internalClassName: null,
     externalTarget: '_blank',
     externalRel: 'noopener noreferrer nofollow',
   });
+
+  md.use(require('markdown-it-footnote'));
 
   eleventyConfig.setLibrary('md', md);
 
@@ -28,12 +28,12 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addPassthroughCopy('src/static');
-  eleventyConfig.setUseGitIgnore(true);
+
+  // Generated CSS is in .gitignore, but must be watched for --serve
+  eleventyConfig.setUseGitIgnore(false);
 
   eleventyConfig.addWatchTarget('./tailwind.config.cjs');
   eleventyConfig.addWatchTarget('./postcss.config.cjs');
-  eleventyConfig.addWatchTarget('./src/_assets/styles.css');
-  eleventyConfig.addWatchTarget('./src/static/styles.min.css');
 
   eleventyConfig.setQuietMode(true);
   eleventyConfig.addPlugin(directoryOutputPlugin);

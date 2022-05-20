@@ -1,8 +1,10 @@
 ---
 title: 'Deconstructed Gevulde Paprika'
+authors:
+  - TheKitchn
 ---
 
-Stef Korporaal <skorporaal.com>
+Dit recept is een aangepaste versie van een recept van [theKitchn](https://www.thekitchn.com/) wat ik niet meer terug kan vinden.
 
 ## Ingrediënten
 

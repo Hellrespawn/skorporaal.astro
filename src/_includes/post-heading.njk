@@ -1,0 +1,8 @@
+{% from "macro.njk" import dot with context %}
+
+<div class="flex flex-row items-center justify-between">
+  <span class="text-zinc-400 dark:text-zinc-500">{{ date | formatDate }}</span>
+  {% if authors %}<span class="italic"> {{ authors | join(", ")}} </span>
+  {% endif %}
+</div>
+<h1 class="mt-2 mr-4">{{ title }} {{ dot(tags[0], '-translate-y-1') }}</h1>

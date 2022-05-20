@@ -4,7 +4,7 @@ This repo holds my personal site and cookbook. More information about the site, 
 
 ## To do
 
-- TODO Markdown layout title with author and date
+- TODO Put dates in `<time>`-element
 - TODO Learn about pagination
 - TODO Write about skorporaal.com
 - TODO Language tag (dutch for recipe, english otherwise)
@@ -18,3 +18,4 @@ This repo holds my personal site and cookbook. More information about the site, 
 - DONE Remove h3 from list-heading and rename it
 - DONE Nicer github link
 - DONE 404 page
+- DONE Markdown layout title with author and date
