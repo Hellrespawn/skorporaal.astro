@@ -4,13 +4,13 @@
   class="{{ item.data.tags | join(' ') }}"
   x-show="!filter || $el.classList.contains(filter)"
 >
+  <!-- Same px as filter -->
   <a
     href="{{ item.url }}"
-    class="flex flex-row items-baseline overflow-x-hidden whitespace-nowrap border-t border-gray-200 py-4 pr-2 transition-[padding-left] duration-100 hover:pl-2 dark:border-gray-700"
+    class="flex flex-row items-baseline overflow-x-hidden whitespace-nowrap border-t border-gray-200 py-4 px-2 transition-[padding-left] duration-100 hover:pl-4 dark:border-gray-700"
   >
     <!-- Colored Dot -->
-    {% set tag = item.data.tags[0] %}
-    {{ dot(tag) }}
+    {{ dot(item.data.tags[0]) }}
 
     <!-- Title -->
     <p class="flex-grow pl-2">{{ item.data.title }}</p>

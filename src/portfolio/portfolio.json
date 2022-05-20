@@ -1,5 +1,6 @@
 {
   "layout": "markdown.njk",
   "permalink": "/portfolio/{{ title | slugify }}/",
-  "tags": ["portfolio"]
+  "tags": ["portfolio"],
+  "authors": ["Stef Korporaal"]
 }

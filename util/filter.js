@@ -1,12 +1,12 @@
 function sortPost(left, right) {
   const order =
-    right.data.date?.getTime() ?? 0 - left.data.date?.getTime() ?? 0;
+    left.data.date?.getTime() ?? 0 - right.data.date?.getTime() ?? 0;
 
   if (isNaN(order)) {
-    return left.data.title.localeCompare(right.data.title);
+    return right.data.title.localeCompare(left.data.title);
   }
 
-  return order;
+  return -order;
 }
 
 module.exports = {
