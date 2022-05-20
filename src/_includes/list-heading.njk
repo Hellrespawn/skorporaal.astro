@@ -6,14 +6,14 @@
 >
   <a
     href="{{ item.url }}"
-    class="flex flex-row items-baseline gap-2 overflow-x-hidden whitespace-nowrap border-t border-gray-200 py-4 pr-2 transition-[padding-left] duration-100 hover:pl-2 dark:border-gray-700"
+    class="flex flex-row items-baseline overflow-x-hidden whitespace-nowrap border-t border-gray-200 py-4 pr-2 transition-[padding-left] duration-100 hover:pl-2 dark:border-gray-700"
   >
     <!-- Colored Dot -->
     {% set tag = item.data.tags[0] %}
     {{ dot(categoryData[tag].color) }}
 
     <!-- Title -->
-    <h3 class="flex-grow">{{ item.data.title }}</h3>
+    <h3 class="flex-grow pl-2">{{ item.data.title }}</h3>
 
     <!-- Date -->
     <div

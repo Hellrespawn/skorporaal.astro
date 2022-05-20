@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "clean:tailwind": "del-cli src/static/styles.min.css",
+    "clean:tailwind": "del-cli src/**/*.out.css",
     "clean:11ty": "del-cli _site",
     "dev:postcss": "postcss --ext .out.css src/_assets/**/*.css -d src/static/ --watch --verbose",
     "dev:11ty": "eleventy --serve --watch",

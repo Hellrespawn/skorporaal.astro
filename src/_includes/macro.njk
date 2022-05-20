@@ -1,11 +1,11 @@
 {% macro icon(name, classes = '') %}
-<div
+<span
   class="flex h-12 w-12 items-center justify-center rounded-full bg-zinc-700 p-2 text-zinc-50 dark:bg-zinc-200 dark:text-zinc-800 {{ classes }}"
 >
   {% include "icons/" + name + ".svg" %}
-</div>
+</span>
 {% endmacro %}
 
 {% macro dot(classes) %}
-<div class="{{ classes }} inline-block h-2 w-2 shrink-0 rounded-full"></div>
+<span class="{{ classes }} inline-block h-2 w-2 shrink-0 rounded-full"></span>
 {% endmacro %}

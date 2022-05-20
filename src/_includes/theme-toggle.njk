@@ -16,11 +16,11 @@
   class="absolute bottom-8 left-4 cursor-pointer md:fixed md:bottom-4"
   aria-label="toggle theme"
 >
-  <div x-show="darkMode">
+  <span x-show="darkMode">
     {{ icon('sun', 'md:shadow-md md:shadow-zinc-400 md:dark:shadow-zinc-900') }}
-  </div>
-  <div x-show="!darkMode">
+  </span>
+  <span x-show="!darkMode">
     {{ icon('moon', 'md:shadow-md md:shadow-zinc-400 md:dark:shadow-zinc-900')
     }}
-  </div>
+  </span>
 </button>

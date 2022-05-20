@@ -5,10 +5,10 @@
 
   <li
     :class="filter !== '{{ category }}' && 'opacity-50'"
-    class="py-4 pr-8 transition-[opacity] duration-100 last:pr-0 hover:opacity-75"
+    class="py-4 pr-8 transition-[opacity] duration-100 last:pr-0 hover:opacity-75 active:opacity-100"
   >
-    <button @click="toggle('{{ category }}')">
-      {{ dot(data.color) }} {{ data.name }}
+    <button class="flex flex-row items-baseline" @click="toggle('{{ category }}')">
+      {{ dot(data.color) }} <span class="pl-2">{{ data.name }}</span>
     </button>
   </li>
 
