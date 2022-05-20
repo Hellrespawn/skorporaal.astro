@@ -1,10 +1,8 @@
 ---
-title: 'Hele aardappelpuree'
+title: 'Aardappelpuree van Hele Aardappels'
 ---
 
-Bron: <https://weaselle.tumblr.com/post/189359419975/my-perfect-mashed-potatoes>
-
-Aangepast door Stef Korporaal <skorporaal.com>.
+Dit is een aangepaste versie van [dit recept](https://weaselle.tumblr.com/post/189359419975/my-perfect-mashed-potatoes) van Tumblr.
 
 ## Ingrediënten per persoon
 
