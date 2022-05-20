@@ -19,7 +19,7 @@
     <div
       class="flex-shrink overflow-hidden text-sm text-zinc-400 dark:text-zinc-500"
     >
-      {{ item.data.date | formatDate }}
+      {{ item.data.date | formatDate | safe }}
     </div>
   </a>
 </li>

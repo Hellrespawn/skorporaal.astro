@@ -1,7 +1,9 @@
 {% from "macro.njk" import dot with context %}
 
 <div class="flex flex-row items-center justify-between">
-  <span class="text-zinc-400 dark:text-zinc-500">{{ date | formatDate }}</span>
+  <span class="text-zinc-400 dark:text-zinc-500"
+    >{{ date | formatDate | safe }}</span
+  >
   {% if authors %}<span class="italic"> {{ authors | join(", ")}} </span>
   {% endif %}
 </div>

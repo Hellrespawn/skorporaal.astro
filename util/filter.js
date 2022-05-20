@@ -15,8 +15,14 @@ module.exports = {
       .filter((post) => typeof post.data.tags !== 'undefined')
       .sort(sortPost),
 
-  formatDate: (date) =>
-    date
-      ? date.toLocaleDateString('nl-NL', { dateStyle: 'short' })
-      : 'A long time ago...',
+  formatDate: (date) => {
+    if (date) {
+      let formattedDate = date.toLocaleDateString('nl-NL', {
+        dateStyle: 'short',
+      });
+      return `<time datetime="${formattedDate}">${formattedDate}</time>`;
+    }
+
+    return 'A long time ago...';
+  },
 };
