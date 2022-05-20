@@ -1,8 +1,10 @@
 ---
 title: Kip Parmigiana
+authors:
+  - SortedFood
 ---
 
-Stef Korporaal <skorporaal.com>
+De saus is een aangepaste versie van [dit recept](https://www.youtube.com/watch?v=MCSTiPtGSUA) van SortedFood.
 
 ## Ingrediënten
 

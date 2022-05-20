@@ -2,8 +2,6 @@
 title: Simpele Katsu
 ---
 
-Stef Korporaal <skorporaal.com>
-
 ## Ingrediënten
 
 | Ingredient: | Hoeveelheid:   | Staat:   | kcal: |

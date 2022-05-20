@@ -1,5 +1,7 @@
 ---
 title: Saltimbocca met kip of kabeljauw
+authors:
+  - Albert Heijn
 ---
 
 Dit recept is oorspronkelijk gebaseerd op een verspakket van de Albert Heijn wat niet meer verkocht wordt.

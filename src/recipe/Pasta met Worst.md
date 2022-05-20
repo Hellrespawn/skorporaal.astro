@@ -1,5 +1,7 @@
 ---
 title: Pasta met Worst
+authors:
+  - SortedFood
 ---
 
 Geïnspireerd door de [Bloke Pasta](https://sortedfood.com/recipe/12543) van SortedFood, uit [deze video](https://www.youtube.com/watch?v=PQiO1wgv94k).

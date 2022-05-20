@@ -3,7 +3,7 @@ function sortPost(left, right) {
     left.data.date?.getTime() ?? 0 - right.data.date?.getTime() ?? 0;
 
   if (isNaN(order)) {
-    return right.data.title.localeCompare(left.data.title);
+    return left.data.title.localeCompare(right.data.title);
   }
 
   return -order;

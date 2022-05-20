@@ -2,8 +2,6 @@
 title: Simpele Teriyaki
 ---
 
-Stef Korporaal <skorporaal.com>
-
 ## Ingrediënten
 
 | Ingredient:   | Hoeveelheid: | Staat:        | kcal: |

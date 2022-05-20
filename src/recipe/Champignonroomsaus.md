@@ -2,8 +2,6 @@
 title: 'Champignonroomsaus'
 ---
 
-Stef Korporaal <skorporaal.com>
-
 ## Ingrediënten
 
 | Ingredient:        | Hoeveelheid: | Staat:         | kcal: |

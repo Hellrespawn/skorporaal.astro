@@ -1,8 +1,10 @@
 ---
 title: 'Kip Caesar'
+authors:
+  - Adam Ragusea
 ---
 
-Stef Korporaal <skorporaal.com>; Adam Ragusea
+Dit is een aangepaste versie van [dit recept](https://www.youtube.com/watch?v=E_CFYtwk1zE) van Adam Ragusea.
 
 ## Ingrediënten Dressing
 
