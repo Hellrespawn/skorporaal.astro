@@ -25,4 +25,11 @@ module.exports = {
 
     return 'A long time ago...';
   },
+
+  getLanguageName: (name) => {
+    return {
+      nl: 'Dutch',
+      en: 'English',
+    }[name];
+  },
 };

@@ -2,5 +2,6 @@
   "layout": "markdown.njk",
   "permalink": "/article/{{ title | slugify }}/",
   "tags": ["article"],
-  "authors": ["Stef Korporaal"]
+  "authors": ["Stef Korporaal"],
+  "language": "en"
 }

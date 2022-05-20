@@ -4,10 +4,8 @@ This repo holds my personal site and cookbook. More information about the site, 
 
 ## To do
 
-- TODO Put dates in `<time>`-element
 - TODO Learn about pagination
 - TODO Write about skorporaal.com
-- TODO Language tag (dutch for recipe, english otherwise)
 - TODO Markdown math rendering
 - TODO Recepten schrijven voor Andijvie-spek, kippensoep, tomatensoep, champignonsoep van Oma, Hachee papke.
 - TODO? Local versions of font
@@ -19,3 +17,5 @@ This repo holds my personal site and cookbook. More information about the site, 
 - DONE Nicer github link
 - DONE 404 page
 - DONE Markdown layout title with author and date
+- DONE Put dates in `<time>`-element
+- Done Language tag (dutch for recipe, english otherwise)

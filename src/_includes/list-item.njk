@@ -13,7 +13,12 @@
     {{ dot(item.data.tags[0]) }}
 
     <!-- Title -->
-    <p class="flex-grow pl-2">{{ item.data.title }}</p>
+    <p class="flex-grow pl-2">
+      {{ item.data.title }}
+      {% if item.data.language !== "en" %}
+      {{ "[" + item.data.language | getLanguageName + "]" }}
+      {% endif %}
+    </p>
 
     <!-- Date -->
     <div

@@ -2,5 +2,6 @@
   "layout": "markdown.njk",
   "permalink": "/recipe/{{ title | slugify }}/",
   "tags": ["recipe"],
-  "authors": ["Stef Korporaal"]
+  "authors": ["Stef Korporaal"],
+  "language": "nl"
 }

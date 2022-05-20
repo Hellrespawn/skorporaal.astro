@@ -2,5 +2,6 @@
   "layout": "markdown.njk",
   "permalink": "/portfolio/{{ title | slugify }}/",
   "tags": ["portfolio"],
-  "authors": ["Stef Korporaal"]
+  "authors": ["Stef Korporaal"],
+  "language": "en"
 }
