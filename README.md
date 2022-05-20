@@ -4,9 +4,6 @@ This repo holds my personal site and cookbook. More information about the site, 
 
 ## To do
 
-- TODO Remove divs inside button (a11y)
-- TODO Remove h3 from list-heading and rename it
-- TODO Nicer github link
 - TODO 404 page
 - TODO Markdown layout title with author and date
 - TODO Learn about pagination
@@ -15,3 +12,9 @@ This repo holds my personal site and cookbook. More information about the site, 
 - TODO Markdown math rendering
 - TODO Recepten schrijven voor Andijvie-spek, kippensoep, tomatensoep, champignonsoep van Oma, Hachee papke.
 - TODO? Local versions of font
+
+## Done
+
+- DONE Remove divs inside button (a11y)
+- DONE Remove h3 from list-heading and rename it
+- DONE Nicer github link
