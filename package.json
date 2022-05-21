@@ -24,7 +24,6 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
-    "@11ty/eleventy-plugin-directory-output": "^1.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "@tailwindcss/typography": "^0.5.2",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
@@ -34,6 +33,7 @@
     "del-cli": "^4.0.1",
     "esbuild": "^0.14.39",
     "eslint": "^8.15.0",
+    "html-minifier": "^4.0.0",
     "markdown-it": "^13.0.1",
     "markdown-it-external-links": "^0.0.6",
     "markdown-it-footnote": "^3.0.3",

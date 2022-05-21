@@ -1,5 +1,5 @@
-const directoryOutputPlugin = require('@11ty/eleventy-plugin-directory-output');
 const filters = require('./util/filter.js');
+const transforms = require('./util/transform.js');
 const markdownIt = require('markdown-it');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
@@ -27,6 +27,11 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter(name, filter);
   });
 
+  // Transforms
+  Object.entries(transforms).forEach(([name, transform]) => {
+    eleventyConfig.addTransform(name, transform);
+  });
+
   eleventyConfig.addPassthroughCopy('src/static');
 
   // Generated CSS is in .gitignore, but must be watched for --serve
@@ -36,7 +41,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./postcss.config.cjs');
 
   eleventyConfig.setQuietMode(true);
-  eleventyConfig.addPlugin(directoryOutputPlugin);
   eleventyConfig.addPlugin(syntaxHighlight);
 
   return {
