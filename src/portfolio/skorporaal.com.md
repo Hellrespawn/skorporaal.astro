@@ -3,7 +3,7 @@ title: 'skorporaal.com'
 date: 2022-05-17
 ---
 
-This site is powered by [Eleventy](https://www.11ty.dev/), [Alpine](https://alpinejs.dev/), and [Tailwind](https://tailwindcss.com/)
+This site is powered by [Eleventy](https://www.11ty.dev/), and [Tailwind](https://tailwindcss.com/)
 
 ## Why
 
@@ -21,9 +21,9 @@ I eventually settled on Eleventy, which is a quite popular, if minimal SSG. I li
 
 Tailwind is a CSS framework that lets you compose styles directly in your markup. It comes with great defaults and is just close enough to regular CSS that I'm never worried about not being able to translate one to the other. In this instance, it emulates scoped styles within our templates.
 
-### Alpine
+### JavaScript
 
-Alpine is a lightweight, reactive JavaScript framework. Like Tailwind it is applied directly into the markup and is automatically scoped into HTML elements. I was not familiar with these sort of frameworks, so I don't have a lot of grounds for comparison, but working with Alpine is quite nice.
+I originally used [Alpine](https://alpinejs.dev/), but with the limited amount of interactivity, I eventually removed this in favor of bespoke [TypeScript](https://www.typescriptlang.org/). [esbuild](https://esbuild.github.io/) is used to bundle it, TypeScript itself is used to check types.
 
 ## a11y
 

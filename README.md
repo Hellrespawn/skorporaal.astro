@@ -4,6 +4,7 @@ This repo holds my personal site and cookbook. More information about the site, 
 
 ## To do
 
+- FIXME Click event listeners should also be keydown.enter
 - FIXME width jumps around when filtering on narrow screen.
 - TODO Learn about pagination
 - TODO Write about skorporaal.com
@@ -21,3 +22,4 @@ This repo holds my personal site and cookbook. More information about the site, 
 - DONE Put dates in `<time>`-element
 - Done Language tag (dutch for recipe, english otherwise)
 - DONE Remove Alpine dependency, added TypeScript
+- DONE Commented code, added home-icon, removed left-arrow

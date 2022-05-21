@@ -4,6 +4,7 @@ export default class Filter {
   posts: Post[];
 
   constructor() {
+    // Create button objects, add callbacks to buttons
     this.buttons = {
       article: new FilterButton('filterArticle', () => this.toggle('article')),
       portfolio: new FilterButton('filterPortfolio', () =>
@@ -12,11 +13,18 @@ export default class Filter {
       recipe: new FilterButton('filterRecipe', () => this.toggle('recipe')),
     };
 
+    // Get post elements
     this.posts = [...document.getElementById('postList')!.children].map(
       (element) => new Post(element as HTMLElement)
     );
   }
 
+  /**
+   * Callback function for `FilterButton`s. Toggles or clears the filter and
+   * filters posts.
+   *
+   * @param type - type of post to filter on.
+   */
   private toggle(type: string): void {
     if (this.filter === type) {
       this.clear();
@@ -27,6 +35,11 @@ export default class Filter {
     this.posts.forEach((post) => post.filter(this.filter));
   }
 
+  /**
+   * Sets the filter and deactivates other buttons.
+   *
+   * @param type - type of post to filter on.
+   */
   private set(type: string): void {
     this.filter = type;
 
@@ -37,6 +50,9 @@ export default class Filter {
     });
   }
 
+  /**
+   * Clear the filter and all buttons.
+   */
   private clear(): void {
     this.filter = '';
     Object.values(this.buttons).forEach((button) => button.clear());
@@ -46,18 +62,16 @@ export default class Filter {
 class FilterButton {
   private static classes = ['opacity-50'];
   private element: HTMLElement;
-  private active = false;
   private callback: () => void;
 
   constructor(idSelector: string, callback: () => void) {
     this.element = document.getElementById(idSelector)!;
-    this.clear();
     this.callback = callback;
     this.element.addEventListener('click', () => this.toggle());
   }
 
   public toggle(): void {
-    if (this.active) {
+    if (this.active()) {
       this.clear();
     } else {
       this.set();
@@ -65,14 +79,18 @@ class FilterButton {
     this.callback();
   }
 
+  private active(): boolean {
+    return !FilterButton.classes.every((className) =>
+      this.element.classList.contains(className)
+    );
+  }
+
   private set(): void {
     this.element.classList.remove(...FilterButton.classes);
-    this.active = true;
   }
 
   public clear(): void {
     this.element.classList.add(...FilterButton.classes);
-    this.active = false;
   }
 }
 
