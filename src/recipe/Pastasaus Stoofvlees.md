@@ -22,35 +22,34 @@ Bijvoorbeeld:
 
 ### Vlees
 
-Gebruik stoofvlees naar keuze, het wordt lekkerder als niet te mager is. Mijn voorkeur is voor riblappen.
+| Ingredient:    | Hoeveelheid: | Staat:     | kcal: |
+| -------------- | ------------ | ---------- | ----: |
+| stoofvlees[^1] | 800g         |            |  1440 |
+| bloem          | 2el (20g)    |            |    70 |
+| champignons    | 400g         | in plakken |    80 |
+| olie           | 2el (20ml)   |            |   160 |
+|                |              | totaal:    |  1750 |
 
-| Ingredient: | Hoeveelheid: | Staat:     | kcal: |
-| ----------- | ------------ | ---------- | ----: |
-| stoofvlees  | 800g         |            |  1440 |
-| bloem       | 2el (20g)    |            |    70 |
-| champignons | 400g         | in plakken |    80 |
-| olie        | 2el (20ml)   |            |   160 |
-|             |              | totaal:    |  1750 |
+[^1]: Gebruik stoofvlees naar keuze, het wordt lekkerder als niet te mager is. Mijn voorkeur is voor riblappen.
 
 ### Groenten
 
-Gezeefde tomaten is ook wel bekend als passata di pomodoro of, in het Engels, "tomato puree". Dit is niet te verwarren met tomatenpuree, wat in het Engels "tomato paste" wordt genoemd.
+| Ingredient:          | Hoeveelheid:   | Staat:      | kcal: |
+| -------------------- | -------------- | ----------- | ----: |
+| ui                   | 2              | gesneden    |    48 |
+| paprika              | 2              | gesneden    |    40 |
+| winterpeen           | 1              | geraspt     |    80 |
+| knoflook             | 3 tenen        | geperst     |    24 |
+| tomatenpuree         | 1 blikje (70g) |             |    64 |
+| wijn[^2]             | 250ml          |             |   200 |
+| bouillon             | 200ml          | rund of kip |    30 |
+| gezeefde tomaten[^3] | 1 pak (500g)   |             |   190 |
+| blik tomaten         | 1 blik (400g)  |             |   120 |
+| laurierblad          | 2              |             |       |
+|                      |                | totaal:     |   796 |
 
-Zelf gebruik ik het liefst witte wijn, maar rode wijn kan ook.
-
-| Ingredient:      | Hoeveelheid:   | Staat:      | kcal: |
-| ---------------- | -------------- | ----------- | ----: |
-| ui               | 2              | gesneden    |    48 |
-| paprika          | 2              | gesneden    |    40 |
-| winterpeen       | 1              | geraspt     |    80 |
-| knoflook         | 3 tenen        | geperst     |    24 |
-| tomatenpuree     | 1 blikje (70g) |             |    64 |
-| wijn             | 250ml          |             |   200 |
-| bouillon         | 200ml          | rund of kip |    30 |
-| gezeefde tomaten | 1 pak (500g)   |             |   190 |
-| blik tomaten     | 1 blik (400g)  |             |   120 |
-| laurierblad      | 2              |             |       |
-|                  |                | totaal:     |   796 |
+[^2]: Zelf gebruik ik het liefst witte wijn, maar rode wijn kan ook.
+[^3]: Gezeefde tomaten is ook wel bekend als passata di pomodoro of, in het Engels, "tomato puree". Dit is niet te verwarren met tomatenpuree, wat in het Engels "tomato paste" wordt genoemd.
 
 ### Smaakmakers
 

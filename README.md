@@ -4,12 +4,12 @@ This repo holds my personal site and cookbook. More information about the site, 
 
 ## To do
 
-- FIXME Click event listeners should also be keydown.enter
-- FIXME width jumps around when filtering on narrow screen.
+- TODO Manually add eventlisteners on load, remove defer from script tag to avoid FOUC
+- TODO Filter A-Z or by Date
 - TODO Learn about pagination
 - TODO Write about skorporaal.com
 - TODO Markdown math rendering
-- TODO Recepten schrijven voor Andijvie-spek, kippensoep, tomatensoep, champignonsoep van Oma, Hachee papke.
+- TODO Recepten schrijven voor kippensoep, tomatensoep, champignonsoep van Oma, Hachee papke.
 - TODO? Local versions of font
 
 ## Done
@@ -20,6 +20,9 @@ This repo holds my personal site and cookbook. More information about the site, 
 - DONE 404 page
 - DONE Markdown layout title with author and date
 - DONE Put dates in `<time>`-element
-- Done Language tag (dutch for recipe, english otherwise)
+- DONE Language tag (dutch for recipe, english otherwise)
 - DONE Remove Alpine dependency, added TypeScript
 - DONE Commented code, added home-icon, removed left-arrow
+- DONE width jumps around when filtering on narrow screen.
+- DONE Click event listeners should also be keydown.enter
+- DONE Andijvie-spek Stamppot toegevoegd

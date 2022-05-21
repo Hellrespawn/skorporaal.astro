@@ -8,8 +8,6 @@ Dit recept is oorspronkelijk gebaseerd op een verspakket van de Albert Heijn wat
 
 ## Ingrediënten voor twee personen
 
-Prosciutto crudo is de traditionele manier om saltimbocca te maken, maar jamon serrano werkt ook goed. Er kan ook spek of Coburger ham gebruikt worden, maar deze smaken wel erg anders.
-
 | Ingredient:          | Hoeveelheid:    | Staat:            | kcal: |
 | -------------------- | --------------- | ----------------- | ----: |
 | kipfilet óf          | 400g (2 filets) |                   |   440 |
@@ -19,7 +17,7 @@ Prosciutto crudo is de traditionele manier om saltimbocca te maken, maar jamon s
 | verse pasta óf       | 250g            |                   |   700 |
 | gedroogde pasta      | 200g            |                   |   700 |
 |                      |                 |                   |       |
-| rauwe ham            | 4 plakken (60g) |                   |   120 |
+| rauwe ham[^1]       | 4 plakken (60g) |                   |   120 |
 | doperwten            | 200g            |                   |   130 |
 | champignons          | 250g            | plakjes           |    40 |
 | knoflook             | 2 teen          | geperst           |    16 |
@@ -30,6 +28,8 @@ Prosciutto crudo is de traditionele manier om saltimbocca te maken, maar jamon s
 | salie                |                 | droog of vers     |       |
 |                      |                 | totaal kip:       |  2238 |
 |                      |                 | totaal kabeljauw: |  1898 |
+
+[^1]: Prosciutto crudo is de traditionele manier om saltimbocca te maken, maar jamon serrano werkt ook goed. Er kan ook spek of Coburger ham gebruikt worden, maar deze smaken wel erg anders.
 
 Calorieën per portie (kip): (2238 \* 0.8) / 2 = 895 1/5 kcal
 

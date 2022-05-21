@@ -8,18 +8,18 @@ Dit is een licht aangepaste versie van [dit recept](https://www.youtube.com/watc
 
 ## Ingrediënten
 
-Filetlapjes à la minute kunnen ook gebruikt worden, snij ze dan niet doormidden. Kipfilet is ook een optie.
-
 ## Schnitzel
 
-| Ingredient: | Hoeveelheid:   | Staat:                          | kcal: |
-| ----------- | -------------- | ------------------------------- | ----: |
-| filetlapjes | 2 stuks (250g) |                                 |   325 |
-| ei          | 1-2 stuks      | geklutst, optioneel met mosterd |   120 |
-| bloem       | 1-2 el         |                                 |    45 |
-| beschuit    | 3-4 stuks      | vermalen                        |   175 |
-| bakvet/ghee | 3 el           |                                 |   200 |
-|             |                | totaal:                         |   865 |
+| Ingredient:      | Hoeveelheid:   | Staat:                | kcal: |
+| ---------------- | -------------- | --------------------- | ----: |
+| filetlapjes[^1] | 2 stuks (250g) |                       |   325 |
+| ei               | 1-2 stuks      | geklutst, met mosterd |   120 |
+| bloem            | 1-2 el         |                       |    45 |
+| beschuit         | 3-4 stuks      | vermalen              |   175 |
+| bakvet/ghee      | 3 el           |                       |   200 |
+|                  |                | totaal:               |   865 |
+
+[^1]: Filetlapjes à la minute kunnen ook gebruikt worden, snij ze dan niet doormidden. Kipfilet is ook een optie.
 
 ## Komkommersalade
 

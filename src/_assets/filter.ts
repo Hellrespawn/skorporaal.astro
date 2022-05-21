@@ -68,6 +68,9 @@ class FilterButton {
     this.element = document.getElementById(idSelector)!;
     this.callback = callback;
     this.element.addEventListener('click', () => this.toggle());
+    this.element.addEventListener('keydown', (event) => {
+      event.key === 'Enter' && this.toggle();
+    });
   }
 
   public toggle(): void {

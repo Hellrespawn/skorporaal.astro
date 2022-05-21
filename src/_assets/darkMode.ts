@@ -23,6 +23,9 @@ export default class DarkMode {
     const darkModeButton = document.getElementById('darkModeButton')!;
 
     darkModeButton.addEventListener('click', () => this.toggle(true));
+    darkModeButton.addEventListener('keydown', (event) => {
+      event.key === 'Enter' && this.toggle(true);
+    });
   }
 
   private toggle(write: boolean): void {

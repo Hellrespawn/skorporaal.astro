@@ -10,7 +10,7 @@ Dit recept is een aangepaste versie van [dit recept](https://www.ah.nl/allerhand
 
 | Ingredient:             | Hoeveelheid:    | Staat:       | kcal: |
 | ----------------------- | --------------- | ------------ | ----: |
-| andijvie                | 250g            | fijngesneden |    40 |
+| andijvie[^1]           | 250g            | fijngesneden |    40 |
 | aardappel, iets kruimig | 600g            | geschild     |   520 |
 | ui                      | 1               | gesnipperd   |    24 |
 | knoflook                | 2 teen          | geperst      |    16 |
@@ -22,13 +22,15 @@ Dit recept is een aangepaste versie van [dit recept](https://www.ah.nl/allerhand
 | chilivlokken            |                 |              |       |
 |                         |                 | totaal:      |  1553 |
 
+[^1]: Als de andijvie niet fijngesneden is, stamp deze er dan doorheen om het kleiner te maken.
+
 Totaal aantal calorieën per portie: 777 kcal
 
 ## Bereiding
 
 1. Verwarm de oven voor op ~80°C.
 
-1. Schil de aardappelen, snijd in gelijke stukken en kook gaar.
+1. Schil de aardappels, snijd in gelijke stukken en kook gaar. Giet het water af.
 
 1. Verhit de helft van de ansjovis met wat olie in een koekenpan en laat de ansjovis uit elkaar vallen in de olie.
 
@@ -38,4 +40,4 @@ Totaal aantal calorieën per portie: 777 kcal
 
 1. Verhit de rest van de ansjovis met olie in dezelfde pan, tot de vis uit elkaar valt. Voeg de ui, knoflook en chilivlokken toe en bak op laag vuur tot de ui bruin wordt. Roer regelmatig. Zet het vuur laag en laat de temperatuur wat zakken alvorens de kappertjes toe te voegen en door te roeren. Voeg kappertjesvocht toe naar smaak.
 
-1. Giet de aardappelen af en stamp met de melk en de boter tot een puree. Meng de andijvie erdoor en breng op smaak met peper en zout
+1. Stamp de aardappels met de melk en de boter tot een puree. Meng de andijvie erdoor en breng op smaak met peper en zout
