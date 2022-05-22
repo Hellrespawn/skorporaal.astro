@@ -2,13 +2,20 @@ const htmlmin = require('html-minifier');
 
 module.exports = {
   minifyHtml: (content, outputPath) => {
-    if (outputPath && outputPath.endsWith('.html')) {
-      const minified = htmlmin.minify(content, {
+    if (outputPath && outputPath.endsWith('html')) {
+      return htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
         collapseWhitespace: true,
       });
-      return minified;
+    }
+
+    return content;
+  },
+
+  minifyJSON: (content, outputPath) => {
+    if (outputPath && outputPath.endsWith('.json')) {
+      return content.replace(/\s{2}/g, '').trim();
     }
 
     return content;
