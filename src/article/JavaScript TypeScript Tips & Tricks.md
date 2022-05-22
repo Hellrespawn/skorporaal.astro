@@ -1,13 +1,12 @@
 ---
-title: 'JavaScript + TypeScript Tips & Tricks Reference'
+title: 'JavaScript & TypeScript Tips & Tricks'
 date: 2021-12-19
 ---
 
-Tips & Tricks Reference Index:
+Tips & Tricks Index:
 
-- [JS/TS](@/posts/jsts-tricks.md)
-- [CSS](@/posts/css-tricks.md)
-- [HTML](@/posts/html-tricks.md)
+- [JS/TS](@./JavaScript TypeScript Tips & Tricks.md)
+- [HTML/CSS](@./HTML CSS Tips & Tricks.md)
 
 ## `tsconfig.json` settings
 
