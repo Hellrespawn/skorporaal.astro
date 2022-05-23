@@ -2,7 +2,7 @@ import categoryData from '../../../_data/categoryData.json';
 
 export class Post {
   private static template?: HTMLTemplateElement;
-  public date?: Date;
+  date?: Date;
 
   constructor(
     public title: string,
@@ -14,7 +14,7 @@ export class Post {
     this.date = date ? new Date(date) : undefined;
   }
 
-  public renderPost(): HTMLLIElement {
+  renderPost(): HTMLLIElement {
     if (!Post.template) {
       Post.template = document.getElementById(
         'postTemplate'

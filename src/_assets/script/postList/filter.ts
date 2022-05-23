@@ -1,4 +1,4 @@
-import { Observable, Subject } from '../observable';
+import { Observable, Observer, Subject } from '../observable';
 
 export interface FilterOptions {
   filterType?: string;
@@ -7,10 +7,10 @@ export interface FilterOptions {
   sortDir?: 'ascending' | 'descending';
 }
 
-export class Filter {
+export class Filter implements Observable<FilterOptions> {
   private options = new Subject({} as FilterOptions);
 
-  getOptions(): Observable<FilterOptions> {
-    return this.options;
+  subscribe(observer: Observer<FilterOptions>): void {
+    this.options.subscribe(observer);
   }
 }

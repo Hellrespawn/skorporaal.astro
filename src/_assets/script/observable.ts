@@ -1,33 +1,31 @@
-export type Subscriber<T> = (value: T) => void;
+export interface Observer<T> {
+  update(value: T): void;
+}
 
-export class Observable<T> {
-  protected subscribers: Subscriber<T>[] = [];
+export interface Observable<T> {
+  subscribe(observer: Observer<T>): void;
+}
 
-  public subscribe(subscriber: Subscriber<T>) {
+export class Subject<T> implements Observable<T> {
+  protected subscribers: Observer<T>[] = [];
+
+  constructor(private value: T) {}
+
+  subscribe(subscriber: Observer<T>) {
     this.subscribers.push(subscriber);
+    subscriber.update(this.value);
   }
 
   protected broadcast(value: T): void {
-    this.subscribers.forEach((subscriber) => subscriber(value));
-  }
-}
-
-export class Subject<T> extends Observable<T> {
-  constructor(private value: T) {
-    super();
+    this.subscribers.forEach((subscriber) => subscriber.update(value));
   }
 
-  public subscribe(subscriber: Subscriber<T>) {
-    this.subscribers.push(subscriber);
-    subscriber(this.value);
-  }
-
-  public next(value: T): void {
+  next(value: T): void {
     this.value = value;
     this.broadcast(value);
   }
 
-  public getValue(): T {
+  getValue(): T {
     return this.value;
   }
 }

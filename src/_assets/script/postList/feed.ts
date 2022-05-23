@@ -14,14 +14,14 @@ export class Feed {
 
   constructor(private url: string) {}
 
-  public async load(): Promise<Feed> {
+  async load(): Promise<Feed> {
     const response = await fetch(this.url);
     const json = await response.json();
     this.posts = json.posts.map(Feed.createPost);
     return this;
   }
 
-  public getPosts(options?: FilterOptions): Post[] {
+  getPosts(options?: FilterOptions): Post[] {
     let posts = this.posts;
 
     if (!options) {

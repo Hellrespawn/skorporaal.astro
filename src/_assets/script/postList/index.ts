@@ -1,17 +1,26 @@
+import { Observer } from '../observable';
 import { Feed } from './feed';
 import { Filter, FilterOptions } from './filter';
 import { Post } from './post';
 
-export class PostList {
+export class PostList implements Observer<FilterOptions> {
   constructor(
     private element: HTMLElement,
     private feed: Feed,
     private filter: Filter
   ) {}
 
-  public async load(): Promise<PostList> {
+  update(value: FilterOptions): void {
+    console.log(`Filter changed: '${value}'`);
+
+    const posts = this.feed.getPosts(value);
+
+    this.render(posts);
+  }
+
+  async load(): Promise<PostList> {
     await this.feed.load();
-    this.filter.getOptions().subscribe(this.onFilterChanged.bind(this));
+    this.filter.subscribe(this);
     return this;
   }
 
@@ -19,13 +28,5 @@ export class PostList {
     const elements = posts.map((post) => post.renderPost());
 
     this.element.replaceChildren(...elements);
-  }
-
-  private onFilterChanged(options: FilterOptions): void {
-    console.log(`Filter changed: '${options}'`);
-
-    const posts = this.feed.getPosts(options);
-
-    this.render(posts);
   }
 }
