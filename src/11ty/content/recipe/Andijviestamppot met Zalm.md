@@ -10,7 +10,7 @@ Dit recept is een aangepaste versie van [dit recept](https://www.ah.nl/allerhand
 
 | Ingredient:             | Hoeveelheid:    | Staat:       | kcal: |
 | ----------------------- | --------------- | ------------ | ----: |
-| andijvie[^1]           | 250g            | fijngesneden |    40 |
+| andijvie[^1]            | 250g            | fijngesneden |    40 |
 | aardappel, iets kruimig | 600g            | geschild     |   520 |
 | ui                      | 1               | gesnipperd   |    24 |
 | knoflook                | 2 teen          | geperst      |    16 |

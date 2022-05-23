@@ -1,5 +1,5 @@
-const filters = require('./util/filter.js');
-const transforms = require('./util/transform.js');
+const filters = require('./src/11ty/_util/filter.js');
+const transforms = require('./src/11ty/_util/transform.js');
 const markdownIt = require('markdown-it');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
@@ -32,7 +32,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addTransform(name, transform);
   });
 
-  eleventyConfig.addPassthroughCopy('src/static');
+  eleventyConfig.addPassthroughCopy('src/11ty/assets');
 
   // Generated CSS is in .gitignore, but must be watched for --serve
   eleventyConfig.setUseGitIgnore(false);
@@ -45,10 +45,10 @@ module.exports = function (eleventyConfig) {
 
   return {
     dir: {
-      input: './src',
+      input: './src/11ty',
       output: './_site',
       includes: '_includes',
-      layouts: '_layouts',
+      layouts: '_includes/layouts',
     },
     templateFormats: ['html', 'md', 'njk'],
     passthroughFileCopy: true,

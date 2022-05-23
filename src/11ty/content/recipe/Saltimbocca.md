@@ -17,7 +17,7 @@ Dit recept is oorspronkelijk gebaseerd op een verspakket van de Albert Heijn wat
 | verse pasta óf       | 250g            |                   |   700 |
 | gedroogde pasta      | 200g            |                   |   700 |
 |                      |                 |                   |       |
-| rauwe ham[^1]       | 4 plakken (60g) |                   |   120 |
+| rauwe ham[^1]        | 4 plakken (60g) |                   |   120 |
 | doperwten            | 200g            |                   |   130 |
 | champignons          | 250g            | plakjes           |    40 |
 | knoflook             | 2 teen          | geperst           |    16 |

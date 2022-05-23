@@ -8,7 +8,7 @@ authors:
 
 | Ingredient:             | Hoeveelheid: | Staat:          | kcal: |
 | ----------------------- | ------------ | --------------- | ----: |
-| andijvie[^1]           | 250g         | fijngesneden    |    40 |
+| andijvie[^1]            | 250g         | fijngesneden    |    40 |
 | aardappel, iets kruimig | 600g         | geschild        |   520 |
 | spek                    | 200g         | blokjes/reepjes |   600 |
 | melk                    | 200 ml       |                 |    90 |

@@ -7,10 +7,10 @@ title: Moderne hutspot
 | Ingredient:   | Hoeveelheid: | Staat:            | kcal: |
 | ------------- | ------------ | ----------------- | ----: |
 | aardappel     | 1kg          | geschilde blokken |   850 |
-| wortel[^1]   | 600g         | grof geraspt      |   210 |
-| ui[^1]       | 400g (~6)    | halve ringen      |   148 |
+| wortel[^1]    | 600g         | grof geraspt      |   210 |
+| ui[^1]        | 400g (~6)    | halve ringen      |   148 |
 | creme fraiche | 125ml        |                   |   363 |
-| bouillon[^2] | 1 blokje     |                   |       |
+| bouillon[^2]  | 1 blokje     |                   |       |
 | mosterd       | 1 tl         |                   |       |
 |               |              | totaal:           |  1561 |
 

@@ -1,5 +1,5 @@
 import { Observable, Observer, Subject } from '../observable';
-import categoryData from '../../../_data/categoryData.json';
+import categoryData from '../../11ty/_data/categoryData.json';
 
 export interface FilterOptions {
   filterType?: string;

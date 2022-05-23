@@ -7,4 +7,3 @@ _site
 # Don't commit temp build files
 *.out.css
 *.out.js
-*.out.js.map

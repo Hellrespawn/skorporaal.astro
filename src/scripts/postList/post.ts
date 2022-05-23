@@ -1,4 +1,4 @@
-import categoryData from '../../../_data/categoryData.json';
+import categoryData from '../../11ty/_data/categoryData.json';
 
 export class Post {
   private static template?: HTMLTemplateElement;
