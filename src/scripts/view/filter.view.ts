@@ -12,17 +12,29 @@ export class FilterView
   constructor(private element: HTMLElement) {
     super();
 
-    this.buttons = Object.entries(categoryData).map(
-      ([type, { color, name }]) => new ButtonView(type, name, color)
-    );
+    this.buttons = this.createButtons();
 
     this.render();
-
-    this.buttons.forEach((button) => button.subscribe(this));
   }
 
   update(value: FilterOptions): void {
     this.next(value);
+  }
+
+  createButtons(): ButtonView[] {
+    const buttons = Object.entries(categoryData).map(
+      ([type, { color, name }]) => new ButtonView(type, name, color)
+    );
+
+    buttons.forEach((button) => button.subscribe(this));
+
+    return buttons;
+  }
+
+  render(): void {
+    const elems = this.buttons.map((button) => button.createElement());
+
+    this.element.replaceChildren(...elems);
   }
 
   clearButtons(currentType?: string): void {
@@ -31,11 +43,5 @@ export class FilterView
         button.clear();
       }
     });
-  }
-
-  render(): void {
-    const elems = this.buttons.map((button) => button.createElement());
-
-    this.element.replaceChildren(...elems);
   }
 }

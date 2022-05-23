@@ -2,6 +2,9 @@ import { Post } from '../model/post.model';
 import categoryData from '../../11ty/_data/categoryData.json';
 import { Observer } from '../observable';
 
+/**
+ * This class controls the display of posts
+ */
 export class FeedView implements Observer<Post[]> {
   private static postTemplate?: HTMLTemplateElement;
 
@@ -11,20 +14,9 @@ export class FeedView implements Observer<Post[]> {
     this.render(posts);
   }
 
-  render(posts: Post[]): void {
+  private render(posts: Post[]): void {
     const elems = posts.map(this.createPostElement.bind(this));
-
     this.element.replaceChildren(...elems);
-  }
-
-  private getPostTemplate() {
-    if (!FeedView.postTemplate) {
-      FeedView.postTemplate = document.getElementById(
-        'postTemplate'
-      ) as HTMLTemplateElement;
-    }
-
-    return FeedView.postTemplate;
   }
 
   private createPostElement(post: Post): HTMLElement {
@@ -51,6 +43,16 @@ export class FeedView implements Observer<Post[]> {
     anchor.children[2].innerHTML = this.formatDate(post.date);
 
     return element;
+  }
+
+  private getPostTemplate() {
+    if (!FeedView.postTemplate) {
+      FeedView.postTemplate = document.getElementById(
+        'postTemplate'
+      ) as HTMLTemplateElement;
+    }
+
+    return FeedView.postTemplate;
   }
 
   private formatDate(date?: Date): string {

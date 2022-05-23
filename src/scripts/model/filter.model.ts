@@ -8,7 +8,7 @@ export interface FilterOptions {
   sortDir?: 'ascending' | 'descending';
 }
 
-export class FilterModel
+export class Filter
   extends Subject<FilterOptions>
   implements Observer<FilterOptions>
 {

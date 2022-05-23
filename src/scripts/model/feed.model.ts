@@ -3,7 +3,7 @@ import { FeedView } from '../view/feed.view';
 import { FilterOptions } from './filter.model';
 import { Post } from './post.model';
 
-interface JsonPostModel {
+interface JsonPost {
   title: string;
   type: string;
   lang: string;
@@ -11,10 +11,7 @@ interface JsonPostModel {
   date?: string;
 }
 
-export class FeedModel
-  extends Subject<Post[]>
-  implements Observer<FilterOptions>
-{
+export class Feed extends Subject<Post[]> implements Observer<FilterOptions> {
   private posts: Post[] = [];
   private loaded = false;
 
@@ -40,18 +37,18 @@ export class FeedModel
 
     if (options.filterTitle) {
       posts = posts.filter((post) =>
-        FeedModel.filterPostModelByTitle(post, options.filterTitle!)
+        Feed.filterPostModelByTitle(post, options.filterTitle!)
       );
     }
 
     if (options.filterType) {
       posts = posts.filter((post) =>
-        FeedModel.filterPostModelByType(post, options.filterType!)
+        Feed.filterPostModelByType(post, options.filterType!)
       );
     }
 
     if (options.sortType) {
-      posts = FeedModel.sortPostModels(
+      posts = Feed.sortPostModels(
         posts,
         options.sortType,
         options.sortDir ?? 'descending'
@@ -64,11 +61,11 @@ export class FeedModel
   async load(): Promise<void> {
     const response = await fetch(this.url);
     const json = await response.json();
-    this.posts = json.posts.map(FeedModel.createPostModel);
+    this.posts = json.posts.map(Feed.createPostModel);
     this.loaded = true;
   }
 
-  private static createPostModel(jsonPostModel: JsonPostModel): Post {
+  private static createPostModel(jsonPostModel: JsonPost): Post {
     return new Post(
       jsonPostModel.title,
       jsonPostModel.type,
@@ -83,12 +80,12 @@ export class FeedModel
   }
 
   private static sortByAlphaDescending(left: Post, right: Post): number {
-    return -FeedModel.sortByAlphaAscending(left, right);
+    return -Feed.sortByAlphaAscending(left, right);
   }
 
   private static sortByDateAscending(left: Post, right: Post): number {
     if (!left.date && !right.date) {
-      return FeedModel.sortByAlphaAscending(left, right);
+      return Feed.sortByAlphaAscending(left, right);
     } else if (!left.date) {
       return -1;
     } else if (!right.date) {
@@ -100,7 +97,7 @@ export class FeedModel
 
   private static sortByDateDescending(left: Post, right: Post): number {
     if (!left.date && !right.date) {
-      return FeedModel.sortByAlphaAscending(left, right);
+      return Feed.sortByAlphaAscending(left, right);
     } else if (!left.date) {
       return 1;
     } else if (!right.date) {
@@ -131,15 +128,15 @@ export class FeedModel
   ): Post[] {
     if (sortType === 'alpha') {
       if (sortDir === 'ascending') {
-        posts = posts.sort(FeedModel.sortByAlphaAscending);
+        posts = posts.sort(Feed.sortByAlphaAscending);
       } else {
-        posts = posts.sort(FeedModel.sortByAlphaDescending);
+        posts = posts.sort(Feed.sortByAlphaDescending);
       }
     } else {
       if (sortDir === 'ascending') {
-        posts = posts.sort(FeedModel.sortByDateAscending);
+        posts = posts.sort(Feed.sortByDateAscending);
       } else {
-        posts = posts.sort(FeedModel.sortByDateDescending);
+        posts = posts.sort(Feed.sortByDateDescending);
       }
     }
 

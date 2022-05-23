@@ -1,6 +1,6 @@
 import DarkMode from './darkMode';
-import { FeedModel } from './model/feed.model';
-import { FilterModel } from './model/filter.model';
+import { Feed } from './model/feed.model';
+import { Filter } from './model/filter.model';
 import { FeedView } from './view/feed.view';
 import { FilterView } from './view/filter.view';
 
@@ -12,9 +12,9 @@ new DarkMode();
 
   if (feedElement && filterElement) {
     const feedView = new FeedView(feedElement);
-    const feedModel = new FeedModel(feedView, '/feed.json');
+    const feedModel = new Feed(feedView, '/feed.json');
     const filterView = new FilterView(filterElement);
-    const filterModel = new FilterModel(filterView);
+    const filterModel = new Filter(filterView);
 
     filterModel.subscribe(feedModel);
 
