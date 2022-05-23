@@ -4,17 +4,18 @@ import { Feed } from './postList/feed';
 import { PostList } from './postList';
 
 new DarkMode();
-new Filter();
 
 (async () => {
   const listElement = document.getElementById('postList');
+  const filterElement = document.getElementById('filter');
 
-  if (listElement) {
+  if (listElement && filterElement) {
     const feed = new Feed('/feed.json');
-    const filter = new Filter();
+    const filter = new Filter(filterElement);
 
     const postList = new PostList(listElement, feed, filter);
 
+    filter.render();
     await postList.load();
   }
 })();

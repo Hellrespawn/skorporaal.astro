@@ -1,7 +1,7 @@
-<div>
-  {% include 'filter.njk' %}
+{% from "macro.njk" import dot with context %}
 
-  {% include "list-item-template.njk" %}
+{% include "filter-button-template.njk" %}
+{% include "list-item-template.njk" %}
 
-  <ul id="postList"></ul>
-</div>
+<div id="filter"></div>
+<ul id="postList"></ul>
