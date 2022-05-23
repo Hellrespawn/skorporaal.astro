@@ -1,21 +1,26 @@
 import DarkMode from './darkMode';
-import { Filter } from './postList/filter';
-import { Feed } from './postList/feed';
-import { PostList } from './postList';
+import { FeedModel } from './model/feed.model';
+import { FilterModel } from './model/filter.model';
+import { FeedView } from './view/feed.view';
+import { FilterView } from './view/filter.view';
 
 new DarkMode();
 
 (async () => {
-  const listElement = document.getElementById('postList');
+  const feedElement = document.getElementById('postFeed');
   const filterElement = document.getElementById('filter');
 
-  if (listElement && filterElement) {
-    const feed = new Feed('/feed.json');
-    const filter = new Filter(filterElement);
+  if (feedElement && filterElement) {
+    const filterView = new FilterView(filterElement);
+    const filterModel = new FilterModel(filterView);
 
-    const postList = new PostList(listElement, feed, filter);
+    const feedView = new FeedView(feedElement);
+    const feedModel = new FeedModel('/feed.json', feedView);
 
-    filter.render();
-    await postList.load();
+    filterModel.subscribe(feedModel);
+
+    filterView.render();
+    await feedModel.load();
+    feedModel.getPosts();
   }
 })();
