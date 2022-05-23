@@ -1,18 +1,17 @@
-import { FeedModel } from '../model/feed.model';
-import { PostModel } from '../model/post.model';
+import { Post } from '../model/post.model';
 import categoryData from '../../11ty/_data/categoryData.json';
 import { Observer } from '../observable';
 
-export class FeedView implements Observer<PostModel[]> {
+export class FeedView implements Observer<Post[]> {
   private static postTemplate?: HTMLTemplateElement;
 
   constructor(private element: HTMLElement) {}
 
-  update(posts: PostModel[]): void {
+  update(posts: Post[]): void {
     this.render(posts);
   }
 
-  render(posts: PostModel[]): void {
+  render(posts: Post[]): void {
     const elems = posts.map(this.createPostElement.bind(this));
 
     this.element.replaceChildren(...elems);
@@ -28,7 +27,7 @@ export class FeedView implements Observer<PostModel[]> {
     return FeedView.postTemplate;
   }
 
-  private createPostElement(post: PostModel): HTMLElement {
+  private createPostElement(post: Post): HTMLElement {
     const template = this.getPostTemplate();
 
     const clone = template.content.cloneNode(true) as DocumentFragment;

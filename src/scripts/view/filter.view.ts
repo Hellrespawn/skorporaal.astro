@@ -1,34 +1,39 @@
-import { FilterModel } from '../model/filter.model';
+import { FilterOptions } from '../model/filter.model';
 import categoryData from '../../11ty/_data/categoryData.json';
 import { ButtonView } from './button.view';
 import { Observer, Subject } from '../observable';
 
-export interface FilterChange {
-  type: string;
-  active: boolean;
-}
-
 export class FilterView
-  extends Subject<FilterChange>
-  implements Observer<FilterChange>
+  extends Subject<FilterOptions>
+  implements Observer<FilterOptions>
 {
-  buttons: ButtonView[];
+  private buttons: ButtonView[];
 
   constructor(private element: HTMLElement) {
-    super({ type: 'test', active: false });
+    super();
 
     this.buttons = Object.entries(categoryData).map(
       ([type, { color, name }]) => new ButtonView(type, name, color)
     );
+
+    this.render();
+
+    this.buttons.forEach((button) => button.subscribe(this));
   }
 
-  update(value: FilterChange): void {
+  update(value: FilterOptions): void {
     this.next(value);
   }
 
-  render(): void {
-    this.buttons.forEach((button) => button.subscribe(this));
+  clearButtons(currentType?: string): void {
+    this.buttons.forEach((button) => {
+      if (!currentType || button.type !== currentType) {
+        button.clear();
+      }
+    });
+  }
 
+  render(): void {
     const elems = this.buttons.map((button) => button.createElement());
 
     this.element.replaceChildren(...elems);

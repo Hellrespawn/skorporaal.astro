@@ -1,5 +1,5 @@
 import { Observer, Subject } from '../observable';
-import { FilterChange, FilterView } from '../view/filter.view';
+import { FilterView } from '../view/filter.view';
 
 export interface FilterOptions {
   filterType?: string;
@@ -10,22 +10,23 @@ export interface FilterOptions {
 
 export class FilterModel
   extends Subject<FilterOptions>
-  implements Observer<FilterChange>
+  implements Observer<FilterOptions>
 {
   private options = {} as FilterOptions;
 
-  constructor(view: FilterView) {
-    super({});
+  constructor(private view: FilterView) {
+    super();
     view.subscribe(this);
   }
 
-  update(value: FilterChange): void {
-    console.log("FilterChange:", value)
-    if (this.options.filterType === value.type) {
-      this.options.filterType = undefined;
-    } else {
-      this.options.filterType = value.type;
+  update(value: FilterOptions): void {
+    if (value.filterType === this.options.filterType) {
+      value.filterType = undefined;
     }
+
+    this.view.clearButtons(value.filterType);
+
+    this.options = { ...this.options, ...value };
 
     this.next(this.options);
   }

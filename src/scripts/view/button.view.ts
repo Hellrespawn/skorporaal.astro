@@ -1,20 +1,17 @@
-import { Observable, Observer, Subject } from '../observable';
-import { FilterChange } from './filter.view';
+import { FilterOptions } from '../model/filter.model';
+import { Subject } from '../observable';
 
-export class ButtonView implements Observable<FilterChange> {
+export class ButtonView extends Subject<FilterOptions> {
+  private static classes = ['opacity-50'];
   private static buttonTemplate?: HTMLTemplateElement;
-  private active: Subject<{ type: string; active: boolean }>;
+  private element?: HTMLElement;
 
   constructor(
-    private type: string,
+    public type: string,
     private name: string,
     private color: string
   ) {
-    this.active = new Subject({ type: this.type, active: false });
-  }
-
-  subscribe(observer: Observer<FilterChange>): void {
-    this.active.subscribe(observer);
+    super();
   }
 
   createElement(): HTMLElement {
@@ -23,7 +20,7 @@ export class ButtonView implements Observable<FilterChange> {
     const clone = template.content.cloneNode(true) as DocumentFragment;
 
     const element = clone.children[0] as HTMLButtonElement;
-    element.addEventListener('click', this.buttonChanged.bind(this));
+    element.addEventListener('click', this.buttonClicked.bind(this));
 
     const dot = element.children[0] as HTMLElement;
     dot.classList.add(this.color);
@@ -31,10 +28,19 @@ export class ButtonView implements Observable<FilterChange> {
     const text = element.children[1];
     text.textContent = this.name;
 
+    this.element = element;
     return element;
   }
 
-  getButtonTemplate() {
+  private set(): void {
+    this.element?.classList.remove(...ButtonView.classes);
+  }
+
+  clear(): void {
+    this.element?.classList.add(...ButtonView.classes);
+  }
+
+  private getButtonTemplate(): HTMLTemplateElement {
     if (!ButtonView.buttonTemplate) {
       ButtonView.buttonTemplate = document.getElementById(
         'filterButtonTemplate'
@@ -44,8 +50,8 @@ export class ButtonView implements Observable<FilterChange> {
     return ButtonView.buttonTemplate;
   }
 
-  buttonChanged() {
-    const { type, active } = this.active.getValue();
-    this.active.next({ type, active: !active });
+  private buttonClicked(): void {
+    this.set();
+    this.next({ filterType: this.type });
   }
 }

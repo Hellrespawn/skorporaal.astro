@@ -1,7 +1,7 @@
 import { Observer, Subject } from '../observable';
 import { FeedView } from '../view/feed.view';
 import { FilterOptions } from './filter.model';
-import { PostModel } from './post.model';
+import { Post } from './post.model';
 
 interface JsonPostModel {
   title: string;
@@ -12,28 +12,25 @@ interface JsonPostModel {
 }
 
 export class FeedModel
-  extends Subject<PostModel[]>
+  extends Subject<Post[]>
   implements Observer<FilterOptions>
 {
-  private posts: PostModel[] = [];
+  private posts: Post[] = [];
+  private loaded = false;
 
-  constructor(private url: string, private view: FeedView) {
-    // FIXME start with loaded posts?
-    super([]);
+  constructor(view: FeedView, private url: string) {
+    super();
+    this.subscribe(view);
   }
+
   update(value: FilterOptions): void {
     this.getPosts(value);
   }
+  async getPosts(options?: FilterOptions): Promise<void> {
+    if (!this.loaded) {
+      await this.load();
+    }
 
-  async load(): Promise<FeedModel> {
-    const response = await fetch(this.url);
-    const json = await response.json();
-    this.posts = json.posts.map(FeedModel.createPostModel);
-    this.subscribe(this.view);
-    return this;
-  }
-
-  getPosts(options?: FilterOptions): void {
     let posts = this.posts;
 
     if (!options) {
@@ -64,8 +61,15 @@ export class FeedModel
     this.next(posts);
   }
 
-  private static createPostModel(jsonPostModel: JsonPostModel): PostModel {
-    return new PostModel(
+  async load(): Promise<void> {
+    const response = await fetch(this.url);
+    const json = await response.json();
+    this.posts = json.posts.map(FeedModel.createPostModel);
+    this.loaded = true;
+  }
+
+  private static createPostModel(jsonPostModel: JsonPostModel): Post {
+    return new Post(
       jsonPostModel.title,
       jsonPostModel.type,
       jsonPostModel.lang,
@@ -74,24 +78,15 @@ export class FeedModel
     );
   }
 
-  private static sortByAlphaAscending(
-    left: PostModel,
-    right: PostModel
-  ): number {
+  private static sortByAlphaAscending(left: Post, right: Post): number {
     return left.title.localeCompare(right.title);
   }
 
-  private static sortByAlphaDescending(
-    left: PostModel,
-    right: PostModel
-  ): number {
+  private static sortByAlphaDescending(left: Post, right: Post): number {
     return -FeedModel.sortByAlphaAscending(left, right);
   }
 
-  private static sortByDateAscending(
-    left: PostModel,
-    right: PostModel
-  ): number {
+  private static sortByDateAscending(left: Post, right: Post): number {
     if (!left.date && !right.date) {
       return FeedModel.sortByAlphaAscending(left, right);
     } else if (!left.date) {
@@ -103,10 +98,7 @@ export class FeedModel
     }
   }
 
-  private static sortByDateDescending(
-    left: PostModel,
-    right: PostModel
-  ): number {
+  private static sortByDateDescending(left: Post, right: Post): number {
     if (!left.date && !right.date) {
       return FeedModel.sortByAlphaAscending(left, right);
     } else if (!left.date) {
@@ -119,24 +111,24 @@ export class FeedModel
   }
 
   private static filterPostModelByTitle(
-    post: PostModel,
+    post: Post,
     titleFilter: string
   ): boolean {
     return post.title.toLowerCase().includes(titleFilter.toLowerCase());
   }
 
   private static filterPostModelByType(
-    post: PostModel,
+    post: Post,
     typeFilter: string
   ): boolean {
     return post.type === typeFilter;
   }
 
   private static sortPostModels(
-    posts: PostModel[],
+    posts: Post[],
     sortType: 'alpha' | 'date',
     sortDir: 'ascending' | 'descending'
-  ): PostModel[] {
+  ): Post[] {
     if (sortType === 'alpha') {
       if (sortDir === 'ascending') {
         posts = posts.sort(FeedModel.sortByAlphaAscending);

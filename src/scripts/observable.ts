@@ -9,23 +9,25 @@ export interface Observable<T> {
 export class Subject<T> implements Observable<T> {
   protected subscribers: Observer<T>[] = [];
 
-  constructor(private value: T) {}
+  constructor(private value?: T) {}
 
   subscribe(subscriber: Observer<T>) {
     this.subscribers.push(subscriber);
-    subscriber.update(this.value);
+    if (this.value) {
+      subscriber.update(this.value);
+    }
   }
 
-  protected broadcast(value: T): void {
+  protected publish(value: T): void {
     this.subscribers.forEach((subscriber) => subscriber.update(value));
   }
 
   next(value: T): void {
     this.value = value;
-    this.broadcast(value);
+    this.publish(value);
   }
 
-  getValue(): T {
+  getValue(): T | undefined {
     return this.value;
   }
 }

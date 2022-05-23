@@ -1,4 +1,4 @@
-export class PostModel {
+export class Post {
   date?: Date;
 
   constructor(

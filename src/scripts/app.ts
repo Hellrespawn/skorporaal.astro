@@ -11,16 +11,13 @@ new DarkMode();
   const filterElement = document.getElementById('filter');
 
   if (feedElement && filterElement) {
+    const feedView = new FeedView(feedElement);
+    const feedModel = new FeedModel(feedView, '/feed.json');
     const filterView = new FilterView(filterElement);
     const filterModel = new FilterModel(filterView);
 
-    const feedView = new FeedView(feedElement);
-    const feedModel = new FeedModel('/feed.json', feedView);
-
     filterModel.subscribe(feedModel);
 
-    filterView.render();
-    await feedModel.load();
     feedModel.getPosts();
   }
 })();
