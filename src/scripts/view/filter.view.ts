@@ -11,7 +11,7 @@ export class FilterView
   private filterButtons: FilterButtonView[];
   private sortButtons: SortButtonView[];
 
-  constructor(private element: HTMLElement) {
+  constructor() {
     super();
 
     this.filterButtons = this.createFilterButtons();
