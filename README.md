@@ -4,26 +4,7 @@ This repo holds my personal site and cookbook. More information about the site, 
 
 ## To do
 
-- TODO Write about skorporaal.com
-- TODO Markdown math rendering
+- TODO Write more about skorporaal.com
 - TODO Recepten schrijven voor kippensoep, tomatensoep, champignonsoep van Oma, Hachee papke.
+- TODO? Markdown math rendering?
 - TODO? Local versions of font
-
-## Done
-
-- DONE Remove divs inside button (a11y)
-- DONE Remove h3 from list-heading and rename it
-- DONE Nicer github link
-- DONE 404 page
-- DONE Markdown layout title with author and date
-- DONE Put dates in `<time>`-element
-- DONE Language tag (dutch for recipe, english otherwise)
-- DONE Remove Alpine dependency, added TypeScript
-- DONE Commented code, added home-icon, removed left-arrow
-- DONE width jumps around when filtering on narrow screen.
-- DONE Click event listeners should also be keydown.enter
-- DONE Andijvie-spek Stamppot toegevoegd
-- DONE Refactored to MVC architecture
-- DONE Bigger font on mobile
-- DONE Bigger margin on mobile
-- DONE Rearrange title and date on mobile
