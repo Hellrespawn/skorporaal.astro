@@ -1,6 +1,8 @@
 import { Observer, Subject } from '../observable';
 import { FilterView } from '../view/filter.view';
 
+const DEBUG_FILTER_CHANGES = false;
+
 export interface FilterOptions {
   filterType?: string;
   filterTitle?: string;
@@ -38,9 +40,10 @@ export class Filter
     }
 
     this.options = { ...this.options, ...value };
-    console.log(this.options);
+
+    DEBUG_FILTER_CHANGES && console.log(this.options);
+
     this.view.clearFilterButtons(this.options.filterType);
-    this.view.clearSortButtons(this.options.sortType);
 
     this.next(this.options);
   }

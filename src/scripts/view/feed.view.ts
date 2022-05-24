@@ -2,13 +2,23 @@ import { Post } from '../model/post.model';
 import categoryData from '../../11ty/_data/categoryData.json';
 import { Observer } from '../observable';
 
+const LANGUAGE_MAPS: { [key: string]: { [key: string]: string } } = {
+  en: { en: 'English', nl: 'Dutch' },
+  nl: { en: 'Engels', nl: 'Nederlands' },
+};
+
 /**
  * This class controls the display of posts
  */
 export class FeedView implements Observer<Post[]> {
   private static postTemplate?: HTMLTemplateElement;
+  private lang: string;
+  private languageMap: { [key: string]: string };
 
-  constructor(private element: HTMLElement) {}
+  constructor(private element: HTMLElement) {
+    this.lang = document.documentElement.lang;
+    this.languageMap = LANGUAGE_MAPS[this.lang];
+  }
 
   update(posts: Post[]): void {
     this.render(posts);
@@ -36,8 +46,7 @@ export class FeedView implements Observer<Post[]> {
     anchor.children[0].classList.add(color);
 
     // title
-    // FIXME check documentRoot for language, and add language if it changes.
-    anchor.children[1].textContent = post.title;
+    this.setTitle(post, anchor.children[1]);
 
     //date
     anchor.children[2].innerHTML = this.formatDate(post.date);
@@ -53,6 +62,15 @@ export class FeedView implements Observer<Post[]> {
     }
 
     return FeedView.postTemplate;
+  }
+
+  private setTitle(post: Post, element: Element): void {
+    let title = post.title;
+
+    if (post.lang !== this.lang) {
+      title += ` [${this.languageMap[post.lang] ?? 'Unknown'}]`;
+    }
+    element.textContent = title;
   }
 
   private formatDate(date?: Date): string {
