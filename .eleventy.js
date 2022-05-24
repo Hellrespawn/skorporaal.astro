@@ -1,26 +1,10 @@
 const filters = require('./src/11ty/_util/filter.js');
 const transforms = require('./src/11ty/_util/transform.js');
-const markdownIt = require('markdown-it');
+const configureMarkdown = require('./src/11ty/_util/markdown.js');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 module.exports = function (eleventyConfig) {
-  // Markdown
-  const md = markdownIt({
-    html: true,
-    breaks: true,
-    linkify: true,
-  });
-
-  md.use(require('markdown-it-external-links'), {
-    externalClassName: null,
-    internalClassName: null,
-    externalTarget: '_blank',
-    externalRel: 'noopener noreferrer nofollow',
-  });
-
-  md.use(require('markdown-it-footnote'));
-
-  eleventyConfig.setLibrary('md', md);
+  configureMarkdown(eleventyConfig);
 
   // Filters
   Object.entries(filters).forEach(([name, filter]) => {

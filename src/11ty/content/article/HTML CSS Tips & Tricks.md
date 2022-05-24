@@ -5,8 +5,8 @@ date: 2021-12-19
 
 Tips & Tricks Index:
 
-- [JS/TS](@./JavaScript TypeScript Tips & Tricks.md)
-- [HTML/CSS](@./HTML CSS Tips & Tricks.md)
+- [JS & TS]({{ @("JavaScript TypeScript Tips & Tricks.md", collections.all) }})
+- [HTML & CSS]({{ @("HTML CSS Tips & Tricks.md", collections.all) }})
 
 ## `<template>`
 
