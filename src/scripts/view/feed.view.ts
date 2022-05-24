@@ -39,9 +39,8 @@ export class FeedView {
 
     // dot
     const dot = element.getElementsByClassName('postDot')[0];
-    const color =
-      categoryData[post.type as 'recipe' | 'article' | 'portfolio'].color;
-    dot.classList.add(color);
+    const bg = categoryData[post.type as 'recipe' | 'article' | 'portfolio'].bg;
+    dot.classList.add(bg);
 
     // title
     this.setTitle(post, element.getElementsByClassName('postTitle')[0]);

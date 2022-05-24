@@ -1,5 +1,5 @@
 ---
-title: 'Champignonroomsaus'
+title: 'Champignon-roomsaus'
 ---
 
 ## Ingrediënten

@@ -2,14 +2,19 @@
 layout: 'base.njk'
 ---
 
-<main class="mx-4 flex flex-col items-center md:mx-0">
-  <nav class="my-8">{% include 'top-bar.njk' %}</nav>
-  <article
-    lang="{{ language }}"
-    class="prose-a:fancy-link prose-a:reset-text-color prose prose-lg prose-zinc prose-teal border-t border-zinc-200 py-8 dark:prose-invert dark:border-zinc-700 md:prose-base"
-  >
-    {% include 'post-heading.njk' %} {{ content | safe }}
-  </article>
+{% set data = categoryData[tags[0]] %}
+
+<main class="flex flex-col items-center">
+  <div class="mx-4 w-fit md:mx-0">
+    <nav class="my-8">{% include 'top-bar.njk' %}</nav>
+    <div class="text-sm {{ data.text }}">{{ data.single }}</div>
+    <article
+      lang="{{ language }}"
+      class="{{ data.border }} prose-a:fancy-link prose-a:reset-text-color prose-table-shrink prose prose-zinc prose-teal w-full border-t-2 py-8 dark:prose-invert"
+    >
+      {% include 'post-heading.njk' %} {{ content | safe }}
+    </article>
+  </div>
 </main>
 
 {% include 'footer.njk' %}

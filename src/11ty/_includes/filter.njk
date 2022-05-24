@@ -2,9 +2,9 @@
 
 <div id="filter" class="flex flex-row items-center">
   {% for type, data in categoryData %}
-  <button id="{{ type + 'FilterButton'}}" class="button">
+  <button id="{{ type + 'FilterButton'}}" class="button inactive">
     {{ dot(type) }}
-    <span class="pl-2">{{ data.name }}</span>
+    <span class="pl-2">{{ data.plural }}</span>
   </button>
   {% endfor %}
 

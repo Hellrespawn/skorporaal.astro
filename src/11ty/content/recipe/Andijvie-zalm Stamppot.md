@@ -1,5 +1,5 @@
 ---
-title: 'Andijviestamppot met Zalm'
+title: 'Andijvie-zalm Stamppot'
 authors:
   - Albert Heijn
 ---

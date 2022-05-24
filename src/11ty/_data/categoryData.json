@@ -1,5 +1,23 @@
 {
-  "recipe": { "color": "bg-accent-500", "name": "Recipes" },
-  "portfolio": { "color": "bg-primary-500", "name": "Portfolio" },
-  "article": { "color": "bg-zinc-500", "name": "Articles" }
+  "recipe": {
+    "bg": "bg-accent-500",
+    "border": "border-accent-500",
+    "plural": "Recipes",
+    "single": "Recipe",
+    "text": "text-accent-500"
+  },
+  "portfolio": {
+    "bg": "bg-primary-500",
+    "border": "border-primary-500",
+    "plural": "Portfolio",
+    "single": "Portfolio",
+    "text": "text-primary-500"
+  },
+  "article": {
+    "bg": "bg-zinc-500",
+    "border": "border-zinc-500",
+    "plural": "Articles",
+    "single": "Article",
+    "text": "text-zinc-500"
+  }
 }

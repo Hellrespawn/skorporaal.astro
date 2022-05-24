@@ -2,15 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .fancy-link {
-    @apply bg-gradient-to-r from-accent-200 to-accent-200 bg-[length:auto_36%] bg-[center_bottom_1px] bg-no-repeat  dark:from-primary-700 dark:to-primary-700;
-  }
-
-  .reset-text-color {
-    @apply text-zinc-700 no-underline dark:text-zinc-300;
-  }
-
+@layer components {
   .button {
     @apply flex flex-row items-baseline rounded py-4 px-2 text-zinc-700 transition-transform duration-100 hover:-translate-y-1 dark:text-zinc-200;
   }
@@ -21,5 +13,19 @@
 
   .button.sort {
     @apply font-semibold text-zinc-600 dark:text-zinc-300;
+  }
+}
+
+@layer utilities {
+  .fancy-link {
+    @apply bg-gradient-to-r from-accent-200 to-accent-200 bg-[length:auto_36%] bg-[center_bottom_1px] bg-no-repeat  dark:from-primary-700 dark:to-primary-700;
+  }
+
+  .reset-text-color {
+    @apply text-zinc-700 no-underline dark:text-zinc-300;
+  }
+
+  .prose-table-shrink {
+    @apply prose-table:w-full prose-table:table-fixed prose-th:overflow-hidden prose-th:text-ellipsis prose-td:overflow-hidden prose-td:text-ellipsis;
   }
 }

@@ -6,5 +6,6 @@ This repo holds my personal site and cookbook. More information about the site, 
 
 - TODO Write more about skorporaal.com
 - TODO Recepten schrijven voor kippensoep, tomatensoep, champignonsoep van Oma, Hachee papke.
+- TODO? Move border to post-heading.njk?
 - TODO? Markdown math rendering?
 - TODO? Local versions of font
