@@ -4,9 +4,6 @@ This repo holds my personal site and cookbook. More information about the site, 
 
 ## To do
 
-- TODO Manually add eventlisteners on load, remove defer from script tag to avoid FOUC
-- TODO Filter A-Z or by Date
-- TODO Learn about pagination
 - TODO Write about skorporaal.com
 - TODO Markdown math rendering
 - TODO Recepten schrijven voor kippensoep, tomatensoep, champignonsoep van Oma, Hachee papke.
@@ -26,3 +23,7 @@ This repo holds my personal site and cookbook. More information about the site, 
 - DONE width jumps around when filtering on narrow screen.
 - DONE Click event listeners should also be keydown.enter
 - DONE Andijvie-spek Stamppot toegevoegd
+- DONE Refactored to MVC architecture
+- DONE Bigger font on mobile
+- DONE Bigger margin on mobile
+- DONE Rearrange title and date on mobile

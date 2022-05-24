@@ -1,6 +1,8 @@
+import { FeedController } from './controller/feed.controller';
 import DarkMode from './darkMode';
-import { loadFrontPage } from './frontPage';
 
-new DarkMode();
+DarkMode.init();
 
-loadFrontPage();
+if (window.location.pathname === '/') {
+  FeedController.init();
+}

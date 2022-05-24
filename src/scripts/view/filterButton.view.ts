@@ -1,14 +1,16 @@
+import { Callback } from '../controller/feed.controller';
 import { FilterOptions } from '../model/filter.model';
-import { Subject } from '../observable';
 
-export class FilterButtonView extends Subject<FilterOptions> {
-  private static classes = ['opacity-50'];
+export class FilterButtonView {
+  private static classes = ['inactive'];
 
-  constructor(private element: HTMLElement, public type: string) {
-    super();
-  }
+  constructor(
+    private element: HTMLElement,
+    private callback: Callback<FilterOptions>,
+    public type: string
+  ) {}
 
-  hookElement(): void {
+  listen(): void {
     this.element = document.getElementById(`${this.type}FilterButton`)!;
     this.element.addEventListener('click', this.buttonClicked.bind(this));
   }
@@ -23,6 +25,6 @@ export class FilterButtonView extends Subject<FilterOptions> {
 
   private buttonClicked(): void {
     this.set();
-    this.next({ filterType: this.type });
+    this.callback({ filterType: this.type });
   }
 }

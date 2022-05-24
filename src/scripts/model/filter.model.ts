@@ -1,6 +1,3 @@
-import { Observer, Subject } from '../observable';
-import { FilterView } from '../view/filter.view';
-
 export interface FilterOptions {
   filterType?: string;
   filterTitle?: string;
@@ -8,18 +5,14 @@ export interface FilterOptions {
   sortDir?: 'ascending' | 'descending';
 }
 
-export class Filter
-  extends Subject<FilterOptions>
-  implements Observer<FilterOptions>
-{
+export class FilterModel {
+  static defaultOptions: FilterOptions = {
+    sortType: 'date',
+    sortDir: 'descending',
+  };
   private options = {} as FilterOptions;
 
-  constructor(private view: FilterView) {
-    super();
-    view.subscribe(this);
-  }
-
-  update(value: FilterOptions): void {
+  updateOptions(value: FilterOptions): FilterOptions {
     if (value.filterType && value.filterType === this.options.filterType) {
       value.filterType = undefined;
     }
@@ -39,12 +32,6 @@ export class Filter
 
     this.options = { ...this.options, ...value };
 
-    this.view.clearFilterButtons(this.options.filterType);
-
-    this.next(this.options);
-  }
-
-  setDefault(): void {
-    this.update({ sortType: 'date', sortDir: 'descending' });
+    return this.options;
   }
 }

@@ -6,7 +6,7 @@ layout: 'base.njk'
   <nav class="my-8">{% include 'top-bar.njk' %}</nav>
   <article
     lang="{{ language }}"
-    class="prose-a:fancy-link prose-a:reset-text-color prose prose-zinc prose-teal border-t border-zinc-200 py-8 dark:prose-invert dark:border-zinc-700"
+    class="prose-a:fancy-link prose-a:reset-text-color prose prose-lg prose-zinc prose-teal border-t border-zinc-200 py-8 dark:prose-invert dark:border-zinc-700 md:prose-base"
   >
     {% include 'post-heading.njk' %} {{ content | safe }}
   </article>

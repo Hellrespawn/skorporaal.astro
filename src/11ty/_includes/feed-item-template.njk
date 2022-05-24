@@ -2,25 +2,23 @@
   <!-- Filled in with post.type -->
   <li>
     <!-- Same px as filter -->
-    <!-- Filled in with post.url -->
     <a
-      class="flex flex-row items-baseline overflow-x-hidden whitespace-nowrap border-t border-gray-200 py-4 px-2 transition-[padding-left] duration-100 hover:pl-4 dark:border-gray-700"
+      class="postUrl group flex flex-col items-baseline border-t border-gray-200 py-4 px-2 dark:border-gray-700 md:flex-row"
     >
-      <!-- Colored Dot -->
-      <!-- Filled in with color based on post.type -->
-      <span class="inline-block h-2 w-2 shrink-0 rounded-full"></span>
+      <span
+        class="flex flex-grow flex-row items-baseline transition-transform duration-[50ms] group-hover:-translate-y-1 md:group-hover:translate-y-0 md:group-hover:translate-x-1"
+      >
+        <!-- Colored Dot -->
+        <span class="postDot inline-block h-2 w-2 shrink-0 rounded-full"></span>
 
-      <!-- Title -->
-      <p class="flex-grow pl-2">
-        <!-- Filled in with post.title and post.lang -->
-      </p>
+        <!-- Title -->
+        <p class="postTitle pl-2"></p
+      ></span>
 
       <!-- Date -->
       <div
-        class="flex-shrink overflow-hidden text-sm text-zinc-400 dark:text-zinc-500"
-      >
-        <!-- Filled in with date -->
-      </div>
+        class="postDate w-full whitespace-nowrap text-right text-sm text-zinc-400 dark:text-zinc-500 md:w-auto md:text-left"
+      ></div>
     </a>
   </li>
 </template>

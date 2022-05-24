@@ -1,9 +1,9 @@
+import { Callback } from '../controller/feed.controller';
 import { FilterOptions } from '../model/filter.model';
-import { Subject } from '../observable';
 
 type State = { display: string; options: FilterOptions };
 
-export class SortButtonView extends Subject<FilterOptions> {
+export class SortButtonView {
   private static states: State[] = [
     {
       display: 'Date ↓',
@@ -23,22 +23,23 @@ export class SortButtonView extends Subject<FilterOptions> {
     },
   ];
 
+  private state = SortButtonView.states[0];
+
   constructor(
     private element: HTMLElement,
-    private state = SortButtonView.states[0]
+    private callback: Callback<FilterOptions>
   ) {
-    super();
     this.updateElement();
   }
 
-  hookElement(): void {
+  listen(): void {
     this.element = document.getElementById('sortButton')!;
     this.element.addEventListener('click', this.buttonClicked.bind(this));
   }
 
   private buttonClicked(): void {
     this.cycle();
-    this.next(this.state.options);
+    this.callback(this.state.options);
   }
 
   private cycle(): void {

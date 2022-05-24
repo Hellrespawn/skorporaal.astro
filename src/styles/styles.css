@@ -10,4 +10,16 @@
   .reset-text-color {
     @apply text-zinc-700 no-underline dark:text-zinc-300;
   }
+
+  .button {
+    @apply flex flex-row items-baseline rounded py-4 px-2 text-zinc-700 transition-transform duration-100 hover:-translate-y-1 dark:text-zinc-200;
+  }
+
+  .button.inactive {
+    @apply text-zinc-400 dark:text-zinc-500;
+  }
+
+  .button.sort {
+    @apply font-semibold text-zinc-600 dark:text-zinc-300;
+  }
 }

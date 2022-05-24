@@ -2,19 +2,13 @@
 
 <div id="filter" class="flex flex-row items-center">
   {% for type, data in categoryData %}
-  <button
-    id="{{ type + 'FilterButton'}}"
-    class="py-4 pl-2 pr-4 opacity-50 transition-opacity duration-100"
-  >
+  <button id="{{ type + 'FilterButton'}}" class="button">
     {{ dot(type) }}
-    <span>{{ data.name }}</span>
+    <span class="pl-2">{{ data.name }}</span>
   </button>
   {% endfor %}
 
   <div class="flex-grow"></div>
 
-  <button
-    id="sortButton"
-    class="py-4 pr-2 font-bold text-zinc-600 dark:text-zinc-300"
-  ></button>
+  <button id="sortButton" class="button sort whitespace-nowrap"></button>
 </div>

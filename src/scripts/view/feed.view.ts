@@ -1,6 +1,5 @@
-import { Post } from '../model/post.model';
+import { Post } from '../post';
 import categoryData from '../../11ty/_data/categoryData.json';
-import { Observer } from '../observable';
 
 const LANGUAGE_MAPS: { [key: string]: { [key: string]: string } } = {
   en: { en: 'English', nl: 'Dutch' },
@@ -10,7 +9,7 @@ const LANGUAGE_MAPS: { [key: string]: { [key: string]: string } } = {
 /**
  * This class controls the display of posts
  */
-export class FeedView implements Observer<Post[]> {
+export class FeedView {
   private static postTemplate?: HTMLTemplateElement;
   private lang: string;
   private languageMap: { [key: string]: string };
@@ -20,11 +19,7 @@ export class FeedView implements Observer<Post[]> {
     this.languageMap = LANGUAGE_MAPS[this.lang];
   }
 
-  update(posts: Post[]): void {
-    this.render(posts);
-  }
-
-  private render(posts: Post[]): void {
+  render(posts: Post[]): void {
     const elems = posts.map(this.createPostElement.bind(this));
     this.element.replaceChildren(...elems);
   }
@@ -37,19 +32,23 @@ export class FeedView implements Observer<Post[]> {
     const element = clone.children[0] as HTMLLIElement;
     element.classList.add(post.type);
 
-    const anchor = element.children[0] as HTMLAnchorElement;
+    const anchor = element.getElementsByClassName(
+      'postUrl'
+    )[0] as HTMLAnchorElement;
     anchor.href = post.url;
 
     // dot
+    const dot = element.getElementsByClassName('postDot')[0];
     const color =
       categoryData[post.type as 'recipe' | 'article' | 'portfolio'].color;
-    anchor.children[0].classList.add(color);
+    dot.classList.add(color);
 
     // title
-    this.setTitle(post, anchor.children[1]);
+    this.setTitle(post, element.getElementsByClassName('postTitle')[0]);
 
     //date
-    anchor.children[2].innerHTML = this.formatDate(post.date);
+    const date = element.getElementsByClassName('postDate')[0];
+    date.innerHTML = this.formatDate(post.date);
 
     return element;
   }

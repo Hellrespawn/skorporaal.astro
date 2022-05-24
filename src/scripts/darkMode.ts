@@ -6,7 +6,11 @@ export default class DarkMode {
   private darkModeClassName = 'dark';
   private storageKey = 'darkMode';
 
-  constructor() {
+  static init(): void {
+    new DarkMode();
+  }
+
+  private constructor() {
     const darkMode: boolean =
       // `??` only triggers on undefined, not on false.
       (localStorage[this.storageKey] &&
