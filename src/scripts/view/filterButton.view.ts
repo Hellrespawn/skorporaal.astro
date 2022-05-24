@@ -14,22 +14,9 @@ export class FilterButtonView extends Subject<FilterOptions> {
     super();
   }
 
-  createElement(): HTMLElement {
-    const template = this.getButtonTemplate();
-
-    const clone = template.content.cloneNode(true) as DocumentFragment;
-
-    const element = clone.children[0] as HTMLButtonElement;
-    element.addEventListener('click', this.buttonClicked.bind(this));
-
-    const dot = element.children[0] as HTMLElement;
-    dot.classList.add(this.color);
-
-    const text = element.children[1];
-    text.textContent = this.name;
-
-    this.element = element;
-    return element;
+  hookElement(): void {
+    this.element = document.getElementById(`${this.type}FilterButton`)!;
+    this.element.addEventListener('click', this.buttonClicked.bind(this));
   }
 
   private set(): void {
@@ -38,16 +25,6 @@ export class FilterButtonView extends Subject<FilterOptions> {
 
   clear(): void {
     this.element?.classList.add(...FilterButtonView.classes);
-  }
-
-  private getButtonTemplate(): HTMLTemplateElement {
-    if (!FilterButtonView.buttonTemplate) {
-      FilterButtonView.buttonTemplate = document.getElementById(
-        'filterButtonTemplate'
-      ) as HTMLTemplateElement;
-    }
-
-    return FilterButtonView.buttonTemplate;
   }
 
   private buttonClicked(): void {

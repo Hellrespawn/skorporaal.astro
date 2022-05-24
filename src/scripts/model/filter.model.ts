@@ -20,13 +20,13 @@ export class Filter
   }
 
   update(value: FilterOptions): void {
-    if (value.filterType === this.options.filterType) {
+    console.log(value);
+    if (value.filterType && value.filterType === this.options.filterType) {
       value.filterType = undefined;
     }
 
-    this.view.clearFilterButtons(value.filterType);
-
     this.options = { ...this.options, ...value };
+    this.view.clearFilterButtons(this.options.filterType);
 
     this.next(this.options);
   }

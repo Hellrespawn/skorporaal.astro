@@ -1,41 +1,27 @@
 import { FilterOptions } from '../model/filter.model';
-import { BehaviorSubject } from '../observable';
+import { Subject } from '../observable';
 
-export class SortButtonView extends BehaviorSubject<FilterOptions> {
+export class SortButtonView extends Subject<FilterOptions> {
   private static buttonTemplate?: HTMLTemplateElement;
   private static states: FilterOptions[] = [
     { sortType: 'date', sortDir: 'descending' },
     { sortType: 'date', sortDir: 'ascending' },
-    { sortType: 'alpha', sortDir: 'descending' },
     { sortType: 'alpha', sortDir: 'ascending' },
+    { sortType: 'alpha', sortDir: 'descending' },
   ];
 
-  constructor(private state = SortButtonView.states[0]) {
-    super(state);
+  private element?: HTMLElement;
+
+  constructor(
+    private state = SortButtonView.states[SortButtonView.states.length - 1]
+  ) {
+    super();
   }
 
-  createElement(): HTMLElement {
-    const template = this.getButtonTemplate();
-
-    const clone = template.content.cloneNode(true) as DocumentFragment;
-
-    const element = clone.children[0] as HTMLButtonElement;
-    element.addEventListener('click', this.buttonClicked.bind(this));
-
-    const text = element.children[0];
-    text.textContent = 'Sort';
-
-    return element;
-  }
-
-  private getButtonTemplate(): HTMLTemplateElement {
-    if (!SortButtonView.buttonTemplate) {
-      SortButtonView.buttonTemplate = document.getElementById(
-        'sortButtonTemplate'
-      ) as HTMLTemplateElement;
-    }
-
-    return SortButtonView.buttonTemplate;
+  hookElement(): void {
+    this.element = document.getElementById('sortButton')!;
+    this.element.addEventListener('click', this.buttonClicked.bind(this));
+    this.buttonClicked();
   }
 
   private buttonClicked(): void {
@@ -49,7 +35,22 @@ export class SortButtonView extends BehaviorSubject<FilterOptions> {
       throw new Error('SortButton state is invalid!');
     }
 
-    this.state =
-      SortButtonView.states[(index + 1) % SortButtonView.states.length];
+    const newIndex = (index + 1) % SortButtonView.states.length;
+
+    this.setIcon(newIndex);
+
+    this.state = SortButtonView.states[newIndex];
+  }
+
+  private setIcon(active: number) {
+    for (const iconElement of this.element!.children) {
+      const icon = iconElement as HTMLElement;
+      const index = +icon.id.split('-')[1];
+      if (index === active) {
+        icon.style.display = 'flex';
+      } else {
+        icon.style.display = 'none';
+      }
+    }
   }
 }

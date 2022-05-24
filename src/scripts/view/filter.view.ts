@@ -16,8 +16,6 @@ export class FilterView
 
     this.filterButtons = this.createFilterButtons();
     this.sortButton = this.createSortButton();
-
-    this.render();
   }
 
   update(value: FilterOptions): void {
@@ -40,12 +38,10 @@ export class FilterView
     return button;
   }
 
-  render(): void {
-    const elems = this.filterButtons.map((button) => button.createElement());
+  hookElements(): void {
+    this.filterButtons.forEach((button) => button.hookElement());
 
-    elems.push(this.sortButton.createElement());
-
-    this.element.replaceChildren(...elems);
+    this.sortButton.hookElement();
   }
 
   clearFilterButtons(currentType?: string): void {

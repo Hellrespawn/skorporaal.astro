@@ -17,7 +17,6 @@ new DarkMode();
     const filterModel = new Filter(filterView);
 
     filterModel.subscribe(feedModel);
-
-    feedModel.getPosts();
+    filterView.hookElements();
   }
 })();
