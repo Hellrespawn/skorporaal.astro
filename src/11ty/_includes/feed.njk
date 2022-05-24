@@ -5,7 +5,7 @@
   {% for type, data in categoryData %}
   <button
     id="{{ type + 'FilterButton'}}"
-    class="{% if loop.last %}flex-grow{% endif%} py-4 pl-2 pr-4 text-left opacity-50 transition-opacity duration-100"
+    class="py-4 pl-2 pr-4 opacity-50 transition-opacity duration-100"
   >
     <span
       class="{{ data.color }} inline-block h-2 w-2 shrink-0 rounded-full"
@@ -14,23 +14,17 @@
   </button>
   {% endfor %}
 
-  <button id="sortButton" class="flex flex-row items-center">
-    <span class="flex flex-row" id="state-0">
-      <span>{% include "icons/calendar.svg" %}</span>
-      <span>{% include "icons/sort-descending.svg"%}</span>
-    </span>
-    <span class="flex flex-row" id="state-1">
-      <span>{% include "icons/calendar.svg" %}</span>
-      <span>{% include "icons/sort-ascending.svg"%}</span>
-    </span>
-    <span class="flex flex-row" id="state-2">
-      <span>{% include "icons/alpha.svg" %}</span>
-      <span>{% include "icons/sort-ascending.svg"%}</span>
-    </span>
-    <span class="flex flex-row" id="state-3">
-      <span>{% include "icons/alpha.svg" %}</span>
-      <span>{% include "icons/sort-descending.svg"%}</span>
-    </span>
+  <div class="flex-grow"></div>
+
+  <button
+    id="sortAlphaButton"
+    class="opacity-50 transition-opacity duration-100"
+  >
+    <span>{% include "icons/alpha.svg" %}</span>
+  </button>
+
+  <button id="sortDateButton" class="">
+    <span>{% include "icons/calendar.svg" %}</span>
   </button>
 </div>
 <ul id="postFeed"></ul>

@@ -9,13 +9,13 @@ export class FilterView
   implements Observer<FilterOptions>
 {
   private filterButtons: FilterButtonView[];
-  private sortButton: SortButtonView;
+  private sortButtons: SortButtonView[];
 
   constructor(private element: HTMLElement) {
     super();
 
     this.filterButtons = this.createFilterButtons();
-    this.sortButton = this.createSortButton();
+    this.sortButtons = this.createSortButtons();
   }
 
   update(value: FilterOptions): void {
@@ -23,29 +23,41 @@ export class FilterView
   }
 
   createFilterButtons(): FilterButtonView[] {
-    const buttons = Object.entries(categoryData).map(
-      ([type, { color, name }]) => new FilterButtonView(type, name, color)
-    );
+    const buttons = Object.keys(categoryData).map((type) => {
+      const element = document.getElementById(`${type}FilterButton`)!;
+      return new FilterButtonView(element, type);
+    });
 
     buttons.forEach((button) => button.subscribe(this));
 
     return buttons;
   }
 
-  createSortButton(): SortButtonView {
-    const button = new SortButtonView();
-    button.subscribe(this);
-    return button;
+  createSortButtons(): SortButtonView[] {
+    const sortAlphaElem = document.getElementById('sortAlphaButton')!;
+    const sortDateElem = document.getElementById('sortDateButton')!;
+    const sortAlphaButton = new SortButtonView(sortAlphaElem, 'alpha');
+    const sortDateButton = new SortButtonView(sortDateElem, 'date');
+    sortAlphaButton.subscribe(this);
+    sortDateButton.subscribe(this);
+    return [sortAlphaButton, sortDateButton];
   }
 
   hookElements(): void {
     this.filterButtons.forEach((button) => button.hookElement());
-
-    this.sortButton.hookElement();
+    this.sortButtons.forEach((button) => button.hookElement());
   }
 
   clearFilterButtons(currentType?: string): void {
     this.filterButtons.forEach((button) => {
+      if (!currentType || button.type !== currentType) {
+        button.clear();
+      }
+    });
+  }
+
+  clearSortButtons(currentType?: string): void {
+    this.sortButtons.forEach((button) => {
       if (!currentType || button.type !== currentType) {
         button.clear();
       }

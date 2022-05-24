@@ -18,5 +18,6 @@ new DarkMode();
 
     filterModel.subscribe(feedModel);
     filterView.hookElements();
+    filterModel.setDefault();
   }
 })();

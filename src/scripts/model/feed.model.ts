@@ -23,6 +23,7 @@ export class Feed extends Subject<Post[]> implements Observer<FilterOptions> {
   update(value: FilterOptions): void {
     this.getPosts(value);
   }
+
   async getPosts(options?: FilterOptions): Promise<void> {
     if (!this.loaded) {
       await this.load();
