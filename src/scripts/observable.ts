@@ -21,3 +21,19 @@ export class Subject<T> implements Observable<T> {
     this.publish(value);
   }
 }
+
+export class BehaviorSubject<T> extends Subject<T> {
+  constructor(private value: T) {
+    super();
+  }
+
+  subscribe(subscriber: Observer<T>) {
+    super.subscribe(subscriber);
+    subscriber.update(this.value);
+  }
+
+  protected next(value: T): void {
+    super.next(value);
+    this.value = value;
+  }
+}

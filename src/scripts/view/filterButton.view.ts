@@ -1,7 +1,7 @@
 import { FilterOptions } from '../model/filter.model';
 import { Subject } from '../observable';
 
-export class ButtonView extends Subject<FilterOptions> {
+export class FilterButtonView extends Subject<FilterOptions> {
   private static classes = ['opacity-50'];
   private static buttonTemplate?: HTMLTemplateElement;
   private element?: HTMLElement;
@@ -33,21 +33,21 @@ export class ButtonView extends Subject<FilterOptions> {
   }
 
   private set(): void {
-    this.element?.classList.remove(...ButtonView.classes);
+    this.element?.classList.remove(...FilterButtonView.classes);
   }
 
   clear(): void {
-    this.element?.classList.add(...ButtonView.classes);
+    this.element?.classList.add(...FilterButtonView.classes);
   }
 
   private getButtonTemplate(): HTMLTemplateElement {
-    if (!ButtonView.buttonTemplate) {
-      ButtonView.buttonTemplate = document.getElementById(
+    if (!FilterButtonView.buttonTemplate) {
+      FilterButtonView.buttonTemplate = document.getElementById(
         'filterButtonTemplate'
       ) as HTMLTemplateElement;
     }
 
-    return ButtonView.buttonTemplate;
+    return FilterButtonView.buttonTemplate;
   }
 
   private buttonClicked(): void {

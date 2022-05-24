@@ -24,7 +24,7 @@ export class Filter
       value.filterType = undefined;
     }
 
-    this.view.clearButtons(value.filterType);
+    this.view.clearFilterButtons(value.filterType);
 
     this.options = { ...this.options, ...value };
 
