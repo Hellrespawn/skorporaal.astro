@@ -1,6 +1,6 @@
 {% from "macro.njk" import dot %}
 
-<div class="flex flex-row items-center">
+<div class="flex flex-row items-center text-lg md:text-base">
   {% for type, data in categoryData %}
   <button id="{{ type + 'FilterButton'}}" class="button button-dark">
     {{ dot(data.bg) }}
