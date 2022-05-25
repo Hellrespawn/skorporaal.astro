@@ -10,28 +10,29 @@ Dit is een licht aangepaste versie van [dit recept](https://www.youtube.com/watc
 
 ## Schnitzel
 
-| Ingredient:     | Hoeveelheid:   | Staat:                | kcal: |
-| --------------- | -------------- | --------------------- | ----: |
-| filetlapjes[^1] | 2 stuks (250g) |                       |   325 |
-| ei              | 1-2 stuks      | geklutst, met mosterd |   120 |
-| bloem           | 1-2 el         |                       |    45 |
-| beschuit        | 3-4 stuks      | vermalen              |   175 |
-| bakvet/ghee     | 3 el           |                       |   200 |
-|                 |                | totaal:               |   865 |
+| #:             | Ingredient:     | kcal: |
+| -------------- | --------------- | ----: |
+| 2 stuks (250g) | filetlapjes[^1] |   325 |
+| 1-2 stuks      | ei              |   120 |
+| 1-2 el         | bloem           |    45 |
+| 75-100g        | paneermeel[^2]  |   175 |
+| 3 el           | bakvet/ghee     |   200 |
+|                | totaal:         |   865 |
 
 [^1]: Filetlapjes à la minute kunnen ook gebruikt worden, snij ze dan niet doormidden. Kipfilet is ook een optie.
+[^2]: Panko of beschuit aanbevolen.
 
 ## Komkommersalade
 
-| Ingredient:   | Hoeveelheid: | kcal: |
-| ------------- | ------------ | ----: |
-| komkommer     | 1 stuk       |    25 |
-| rode ui       | 0.5 stuks    |    10 |
-| crème fraîche | 100g         |   290 |
-| suiker        | 0.5el        |    30 |
-| azijn         | 1 tl         |       |
-| dille         | snuf         |       |
-|               | totaal:      |   360 |
+| #:        | Ingredient:   | kcal: |
+| --------- | ------------- | ----: |
+| 1 stuk    | komkommer     |    25 |
+| 0.5 stuks | rode ui       |    10 |
+| 100g      | crème fraîche |   290 |
+| 0.5el     | suiker        |    30 |
+| 1 tl      | azijn         |       |
+| snuf      | dille         |       |
+|           | totaal:       |   360 |
 
 Calorieën per portie: 305 / 2 = 613 kcal
 
@@ -40,6 +41,8 @@ Calorieën met 100g aardappel: 613 + 88 + 40 (olie) = 741 kcal
 ## Schnitzel
 
 1. Snij de filetlapjes bijna doormidden, als een vlinder, en sla ze plat tussen wat vershoudfolie. Prik overal gaatjes met een vork. Voeg peper en zout toe.
+
+1. Kluts het ei met wat mosterd.
 
 1. Haal de lapjes door bloem, ei en beschuit/paneermeel.
 

@@ -1,5 +1,5 @@
 ---
-title: Kip Parmigiana
+title: Kip Parmigiana met Pasta al Burro
 authors:
   - SortedFood
 ---
@@ -10,35 +10,35 @@ De saus is een aangepaste versie van [dit recept](https://www.youtube.com/watch?
 
 ### Saus
 
-| Ingredient:     | Hoeveelheid: | Staat:     | kcal: |
-| --------------- | ------------ | ---------- | ----: |
-| ui              | 0.5          | gesnipperd |    12 |
-| knoflook        | 2 tenen      | geperst    |    10 |
-| gepelde tomaten | 1 blik       |            |   100 |
-| kippenbouillon  | 100ml        |            |     4 |
-| bruine suiker   | 1 el         |            |    50 |
-| oregano         | 1 el         | gedroogd   |     1 |
-| olijfolie       | 0.5 el       |            |    40 |
-|                 |              | totaal:    |   217 |
+| #:      | Ingredient:     | kcal: |
+| ------- | --------------- | ----: |
+| 0.5     | ui              |    12 |
+| 2 tenen | knoflook        |    10 |
+| 1 blik  | gepelde tomaten |   100 |
+| 100ml   | kippenbouillon  |     4 |
+| 1 el    | bruine suiker   |    50 |
+| 1 el    | oregano         |     1 |
+| 0.5 el  | olijfolie       |    40 |
+|         | totaal:         |   217 |
 
 ### Schnitzel
 
-| Ingredient:           | Hoeveelheid: | Staat:     | kcal: |
-| --------------------- | ------------ | ---------- | ----: |
-| krokante kipschnitzel | 2            |            |   468 |
-| jonge kaas            | 1 plak       |            |   120 |
-| italiaanse kaas       | ~10g         | geraspt    |    40 |
-| champignons           | 100g         | in plakjes |    20 |
-| olijfolie             | 2el          |            |   160 |
-|                       |              | totaal:    |   808 |
+| #:     | Ingredient:           | kcal: |
+| ------ | --------------------- | ----: |
+| 2      | krokante kipschnitzel |   468 |
+| 1 plak | jonge kaas            |   120 |
+| ~10g   | italiaanse kaas       |    40 |
+| 100g   | champignons           |    20 |
+| 2el    | olijfolie             |   160 |
+|        | totaal:               |   808 |
 
 ### Pasta
 
-| Ingredient: | Hoeveelheid: | Staat:   | kcal: |
-| ----------- | ------------ | -------- | ----: |
-| pasta       | 100g         | gedroogd |   350 |
-| boter       | 1 el         |          |    80 |
-|             |              | totaal:  |   430 |
+| #:   | Ingredient: | kcal: |
+| ---- | ----------- | ----: |
+| 100g | pasta       |   350 |
+| 1 el | boter       |    80 |
+|      | totaal:     |   430 |
 
 Totaal aantal calorieën: 1455 kcal
 
@@ -48,13 +48,19 @@ Totaal aantal calorieën per maaltijd: 727 1/2 kcal
 
 ### Saus
 
+1. Snipper de ui en pers de knoflook.
+
 1. Doe de ui, knoflook, oregano en suiker in een pan met wat olie. Bak tot de ui zacht wordt.
 
-1. Voeg de bouillon en tomaten toe aan de pan. Laat 15-20 minuten pruttelen. Voeg indien nodig wat water toe.
+1. Voeg de bouillon en tomaten toe aan de pan. Gebruik je spatel/lepel om de hele bliktomaten voorzichtig te pletten/snijden.
+
+1. Laat 15-20 minuten pruttelen. Voeg indien nodig wat water toe.
 
 ### Schnitzel
 
-1. Bak de schnitzel bruin. Indien van toepassing, bak de champignons bruin, tot het vocht verdreven is.
+1. Snij de champignons in plakjes.
+
+1. Bak de schnitzels bruin en leg apart. Indien van toepassing, bak de champignons bruin, tot het vocht verdreven is.
 
 1. Als de saus klaar is, meng de champignons erdoorheen en giet deze in een ovenschaal. Leg de schnitzel op de saus.
 

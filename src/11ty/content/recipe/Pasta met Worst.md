@@ -1,5 +1,5 @@
 ---
-title: Pasta met Worst
+title: Pasta met Worst en Venkel
 authors:
   - SortedFood
 ---
@@ -8,20 +8,22 @@ Geïnspireerd door de [Bloke Pasta](https://sortedfood.com/recipe/12543) van Sor
 
 ## Ingrediënten
 
-| Ingredient:    | Hoeveelheid:            | Staat:      | kcal: |
-| -------------- | ----------------------- | ----------- | ----: |
-| braadworst     | 200g (2 stuks)          | Uitgeknepen |   540 |
-| pasta          | 200g (droog, vers 250g) |             |   700 |
-| ui             | 0.5                     | gesneden    |    12 |
-| paprika        | 1                       | gesneden    |    20 |
-| champignons    | 200g                    | gesneden    |    40 |
-| witte wijn     | 125ml                   |             |   100 |
-| venkelzaad     | 1 tl                    |             |     5 |
-| oregano        | 1 el                    |             |     5 |
-| knoflookpoeder | 1 tl                    |             |     5 |
-| citroensap     | 0.5 citroen             |             |     5 |
-| olijfolie      | 1 el                    |             |    80 |
-|                |                         | totaal:     |  1512 |
+| #:             | Ingredient:    | kcal: |
+| -------------- | -------------- | ----: |
+| 200g (2 stuks) | braadworst     |   540 |
+| 250g[^1]       | verse pasta    |   700 |
+| 0.5            | ui             |    12 |
+| 1              | paprika        |    20 |
+| 200g           | champignons    |    40 |
+| 125ml          | witte wijn     |   100 |
+| 1 tl           | venkelzaad     |     5 |
+| 1 el           | oregano        |     5 |
+| 1 tl           | knoflookpoeder |     5 |
+| 0.5 citroen    | citroensap     |     5 |
+| 1 el           | olijfolie      |    80 |
+|                |                |  1512 |
+
+[^1]: Als je gedroogde pasta hebt, gebruik dan 200g voor dezelfde hoeveelheid.
 
 Calorieën per maaltijd: 756 kcal
 
@@ -31,7 +33,11 @@ Calorieën per maaltijd: 756 kcal
 
 1. Knijp de braadworst in kleine "gehaktballetjes" uit. Bak deze rondom in de olijfolie totdat ze goudbruin zijn. Verwijder ze uit de pan, maar probeer zoveel mogelijk vet te laten liggen.
 
-1. Bak de gesneden ui, paprika en champignons in het overgebleven vet tot de gewenste gaarheid. Voeg het venkelzaad, de oregano en knoflookpoeder toe. Wees voorzichtig met de hoeveelheid, vooral met het venkelzaad, je kan altijd meer toevoegen! Bak kort mee.
+1. Snij de ui, paprike en champignons.
+
+1. Bak de ui, paprika en champignons in het overgebleven vet tot het vocht ui de champignons verdreven is.
+
+1. Voeg het venkelzaad, de oregano en knoflookpoeder toe. Wees voorzichtig met de hoeveelheid, vooral met het venkelzaad, je kan altijd meer toevoegen! Bak kort mee.
 
 1. Voeg de wijn toe aan de groente. Laat het pruttelen tot de wijn voor de helft gereduceerd is.
 

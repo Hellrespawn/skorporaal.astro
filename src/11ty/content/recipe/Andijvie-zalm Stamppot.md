@@ -8,33 +8,35 @@ Dit recept is een aangepaste versie van [dit recept](https://www.ah.nl/allerhand
 
 ## Ingrediënten
 
-| Ingredient:             | Hoeveelheid:    | Staat:       | kcal: |
-| ----------------------- | --------------- | ------------ | ----: |
-| andijvie[^1]            | 250g            | fijngesneden |    40 |
-| aardappel, iets kruimig | 600g            | geschild     |   520 |
-| ui                      | 1               | gesnipperd   |    24 |
-| knoflook                | 2 teen          | geperst      |    16 |
-| zalm                    | 2 filets (300g) |              |   660 |
-| kappertjes              | 2 tl            | fijngesneden |     8 |
-| ansjovisfilets          | 1 blikje (50g)  |              |   110 |
-| melk                    | 200 ml          |              |    90 |
-| boter                   | 10g             |              |    75 |
-| chilivlokken            |                 |              |       |
-|                         |                 | totaal:      |  1553 |
+| #:              | Ingredient:             | kcal: |
+| --------------- | ----------------------- | ----: |
+| 250g            | andijvie[^1]            |    40 |
+| 600g            | aardappel, iets kruimig |   520 |
+| 1               | ui                      |    24 |
+| 2 teen          | knoflook                |    16 |
+| 2 filets (300g) | zalm                    |   660 |
+| 2 tl            | kappertjes              |     8 |
+| 3 à 4           | ansjovisfilets          |   110 |
+| 200 ml          | melk                    |    90 |
+| 10g             | boter                   |    75 |
+|                 | chilivlokken            |       |
+|                 | totaal:                 |  1553 |
 
-[^1]: Als de andijvie niet fijngesneden is, stamp deze er dan doorheen om het kleiner te maken.
+[^1]: Als je grovere voorgesneden andijvie hebt, stamp deze aan het eind dan hard door de aardappels heen om het te kortwieken.
 
 Totaal aantal calorieën per portie: 777 kcal
 
 ## Bereiding
 
-1. Verwarm de oven voor op ~80°C.
+1. (Optioneel) Verwarm de oven voor op ~80°C.
 
 1. Schil de aardappels, snijd in gelijke stukken en kook gaar. Giet het water af.
 
+1. Indien van toepassing, snijd de andijvie fijn.
+
 1. Verhit de helft van de ansjovis met wat olie in een koekenpan en laat de ansjovis uit elkaar vallen in de olie.
 
-1. Bestrooi de zalm rondom met peper en eventueel zout en bak op middelhoog vuur tot gewenste gaarheid. Bewaar tot de stamppot klaar is in de oven.
+1. Bestrooi de zalm rondom met peper en eventueel zout en bak op middelhoog vuur tot gewenste gaarheid. (Optioneel) Bewaar tot de stamppot klaar is in de oven.
 
 1. Snipper ondertussen de ui en snijd de knoflook fijn (en de kappertjes, optioneel).
 
