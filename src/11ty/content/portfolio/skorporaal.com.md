@@ -35,7 +35,7 @@ I have tried to make this site at least somewhat accessible, having applied a lo
 
 - Fancy links and source code structure inspired by [chrissy.dev](https://www.chrissy.dev/)
 
-- Sun-, moon- and left arrow icons from [Hero Icons](https://heroicons.com/)
+- Sun-, moon- and home-icons from [Hero Icons](https://heroicons.com/)
 
 - GitHub icon from [Feather Icons](https://feathericons.com/)
 
