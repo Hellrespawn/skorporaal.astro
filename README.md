@@ -2,6 +2,8 @@
 
 This repo holds my personal site and cookbook. More information about the site, including attribution, can be found in `./src/portfolio/skorporaal.com.md`.
 
+This repository is public for the purposes of demonstration and education. Much of it is geared specifically to my personal use case and it should no be considered a template or a starter.
+
 ## To do
 
 - TODO Init dark mode early
@@ -13,4 +15,4 @@ This repo holds my personal site and cookbook. More information about the site, 
 - TODO? Create nunjucks macro which calls @ for local links?
 - TODO? Move border to post-heading.njk?
 - TODO? Markdown math rendering?
-- TODO? Local versions of font
+- TODO? Local versions of font?
