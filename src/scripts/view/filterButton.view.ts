@@ -2,7 +2,7 @@ import { Callback } from '../controller/feed.controller';
 import { FilterOptions } from '../model/filter.model';
 
 export class FilterButtonView {
-  private static classes = ['inactive'];
+  private static classes = ['button-dark'];
 
   constructor(
     private element: HTMLElement,

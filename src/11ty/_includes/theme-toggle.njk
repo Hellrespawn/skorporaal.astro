@@ -3,14 +3,9 @@
 <button
   id="darkModeButton"
   tabindex="0"
-  class="absolute bottom-8 left-4 cursor-pointer md:fixed md:bottom-4"
+  class="absolute bottom-8 left-4 cursor-pointer rounded-full md:fixed md:bottom-4"
   aria-label="toggle theme"
 >
-  <span id="lightModeIcon">
-    {{ icon('sun', 'md:shadow-md md:shadow-zinc-400 md:dark:shadow-zinc-900') }}
-  </span>
-  <span id="darkModeIcon">
-    {{ icon('moon', 'md:shadow-md md:shadow-zinc-400 md:dark:shadow-zinc-900')
-    }}
-  </span>
+  <span id="lightModeIcon"> {{ icon('sun', 'theme-shadow') }} </span>
+  <span id="darkModeIcon"> {{ icon('moon', 'theme-shadow') }} </span>
 </button>

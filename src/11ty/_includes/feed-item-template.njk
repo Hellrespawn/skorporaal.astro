@@ -2,14 +2,10 @@
 
 <template id="postTemplate">
   <!-- Filled in with post.type -->
-  <li>
+  <li class="border-t border-gray-200 dark:border-gray-700">
     <!-- Same px as filter -->
-    <a
-      class="postUrl group flex flex-col items-baseline border-t border-gray-200 py-4 px-2 dark:border-gray-700 md:flex-row"
-    >
-      <span
-        class="flex flex-grow flex-row items-baseline transition-transform duration-[50ms] group-hover:-translate-y-1 md:group-hover:translate-y-0 md:group-hover:translate-x-1"
-      >
+    <a class="button postUrl flex flex-col items-baseline md:flex-row">
+      <span class="flex flex-grow flex-row items-baseline">
         <!-- Colored Dot -->
         {{ dot("postDot") }}
         <!-- Title -->
