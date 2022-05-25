@@ -14,6 +14,10 @@
   .button.sort {
     @apply font-semibold text-zinc-600 dark:text-zinc-300;
   }
+
+  .prose-full {
+    @apply prose-a:fancy-link prose-a:reset-text-color prose-table-shrink prose prose-zinc prose-teal dark:prose-invert;
+  }
 }
 
 @layer utilities {

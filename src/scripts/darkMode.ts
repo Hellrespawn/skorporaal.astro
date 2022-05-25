@@ -11,13 +11,17 @@ export default class DarkMode {
   }
 
   private constructor() {
-    const darkMode: boolean =
-      // `??` only triggers on undefined, not on false.
-      (localStorage[this.storageKey] &&
-        localStorage[this.storageKey] === 'true') ??
-      (window.matchMedia &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches);
+    let darkMode: boolean;
 
+    const storedMode = localStorage.getItem(this.storageKey);
+
+    if (storedMode === null) {
+      darkMode =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches;
+    } else {
+      darkMode = storedMode === 'true';
+    }
     if (darkMode) {
       this.toggle(false);
     } else {

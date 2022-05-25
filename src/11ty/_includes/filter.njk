@@ -1,9 +1,9 @@
-{% from "macro.njk" import dot with context %}
+{% from "macro.njk" import dot %}
 
-<div id="filter" class="flex flex-row items-center">
+<div class="flex flex-row items-center">
   {% for type, data in categoryData %}
   <button id="{{ type + 'FilterButton'}}" class="button inactive">
-    {{ dot(type) }}
+    {{ dot(data.bg) }}
     <span class="pl-2">{{ data.plural }}</span>
   </button>
   {% endfor %}

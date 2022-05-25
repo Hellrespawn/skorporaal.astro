@@ -5,12 +5,12 @@ layout: 'base.njk'
 {% set data = categoryData[tags[0]] %}
 
 <main class="flex flex-col items-center">
-  <div class="mx-4 w-fit md:mx-0">
+  <div class="mx-2 w-fit md:mx-0">
     <nav class="my-8">{% include 'top-bar.njk' %}</nav>
     <div class="text-sm {{ data.text }}">{{ data.single }}</div>
     <article
       lang="{{ language }}"
-      class="{{ data.border }} prose-a:fancy-link prose-a:reset-text-color prose-table-shrink prose prose-zinc prose-teal w-full border-t-2 py-8 dark:prose-invert"
+      class="{{ data.border }} w-full border-t-2 py-8 prose-full"
     >
       {% include 'post-heading.njk' %} {{ content | safe }}
     </article>

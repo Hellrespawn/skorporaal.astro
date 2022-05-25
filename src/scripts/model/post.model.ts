@@ -51,12 +51,12 @@ export class PostModel {
 
   async load(): Promise<void> {
     const response = await fetch(this.url);
-    const json = await response.json();
+    const json = (await response.json()) as { posts: JsonPost[] };
     this.posts = json.posts.map(PostModel.jsonToPost);
     this.loaded = true;
   }
 
-  private static jsonToPost(jsonPost: JsonPost): Post {
+  private static jsonToPost(this: void, jsonPost: JsonPost): Post {
     return new Post(
       jsonPost.title,
       jsonPost.type,
@@ -66,15 +66,27 @@ export class PostModel {
     );
   }
 
-  private static sortByAlphaAscending(left: Post, right: Post): number {
+  private static sortByAlphaAscending(
+    this: void,
+    left: Post,
+    right: Post
+  ): number {
     return left.title.localeCompare(right.title);
   }
 
-  private static sortByAlphaDescending(left: Post, right: Post): number {
+  private static sortByAlphaDescending(
+    this: void,
+    left: Post,
+    right: Post
+  ): number {
     return -PostModel.sortByAlphaAscending(left, right);
   }
 
-  private static sortByDateAscending(left: Post, right: Post): number {
+  private static sortByDateAscending(
+    this: void,
+    left: Post,
+    right: Post
+  ): number {
     if (!left.date && !right.date) {
       return PostModel.sortByAlphaAscending(left, right);
     } else if (!left.date) {
@@ -86,7 +98,11 @@ export class PostModel {
     }
   }
 
-  private static sortByDateDescending(left: Post, right: Post): number {
+  private static sortByDateDescending(
+    this: void,
+    left: Post,
+    right: Post
+  ): number {
     if (!left.date && !right.date) {
       return PostModel.sortByAlphaAscending(left, right);
     } else if (!left.date) {

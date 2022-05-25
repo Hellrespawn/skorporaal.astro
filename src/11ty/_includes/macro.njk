@@ -6,8 +6,8 @@
 </span>
 {% endmacro %}
 
-{# Requires use of `import with context` #}
-{% macro dot(tag, classes='') %}
-{% set bg = categoryData[tag].bg %}
-<span class="{{ bg }} {{ classes }} inline-block h-2 w-2 shrink-0 rounded-full"></span>
+{% macro dot(classes='') %}
+<span
+  class="{{ classes }} inline-block h-2 w-2 shrink-0 rounded-full"
+></span>
 {% endmacro %}

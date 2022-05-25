@@ -24,6 +24,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./tailwind.config.cjs');
   eleventyConfig.addWatchTarget('./postcss.config.cjs');
 
+  eleventyConfig.addWatchTarget('./src/scripts/');
+  eleventyConfig.addWatchTarget('./src/styles/');
+
   eleventyConfig.setQuietMode(true);
   eleventyConfig.addPlugin(syntaxHighlight);
 

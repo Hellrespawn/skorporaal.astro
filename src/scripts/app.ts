@@ -4,5 +4,5 @@ import DarkMode from './darkMode';
 DarkMode.init();
 
 if (window.location.pathname === '/') {
-  FeedController.init();
+  FeedController.init('/feed.json');
 }

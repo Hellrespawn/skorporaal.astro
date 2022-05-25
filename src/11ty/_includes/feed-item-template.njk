@@ -1,3 +1,5 @@
+{% from "macro.njk" import dot %}
+
 <template id="postTemplate">
   <!-- Filled in with post.type -->
   <li>
@@ -9,8 +11,7 @@
         class="flex flex-grow flex-row items-baseline transition-transform duration-[50ms] group-hover:-translate-y-1 md:group-hover:translate-y-0 md:group-hover:translate-x-1"
       >
         <!-- Colored Dot -->
-        <span class="postDot inline-block h-2 w-2 shrink-0 rounded-full"></span>
-
+        {{ dot("postDot") }}
         <!-- Title -->
         <p class="postTitle pl-2"></p
       ></span>
