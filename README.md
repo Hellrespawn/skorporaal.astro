@@ -7,8 +7,6 @@ This repository is public for the purposes of demonstration and education. Much 
 ## To do
 
 - TODO Init dark mode early
-- TODO Enlarge post feed on mobile
-- TODO Play more with margins on mobile (encaps in separate Tailwind class?)
 - TODO Write more about skorporaal.com
 - TODO Write more comprehensive about page
 - TODO Recepten schrijven voor kippensoep, tomatensoep, champignonsoep van Oma, Hachee papke.
