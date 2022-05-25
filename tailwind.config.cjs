@@ -27,6 +27,9 @@ module.exports = {
         black: '#000000',
         primary: colors.cyan, // teal, cyan or sky?
         accent: colors.amber, // orange, amber, custom gold?
+        zinc: {
+          750: '#333338',
+        },
       },
       fontFamily: {
         sans: ['"Nunito"', ...defaultTheme.fontFamily.sans],

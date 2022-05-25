@@ -4,7 +4,7 @@
 
 @layer components {
   .button {
-    @apply my-1 flex flex-row items-baseline py-2 px-2 text-zinc-700 transition-colors duration-75 hover:bg-zinc-100 active:bg-zinc-200 dark:text-zinc-200 hover:dark:bg-zinc-700 active:dark:bg-zinc-600;
+    @apply my-1 flex flex-row items-baseline py-2 px-2 text-zinc-700 transition-colors duration-75 hover:bg-zinc-100 active:bg-zinc-200 dark:text-zinc-200 hover:dark:bg-zinc-750 active:dark:bg-zinc-700;
   }
 
   .button.button-clip {
