@@ -1,0 +1,25 @@
+---
+layout: default.njk
+title: About
+---
+
+{% from "macro.njk" import icon %}
+
+<section class="flex shrink-0 flex-col items-center py-16 md:w-1/2 md:py-0">
+  {% include "home-button.njk" %}
+  <div class="flex flex-col justify-center md:h-full">
+    <h2 class="text-3xl">Under construction...</h2>
+
+    <div class="not-prose mt-12 flex flex-row justify-center">
+      <a
+        class="button button-clip flex w-min flex-row items-center rounded-l-full"
+        target="_blank"
+        rel="nofollower noreferrer noopener"
+        href="{{ site.github }}"
+      >
+        {{ icon('github') }}
+        <div class="fancy-external-link ml-4 mr-6">Hellrespawn</div>
+      </a>
+    </div>
+  </div>
+</section>

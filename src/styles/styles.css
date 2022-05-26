@@ -26,7 +26,15 @@
 
 @layer utilities {
   .fancy-link {
-    @apply bg-gradient-to-r from-accent-200 to-accent-200 bg-[length:auto_36%] bg-[center_bottom_1px] bg-no-repeat  dark:from-primary-700 dark:to-primary-700;
+    @apply bg-gradient-to-r bg-[length:auto_36%] bg-[center_bottom_1px] bg-no-repeat;
+  }
+
+  .fancy-internal-link {
+    @apply fancy-link from-primary-100 to-primary-100 dark:from-accent-900 dark:to-accent-900;
+  }
+
+  .fancy-external-link {
+    @apply fancy-link from-accent-200 to-accent-200 dark:from-primary-700 dark:to-primary-700;
   }
 
   .reset-text-color {

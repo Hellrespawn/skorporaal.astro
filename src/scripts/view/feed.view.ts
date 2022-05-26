@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import type Post from '../post';
 import categoryData from '../../11ty/_data/categoryData.json';
 
@@ -32,7 +33,7 @@ export default class FeedView {
     const clone = template.content.cloneNode(true) as DocumentFragment;
 
     const element = clone.children[0] as HTMLLIElement;
-    element.classList.add(post.type);
+    this.addAttributesToPostElement(post, element);
 
     const anchor = element.getElementsByClassName(
       'postUrl'
@@ -66,6 +67,13 @@ export default class FeedView {
     return FeedView.postTemplate;
   }
 
+  private addAttributesToPostElement(post: Post, element: HTMLLIElement): void {
+    element.classList.add(post.type);
+    if (post.lang !== this.lang) {
+      element.lang = post.lang;
+    }
+  }
+
   private setTitle(post: Post, element: Element): void {
     let { title } = post;
 
@@ -73,7 +81,6 @@ export default class FeedView {
       title += ` [${this.languageMap[post.lang] ?? 'Unknown'}]`;
     }
 
-    // eslint-disable-next-line no-param-reassign
     element.textContent = title;
   }
 

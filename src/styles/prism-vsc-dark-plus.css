@@ -4,6 +4,7 @@ code[class*='language-'] {
   text-shadow: none;
   font-family: Menlo, Monaco, Consolas, 'Andale Mono', 'Ubuntu Mono',
     'Courier New', monospace;
+  font-size: 1rem;
   direction: ltr;
   text-align: left;
   white-space: pre-wrap;

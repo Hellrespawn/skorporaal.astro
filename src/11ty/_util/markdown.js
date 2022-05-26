@@ -12,8 +12,8 @@ module.exports = function configureMarkdown(eleventyConfig) {
 
   // Add `target` and `rel` to outgoing links.
   md.use(require('markdown-it-external-links'), {
-    externalClassName: null,
-    internalClassName: null,
+    externalClassName: 'fancy-external-link',
+    internalClassName: 'fancy-internal-link',
     externalTarget: '_blank',
     externalRel: 'noopener noreferrer nofollow',
   });
