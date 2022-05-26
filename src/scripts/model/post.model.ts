@@ -1,5 +1,5 @@
-import { FilterOptions } from './filter.model';
-import { Post } from '../post';
+import { type FilterOptions } from './filter.model';
+import Post from '../post';
 
 interface JsonPost {
   title: string;
@@ -9,8 +9,9 @@ interface JsonPost {
   date?: string;
 }
 
-export class PostModel {
+export default class PostModel {
   private posts: Post[] = [];
+
   private loaded = false;
 
   constructor(private url: string) {}
@@ -20,7 +21,7 @@ export class PostModel {
       throw new Error('PostModel was not loaded.');
     }
 
-    let posts = this.posts;
+    let posts = this.posts.slice();
 
     if (!options) {
       return posts;
@@ -87,15 +88,19 @@ export class PostModel {
     left: Post,
     right: Post
   ): number {
+    let sort: number;
+
     if (!left.date && !right.date) {
-      return PostModel.sortByAlphaAscending(left, right);
+      sort = PostModel.sortByAlphaAscending(left, right);
     } else if (!left.date) {
-      return -1;
+      sort = -1;
     } else if (!right.date) {
-      return 1;
+      sort = 1;
     } else {
-      return left.date.getTime() - right.date.getTime();
+      sort = left.date.getTime() - right.date.getTime();
     }
+
+    return sort;
   }
 
   private static sortByDateDescending(
@@ -103,15 +108,19 @@ export class PostModel {
     left: Post,
     right: Post
   ): number {
+    let sort: number;
+
     if (!left.date && !right.date) {
-      return PostModel.sortByAlphaAscending(left, right);
+      sort = PostModel.sortByAlphaAscending(left, right);
     } else if (!left.date) {
-      return 1;
+      sort = 1;
     } else if (!right.date) {
-      return -1;
+      sort = -1;
     } else {
-      return right.date.getTime() - left.date.getTime();
+      sort = right.date.getTime() - left.date.getTime();
     }
+
+    return sort;
   }
 
   private static filterPostModelByTitle(
@@ -133,20 +142,20 @@ export class PostModel {
     sortType: 'alpha' | 'date',
     sortDir: 'ascending' | 'descending'
   ): Post[] {
+    let sortedPosts: Post[];
+
     if (sortType === 'alpha') {
       if (sortDir === 'ascending') {
-        posts = posts.sort(PostModel.sortByAlphaAscending);
+        sortedPosts = posts.sort(PostModel.sortByAlphaAscending);
       } else {
-        posts = posts.sort(PostModel.sortByAlphaDescending);
+        sortedPosts = posts.sort(PostModel.sortByAlphaDescending);
       }
+    } else if (sortDir === 'ascending') {
+      sortedPosts = posts.sort(PostModel.sortByDateAscending);
     } else {
-      if (sortDir === 'ascending') {
-        posts = posts.sort(PostModel.sortByDateAscending);
-      } else {
-        posts = posts.sort(PostModel.sortByDateDescending);
-      }
+      sortedPosts = posts.sort(PostModel.sortByDateDescending);
     }
 
-    return posts;
+    return sortedPosts;
   }
 }

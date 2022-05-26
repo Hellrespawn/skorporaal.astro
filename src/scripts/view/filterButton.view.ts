@@ -1,17 +1,15 @@
-import { Callback } from '../controller/feed.controller';
-import { FilterOptions } from '../model/filter.model';
+import { type Callback } from '../app';
 
-export class FilterButtonView {
+export default class FilterButtonView {
   private static classes = ['button-dark'];
 
   constructor(
     private element: HTMLElement,
-    private callback: Callback<FilterOptions>,
+    private callback: Callback<string>,
     public type: string
   ) {}
 
   listen(): void {
-    this.element = document.getElementById(`${this.type}FilterButton`)!;
     this.element.addEventListener('click', this.buttonClicked.bind(this));
   }
 
@@ -25,6 +23,6 @@ export class FilterButtonView {
 
   private buttonClicked(): void {
     this.set();
-    this.callback({ filterType: this.type });
+    this.callback(this.type);
   }
 }

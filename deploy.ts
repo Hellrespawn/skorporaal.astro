@@ -1,17 +1,15 @@
+/* eslint-disable no-console */
 import dotenv from 'dotenv';
-dotenv.config({ override: true });
-
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
 import * as ftp from 'basic-ftp';
 
-const HOSTNAME = process.env.HOSTNAME;
-const USERNAME = process.env.USERNAME;
-const PASSWORD = process.env.PASSWORD;
+dotenv.config({ override: true });
+
+const { HOSTNAME, USERNAME, PASSWORD, REMOTE_DIR } = process.env;
+
 const LOCAL_DIR =
   process.env.LOCAL_DIR && path.join(__dirname, process.env.LOCAL_DIR);
-const REMOTE_DIR = process.env.REMOTE_DIR;
-
 if (!HOSTNAME || !USERNAME || !PASSWORD || !LOCAL_DIR || !REMOTE_DIR) {
   throw new Error('Environment variables not properly configured!');
 }
@@ -24,6 +22,7 @@ async function checkSitePath(): Promise<void> {
       throw new Error("'_site' is not a folder.");
     }
   } catch (rawError) {
+    // eslint-disable-next-line no-undef
     const error = rawError as NodeJS.ErrnoException;
 
     if (error.code === 'ENOENT') {
@@ -65,4 +64,4 @@ async function main(): Promise<void> {
   }
 }
 
-void main();
+main().catch((error) => console.error(error));

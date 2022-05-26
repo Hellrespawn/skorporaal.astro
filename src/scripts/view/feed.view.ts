@@ -1,4 +1,4 @@
-import { Post } from '../post';
+import type Post from '../post';
 import categoryData from '../../11ty/_data/categoryData.json';
 
 const LANGUAGE_MAPS: { [key: string]: { [key: string]: string } } = {
@@ -9,9 +9,11 @@ const LANGUAGE_MAPS: { [key: string]: { [key: string]: string } } = {
 /**
  * This class controls the display of posts
  */
-export class FeedView {
+export default class FeedView {
   private static postTemplate?: HTMLTemplateElement;
+
   private lang: string;
+
   private languageMap: { [key: string]: string };
 
   constructor(private element: HTMLElement) {
@@ -25,7 +27,7 @@ export class FeedView {
   }
 
   private createPostElement(post: Post): HTMLElement {
-    const template = this.getPostTemplate();
+    const template = FeedView.getPostTemplate();
 
     const clone = template.content.cloneNode(true) as DocumentFragment;
 
@@ -39,20 +41,22 @@ export class FeedView {
 
     // dot
     const dot = element.getElementsByClassName('postDot')[0];
-    const bg = categoryData[post.type as 'recipe' | 'article' | 'portfolio'].bg;
+    const { bg } =
+      categoryData[post.type as 'recipe' | 'article' | 'portfolio'];
+
     dot.classList.add(bg);
 
     // title
     this.setTitle(post, element.getElementsByClassName('postTitle')[0]);
 
-    //date
+    // date
     const date = element.getElementsByClassName('postDate')[0];
-    date.innerHTML = this.formatDate(post.date);
+    date.innerHTML = FeedView.formatDate(post.date);
 
     return element;
   }
 
-  private getPostTemplate() {
+  private static getPostTemplate(): HTMLTemplateElement {
     if (!FeedView.postTemplate) {
       FeedView.postTemplate = document.getElementById(
         'postTemplate'
@@ -63,15 +67,17 @@ export class FeedView {
   }
 
   private setTitle(post: Post, element: Element): void {
-    let title = post.title;
+    let { title } = post;
 
     if (post.lang !== this.lang) {
       title += ` [${this.languageMap[post.lang] ?? 'Unknown'}]`;
     }
+
+    // eslint-disable-next-line no-param-reassign
     element.textContent = title;
   }
 
-  private formatDate(date?: Date): string {
+  private static formatDate(date?: Date): string {
     if (date) {
       const formattedDate = date.toLocaleDateString('nl-NL', {
         dateStyle: 'short',

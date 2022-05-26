@@ -1,9 +1,9 @@
-import { Callback } from '../controller/feed.controller';
-import { FilterOptions } from '../model/filter.model';
+import { type Callback } from '../app';
+import { type SortOptions } from '../model/filter.model';
 
-type State = { display: string; options: FilterOptions };
+type State = { display: string; options: SortOptions };
 
-export class SortButtonView {
+export default class SortButtonView {
   private static states: State[] = [
     {
       display: 'Date ↓',
@@ -27,13 +27,12 @@ export class SortButtonView {
 
   constructor(
     private element: HTMLElement,
-    private callback: Callback<FilterOptions>
+    private callback: Callback<SortOptions>
   ) {
     this.updateElement();
   }
 
   listen(): void {
-    this.element = document.getElementById('sortButton')!;
     this.element.addEventListener('click', this.buttonClicked.bind(this));
   }
 
@@ -54,9 +53,7 @@ export class SortButtonView {
     this.updateElement();
   }
 
-  private updateElement() {
+  private updateElement(): void {
     this.element.textContent = this.state.display;
-
-    return;
   }
 }

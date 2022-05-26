@@ -6,6 +6,10 @@
   class="absolute bottom-8 left-4 cursor-pointer rounded-full md:fixed md:bottom-4"
   aria-label="toggle theme"
 >
-  <span id="lightModeIcon"> {{ icon('sun', 'theme-shadow') }} </span>
-  <span id="darkModeIcon"> {{ icon('moon', 'theme-shadow') }} </span>
+  <span class="hidden dark:inline" id="lightModeIcon">
+    {{ icon('sun', 'theme-shadow') }}
+  </span>
+  <span class="dark:hidden" id="darkModeIcon">
+    {{ icon('moon', 'theme-shadow') }}
+  </span>
 </button>

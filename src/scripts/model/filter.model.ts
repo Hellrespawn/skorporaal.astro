@@ -1,8 +1,16 @@
+export type SortType = 'alpha' | 'date';
+export type SortDir = 'ascending' | 'descending';
+
 export interface FilterOptions {
   filterType?: string;
   filterTitle?: string;
-  sortType?: 'alpha' | 'date';
-  sortDir?: 'ascending' | 'descending';
+  sortType?: SortType;
+  sortDir?: SortDir;
+}
+
+export interface SortOptions {
+  sortType: SortType;
+  sortDir: SortDir;
 }
 
 export class FilterModel {
@@ -10,28 +18,21 @@ export class FilterModel {
     sortType: 'date',
     sortDir: 'descending',
   };
-  private options = {} as FilterOptions;
 
-  updateOptions(value: FilterOptions): FilterOptions {
-    if (value.filterType && value.filterType === this.options.filterType) {
-      value.filterType = undefined;
+  private options: FilterOptions = {};
+
+  updateFilter(filterType: string): FilterOptions {
+    if (filterType === this.options.filterType) {
+      this.options.filterType = undefined;
+    } else {
+      this.options.filterType = filterType;
     }
 
-    if (value.sortType) {
-      if (value.sortType === this.options.sortType) {
-        value.sortDir =
-          this.options.sortDir === 'ascending' ? 'descending' : 'ascending';
-      } else {
-        if (value.sortType === 'alpha') {
-          this.options.sortDir = 'ascending';
-        } else {
-          this.options.sortDir = 'descending';
-        }
-      }
-    }
+    return this.options;
+  }
 
-    this.options = { ...this.options, ...value };
-
+  updateSort(sortOptions: SortOptions): FilterOptions {
+    this.options = { ...this.options, ...sortOptions };
     return this.options;
   }
 }

@@ -1,25 +1,31 @@
 import categoryData from '../../11ty/_data/categoryData.json';
-import { FilterModel, FilterOptions } from '../model/filter.model';
-import { PostModel } from '../model/post.model';
-import { FeedView } from '../view/feed.view';
-import { FilterButtonView } from '../view/filterButton.view';
-import { SortButtonView } from '../view/sortButton.view';
+import {
+  FilterModel,
+  type SortOptions,
+  type FilterOptions,
+} from '../model/filter.model';
+import PostModel from '../model/post.model';
+import FeedView from '../view/feed.view';
+import FilterButtonView from '../view/filterButton.view';
+import SortButtonView from '../view/sortButton.view';
 
-export type Callback<T> = (value: T) => void;
-
-export class FeedController {
+export default class FeedController {
   private postModel!: PostModel;
+
   private filterModel!: FilterModel;
+
   private feedView!: FeedView;
+
   private filterButtons!: FilterButtonView[];
+
   private sortButton!: SortButtonView;
 
-  static init(feedUrl: string): void {
-    new FeedController(feedUrl).render();
+  static async init(feedUrl: string): Promise<void> {
+    await new FeedController(feedUrl).render();
   }
 
   private constructor(feedUrl: string) {
-    this.feedView = this.createFeedView();
+    this.feedView = FeedController.createFeedView();
     this.postModel = new PostModel(feedUrl);
     this.filterModel = new FilterModel();
 
@@ -27,15 +33,13 @@ export class FeedController {
     this.sortButton = this.createSortButton();
   }
 
-  private render(): void {
-    // Void operator handles floating promise.
-    void this.postModel
-      .load()
-      .then(() => this.updateSort(FilterModel.defaultOptions));
+  private async render(): Promise<void> {
+    await this.postModel.load();
+    this.updateFeed(FilterModel.defaultOptions);
     this.listen();
   }
 
-  private createFeedView(): FeedView {
+  private static createFeedView(): FeedView {
     const feedElement = document.getElementById('postFeed')!;
     return new FeedView(feedElement);
   }
@@ -49,8 +53,8 @@ export class FeedController {
     return buttons;
   }
 
-  private updateFilter(update: FilterOptions): void {
-    const options = this.filterModel.updateOptions(update);
+  private updateFilter(type: string): void {
+    const options = this.filterModel.updateFilter(type);
     this.clearFilterButtons(options.filterType);
     this.updateFeed(options);
   }
@@ -69,8 +73,8 @@ export class FeedController {
     return button;
   }
 
-  private updateSort(update: FilterOptions): void {
-    const options = this.filterModel.updateOptions(update);
+  private updateSort(update: SortOptions): void {
+    const options = this.filterModel.updateSort(update);
     this.updateFeed(options);
   }
 
@@ -80,7 +84,9 @@ export class FeedController {
   }
 
   private listen(): void {
-    this.filterButtons.forEach((button) => button.listen());
+    this.filterButtons.forEach((button) => {
+      button.listen();
+    });
 
     this.sortButton.listen();
   }

@@ -1,8 +1,13 @@
-import { FeedController } from './controller/feed.controller';
-import DarkMode from './darkMode';
+import FeedController from './controller/feed.controller';
+import ThemeController from './controller/theme.controller';
 
-DarkMode.init();
+export type Callback<T> = (value: T) => void;
+
+ThemeController.init();
 
 if (window.location.pathname === '/') {
-  FeedController.init('/feed.json');
+  FeedController.init('/feed.json').catch((error) => {
+    // eslint-disable-next-line no-console
+    console.error(error);
+  });
 }
