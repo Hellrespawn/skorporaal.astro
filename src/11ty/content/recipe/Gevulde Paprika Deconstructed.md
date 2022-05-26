@@ -21,9 +21,9 @@ Dit recept is een aangepaste versie van een recept van [theKitchn](https://www.t
 | 1 el     | uienpoeder     |       |
 |          | totaal:        |  1438 |
 
-Calorieën per portie: 1438 / 3 = 479 1/3 kcal
+Calorieën per portie: $${1438 \\over 3} = 479 {1 \\over 3} kcal$$
 
-Calorieën per portie met 75g rijst/pasta: 479 1/3 + 260 = 739 1/3 kcal
+Calorieën per portie met 75g rijst/pasta: $$479 {1 \\over 3} + 260 = 739 {1 \\over 3} kcal$$
 
 ## Bereiding
 

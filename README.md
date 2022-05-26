@@ -9,7 +9,8 @@ This repository is public for the purposes of demonstration and education. Much 
 - TODO Write more about skorporaal.com
 - TODO Write more comprehensive about page
 - TODO Recepten schrijven voor kippensoep, tomatensoep, champignonsoep van Oma, Hachee papke.
+- TODO? Invert filter functionality? Enable/disable individual tags?
 - TODO? Create nunjucks macro which calls @ for local links?
 - TODO? Move border to post-heading.njk?
-- TODO? Markdown math rendering?
 - TODO? Local versions of font?
+- TODO? Local versions of KaTeX styles and font?

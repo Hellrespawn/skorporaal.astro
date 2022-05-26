@@ -1,6 +1,13 @@
 const htmlmin = require('html-minifier');
+const katex = require('katex');
 
 module.exports = {
+  katex: (content) => {
+    return content.replace(/\$\$(.+?)\$\$/g, (_, equation) => {
+      return katex.renderToString(equation);
+    });
+  },
+
   minifyHtml: (content, outputPath) => {
     if (outputPath && outputPath.endsWith('html')) {
       return htmlmin.minify(content, {

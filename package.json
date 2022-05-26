@@ -43,6 +43,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.2",
     "html-minifier": "^4.0.0",
+    "katex": "^0.15.6",
     "markdown-it": "^13.0.1",
     "markdown-it-external-links": "^0.0.6",
     "markdown-it-footnote": "^3.0.3",

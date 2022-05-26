@@ -21,9 +21,9 @@ title: Simpele Teriyaki
 | 3el       | olie          |   240 |
 |           | totaal:       |  1070 |
 
-Calorieën per portie: 535 kcal +
+Calorieën per portie: $${1070 \\over 2} = 535  kcal$$
 
-Calorieën per portie met 75g rijst = 535 + (3/4 \* 350) = 797 1/2 kcal
+Calorieën per portie met 75g rijst: $$535 + 262 {1 \\over 2} = 797 {1 \\over 2} kcal$$
 
 ## Bereiding
 

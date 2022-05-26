@@ -67,7 +67,7 @@ Geen van deze onderdelen zijn vereist, maar ze maken het allemaal lekkerder!
 | oregano              | 1 el (naar smaak) |
 | tijm                 | 1 el (naar smaak) |
 
-Minimaal aantal calorieën: 2546 kcal
+Minimaal aantal calorieën: $$2546 kcal$$
 
 ## Saus
 

@@ -14,7 +14,7 @@ Dit is een aangepaste versie van [dit recept](https://weaselle.tumblr.com/post/1
 | 1 á 2 el   | boter                 |   100 |
 | 60 ml      | room                  |   120 |
 | naar smaak | kruiden / smaakmakers |       |
-|            | totaal:               |   440 |
+|            | minimaal:             |   440 |
 
 ## Bereiding
 

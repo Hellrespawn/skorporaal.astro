@@ -15,6 +15,8 @@ authors:
 | 10g    | boter                   |    75 |
 |        | totaal:                 |  1475 |
 
+Calorieën per portie: $${1475 \\over 2} = 737 {1 \\over 2} kcal$$
+
 [^1]: Als je grovere voorgesneden andijvie hebt, stamp deze aan het eind dan hard door de aardappels heen om het te kortwieken.
 
 ## Bereiding

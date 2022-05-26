@@ -4,27 +4,27 @@ title: Simpele Katsu
 
 ## Ingrediënten
 
-| #:             | Ingredient: | kcal: |
-| -------------- | ----------- | ----: |
-| 300g (3 stuks) | kipdijfilet |   465 |
-| 3 el           | sojasaus    |    15 |
-| 1 el           | mirin       |    24 |
-| 1 el           | rijstazijn  |    12 |
-| 1 el           | bloem       |    20 |
-| 1              | ei          |    60 |
-| 60g            | panko       |   220 |
-| 0.5            | ui          |    12 |
-| 1              | paprika     |    20 |
-| 200g           | champignons |    40 |
-| 100g           | bosui       |    20 |
-| 3 el           | olie        |   240 |
-|                | totaal:     |  1148 |
+| #:               | Ingredient: | kcal: |
+| ---------------- | ----------- | ----: |
+| 300g (3 stuks)   | kipdijfilet |   465 |
+| 3 el             | sojasaus    |    15 |
+| 1 el             | mirin       |    24 |
+| 1 el             | rijstazijn  |    12 |
+| 1 el             | bloem       |    20 |
+| 1                | ei          |    60 |
+| 60g              | panko       |   220 |
+| $${1 \\over 2}$$ | ui          |    12 |
+| 1                | paprika     |    20 |
+| 200g             | champignons |    40 |
+| 100g             | bosui       |    20 |
+| 3 el             | olie        |   240 |
+|                  | totaal:     |  1148 |
 
-Calorieën per portie: 574 kcal +
+Calorieën per portie: $${1148 \\over 2} = 574  kcal$$
 
-Portie met grote wrap : stem:[574 + 190 = 764 kcal] +
+Calorieën per portie met grote wrap: $$574 + 190 = 764 kcal$$
 
-Portie met 50g rijst : stem:[574 + 175 = 749 kcal] +
+Calorieën per portie met 50g rijst: $$574 + 175 = 749 kcal$$
 
 ## Bereiding
 
