@@ -13,6 +13,14 @@ module.exports = {
     return 'A long time ago...';
   },
 
+  formatDateTime: (date) => {
+    let formattedDate = date.toLocaleString('nl-NL', {
+      dateStyle: 'short',
+      timeStyle: 'long',
+    });
+    return `<time datetime="${date.toISOString()}">${formattedDate}</time>`;
+  },
+
   toISOString: (date) => {
     return date.toISOString();
   },

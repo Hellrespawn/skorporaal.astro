@@ -4,7 +4,7 @@
 
 @layer components {
   .button {
-    @apply my-1 flex flex-row items-baseline py-2 px-2 text-zinc-700 transition-colors duration-75 hover:bg-zinc-100 active:bg-zinc-200 dark:text-zinc-200 hover:dark:bg-zinc-750 active:dark:bg-zinc-700;
+    @apply my-1 flex flex-row items-baseline rounded-sm py-2 px-2 text-gray-700 transition-colors duration-75 hover:bg-gray-100 active:bg-gray-200 dark:text-gray-200 hover:dark:bg-gray-750 active:dark:bg-gray-700;
   }
 
   .button.button-clip {
@@ -12,11 +12,11 @@
   }
 
   button.button-medium {
-    @apply text-zinc-600 dark:text-zinc-300;
+    @apply text-gray-600 dark:text-gray-300;
   }
 
   button.button-dark {
-    @apply text-zinc-400 dark:text-zinc-500;
+    @apply text-gray-400 dark:text-gray-500;
   }
 
   .prose-full {
@@ -30,19 +30,19 @@
   }
 
   .fancy-internal-link {
-    @apply fancy-link from-primary-100 to-primary-100 dark:from-accent-900 dark:to-accent-900;
+    @apply fancy-link from-tertiary-200 to-tertiary-200 dark:from-tertiary-900 dark:to-tertiary-900;
   }
 
   .fancy-external-link {
-    @apply fancy-link from-accent-200 to-accent-200 dark:from-primary-700 dark:to-primary-700;
+    @apply fancy-link from-secondary-200 to-secondary-200 dark:from-primary-700 dark:to-primary-700;
   }
 
   .reset-text-color {
-    @apply text-zinc-700 no-underline dark:text-zinc-300;
+    @apply text-gray-700 no-underline dark:text-gray-300;
   }
 
   .theme-shadow {
     @apply transition-shadow duration-100 md:shadow-md
-    md:shadow-zinc-400 md:hover:shadow-zinc-500 md:dark:shadow-zinc-900 md:dark:hover:shadow-mdlg md:dark:hover:shadow-black;
+    md:shadow-gray-400 md:hover:shadow-gray-500 md:dark:shadow-gray-900 md:dark:hover:shadow-mdlg md:dark:hover:shadow-black;
   }
 }

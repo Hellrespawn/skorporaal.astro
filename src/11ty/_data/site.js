@@ -8,4 +8,5 @@ module.exports = {
   url: 'skorporaal.com',
   email: 'stef@skorporaal.com',
   github: 'https://github.com/Hellrespawn',
+  builtAt: new Date(),
 };

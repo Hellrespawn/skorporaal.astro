@@ -1,11 +1,14 @@
 <footer
-  class="relative flex flex-row justify-end bg-zinc-100 py-12 px-8 text-zinc-400 dark:bg-zinc-700 dark:text-zinc-400 md:px-12"
+  class="relative flex flex-row justify-between bg-gray-100 py-8 px-4 text-gray-400 dark:bg-gray-700 dark:text-gray-400 md:justify-end md:px-8"
 >
-  {% include 'theme-toggle.njk' %}
-  <div>
-    Copyright © 2022
-    <a href="mailto:{{ site.email }}" class="fancy-external-link"
-      >{{ site.name }}</a
-    >
+  <div class="mr-2 flex flex-col">
+    <div class="font-bold">
+      Copyright © 2022
+      <a href="mailto:{{ site.email }}" class="fancy-external-link"
+        >{{ site.name }}</a
+      >
+    </div>
+    <div>Last updated on {{ site.builtAt | formatDateTime | safe }}</div>
   </div>
+  {% include 'theme-toggle.njk' %}
 </footer>

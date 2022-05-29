@@ -1,10 +1,10 @@
 {
-  "recipe": {
-    "bg": "bg-accent-500",
-    "border": "border-accent-500",
-    "plural": "Recipes",
-    "single": "Recipe",
-    "text": "text-accent-500"
+  "article": {
+    "bg": "bg-secondary-500",
+    "border": "border-secondary-500",
+    "plural": "Articles",
+    "single": "Article",
+    "text": "text-secondary-500"
   },
   "portfolio": {
     "bg": "bg-primary-500",
@@ -13,11 +13,11 @@
     "single": "Portfolio",
     "text": "text-primary-500"
   },
-  "article": {
-    "bg": "bg-zinc-500",
-    "border": "border-zinc-500",
-    "plural": "Articles",
-    "single": "Article",
-    "text": "text-zinc-500"
+  "recipe": {
+    "bg": "bg-tertiary-500",
+    "border": "border-tertiary-500",
+    "plural": "Recipes",
+    "single": "Recipe",
+    "text": "text-tertiary-500"
   }
 }
