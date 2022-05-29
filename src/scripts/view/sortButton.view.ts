@@ -1,7 +1,7 @@
 import { type Callback } from '../app';
 import { type SortOptions } from '../model/filter.model';
 
-type State = { display: string; options: SortOptions };
+export type State = { display: string; options: SortOptions };
 
 export default class SortButtonView {
   private static states: State[] = [
@@ -23,12 +23,15 @@ export default class SortButtonView {
     },
   ];
 
-  private state = SortButtonView.states[0];
+  private state;
 
   constructor(
     private element: HTMLElement,
-    private callback: Callback<SortOptions>
+    private callback: Callback<SortOptions>,
+    sortOptions: SortOptions
   ) {
+    this.state = SortButtonView.getInitialState(sortOptions);
+
     this.updateElement();
   }
 
@@ -36,12 +39,26 @@ export default class SortButtonView {
     this.element.addEventListener('click', this.buttonClicked.bind(this));
   }
 
+  private static getInitialState(sortOptions: SortOptions): State {
+    const state = SortButtonView.states.find(
+      (sortState) =>
+        sortState.options.sortType === sortOptions.sortType &&
+        sortState.options.sortDir === sortOptions.sortDir
+    );
+
+    if (!state) {
+      throw new Error(`Invalid sorter state: ${sortOptions}`);
+    }
+
+    return state;
+  }
+
   private buttonClicked(): void {
-    this.cycle();
+    this.cycleState();
     this.callback(this.state.options);
   }
 
-  private cycle(): void {
+  private cycleState(): void {
     const index = SortButtonView.states.indexOf(this.state);
     if (index === -1) {
       throw new Error('SortButton state is invalid!');

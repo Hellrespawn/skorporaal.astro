@@ -3,10 +3,12 @@ import ThemeController from './controller/theme.controller';
 
 export type Callback<T> = (value: T) => void;
 
-ThemeController.init();
+new ThemeController().render();
 
 if (window.location.pathname === '/') {
-  FeedController.init('/feed.json').catch((error) => {
+  const controller = new FeedController('/feed.json', ['article', 'portfolio']);
+
+  controller.render().catch((error) => {
     // eslint-disable-next-line no-console
     console.error(error);
   });

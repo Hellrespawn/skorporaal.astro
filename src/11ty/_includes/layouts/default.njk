@@ -2,13 +2,13 @@
 layout: 'base.njk'
 ---
 
-<main class="flex flex-col md:h-screen md:flex-row">
+<main class="flex flex-col md:min-h-screen md:flex-row">
   <section
-    class="my-8 mx-4 flex flex-col items-center justify-center md:m-8 md:w-1/2"
+    class="flex flex-col items-center justify-center py-8 px-4 md:h-screen md:w-1/2 md:flex-none md:p-8"
   >
     {% include 'bio.njk' %}
   </section>
 
-  {{ content | safe }}
+  <section class="flex-none md:w-1/2">{{ content | safe }}</section>
 </main>
 {% include 'footer.njk' %}

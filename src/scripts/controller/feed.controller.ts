@@ -1,41 +1,33 @@
 import categoryData from '../../11ty/_data/categoryData.json';
-import {
-  FilterModel,
-  type SortOptions,
-  type FilterOptions,
-} from '../model/filter.model';
+import { FilterModel, type SortOptions } from '../model/filter.model';
 import PostModel from '../model/post.model';
 import FeedView from '../view/feed.view';
 import FilterButtonView from '../view/filterButton.view';
 import SortButtonView from '../view/sortButton.view';
 
 export default class FeedController {
-  private postModel!: PostModel;
+  private postModel: PostModel;
 
-  private filterModel!: FilterModel;
+  private filterModel: FilterModel;
 
-  private feedView!: FeedView;
+  private feedView: FeedView;
 
-  private filterButtons!: FilterButtonView[];
+  private filterButtons: FilterButtonView[];
 
-  private sortButton!: SortButtonView;
+  private sortButton: SortButtonView;
 
-  static async init(feedUrl: string): Promise<void> {
-    await new FeedController(feedUrl).render();
-  }
-
-  private constructor(feedUrl: string) {
-    this.feedView = FeedController.createFeedView();
+  constructor(feedUrl: string, defaultTypes?: string[]) {
     this.postModel = new PostModel(feedUrl);
-    this.filterModel = new FilterModel();
+    this.filterModel = new FilterModel(defaultTypes);
 
+    this.feedView = FeedController.createFeedView();
     this.filterButtons = this.createFilterButtons();
     this.sortButton = this.createSortButton();
   }
 
-  private async render(): Promise<void> {
+  async render(): Promise<void> {
     await this.postModel.load();
-    this.updateFeed(FilterModel.defaultOptions);
+    this.updateFeed();
     this.listen();
   }
 
@@ -47,39 +39,46 @@ export default class FeedController {
   private createFilterButtons(): FilterButtonView[] {
     const buttons = Object.keys(categoryData).map((type) => {
       const element = document.getElementById(`${type}FilterButton`)!;
-      return new FilterButtonView(element, this.updateFilter.bind(this), type);
+      return new FilterButtonView(
+        element,
+        this.updateFilter.bind(this),
+        type,
+        this.filterModel.getActiveTypes()
+      );
     });
 
     return buttons;
   }
 
   private updateFilter(type: string): void {
-    const options = this.filterModel.updateFilter(type);
-    this.clearFilterButtons(options.filterType);
-    this.updateFeed(options);
+    this.filterModel.updateFilter(type);
+    this.updateFilterButtons();
+    this.updateFeed();
   }
 
-  private clearFilterButtons(currentType?: string): void {
-    this.filterButtons.forEach((button) => {
-      if (!currentType || button.type !== currentType) {
-        button.clear();
-      }
-    });
+  private updateFilterButtons(): void {
+    this.filterButtons.forEach((button) =>
+      button.set(this.filterModel.getActiveTypes())
+    );
   }
 
   private createSortButton(): SortButtonView {
     const element = document.getElementById('sortButton')!;
-    const button = new SortButtonView(element, this.updateSort.bind(this));
+    const button = new SortButtonView(
+      element,
+      this.updateSort.bind(this),
+      this.filterModel.getSortOptions()
+    );
     return button;
   }
 
   private updateSort(update: SortOptions): void {
-    const options = this.filterModel.updateSort(update);
-    this.updateFeed(options);
+    this.filterModel.updateSort(update);
+    this.updateFeed();
   }
 
-  private updateFeed(options: FilterOptions): void {
-    const posts = this.postModel.getPosts(options);
+  private updateFeed(): void {
+    const posts = this.postModel.getPosts(this.filterModel.getState());
     this.feedView.render(posts);
   }
 

@@ -32,5 +32,9 @@ module.exports = {
     // Not properly configured in base configs.
     'no-useless-constructor': 'off',
     '@typescript-eslint/no-useless-constructor': ['error'],
+
+    'max-classes-per-file': 'off',
+
+    '@typescript-eslint/restrict-template-expressions': 'off',
   },
 };

@@ -1,4 +1,4 @@
-import { type FilterOptions } from './filter.model';
+import { type FilterState } from './filter.model';
 import Post from '../post';
 
 interface JsonPost {
@@ -16,35 +16,23 @@ export default class PostModel {
 
   constructor(private url: string) {}
 
-  getPosts(options?: FilterOptions): Post[] {
+  getPosts(state: FilterState): Post[] {
     if (!this.loaded) {
       throw new Error('PostModel was not loaded.');
     }
 
     let posts = this.posts.slice();
 
-    if (!options) {
-      return posts;
-    }
+    const activeTypes = state.getActiveTypes();
 
-    if (options.filterTitle) {
+    if (activeTypes.length) {
       posts = posts.filter((post) =>
-        PostModel.filterPostModelByTitle(post, options.filterTitle!)
+        PostModel.filterPostModelByType(post, activeTypes)
       );
     }
 
-    if (options.filterType) {
-      posts = posts.filter((post) =>
-        PostModel.filterPostModelByType(post, options.filterType!)
-      );
-    }
-
-    if (options.sortType) {
-      posts = PostModel.sortPostModels(
-        posts,
-        options.sortType,
-        options.sortDir ?? 'descending'
-      );
+    if (state.sortType) {
+      posts = PostModel.sortPostModels(posts, state.sortType, state.sortDir);
     }
 
     return posts;
@@ -132,9 +120,9 @@ export default class PostModel {
 
   private static filterPostModelByType(
     post: Post,
-    typeFilter: string
+    activeTypes: string[]
   ): boolean {
-    return post.type === typeFilter;
+    return activeTypes.includes(post.type);
   }
 
   private static sortPostModels(
