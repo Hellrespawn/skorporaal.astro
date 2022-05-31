@@ -7,12 +7,9 @@ layout: 'base.njk'
 <main class="flex flex-col items-center">
   <div class="mx-3 md:mx-0">
     <nav class="my-8">{% include 'top-bar.njk' %}</nav>
-    <div class="text-sm {{ data.text }}">{{ data.single }}</div>
-    <article
-      lang="{{ language }}"
-      class="{{ data.border }} w-full border-t-2 py-8 prose-full"
-    >
-      {% include 'post-heading.njk' %} {{ content | safe }}
+    <article lang="{{ language }}" class="w-full">
+      {% include 'post-heading.njk' %}
+      <div class="prose-full">{{ content | safe }}</div>
     </article>
   </div>
 </main>

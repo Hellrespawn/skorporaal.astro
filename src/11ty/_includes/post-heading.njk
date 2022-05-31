@@ -1,10 +1,20 @@
-<div class="flex flex-row flex-wrap items-center justify-between">
+<!-- Category name -->
+<div class="text-sm {{ data.text }}">{{ data.single }}</div>
+<!-- Heading with border -->
+<div
+  class="{{ data.border }} flex flex-row flex-wrap items-center justify-between border-t-2 pt-8"
+>
+  <!-- Date -->
   <span class="text-left text-gray-400 dark:text-gray-500"
     >{{ date | formatDate | safe }}</span
   >
+
   {% if authors %}<span class="text-right italic">
+    <!-- Authors -->
     {{ authors | join(", ")}}
   </span>
   {% endif %}
 </div>
+
+<!-- Title -->
 <h1 class="mt-2 text-3xl">{{ title }}</h1>
