@@ -6,9 +6,11 @@ module.exports = {
   ignorePatterns: ['*.js', '*.cjs', '*.html'],
   extends: [
     'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'eslint-config-prettier',
+    'plugin:@typescript-eslint/strict',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -19,29 +21,15 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   rules: {
     /* Logic Errors */
-    // I like separating normal imports and type imports.
-    '@typescript-eslint/consistent-type-imports': 'warn',
-    '@typescript-eslint/lines-between-class-members': ['warn', 'always'],
     // Enforces use of Promise.all
     'no-await-in-loop': 'error',
     'no-constant-binary-expression': 'error',
     'no-constructor-return': 'error',
     'no-duplicate-imports': 'warn',
-    // These are very useful in the context of writing code for the browser.
-    '@typescript-eslint/no-non-null-assertion': 'off',
     'no-self-compare': 'warn',
     'no-template-curly-in-string': 'warn',
     'no-unreachable-loop': 'warn',
     'no-unused-private-class-members': 'error',
-    // Allow unused vars starting with '_'
-    'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': [
-      'warn',
-      { argsIgnorePattern: '^_', destructuredArrayIgnorePattern: '^_' },
-    ],
-    // Warns on useless constructor
-    'no-useless-constructor': 'off',
-    '@typescript-eslint/no-useless-constructor': ['error'],
     'require-atomic-updates': 'warn',
     /* Suggestions */
     camelcase: 'warn',
@@ -78,6 +66,18 @@ module.exports = {
     'prefer-spread': 'warn',
     'require-await': 'error',
     'sort-imports': 'warn',
-    /* LAyout & Formatting */
+    /* TypeScript */
+    '@typescript-eslint/lines-between-class-members': ['warn', 'always'],
+    // These are very useful in the context of writing code for the browser.
+    '@typescript-eslint/no-non-null-assertion': 'off',
+
+    // Allow unused vars starting with '_'
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      { argsIgnorePattern: '^_', destructuredArrayIgnorePattern: '^_' },
+    ],
+    '@typescript-eslint/member-ordering': 'warn',
+    '@typescript-eslint/no-confusing-void-expression': 'warn',
   },
 };

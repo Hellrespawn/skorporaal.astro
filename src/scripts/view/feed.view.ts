@@ -2,7 +2,7 @@
 import type Post from '../post';
 import categoryData from '../../11ty/_data/categoryData.json';
 
-const LANGUAGE_MAPS: { [key: string]: { [key: string]: string } } = {
+const LANGUAGE_MAPS: Record<string, Record<string, string>> = {
   en: { en: 'English', nl: 'Dutch' },
   nl: { en: 'Engels', nl: 'Nederlands' },
 };
@@ -15,11 +15,33 @@ export default class FeedView {
 
   private lang: string;
 
-  private languageMap: { [key: string]: string };
+  private languageMap: Record<string, string>;
 
   constructor(private element: HTMLElement) {
     this.lang = document.documentElement.lang;
-    this.languageMap = LANGUAGE_MAPS[this.lang];
+    this.languageMap = LANGUAGE_MAPS[this.lang]!;
+  }
+
+  private static getPostTemplate(): HTMLTemplateElement {
+    if (!FeedView.postTemplate) {
+      FeedView.postTemplate = document.getElementById(
+        'postTemplate'
+      ) as HTMLTemplateElement;
+    }
+
+    return FeedView.postTemplate;
+  }
+
+  private static formatDate(date?: Date): string {
+    if (date) {
+      const formattedDate = date.toLocaleDateString('nl-NL', {
+        dateStyle: 'short',
+      });
+
+      return `<time datetime="${formattedDate}">${formattedDate}</time>`;
+    }
+
+    return 'A long time ago...';
   }
 
   render(posts: Post[]): void {
@@ -41,30 +63,20 @@ export default class FeedView {
     anchor.href = post.url;
 
     // dot
-    const [dot] = element.getElementsByClassName('postDot');
+    const dot = element.getElementsByClassName('postDot')[0]!;
     const { bg } =
       categoryData[post.type as 'recipe' | 'article' | 'portfolio'];
 
     dot.classList.add(bg);
 
     // title
-    this.setTitle(post, element.getElementsByClassName('postTitle')[0]);
+    this.setTitle(post, element.getElementsByClassName('postTitle')[0]!);
 
     // date
-    const [date] = element.getElementsByClassName('postDate');
+    const date = element.getElementsByClassName('postDate')[0]!;
     date.innerHTML = FeedView.formatDate(post.date);
 
     return element;
-  }
-
-  private static getPostTemplate(): HTMLTemplateElement {
-    if (!FeedView.postTemplate) {
-      FeedView.postTemplate = document.getElementById(
-        'postTemplate'
-      ) as HTMLTemplateElement;
-    }
-
-    return FeedView.postTemplate;
   }
 
   private addAttributesToPostElement(post: Post, element: HTMLLIElement): void {
@@ -82,17 +94,5 @@ export default class FeedView {
     }
 
     element.textContent = title;
-  }
-
-  private static formatDate(date?: Date): string {
-    if (date) {
-      const formattedDate = date.toLocaleDateString('nl-NL', {
-        dateStyle: 'short',
-      });
-
-      return `<time datetime="${formattedDate}">${formattedDate}</time>`;
-    }
-
-    return 'A long time ago...';
   }
 }

@@ -25,15 +25,15 @@ export default class FeedController {
     this.sortButton = this.createSortButton();
   }
 
+  private static createFeedView(): FeedView {
+    const feedElement = document.getElementById('postFeed')!;
+    return new FeedView(feedElement);
+  }
+
   async render(): Promise<void> {
     await this.postModel.load();
     this.updateFeed();
     this.listen();
-  }
-
-  private static createFeedView(): FeedView {
-    const feedElement = document.getElementById('postFeed')!;
-    return new FeedView(feedElement);
   }
 
   private createFilterButtons(): FilterButtonView[] {
@@ -57,9 +57,9 @@ export default class FeedController {
   }
 
   private updateFilterButtons(): void {
-    this.filterButtons.forEach((button) =>
-      button.set(this.filterModel.getActiveTypes())
-    );
+    this.filterButtons.forEach((button) => {
+      button.set(this.filterModel.getActiveTypes());
+    });
   }
 
   private createSortButton(): SortButtonView {

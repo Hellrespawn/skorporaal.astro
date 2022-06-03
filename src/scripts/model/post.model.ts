@@ -16,36 +16,7 @@ export default class PostModel {
 
   constructor(private url: string) {}
 
-  getPosts(state: FilterState): Post[] {
-    if (!this.loaded) {
-      throw new Error('PostModel was not loaded.');
-    }
-
-    let posts = this.posts.slice();
-
-    const activeTypes = state.getActiveTypes();
-
-    if (activeTypes.length) {
-      posts = posts.filter((post) =>
-        PostModel.filterPostModelByType(post, activeTypes)
-      );
-    }
-
-    if (state.sortType) {
-      posts = PostModel.sortPostModels(posts, state.sortType, state.sortDir);
-    }
-
-    return posts;
-  }
-
-  async load(): Promise<void> {
-    const response = await fetch(this.url);
-    const json = (await response.json()) as { posts: JsonPost[] };
-    this.posts = json.posts.map(PostModel.jsonToPost);
-    this.loaded = true;
-  }
-
-  private static jsonToPost(this: void, jsonPost: JsonPost): Post {
+  private static jsonToPost(jsonPost: JsonPost): Post {
     return new Post(
       jsonPost.title,
       jsonPost.type,
@@ -55,27 +26,15 @@ export default class PostModel {
     );
   }
 
-  private static sortByAlphaAscending(
-    this: void,
-    left: Post,
-    right: Post
-  ): number {
+  private static sortByAlphaAscending(left: Post, right: Post): number {
     return left.title.localeCompare(right.title);
   }
 
-  private static sortByAlphaDescending(
-    this: void,
-    left: Post,
-    right: Post
-  ): number {
+  private static sortByAlphaDescending(left: Post, right: Post): number {
     return -PostModel.sortByAlphaAscending(left, right);
   }
 
-  private static sortByDateAscending(
-    this: void,
-    left: Post,
-    right: Post
-  ): number {
+  private static sortByDateAscending(left: Post, right: Post): number {
     let sort: number;
 
     if (!left.date && !right.date) {
@@ -91,11 +50,7 @@ export default class PostModel {
     return sort;
   }
 
-  private static sortByDateDescending(
-    this: void,
-    left: Post,
-    right: Post
-  ): number {
+  private static sortByDateDescending(left: Post, right: Post): number {
     let sort: number;
 
     if (!left.date && !right.date) {
@@ -134,16 +89,51 @@ export default class PostModel {
 
     if (sortType === 'alpha') {
       if (sortDir === 'ascending') {
-        sortedPosts = posts.sort(PostModel.sortByAlphaAscending);
+        sortedPosts = posts.sort((left, right) =>
+          PostModel.sortByAlphaAscending(left, right)
+        );
       } else {
-        sortedPosts = posts.sort(PostModel.sortByAlphaDescending);
+        sortedPosts = posts.sort((left, right) =>
+          PostModel.sortByAlphaDescending(left, right)
+        );
       }
     } else if (sortDir === 'ascending') {
-      sortedPosts = posts.sort(PostModel.sortByDateAscending);
+      sortedPosts = posts.sort((left, right) =>
+        PostModel.sortByDateAscending(left, right)
+      );
     } else {
-      sortedPosts = posts.sort(PostModel.sortByDateDescending);
+      sortedPosts = posts.sort((left, right) =>
+        PostModel.sortByDateDescending(left, right)
+      );
     }
 
     return sortedPosts;
+  }
+
+  getPosts(state: FilterState): Post[] {
+    if (!this.loaded) {
+      throw new Error('PostModel was not loaded.');
+    }
+
+    let posts = this.posts.slice();
+
+    const activeTypes = state.getActiveTypes();
+
+    if (activeTypes.length) {
+      posts = posts.filter((post) =>
+        PostModel.filterPostModelByType(post, activeTypes)
+      );
+    }
+
+    posts = PostModel.sortPostModels(posts, state.sortType, state.sortDir);
+
+    return posts;
+  }
+
+  async load(): Promise<void> {
+    const response = await fetch(this.url);
+    const json = (await response.json()) as { posts: JsonPost[] };
+    this.posts = json.posts.map((post) => PostModel.jsonToPost(post));
+    this.loaded = true;
   }
 }

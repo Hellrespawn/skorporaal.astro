@@ -3,21 +3,22 @@ import categoryData from '../../11ty/_data/categoryData.json';
 export type SortType = 'alpha' | 'date';
 export type SortDirection = 'ascending' | 'descending';
 
+export interface SortOptions {
+  sortType: SortType;
+  sortDir: SortDirection;
+}
+
 export class FilterState {
   private static types = Object.keys(categoryData);
-
-  private filteredTypes!: string[];
 
   sortType: SortType = 'date';
 
   sortDir: SortDirection = 'descending';
 
+  private filteredTypes!: string[];
+
   constructor(private defaultTypes: string[] = FilterState.types.slice()) {
     this.resetFilter();
-  }
-
-  private resetFilter() {
-    this.filteredTypes = this.defaultTypes.slice();
   }
 
   getActiveTypes(): string[] {
@@ -41,11 +42,10 @@ export class FilterState {
       this.resetFilter();
     }
   }
-}
 
-export interface SortOptions {
-  sortType: SortType;
-  sortDir: SortDirection;
+  private resetFilter() {
+    this.filteredTypes = this.defaultTypes.slice();
+  }
 }
 
 export class FilterModel {
@@ -81,8 +81,8 @@ export class FilterModel {
   }
 
   updateSort(sortOptions: SortOptions): FilterState {
-    this.state.sortDir = sortOptions.sortDir ?? this.state.sortDir;
-    this.state.sortType = sortOptions.sortType ?? this.state.sortType;
+    this.state.sortDir = sortOptions.sortDir;
+    this.state.sortType = sortOptions.sortType;
 
     this.saveState();
 

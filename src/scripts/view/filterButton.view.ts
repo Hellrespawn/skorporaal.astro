@@ -18,9 +18,9 @@ export default class FilterButtonView {
 
   set(activeTypes: string[]): void {
     if (activeTypes.includes(this.type)) {
-      this.element?.classList.remove(...FilterButtonView.classes);
+      this.element.classList.remove(...FilterButtonView.classes);
     } else {
-      this.element?.classList.add(...FilterButtonView.classes);
+      this.element.classList.add(...FilterButtonView.classes);
     }
   }
 

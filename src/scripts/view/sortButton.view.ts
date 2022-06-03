@@ -1,7 +1,10 @@
 import { type Callback } from '../app';
 import { type SortOptions } from '../model/filter.model';
 
-export type State = { display: string; options: SortOptions };
+export interface State {
+  display: string;
+  options: SortOptions;
+}
 
 export default class SortButtonView {
   private static states: State[] = [
@@ -35,10 +38,6 @@ export default class SortButtonView {
     this.updateElement();
   }
 
-  listen(): void {
-    this.element.addEventListener('click', this.buttonClicked.bind(this));
-  }
-
   private static getInitialState(sortOptions: SortOptions): State {
     const state = SortButtonView.states.find(
       (sortState) =>
@@ -47,10 +46,16 @@ export default class SortButtonView {
     );
 
     if (!state) {
-      throw new Error(`Invalid sorter state: ${sortOptions.toString()}`);
+      throw new Error(
+        `Invalid sorter state: { type: ${sortOptions.sortType}, dir: ${sortOptions.sortType} }`
+      );
     }
 
     return state;
+  }
+
+  listen(): void {
+    this.element.addEventListener('click', this.buttonClicked.bind(this));
   }
 
   private buttonClicked(): void {
@@ -66,7 +71,7 @@ export default class SortButtonView {
 
     const newIndex = (index + 1) % SortButtonView.states.length;
 
-    this.state = SortButtonView.states[newIndex];
+    this.state = SortButtonView.states[newIndex]!;
     this.updateElement();
   }
 
