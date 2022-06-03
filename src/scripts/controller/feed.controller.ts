@@ -1,9 +1,9 @@
-import categoryData from '../../11ty/_data/categoryData.json';
 import { FilterModel, type SortOptions } from '../model/filter.model';
-import PostModel from '../model/post.model';
 import FeedView from '../view/feed.view';
 import FilterButtonView from '../view/filterButton.view';
+import PostModel from '../model/post.model';
 import SortButtonView from '../view/sortButton.view';
+import categoryData from '../../11ty/_data/categoryData.json';
 
 export default class FeedController {
   private postModel: PostModel;

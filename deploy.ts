@@ -1,8 +1,7 @@
-/* eslint-disable no-console */
-import dotenv from 'dotenv';
 import * as fs from 'node:fs/promises';
-import * as path from 'node:path';
 import * as ftp from 'basic-ftp';
+import * as path from 'node:path';
+import dotenv from 'dotenv';
 
 dotenv.config({ override: true });
 

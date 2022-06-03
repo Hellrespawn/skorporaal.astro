@@ -1,5 +1,5 @@
-import ThemeModel from '../model/theme.model';
 import ThemeButtonView from '../view/themeButton.view';
+import ThemeModel from '../model/theme.model';
 
 export default class ThemeController {
   private themeButtonView: ThemeButtonView;

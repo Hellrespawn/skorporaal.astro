@@ -41,7 +41,7 @@ export default class FeedView {
     anchor.href = post.url;
 
     // dot
-    const dot = element.getElementsByClassName('postDot')[0];
+    const [dot] = element.getElementsByClassName('postDot');
     const { bg } =
       categoryData[post.type as 'recipe' | 'article' | 'portfolio'];
 
@@ -51,7 +51,7 @@ export default class FeedView {
     this.setTitle(post, element.getElementsByClassName('postTitle')[0]);
 
     // date
-    const date = element.getElementsByClassName('postDate')[0];
+    const [date] = element.getElementsByClassName('postDate');
     date.innerHTML = FeedView.formatDate(post.date);
 
     return element;

@@ -6,7 +6,6 @@ module.exports = {
   ignorePatterns: ['*.js', '*.cjs', '*.html'],
   extends: [
     'eslint:recommended',
-    'eslint-config-airbnb-base',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'eslint-config-prettier',
@@ -19,22 +18,66 @@ module.exports = {
   },
   plugins: ['@typescript-eslint'],
   rules: {
-    // These are very useful in the context of writing code for the browser.
-    '@typescript-eslint/no-non-null-assertion': 'off',
-    // Not sure why devDependencies from package.json aren't allowed.
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
-    // Doesn't work because of bundler.
-    'import/no-unresolved': 'off',
-    // Doesn't play nice with filenames like feed.controller.ts.
-    'import/extensions': ['off'],
+    /* Logic Errors */
     // I like separating normal imports and type imports.
     '@typescript-eslint/consistent-type-imports': 'warn',
-    // Not properly configured in base configs.
+    '@typescript-eslint/lines-between-class-members': ['warn', 'always'],
+    // Enforces use of Promise.all
+    'no-await-in-loop': 'error',
+    'no-constant-binary-expression': 'error',
+    'no-constructor-return': 'error',
+    'no-duplicate-imports': 'warn',
+    // These are very useful in the context of writing code for the browser.
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    'no-self-compare': 'warn',
+    'no-template-curly-in-string': 'warn',
+    'no-unreachable-loop': 'warn',
+    'no-unused-private-class-members': 'error',
+    // Allow unused vars starting with '_'
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      { argsIgnorePattern: '^_', destructuredArrayIgnorePattern: '^_' },
+    ],
+    // Warns on useless constructor
     'no-useless-constructor': 'off',
     '@typescript-eslint/no-useless-constructor': ['error'],
-
-    'max-classes-per-file': 'off',
-
-    '@typescript-eslint/restrict-template-expressions': 'off',
+    'require-atomic-updates': 'warn',
+    /* Suggestions */
+    camelcase: 'warn',
+    'dot-notation': 'warn',
+    eqeqeq: 'warn',
+    'guard-for-in': 'warn',
+    'new-cap': 'warn',
+    'no-array-constructor': 'warn',
+    'no-caller': 'error',
+    'no-else-return': 'warn',
+    'no-eval': 'error',
+    'no-extra-bind': 'warn',
+    'no-implicit-coercion': 'warn',
+    'no-implied-eval': 'error',
+    'no-invalid-this': 'error',
+    'no-lonely-if': 'warn',
+    'no-new': 'error',
+    'no-new-object': 'error',
+    'no-new-wrappers': 'error',
+    'no-return-await': 'warn',
+    'no-script-url': 'error',
+    'no-throw-literal': 'error',
+    'no-unneeded-ternary': 'warn',
+    'no-unused-expressions': 'warn',
+    'no-useless-call': 'warn',
+    'no-useless-rename': 'warn',
+    'no-useless-return': 'warn',
+    'no-var': 'error',
+    'prefer-const': 'warn',
+    'prefer-destructuring': 'warn',
+    'prefer-object-spread': 'warn',
+    'prefer-regex-literals': 'warn',
+    'prefer-rest-params': 'warn',
+    'prefer-spread': 'warn',
+    'require-await': 'error',
+    'sort-imports': 'warn',
+    /* LAyout & Formatting */
   },
 };

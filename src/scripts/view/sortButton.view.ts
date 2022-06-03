@@ -47,7 +47,7 @@ export default class SortButtonView {
     );
 
     if (!state) {
-      throw new Error(`Invalid sorter state: ${sortOptions}`);
+      throw new Error(`Invalid sorter state: ${sortOptions.toString()}`);
     }
 
     return state;
