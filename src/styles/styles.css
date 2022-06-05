@@ -20,7 +20,7 @@
   }
 
   .prose-full {
-    @apply prose-a:fancy-link prose-a:reset-text-color prose prose-lg prose-zinc prose-teal prose-table:w-fit dark:prose-invert;
+    @apply prose-a:fancy-link prose-a:reset-text-color prose prose-lg prose-zinc prose-teal dark:prose-invert;
   }
 }
 

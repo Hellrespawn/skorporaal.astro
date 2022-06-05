@@ -2,9 +2,8 @@
 
 <div class="flex flex-row items-center text-lg md:text-base">
   {% for type, data in (categoryData | dictsort) %}
-  <button id="{{ type + 'FilterButton'}}" class="button">
-    {{ dot(data.bg) }}
-    <span class="pl-2">{{ data.plural }}</span>
+  <button id="{{ type + 'FilterButton'}}" class="button gap-x-2">
+    {{ dot(data.bg) }} {{ data.plural }}
   </button>
   {% endfor %}
 

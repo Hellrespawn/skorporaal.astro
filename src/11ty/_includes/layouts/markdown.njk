@@ -9,7 +9,11 @@ layout: 'base.njk'
     <nav class="my-8">{% include 'top-bar.njk' %}</nav>
     <article lang="{{ language }}" class="w-full">
       {% include 'post-heading.njk' %}
-      <div class="prose-full">{{ content | safe }}</div>
+      <div class="prose-full py-8">
+        <h1 class="text-3xl">{{ title }}</h1>
+
+        {{ content | safe }}
+      </div>
     </article>
   </div>
 </main>
