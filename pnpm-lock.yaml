@@ -7,11 +7,9 @@ specifiers:
   cssnano: ^5.1.11
   postcss: ^8.4.14
   prettier: ^2.6.2
-  prettier-plugin-astro: 0.1.0-next.4
   rehype-external-links: ^1.0.1
   slugify: ^1.6.5
   tailwindcss: ^3.0.24
-  typescript: ^4.7.3
 
 devDependencies:
   '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.24
@@ -20,11 +18,9 @@ devDependencies:
   cssnano: 5.1.11_postcss@8.4.14
   postcss: 8.4.14
   prettier: 2.6.2
-  prettier-plugin-astro: 0.1.0-next.4
   rehype-external-links: 1.0.1
   slugify: 1.6.5
   tailwindcss: 3.0.24
-  typescript: 4.7.3
 
 packages:
 
@@ -34,13 +30,6 @@ packages:
     dependencies:
       '@jridgewell/gen-mapping': 0.1.1
       '@jridgewell/trace-mapping': 0.3.13
-    dev: true
-
-  /@astrojs/compiler/0.13.2:
-    resolution: {integrity: sha512-0Un4CtLbhJljisFf9WaxK1TSV1oakR3Mh4x1Uyg1JHdyQ5te/1xcq+PWVaOyQc4lq4z8MYNFQb7hG66m0CeMtw==}
-    dependencies:
-      tsm: 2.2.1
-      uvu: 0.5.3
     dev: true
 
   /@astrojs/compiler/0.15.2:
@@ -3335,16 +3324,6 @@ packages:
       which-pm: 2.0.0
     dev: true
 
-  /prettier-plugin-astro/0.1.0-next.4:
-    resolution: {integrity: sha512-M1Pi6e8+yxa8I+bDCnGXdGI8XywNiHKA9tQwGvBaBYme0pcm2BUV+Tv9rxvQLqUyLMC2A4dzWa7JbcwwpSKEig==}
-    engines: {node: ^14.13.1 || >=16.0.0, npm: '>=6.14.0'}
-    dependencies:
-      '@astrojs/compiler': 0.13.2
-      prettier: 2.6.2
-      sass-formatter: 0.7.4
-      synckit: 0.6.2
-    dev: true
-
   /prettier/2.6.2:
     resolution: {integrity: sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==}
     engines: {node: '>=10.13.0'}
@@ -3555,10 +3534,6 @@ packages:
       queue-microtask: 1.2.3
     dev: true
 
-  /s.color/0.0.15:
-    resolution: {integrity: sha512-AUNrbEUHeKY8XsYr/DYpl+qk5+aM+DChopnWOPEzn8YKzOhv4l2zH6LzZms3tOZP3wwdOyc0RmTciyi46HLIuA==}
-    dev: true
-
   /sade/1.8.1:
     resolution: {integrity: sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==}
     engines: {node: '>=6'}
@@ -3572,12 +3547,6 @@ packages:
 
   /safe-buffer/5.2.1:
     resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
-    dev: true
-
-  /sass-formatter/0.7.4:
-    resolution: {integrity: sha512-8UMMSv/P5FREyca67k6PP6DsfL5c3XGbt72OKSDsfy9qaEvQPGDtA+v/9ep3An1GF8YV0C8UtgVB/haePza2nA==}
-    dependencies:
-      suf-log: 2.5.3
     dev: true
 
   /section-matter/1.0.0:
@@ -3791,12 +3760,6 @@ packages:
       postcss-selector-parser: 6.0.10
     dev: true
 
-  /suf-log/2.5.3:
-    resolution: {integrity: sha512-KvC8OPjzdNOe+xQ4XWJV2whQA0aM1kGVczMQ8+dStAO6KfEB140JEVQ9dE76ONZ0/Ylf67ni4tILPJB41U0eow==}
-    dependencies:
-      s.color: 0.0.15
-    dev: true
-
   /supports-color/5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
     engines: {node: '>=4'}
@@ -3851,13 +3814,6 @@ packages:
       csso: 4.2.0
       picocolors: 1.0.0
       stable: 0.1.8
-    dev: true
-
-  /synckit/0.6.2:
-    resolution: {integrity: sha512-Vhf+bUa//YSTYKseDiiEuQmhGCoIF3CVBhunm3r/DQnYiGT4JssmnKQc44BIyOZRK2pKjXXAgbhfmbeoC9CJpA==}
-    engines: {node: '>=12.20'}
-    dependencies:
-      tslib: 2.4.0
     dev: true
 
   /tailwindcss/3.0.24:
@@ -3946,12 +3902,6 @@ packages:
 
   /typescript/4.6.4:
     resolution: {integrity: sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg==}
-    engines: {node: '>=4.2.0'}
-    hasBin: true
-    dev: true
-
-  /typescript/4.7.3:
-    resolution: {integrity: sha512-WOkT3XYvrpXx4vMMqlD+8R8R37fZkjyLGlxavMc4iB8lrl8L0DeTcHbYgw/v0N/z9wAFsgBhcsF0ruoySS22mA==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true

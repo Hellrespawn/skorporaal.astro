@@ -1,0 +1,24 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Footer from "@components/Footer.astro";
+---
+
+<!-- {% set data = categoryData[tags[0]] %} -->
+
+<BaseLayout>
+    <main class="flex flex-col items-center">
+        <div class="mx-3 md:mx-0">
+            <!-- <nav class="my-8">{% include 'top-bar.njk' %}</nav> -->
+            <article lang="{{ language }}" class="w-full">
+                <!-- {% include 'post-heading.njk' %} -->
+                <div class="prose-full py-8">
+                    <!-- <h1 class="text-3xl">{{ title }}</h1> -->
+
+                    <slot />
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <Footer />
+</BaseLayout>

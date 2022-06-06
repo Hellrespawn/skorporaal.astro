@@ -1,7 +1,15 @@
 ---
-import DefaultLayout from "@layouts/DefaultLayout.astro";
+import PostLayout from "@layouts/PostLayout.astro";
+import { Debug } from 'astro/components';
+import { Post } from "@scripts/post";
+
+const post = (await Astro.glob<Post>('../content/recipe/Tomatensaus met Stoofvlees.md'))[0];
+
 ---
 
-<DefaultLayout>
-    <h1>New Project</h1>
-</DefaultLayout>
+<PostLayout>
+    <p>title: { post.frontmatter.title }</p>
+
+    <post.Content />
+
+</PostLayout>
