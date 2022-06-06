@@ -1,0 +1,18 @@
+---
+import { SITE } from '../script/config'
+import { dateTimeToString } from '../script/common';
+
+const dateString = dateTimeToString(SITE.builtAt)
+---
+
+<footer
+    class="relative flex flex-row justify-between bg-gray-100 py-8 px-4 text-gray-400 dark:bg-gray-700 dark:text-gray-400 md:justify-end md:px-8">
+    <div class="mr-2 flex flex-col md:mr-0">
+        <div class="font-bold">
+            Copyright © 2022
+            <a href="mailto:{{ site.email }}" class="fancy-external-link">{ SITE.name }</a>
+        </div>
+        <div>Last updated on <time datetime={SITE.builtAt.toISOString()}>{dateString}</time></div>
+    </div>
+    <!-- {% include 'theme-toggle.njk' %} -->
+</footer>
