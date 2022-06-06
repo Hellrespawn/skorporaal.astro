@@ -13,14 +13,14 @@ title: Simpele Katsu
 | 1 el             | bloem       |    20 |
 | 1                | ei          |    60 |
 | 60g              | panko       |   220 |
-| $${1 \\over 2}$$ | ui          |    12 |
+| $${1 \over 2}$$ | ui          |    12 |
 | 1                | paprika     |    20 |
 | 200g             | champignons |    40 |
 | 100g             | bosui       |    20 |
 | 3 el             | olie        |   240 |
 |                  | totaal:     |  1148 |
 
-Calorieën per portie: $${1148 \\over 2} = 574  kcal$$
+Calorieën per portie: $${1148 \over 2} = 574  kcal$$
 
 Calorieën per portie met grote wrap: $$574 + 190 = 764 kcal$$
 

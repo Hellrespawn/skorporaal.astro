@@ -12,20 +12,20 @@ Geïnspireerd door de [Bloke Pasta](https://sortedfood.com/recipe/12543) van Sor
 | ---------------- | -------------- | ----: |
 | 200g (2 stuks)   | braadworst     |   540 |
 | 250g[^1]         | verse pasta    |   700 |
-| $${1 \\over 2}$$ | ui             |    12 |
+| $${1 \over 2}$$ | ui             |    12 |
 | 1                | paprika        |    20 |
 | 200g             | champignons    |    40 |
 | 125ml            | witte wijn     |   100 |
 | 1 tl             | venkelzaad     |     5 |
 | 1 el             | oregano        |     5 |
 | 1 tl             | knoflookpoeder |     5 |
-| $${1 \\over 2}$$ | citroen        |     5 |
+| $${1 \over 2}$$ | citroen        |     5 |
 | 1 el             | olijfolie      |    80 |
 |                  |                |  1512 |
 
 [^1]: Als je gedroogde pasta hebt, gebruik dan 200g voor dezelfde hoeveelheid.
 
-Calorieën per portie: $${1512 \\over 2} = 756 kcal$$
+Calorieën per portie: $${1512 \over 2} = 756 kcal$$
 
 ## Bereiding
 

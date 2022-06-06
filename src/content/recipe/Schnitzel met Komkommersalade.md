@@ -27,16 +27,16 @@ Dit is een licht aangepaste versie van [dit recept](https://www.youtube.com/watc
 | #:                  | Ingredient:   | kcal: |
 | ------------------- | ------------- | ----: |
 | 1 stuk              | komkommer     |    25 |
-| $${1 \\over 2}$$    | rode ui       |    10 |
+| $${1 \over 2}$$    | rode ui       |    10 |
 | 100g                | crème fraîche |   290 |
-| $${1 \\over 2}$$ el | suiker        |    30 |
+| $${1 \over 2}$$ el | suiker        |    30 |
 | 1 tl                | azijn         |       |
 | snufje              | dille         |       |
 |                     | totaal:       |   360 |
 
-Calorieën per portie: $${865 + 360 \\over 2} = 612 {1 \\over 2} kcal$$
+Calorieën per portie: $${865 + 360 \over 2} = 612 {1 \over 2} kcal$$
 
-Calorieën met 100g aardappel: $$612 {1 \\over 2} + 88 + 40 (olie) = 740 {1 \\over 2} kcal$$
+Calorieën met 100g aardappel: $$612 {1 \over 2} + 88 + 40 (olie) = 740 {1 \over 2} kcal$$
 
 ## Schnitzel
 

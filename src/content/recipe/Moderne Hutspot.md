@@ -17,7 +17,7 @@ title: Moderne Hutspot
 [^1]: Kan ook vervangen worden door 1kg gemengde wortel/ui. Scheid dan de ui van de wortel, voor zover mogelijk
 [^2]: Naar keuze, kip of groente aanbevolen
 
-Calorieën per portie: $${1561 \\over 3} = 520 {1 \\over 3} kcal$$
+Calorieën per portie: $${1561 \over 3} = 520 {1 \over 3} kcal$$
 
 ## Bereiding
 

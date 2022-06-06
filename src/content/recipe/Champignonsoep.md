@@ -23,7 +23,7 @@ Dit is een aangepaste versie van [dit recept](https://coelasquid.tumblr.com/post
 | 1 tl      | worcestershiresaus |       |
 |           | totaal:            |  1761 |
 
-Calorieën per kom: $${1761 \\over 8} = 220 {1 \\over 8} kcal$$
+Calorieën per kom: $${1761 \over 8} = 220 {1 \over 8} kcal$$
 
 ## Bereiding
 

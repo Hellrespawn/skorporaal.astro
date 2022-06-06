@@ -12,13 +12,13 @@ De saus is een aangepaste versie van [dit recept](https://www.youtube.com/watch?
 
 | #:                  | Ingredient:     | kcal: |
 | ------------------- | --------------- | ----: |
-| $${1 \\over 2}$$    | ui              |    12 |
+| $${1 \over 2}$$    | ui              |    12 |
 | 2 tenen             | knoflook        |    10 |
 | 1 blik              | gepelde tomaten |   100 |
 | 100ml               | kippenbouillon  |     4 |
 | 1 el                | bruine suiker   |    50 |
 | 1 el                | oregano         |     1 |
-| $${1 \\over 2}$$ el | olijfolie       |    40 |
+| $${1 \over 2}$$ el | olijfolie       |    40 |
 |                     | totaal:         |   217 |
 
 ### Schnitzel
@@ -42,7 +42,7 @@ De saus is een aangepaste versie van [dit recept](https://www.youtube.com/watch?
 
 Totaal aantal calorieën: $$1455 kcal$$
 
-Calorieën per portie: $${1455 \\over 2} = 727 {1 \\over 2} kcal$$
+Calorieën per portie: $${1455 \over 2} = 727 {1 \over 2} kcal$$
 
 ## Bereiding
 

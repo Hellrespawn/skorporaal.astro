@@ -24,16 +24,16 @@ Dit recept is oorspronkelijk gebaseerd op een verspakket van de Albert Heijn wat
 | 250ml             | kookroom             |   512 |
 | 20g               | harde italiaane kaas |   120 |
 | 2 el              | olie                 |   160 |
-| $${1 \\over 2 }$$ | citroen              |       |
+| $${1 \over 2 }$$ | citroen              |       |
 |                   | salie                |       |
 |                   | totaal kip:          |  2238 |
 |                   | totaal kabeljauw:    |  1898 |
 
 [^1]: Prosciutto crudo is de traditionele manier om saltimbocca te maken, maar jamon serrano werkt ook goed. Er kan ook spek of Coburger ham gebruikt worden, maar deze smaken wel erg anders.
 
-Calorieën per portie (kip): $${2238  \\over 2 {1 \\over 2}} = 895 {1 \\over 5} kcal$$
+Calorieën per portie (kip): $${2238  \over 2 {1 \over 2}} = 895 {1 \over 5} kcal$$
 
-Calorieën per portie (kabeljauw): $${1898 \\over  2 {1 \\over 2}} = 759 \\frac{1}{5} kcal$$
+Calorieën per portie (kabeljauw): $${1898 \over  2 {1 \over 2}} = 759 \\frac{1}{5} kcal$$
 
 ## Bereiding
 

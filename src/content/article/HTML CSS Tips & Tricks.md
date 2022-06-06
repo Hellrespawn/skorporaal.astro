@@ -1,12 +1,12 @@
 ---
-title: 'HTML & CSS Tips & Tricks'
+title: "HTML & CSS Tips & Tricks"
 date: 2021-12-19
 ---
 
 Tips & Tricks Index:
 
-- [HTML & CSS]({{ @("HTML CSS Tips & Tricks.md", collections.all) }})
-- [JS & TS]({{ @("JavaScript TypeScript Tips & Tricks.md", collections.all) }})
+<!-- - [HTML & CSS]({{ @("HTML CSS Tips & Tricks.md", collections.all) }})
+- [JS & TS]({{ @("JavaScript TypeScript Tips & Tricks.md", collections.all) }}) -->
 
 ## Anchor tags `<a>`
 
@@ -48,7 +48,7 @@ Templates are useful elements that allow you to embed a structure in an HTML fil
 ```
 
 ```ts
-const template = document.getElementById('commentTemplate');
+const template = document.getElementById("commentTemplate");
 
 for (const post of posts) {
   const element = fillTemplate(post, template.content.cloneNode(true));

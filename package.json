@@ -16,6 +16,8 @@
     "postcss": "^8.4.14",
     "prettier": "^2.6.2",
     "rehype-external-links": "^1.0.1",
+    "rehype-katex": "^6.0.2",
+    "remark-math": "^5.1.1",
     "slugify": "^1.6.5",
     "tailwindcss": "^3.0.24"
   }

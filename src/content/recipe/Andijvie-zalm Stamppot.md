@@ -24,7 +24,7 @@ Dit recept is een aangepaste versie van [dit recept](https://www.ah.nl/allerhand
 
 [^1]: Als je grovere voorgesneden andijvie hebt, stamp deze aan het eind dan hard door de aardappels heen om het te kortwieken.
 
-Calorieën per portie: $${1553 \\over 2} = 776 {1 \\over 2} kcal$$
+Calorieën per portie: $${1553 \over 2} = 776 {1 \over 2} kcal$$
 
 ## Bereiding
 

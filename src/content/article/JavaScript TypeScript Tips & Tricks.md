@@ -1,12 +1,12 @@
 ---
-title: 'JavaScript & TypeScript Tips & Tricks'
+title: "JavaScript & TypeScript Tips & Tricks"
 date: 2021-12-19
 ---
 
 Tips & Tricks Index:
 
-- [HTML & CSS]({{ @("HTML CSS Tips & Tricks.md", collections.all) }})
-- [JS & TS]({{ @("JavaScript TypeScript Tips & Tricks.md", collections.all) }})
+<!-- - [HTML & CSS]({{ @("HTML CSS Tips & Tricks.md", collections.all) }})
+- [JS & TS]({{ @("JavaScript TypeScript Tips & Tricks.md", collections.all) }}) -->
 
 ## `tsconfig.json` settings
 
@@ -37,7 +37,7 @@ export default function addOne(n: number): number {
 }
 
 // File 2
-import increment from 'File1';
+import increment from "File1";
 
 console.log(increment(2));
 // Prints '3'

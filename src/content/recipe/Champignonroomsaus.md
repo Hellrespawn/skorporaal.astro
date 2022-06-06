@@ -15,7 +15,7 @@ title: 'Champignon-roomsaus'
 | 2 el             | peterselie         |    10 |
 | 10g              | roomboter          |    75 |
 | 1 tl             | worcestershiresaus |     5 |
-| $${1 \\over 4}$$ | citroen            |     5 |
+| $${1 \over 4}$$ | citroen            |     5 |
 |                  | totaal:            |   754 |
 
 ## Bereiding

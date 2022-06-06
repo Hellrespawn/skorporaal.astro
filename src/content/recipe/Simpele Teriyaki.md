@@ -24,9 +24,9 @@ title: Simpele Teriyaki
 
 [^1]: Gebruik een olie die geschikt is voor roerbakken op hoog vuur.
 
-Calorieën per portie: $${1070 \\over 2} = 535  kcal$$
+Calorieën per portie: $${1070 \over 2} = 535  kcal$$
 
-Calorieën per portie met 75g rijst: $$535 + 262 {1 \\over 2} = 797 {1 \\over 2} kcal$$
+Calorieën per portie met 75g rijst: $$535 + 262 {1 \over 2} = 797 {1 \over 2} kcal$$
 
 ## Bereiding
 
