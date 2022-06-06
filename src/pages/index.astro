@@ -3,7 +3,9 @@ import PostLayout from "@layouts/PostLayout.astro";
 import { Debug } from 'astro/components';
 import { Post } from "@scripts/post";
 
-const post = (await Astro.glob<Post>('../content/recipe/Tomatensaus met Stoofvlees.md'))[0];
+const posts = (await Astro.glob<Post>('../content/**/*.md'));
+
+const post = posts[8];
 
 ---
 
