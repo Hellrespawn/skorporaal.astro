@@ -1,16 +1,15 @@
 ---
-import { Post } from "@scripts/post";
-import Feed from "@components/Feed.astro";
+import { Frontmatter, FeedItem } from "@scripts/post";
+import Feed from "@components/Feed.svelte";
 import DefaultLayout from "@layouts/DefaultLayout.astro";
 
-const posts = (await Astro.glob<Post>('../content/**/*.md'));
+const instances = await Astro.glob<Frontmatter>('../content/**/*.md');
 
-Post.process(posts)
-
+const feedItems = instances.map(instance => new FeedItem(instance));
 
 ---
 
 <DefaultLayout>
-    <Feed posts={posts} />
+    <Feed client:load feedItems={feedItems} />
 
 </DefaultLayout>

@@ -35,7 +35,7 @@ function averageHexColors(color1, color2) {
 
 module.exports = {
   plugins: [require("@tailwindcss/typography")],
-  content: ["./src/**/*.{astro,css,json,ts}"],
+  content: ["./src/**/*.{astro,svelte,css,json,ts}"],
   darkMode: "class",
   theme: {
     keyframes: {

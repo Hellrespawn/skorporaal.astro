@@ -1,6 +1,7 @@
 ---
 import { SITE } from '@scripts/config'
 import { dateTimeToString } from '@scripts/common';
+import ThemeToggle from './ThemeToggle.svelte';
 
 const dateString = dateTimeToString(SITE.builtAt)
 ---
@@ -14,5 +15,5 @@ const dateString = dateTimeToString(SITE.builtAt)
         </div>
         <div>Last updated on <time datetime={SITE.builtAt.toISOString()}>{dateString}</time></div>
     </div>
-    <!-- {% include 'theme-toggle.njk' %} -->
+    <ThemeToggle client:load />
 </footer>

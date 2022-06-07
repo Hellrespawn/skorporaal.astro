@@ -1,66 +1,84 @@
 import { MarkdownInstance } from "astro";
-import { SITE } from "./config";
+import { AstroComponentFactory } from "astro/dist/types/runtime/server";
+import { dateToString } from "./common";
 
-export type PostType = "article" | "portfolio" | "recipe";
+export const POST_TYPES = <const>["article", "portfolio", "recipe"];
 
-export class Post {
+export type PostType = typeof POST_TYPES[number];
+
+export interface CategoryData {
+  bg: string;
+  border: string;
+  plural: string;
+  single: string;
+  text: string;
+}
+
+export const CATEGORY_DATA: { [key in PostType]: CategoryData } = <const>{
+  article: {
+    bg: "bg-secondary-500",
+    border: "border-secondary-500",
+    plural: "Articles",
+    single: "Article",
+    text: "text-secondary-500",
+  },
+  portfolio: {
+    bg: "bg-primary-500",
+    border: "border-primary-500",
+    plural: "Portfolio",
+    single: "Portfolio",
+    text: "text-primary-500",
+  },
+  recipe: {
+    bg: "bg-tertiary-500",
+    border: "border-tertiary-500",
+    plural: "Recipes",
+    single: "Recipe",
+    text: "text-tertiary-500",
+  },
+};
+
+export interface Frontmatter {
   title: string;
-  type: PostType = "article";
+  type: PostType;
   authors: string[];
   categories: string[];
   tags: string[];
   description?: string;
   date?: string;
   updated?: string;
+}
 
-  static process(posts: MarkdownInstance<Post>[]): void {
-    this.validate(posts);
+export class FeedItem {
+  constructor(private instance: MarkdownInstance<Frontmatter>) {}
 
-    this.populateDefaults(posts);
-
-    posts.sort(Post.dateDescendingSort);
+  private get frontmatter(): Frontmatter {
+    return this.instance.frontmatter;
   }
 
-  private static validate(posts: MarkdownInstance<Post>[]): void {
-    const errors = posts
-      .filter((post) => !post.frontmatter.title)
-      .map((post) => `Missing title: '${post.file}'`);
+  get title(): string {
+    return this.frontmatter.title;
+  }
 
-    if (errors.length) {
-      throw errors.join("\n");
+  get type(): PostType {
+    if (this.frontmatter.type) {
+      return this.frontmatter.type;
     }
+    const file = this.instance.file;
+    const segments = file.split("/");
+    return segments[segments.length - 2] as PostType;
   }
 
-  private static populateDefaults(posts: MarkdownInstance<Post>[]): void {
-    for (const post of posts) {
-      post.frontmatter.authors = post.frontmatter.authors ?? [SITE.name];
-      post.frontmatter.categories = post.frontmatter.categories ?? [];
-      post.frontmatter.tags = post.frontmatter.tags ?? [];
-    }
-  }
-
-  private static dateDescendingSort(
-    a: MarkdownInstance<Post>,
-    b: MarkdownInstance<Post>
-  ): number {
-    const aString = a.frontmatter.updated ?? a.frontmatter.date;
-    const bString = b.frontmatter.updated ?? b.frontmatter.date;
-
-    if (!aString || !bString) {
-      return 0;
+  get formattedDate(): string {
+    const date = this.frontmatter.updated || this.frontmatter.date;
+    if (date) {
+      return dateToString(new Date(date));
     } else {
-      const [aTime, bTime] = [aString, bString].map((string) =>
-        new Date(string).getTime()
-      );
-      return bTime - aTime;
+      return "A long time ago...";
     }
   }
 
-  static getUniqueCategories(posts: MarkdownInstance<Post>[]): string[] {
-    return [...new Set(posts.flatMap((post) => post.frontmatter.categories))];
-  }
-
-  static getUniqueTags(posts: MarkdownInstance<Post>[]): string[] {
-    return [...new Set(posts.flatMap((post) => post.frontmatter.tags))];
+  get component(): AstroComponentFactory {
+    return this.instance.Content;
   }
 }
