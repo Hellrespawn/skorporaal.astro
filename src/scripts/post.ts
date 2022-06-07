@@ -1,6 +1,7 @@
 import { MarkdownInstance } from "astro";
 import { AstroComponentFactory } from "astro/dist/types/runtime/server";
 import { dateToString } from "./common";
+import { SITE } from "./config";
 
 export const POST_TYPES = <const>["article", "portfolio", "recipe"];
 
@@ -41,23 +42,19 @@ export const CATEGORY_DATA: { [key in PostType]: CategoryData } = <const>{
 export interface Frontmatter {
   title: string;
   type: PostType;
-  authors: string[];
   categories: string[];
   tags: string[];
+  authors?: string[];
   description?: string;
   date?: string;
   updated?: string;
 }
 
-export class FeedItem {
-  constructor(private instance: MarkdownInstance<Frontmatter>) {}
+class MarkdownInstanceWrapper {
+  constructor(protected instance: MarkdownInstance<Frontmatter>) {}
 
-  private get frontmatter(): Frontmatter {
+  protected get frontmatter(): Frontmatter {
     return this.instance.frontmatter;
-  }
-
-  get title(): string {
-    return this.frontmatter.title;
   }
 
   get type(): PostType {
@@ -76,6 +73,31 @@ export class FeedItem {
     } else {
       return "A long time ago...";
     }
+  }
+}
+
+export class FeedItem extends MarkdownInstanceWrapper {
+  get title(): string {
+    return this.frontmatter.title;
+  }
+
+  get component(): AstroComponentFactory {
+    return this.instance.Content;
+  }
+}
+
+export class FullPost extends MarkdownInstanceWrapper {
+  get title(): string {
+    return this.frontmatter.title;
+  }
+
+  get authors(): string {
+    const authors = [SITE.name];
+
+    if (this.frontmatter.authors) {
+      authors.push(...this.frontmatter.authors);
+    }
+    return authors.join(", ");
   }
 
   get component(): AstroComponentFactory {

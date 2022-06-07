@@ -1,6 +1,6 @@
 <script lang="ts">
   import { CategoryData, CATEGORY_DATA, type PostType } from "@scripts/post";
-  import Dot from "./Dot.svelte";
+  import Dot from "@components/Feed/Dot.svelte";
 
   const categoryData = <[PostType, CategoryData][]>(
     Object.entries(CATEGORY_DATA).sort(([left, _l], [right, _r]) =>

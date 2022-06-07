@@ -2,7 +2,7 @@
 import "@src/styles/style.css"
 
 export interface Props {
-    title?: string
+  title?: string
 }
 
 const { title } = Astro.props as Props;
@@ -24,6 +24,6 @@ const { title } = Astro.props as Props;
 <link rel="icon" href="/assets/favicon.png" />
 
 <title>
-    skorporaal.com
-    { title && ` - ${title}`}
+  skorporaal.com
+  { title && ` - ${title}`}
 </title>

@@ -1,24 +1,30 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Footer from "@components/Footer.astro";
+import TopNav from "@components/TopNav.astro";
+import { type FullPost } from "@scripts/post";
+
+export interface Props {
+  post: FullPost
+}
+
+const { post } = Astro.props as Props;
 ---
 
-<!-- {% set data = categoryData[tags[0]] %} -->
+<BaseLayout title={post.title}>
+  <main class="flex flex-col items-center">
+    <div class="mx-3 md:mx-0">
+      <TopNav />
+      <article lang="{{ language }}" class="w-full">
+        <!-- {% include 'post-heading.njk' %} -->
+        <div class="prose-full py-8">
+          <h1 class="text-3xl">{ post.title }</h1>
 
-<BaseLayout>
-    <main class="flex flex-col items-center">
-        <div class="mx-3 md:mx-0">
-            <!-- <nav class="my-8">{% include 'top-bar.njk' %}</nav> -->
-            <article lang="{{ language }}" class="w-full">
-                <!-- {% include 'post-heading.njk' %} -->
-                <div class="prose-full py-8">
-                    <!-- <h1 class="text-3xl">{{ title }}</h1> -->
-
-                    <slot />
-                </div>
-            </article>
+          <post.component />
         </div>
-    </main>
+      </article>
+    </div>
+  </main>
 
-    <Footer />
+  <Footer />
 </BaseLayout>

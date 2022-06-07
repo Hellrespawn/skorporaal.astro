@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { CATEGORY_DATA, type PostType } from "../scripts/post";
+  import { CATEGORY_DATA, type PostType } from "@scripts/post";
 
   export let type: PostType;
 

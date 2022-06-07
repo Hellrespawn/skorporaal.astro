@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type FeedItem } from "@scripts/post";
-  import Dot from "@components/Dot.svelte";
+  import Dot from "@components/Feed/Dot.svelte";
 
   export let feedItem: FeedItem;
 </script>

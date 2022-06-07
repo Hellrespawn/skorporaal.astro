@@ -1,6 +1,6 @@
 ---
 import { Frontmatter, FeedItem } from "@scripts/post";
-import Feed from "@components/Feed.svelte";
+import Feed from "@components/Feed/Feed.svelte";
 import DefaultLayout from "@layouts/DefaultLayout.astro";
 
 const instances = await Astro.glob<Frontmatter>('../content/**/*.md');

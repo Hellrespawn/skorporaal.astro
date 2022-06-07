@@ -1,7 +1,7 @@
 <script lang="ts">
   import { type FeedItem } from "@scripts/post";
-  import Filter from "@components/Filter.svelte";
-  import FeedItemComponent from "@components/FeedItem.svelte";
+  import Filter from "@components/Feed/Filter.svelte";
+  import FeedItemComponent from "@components/Feed/FeedItem.svelte";
 
   export let feedItems: FeedItem[];
 </script>
