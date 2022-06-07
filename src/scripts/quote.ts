@@ -2,19 +2,21 @@
 // https://www.typescriptlang.org/tsconfig#resolveJsonModule
 import QUOTES from "../quotes.json";
 
-type Quote = {
+interface Quote {
   text: string;
   author: string;
   source?: string;
-};
+}
 
 /* Fill in random quote. */
-export default async function fillQuote(): Promise<void> {
-  const quoteElem: HTMLElement | null = document.getElementById("quote-text")!;
+export default function fillQuote(): void {
+  const quoteElem: HTMLElement = document.getElementById("quote-text")!;
   const authorElem: HTMLElement = document.getElementById("quoteAuthor")!;
   const sourceElem: HTMLElement = document.getElementById("quoteSource")!;
 
-  const quote: Quote = QUOTES[Math.floor(Math.random() * QUOTES.length)];
+  const quotes = QUOTES as Quote[];
+
+  const quote = quotes[Math.floor(Math.random() * quotes.length)];
 
   quoteElem.textContent = quote.text;
   authorElem.textContent = quote.author;

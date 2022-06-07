@@ -2,7 +2,7 @@ const CLASS_NAME = "dark";
 
 const STORAGE_KEY = "darkMode";
 
-export function init() {
+export function initTheme() {
   let darkMode: boolean;
 
   const storedMode = localStorage.getItem(STORAGE_KEY);
@@ -18,7 +18,7 @@ export function init() {
   }
 }
 
-export function toggle(): void {
+export function toggleTheme(): void {
   const toggled = document.documentElement.classList.toggle(CLASS_NAME);
 
   localStorage.setItem(STORAGE_KEY, toggled.toString());

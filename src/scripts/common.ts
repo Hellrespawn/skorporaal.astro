@@ -1,16 +1,3 @@
-import _slugify from "slugify";
-
-/**
- * Slugify string.
- *
- * TODO? Limit length of slugified strings?
- *
- * @return slugified string
- */
-export function slugify(string: string): string {
-  return _slugify(string, { lower: true, strict: true });
-}
-
 /**
  * Converts a date to string.
  *

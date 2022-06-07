@@ -1,14 +1,14 @@
 <script lang="ts">
   import { onMount } from "svelte";
 
-  import * as ThemeModel from "@scripts/model/theme.model";
+  import { initTheme, toggleTheme } from "@scripts/theme";
   import Sun from "./Icons/Sun.svelte";
   import Moon from "./Icons/Moon.svelte";
 
-  onMount(ThemeModel.init);
+  onMount(initTheme);
 
   function toggle(): void {
-    ThemeModel.toggle();
+    toggleTheme();
   }
 </script>
 

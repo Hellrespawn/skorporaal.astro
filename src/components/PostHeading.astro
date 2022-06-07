@@ -6,7 +6,7 @@ export interface Props {
 }
 
 const { post } = Astro.props as Props;
-const data = CATEGORY_DATA[post.type]
+const data = CATEGORY_DATA[post.category]
 ---
 
 <!-- Category name -->

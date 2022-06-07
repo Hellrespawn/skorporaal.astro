@@ -2,6 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Footer from "@components/Footer.astro";
 import TopNav from "@components/TopNav.astro";
+import PostHeading from "@components/PostHeading.astro";
 import { type FullPost } from "@scripts/post";
 
 export interface Props {
@@ -16,7 +17,7 @@ const { post } = Astro.props as Props;
     <div class="mx-3 md:mx-0">
       <TopNav />
       <article lang="{{ language }}" class="w-full">
-        <!-- {% include 'post-heading.njk' %} -->
+        <PostHeading post={post} />
         <div class="prose-full py-8">
           <h1 class="text-3xl">{ post.title }</h1>
 

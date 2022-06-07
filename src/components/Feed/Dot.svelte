@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { CATEGORY_DATA, type PostType } from "@scripts/post";
+  import { CATEGORY_DATA, type PostCategory } from "@scripts/post";
 
-  export let type: PostType;
+  export let category: PostCategory;
 
-  const bg = CATEGORY_DATA[type].bg;
+  const bg = CATEGORY_DATA[category].bg;
 </script>
 
 <span class={`${bg} inline-block h-2 w-2 shrink-0 rounded-full`} />

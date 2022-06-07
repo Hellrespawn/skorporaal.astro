@@ -7,12 +7,12 @@
 
 <!-- Same px as filter -->
 <a
-  href={`/posts/${feedItem.title}`}
+  href={feedItem.url}
   class="button postUrl flex flex-col items-baseline md:flex-row"
 >
   <span class="flex flex-grow flex-row items-baseline">
     <!-- Colored Dot -->
-    <Dot type={feedItem.type} />
+    <Dot category={feedItem.category} />
     <!-- Title -->
     <p class="postTitle px-2">{feedItem.title}</p>
   </span>
