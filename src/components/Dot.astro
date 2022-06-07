@@ -1,0 +1,11 @@
+---
+import { PostType } from "../scripts/post";
+
+export interface Props {
+    type: PostType
+}
+
+const { type } = Astro.props as Props;
+---
+
+<span class="bg-zinc-500 inline-block h-2 w-2 shrink-0 rounded-full"></span>

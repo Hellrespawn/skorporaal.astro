@@ -1,0 +1,28 @@
+---
+import { MarkdownInstance } from "astro"
+import { Post } from "@scripts/post";
+import { dateToString } from "@scripts/common";
+import Dot from "@components/Dot.astro";
+
+export interface Props {
+    post: MarkdownInstance<Post>
+}
+
+const { post } = Astro.props as Props;
+const dateString = post.frontmatter.date ? dateToString(new Date(post.frontmatter.date)) : "A long time ago..."
+---
+
+<!-- Same px as filter -->
+<a href={`/posts/${post.frontmatter.title}`} class="button postUrl flex flex-col items-baseline md:flex-row">
+    <span class="flex flex-grow flex-row items-baseline">
+        <!-- Colored Dot -->
+        <Dot type={post.frontmatter. type} />
+        <!-- Title -->
+        <p class="postTitle px-2">{post.frontmatter.title}</p>
+    </span>
+
+    <!-- Date -->
+    <div
+        class="postDate w-full whitespace-nowrap text-right text-sm text-gray-400 dark:text-gray-500 md:w-auto md:text-left">
+        {dateString}</div>
+</a>

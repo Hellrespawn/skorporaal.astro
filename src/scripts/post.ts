@@ -1,8 +1,11 @@
 import { MarkdownInstance } from "astro";
 import { SITE } from "./config";
 
+export type PostType = "article" | "portfolio" | "recipe";
+
 export class Post {
   title: string;
+  type: PostType = "article";
   authors: string[];
   categories: string[];
   tags: string[];

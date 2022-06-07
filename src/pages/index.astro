@@ -1,17 +1,16 @@
 ---
-import PostLayout from "@layouts/PostLayout.astro";
-import { Debug } from 'astro/components';
 import { Post } from "@scripts/post";
+import Feed from "@components/Feed.astro";
+import DefaultLayout from "@layouts/DefaultLayout.astro";
 
 const posts = (await Astro.glob<Post>('../content/**/*.md'));
 
-const post = posts[8];
+Post.process(posts)
+
 
 ---
 
-<PostLayout>
-    <p>title: { post.frontmatter.title }</p>
+<DefaultLayout>
+    <Feed posts={posts} />
 
-    <post.Content />
-
-</PostLayout>
+</DefaultLayout>
