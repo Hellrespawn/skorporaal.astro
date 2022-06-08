@@ -1,8 +1,12 @@
 <script lang="ts">
-  import { type FeedItem } from "@scripts/post";
   import Dot from "@components/Feed/Dot.svelte";
 
-  export let feedItem: FeedItem;
+  export let feedItem: {
+    url: string;
+    dot: string;
+    title: string;
+    formattedDate: string;
+  };
 </script>
 
 <!-- Same px as filter -->

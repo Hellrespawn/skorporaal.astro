@@ -10,3 +10,4 @@ Made available under the [The 3-Clause BSD License](https://opensource.org/licen
 
 FIXME FOUC
 TODO Implement language
+TODO Check if frontmatter is preserved from astro -> svelte

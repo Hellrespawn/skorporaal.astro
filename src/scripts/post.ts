@@ -29,13 +29,9 @@ export interface Frontmatter {
  */
 export abstract class MarkdownInstanceWrapper {
   title: string;
-
   slug: string;
-
   category: PostCategory;
-
   formattedDate: string;
-
   date?: Date;
 
   constructor(instance: MarkdownInstance<Frontmatter>) {

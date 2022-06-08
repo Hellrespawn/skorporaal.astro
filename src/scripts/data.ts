@@ -30,7 +30,7 @@ export interface CategoryData {
   text: string;
 }
 
-export const CATEGORY_DATA: { [key in PostCategory]: CategoryData } = {
+export const CATEGORY_DATA: Record<PostCategory, CategoryData> = {
   article: {
     bg: "bg-secondary-500",
     border: "border-secondary-500",

@@ -68,10 +68,8 @@ module.exports = {
         "prefer-spread": "warn",
         "require-await": "error",
         /* TypeScript */
-        "@typescript-eslint/lines-between-class-members": ["warn", "always"],
         // These are very useful in the context of writing code for the browser.
         "@typescript-eslint/no-non-null-assertion": "off",
-
         // Allow unused vars starting with '_'
         "no-unused-vars": "off",
         "@typescript-eslint/no-unused-vars": [

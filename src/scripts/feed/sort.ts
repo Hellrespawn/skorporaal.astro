@@ -65,18 +65,18 @@ function sortByDateDescending(left: FeedItem, right: FeedItem): number {
   return sort;
 }
 
-function createState() {
+function createSort() {
   let index = 0;
 
   const { subscribe, set } = writable(STATES[index]);
 
   return {
     subscribe,
-    cycle: (): void => {
+    cycle(): void {
       index = (index + 1) % STATES.length;
       set(STATES[index]);
     },
   };
 }
 
-export const sortState = createState();
+export const sort = createSort();
