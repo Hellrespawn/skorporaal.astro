@@ -12,7 +12,7 @@
 >
   <span class="flex flex-grow flex-row items-baseline">
     <!-- Colored Dot -->
-    <Dot category={feedItem.category} />
+    <Dot bg={feedItem.dot} />
     <!-- Title -->
     <p class="postTitle px-2">{feedItem.title}</p>
   </span>

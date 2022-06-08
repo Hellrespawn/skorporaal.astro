@@ -1,21 +1,22 @@
 <script lang="ts">
-  import {
-    CategoryData,
-    CATEGORY_DATA,
-    type PostCategory,
-  } from "@scripts/post";
+  import { CATEGORY_DATA } from "@scripts/data";
+  import { sortState } from "@scripts/feed/sort";
   import Dot from "@components/Feed/Dot.svelte";
 </script>
 
 <div class="flex flex-row items-center text-lg md:text-base">
-  {#each Object.entries(CATEGORY_DATA) as [category, data]}
+  {#each Object.values(CATEGORY_DATA) as data}
     <button class="button gap-x-2">
-      <Dot {category} />
+      <Dot bg={data.bg} />
       {data.plural}
     </button>
   {/each}
 
   <div class="flex-grow" />
 
-  <button class="button button-medium whitespace-nowrap font-semibold" />
+  <button
+    on:click={sortState.cycle}
+    class="button button-medium whitespace-nowrap font-semibold"
+    >{$sortState.display}</button
+  >
 </div>

@@ -1,6 +1,6 @@
 // Directly imported JSON as a module, very cool feature!
 // https://www.typescriptlang.org/tsconfig#resolveJsonModule
-import QUOTES from "../quotes.json";
+import QUOTES from "@src/quotes.json";
 
 interface Quote {
   text: string;

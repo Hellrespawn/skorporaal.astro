@@ -1,9 +1,9 @@
 ---
-import { SITE } from '@scripts/config'
+import { SITE_DATA } from '@scripts/data'
 import { dateTimeToString } from '@scripts/common';
 import ThemeToggle from './ThemeToggle.svelte';
 
-const dateString = dateTimeToString(SITE.builtAt)
+const dateString = dateTimeToString(SITE_DATA.builtAt)
 ---
 
 <footer
@@ -11,9 +11,9 @@ const dateString = dateTimeToString(SITE.builtAt)
   <div class="mr-2 flex flex-col md:mr-0">
     <div class="font-bold">
       Copyright © 2022
-      <a href="mailto:{{ site.email }}" class="fancy-external-link">{ SITE.name }</a>
+      <a href="mailto:{{ site.email }}" class="fancy-external-link">{ SITE_DATA.name }</a>
     </div>
-    <div>Last updated on <time datetime={SITE.builtAt.toISOString()}>{dateString}</time></div>
+    <div>Last updated on <time datetime={SITE_DATA.builtAt.toISOString()}>{dateString}</time></div>
   </div>
   <ThemeToggle client:load />
 </footer>
