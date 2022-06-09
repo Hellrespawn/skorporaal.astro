@@ -1,8 +1,8 @@
 import { writable } from "svelte/store";
-import { PostCategory, POST_CATEGORIES } from "../data";
+import { PostCategory } from "../data";
 
 function createFilter() {
-  const defaultCategories: PostCategory[] = [...POST_CATEGORIES];
+  const defaultCategories: PostCategory[] = ["article", "portfolio", "other"];
   const activeCategories = [...defaultCategories];
 
   const { subscribe, update } = writable(activeCategories);
