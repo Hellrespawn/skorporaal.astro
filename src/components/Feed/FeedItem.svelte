@@ -1,12 +1,25 @@
 <script lang="ts">
   import Dot from "@components/Feed/Dot.svelte";
+  import { onMount } from "svelte";
+  import { LANGUAGE_DATA } from "../../scripts/data";
 
   export let feedItem: {
-    url: string;
     dot: string;
-    title: string;
     formattedDate: string;
+    lang: string;
+    title: string;
+    url: string;
   };
+
+  let title = feedItem.title;
+
+  onMount(() => {
+    if (feedItem.lang !== document.documentElement.lang) {
+      title += ` [${
+        LANGUAGE_DATA[document.documentElement.lang][feedItem.lang]
+      }]`;
+    }
+  });
 </script>
 
 <!-- Same px as filter -->
@@ -18,7 +31,7 @@
     <!-- Colored Dot -->
     <Dot bg={feedItem.dot} />
     <!-- Title -->
-    <p class="postTitle px-2">{feedItem.title}</p>
+    <p class="postTitle px-2">{title}</p>
   </span>
 
   <!-- Date -->

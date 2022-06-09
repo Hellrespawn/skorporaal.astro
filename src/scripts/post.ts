@@ -18,28 +18,32 @@ export function isPostCategory(str: string): str is PostCategory {
  */
 export interface Frontmatter {
   title: string;
-  category?: PostCategory;
   authors?: string[];
+  category?: PostCategory;
   date?: string;
+  lang?: string;
   updated?: string;
 }
 
 /**
  * Base Markdown wrapper class
  */
-export abstract class MarkdownInstanceWrapper {
-  title: string;
-  slug: string;
+export abstract class Post {
   category: PostCategory;
   formattedDate: string;
+  lang: string;
+  slug: string;
+  title: string;
   date?: Date;
 
   constructor(instance: MarkdownInstance<Frontmatter>) {
-    this.title = instance.frontmatter.title;
-    this.slug = slugify(this.title, { lower: true, strict: true });
     this.category = this.getCategory(instance);
     this.date = this.getDate(instance);
     this.formattedDate = this.getFormattedDate();
+    this.lang =
+      instance.frontmatter.lang ?? this.category === "recipe" ? "nl" : "en";
+    this.title = instance.frontmatter.title;
+    this.slug = slugify(this.title, { lower: true, strict: true });
   }
 
   getCategory(instance: MarkdownInstance<Frontmatter>): PostCategory {
@@ -74,7 +78,7 @@ export abstract class MarkdownInstanceWrapper {
   }
 }
 
-export class FullPost extends MarkdownInstanceWrapper {
+export class FullPost extends Post {
   authors: string[];
 
   component: AstroComponentFactory;

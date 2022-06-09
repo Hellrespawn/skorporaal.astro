@@ -1,10 +1,9 @@
 import { type MarkdownInstance } from "astro";
 import { CATEGORY_DATA } from "@scripts/data";
-import { type Frontmatter, MarkdownInstanceWrapper } from "@scripts/post";
+import { type Frontmatter, Post } from "@scripts/post";
 
-export class FeedItem extends MarkdownInstanceWrapper {
+export class FeedItem extends Post {
   dot: string;
-
   url: string;
 
   constructor(instance: MarkdownInstance<Frontmatter>) {

@@ -60,3 +60,14 @@ export const CATEGORY_DATA: Record<PostCategory, CategoryData> = {
     text: "text-rose-500",
   },
 };
+
+export const LANGUAGE_DATA = {
+  en: {
+    nl: "Dutch",
+    en: "English",
+  },
+  nl: {
+    nl: "Nederlands",
+    en: "Engels",
+  },
+};

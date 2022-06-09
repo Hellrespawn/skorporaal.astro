@@ -16,7 +16,7 @@ const { post } = Astro.props as Props;
   <main class="flex flex-col items-center">
     <div class="mx-3 md:mx-0">
       <TopNav />
-      <article lang="{{ language }}" class="w-full">
+      <article lang={post.lang} class="w-full">
         <PostHeading post={post} />
         <div class="prose-full py-8">
           <h1 class="text-3xl">{ post.title }</h1>
