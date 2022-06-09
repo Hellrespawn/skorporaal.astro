@@ -3,7 +3,6 @@ lockfileVersion: 5.4
 specifiers:
   '@astrojs/svelte': ^0.1.4
   '@tailwindcss/typography': ^0.5.2
-  '@types/node': ^17.0.40
   '@typescript-eslint/eslint-plugin': ^5.27.1
   '@typescript-eslint/parser': ^5.27.1
   astro: 1.0.0-beta.41
@@ -11,7 +10,6 @@ specifiers:
   cssnano: ^5.1.11
   eslint: ^8.17.0
   eslint-config-prettier: ^8.5.0
-  node: ^17.7.2
   postcss: ^8.4.14
   prettier: ^2.6.2
   rehype-external-links: ^1.0.1
@@ -25,7 +23,6 @@ specifiers:
 devDependencies:
   '@astrojs/svelte': 0.1.4_ul755q3dxsprj73ozc64nxdp4y
   '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.24
-  '@types/node': 17.0.40
   '@typescript-eslint/eslint-plugin': 5.27.1_aq7uryhocdbvbqum33pitcm3y4
   '@typescript-eslint/parser': 5.27.1_ud6rd4xtew5bv4yhvkvu24pzm4
   astro: 1.0.0-beta.41
@@ -33,7 +30,6 @@ devDependencies:
   cssnano: 5.1.11_postcss@8.4.14
   eslint: 8.17.0
   eslint-config-prettier: 8.5.0_eslint@8.17.0
-  node: 17.7.2
   postcss: 8.4.14
   prettier: 2.6.2
   rehype-external-links: 1.0.1
@@ -3412,10 +3408,6 @@ packages:
       tslib: 2.4.0
     dev: true
 
-  /node-bin-setup/1.1.0:
-    resolution: {integrity: sha512-pTeU6NgUrexiLNtd+AKwvg6cngHMvj5FZ5e2bbv2ogBSIc9yhkXSSaTScfSRZnwHIh5YFmYSYlemLWkiKD7rog==}
-    dev: true
-
   /node-domexception/1.0.0:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
     engines: {node: '>=10.5.0'}
@@ -3432,15 +3424,6 @@ packages:
 
   /node-releases/2.0.5:
     resolution: {integrity: sha512-U9h1NLROZTq9uE1SNffn6WuPDg8icmi3ns4rEl/oTfIle4iLjTliCzgTsbaIFMq/Xn078/lfY/BL0GWZ+psK4Q==}
-    dev: true
-
-  /node/17.7.2:
-    resolution: {integrity: sha512-1hLwQfuA39nUDxCTwKqS8l27E9OEzfAdK5xU4Wcr3h2FrQao6qWNnurgWn4GJn9g6tfHuuupyrBl1lvMLNnecw==}
-    engines: {npm: '>=5.0.0'}
-    hasBin: true
-    requiresBuild: true
-    dependencies:
-      node-bin-setup: 1.1.0
     dev: true
 
   /normalize-path/3.0.0:
