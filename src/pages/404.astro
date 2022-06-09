@@ -1,0 +1,16 @@
+---
+import DefaultLayout from "@layouts/DefaultLayout.astro";
+import Home from "@components/Icons/Home.astro";
+---
+
+<DefaultLayout title="404 - Page not found!">
+  <div class="flex h-full flex-col items-center py-16 md:py-0">
+    <a class="button rounded-full" href="/">
+      <Home />
+    </a>
+    <div class="flex flex-col justify-center md:h-full">
+      <h2 class="text-3xl">404 Error</h2>
+      <h3 class="pb-4 text-2xl">Page not found!</h3>
+    </div>
+  </div>
+</DefaultLayout>

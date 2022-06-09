@@ -29,12 +29,21 @@ async function checkSitePath(): Promise<void> {
   }
 }
 
+async function rename404(): Promise<void> {
+  console.log("Renaming '404.html' to '404.shtml'");
+  const src = path.join(LOCAL_DIR!, "404.html");
+  const tgt = path.join(LOCAL_DIR!, "404.shtml");
+  await fs.rename(src, tgt);
+}
+
 async function main(): Promise<void> {
   const client = new ftp.Client();
 
-  console.log("Attempting to upload files...");
-
   try {
+    console.log("Running post-build tasks...");
+    await rename404();
+
+    console.log("Attempting to upload files...");
     await checkSitePath();
 
     await client.access({
