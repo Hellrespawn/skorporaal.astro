@@ -1,14 +1,11 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-
-  import { initTheme, toggleTheme } from "@scripts/theme";
   import Sun from "./Icons/Sun.svelte";
   import Moon from "./Icons/Moon.svelte";
 
-  onMount(initTheme);
-
   function toggle(): void {
-    toggleTheme();
+    const toggled = document.documentElement.classList.toggle("dark");
+
+    localStorage.setItem("darkMode", toggled.toString());
   }
 </script>
 

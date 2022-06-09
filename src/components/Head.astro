@@ -23,6 +23,22 @@ const { title } = Astro.props as Props;
 <!-- Local fonts and styles -->
 <link rel="icon" href="/assets/favicon.png" />
 
+<script is:inline>
+  let darkMode;
+
+  const storedMode = localStorage.getItem("darkMode");
+
+  if (storedMode === null) {
+    darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  } else {
+    darkMode = storedMode === "true";
+  }
+
+  if (darkMode) {
+    document.documentElement.classList.toggle("dark");
+  }
+</script>
+
 <title>
   skorporaal.com
   { title && ` - ${title}`}
