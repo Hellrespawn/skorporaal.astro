@@ -1,5 +1,5 @@
-<script lang="ts">
-  export let classes: string = "";
+<script>
+  export let classes = "";
 </script>
 
 <span

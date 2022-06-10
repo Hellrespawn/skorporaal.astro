@@ -5,6 +5,7 @@ import Quote from "@components/Quote.svelte";
 import photoReference from "@src/images/photograph.jpg";
 import { Content as About } from "@src/about.md";
 import { SITE_DATA } from "@scripts/data";
+import GitHub from "../components/Icons/GitHub.astro";
 ---
 
 <DefaultLayout title="404 - Page not found!">
@@ -16,13 +17,20 @@ import { SITE_DATA } from "@scripts/data";
     </div>
 
 
-    <div class="flex flex-col items-end gap-4 flex-shrink-0 relative float-right ml-4 mb-4">
-      <img alt={SITE_DATA.name} src={photoReference} class="object-cover rounded-l-full h-40 saturate-[25%]">
-      <div class="absolute top-0 right-0 bg-secondary-500 dark:bg-primary-500 opacity-[15%] h-40 w-full rounded-l-full">
+    <div class="flex flex-col items-end gap-4 flex-shrink-0 float-right ml-4 mb-4">
+      <div class="w-40 relative rounded-l-full overflow-hidden">
+        <img alt={SITE_DATA.name} src={photoReference} class="object-cover saturate-[25%]">
+        <div
+          class="absolute top-0 right-0 bottom-0 left-0 bg-secondary-500 dark:bg-primary-500 opacity-[5%] rounded-l-full">
+        </div>
       </div>
-      <div class="rounded-l-full bg-gray-700 text-gray-200 py-1 px-4 w-[70%] text-center">
-        <a href="/">GitHub</a>
-      </div>
+      <a class="button pr-0 w-full rounded-l-full" href="/">
+        <div
+          class="w-full rounded-l-full bg-gray-700 text-gray-50 dark:bg-gray-200 dark:text-gray-800 text-center flex flex-row items-center ">
+          <GitHub />
+          Hellrespawn
+        </div>
+      </a>
     </div>
 
     <div class="mx-3 prose-full prose-ul:w-fit prose-ul:mx-auto prose-h3:text-center">
