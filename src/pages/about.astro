@@ -1,14 +1,13 @@
 ---
 import DefaultLayout from "@layouts/DefaultLayout.astro";
 import Home from "@components/Icons/Home.astro";
-import Quote from "@components/Quote.svelte";
 import Photograph from "@components/Photograph.astro";
 import Links from "@components/Links.astro";
 import { Content as About } from "@src/about.md";
 ---
 
-<DefaultLayout title="404 - Page not found!">
-  <div class="w-full h-full py-8 md:py-0">
+<DefaultLayout title="About me">
+  <div class="w-full h-full md:py-8">
     <div class="flex flex-row justify-center my-4">
       <a class="rounded-full button" href="/">
         <Home />
@@ -20,7 +19,7 @@ import { Content as About } from "@src/about.md";
       <Links />
     </div>
 
-    <div class="mx-3 prose-full prose-ul:w-fit prose-ul:mx-auto prose-h3:text-center">
+    <div class="mx-3 md:mx-auto prose-full prose-ul:w-fit prose-ul:mx-auto prose-h3:text-center">
       <About />
     </div>
   </div>
