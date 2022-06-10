@@ -1,12 +1,19 @@
 ---
 title: "HTML & CSS Tips & Tricks"
 date: 2021-12-19
+setup: |
+  import { getUrl } from "@scripts/post";
+  import * as html from "./HTML CSS Tips & Tricks.md";
+  import * as jsTs from "./JavaScript TypeScript Tips & Tricks.md";
+
+  const htmlUrl = getUrl(html);
+  const jsTsUrl = getUrl(jsTs);
 ---
 
 Tips & Tricks Index:
 
-<!-- - [HTML & CSS]({{ @("HTML CSS Tips & Tricks.md", collections.all) }})
-- [JS & TS]({{ @("JavaScript TypeScript Tips & Tricks.md", collections.all) }}) -->
+- <a href={htmlUrl}>HTML & CSS</a>
+- <a href={jsTsUrl}>JS & TS</a>
 
 ## Anchor tags `<a>`
 
@@ -26,7 +33,7 @@ Denotes the relationship of the link to the site.
 
 - `rel="noopener"` - Instructs the browser to open the link without granting the new browsing context access to the document that opened it.
 
-- `rel="noreferrer"` - Prevents the browser, when navigating to another page, to send any information via the `Referer:` HTTP header.
+- `rel="noreferrer"` - Prevents the browser, when navigating to another page, to send any information via the `Referrer:` HTTP header.
 
 ## `<lang>`
 

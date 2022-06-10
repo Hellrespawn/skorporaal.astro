@@ -1,12 +1,19 @@
 ---
 title: "JavaScript & TypeScript Tips & Tricks"
 date: 2021-12-19
+setup: |
+  import { getUrl } from "@scripts/post";
+  import * as html from "./HTML CSS Tips & Tricks.md";
+  import * as jsTs from "./JavaScript TypeScript Tips & Tricks.md";
+
+  const htmlUrl = getUrl(html);
+  const jsTsUrl = getUrl(jsTs);
 ---
 
 Tips & Tricks Index:
 
-<!-- - [HTML & CSS]({{ @("HTML CSS Tips & Tricks.md", collections.all) }})
-- [JS & TS]({{ @("JavaScript TypeScript Tips & Tricks.md", collections.all) }}) -->
+- <a href={htmlUrl}>HTML & CSS</a>
+- <a href={jsTsUrl}>JS & TS</a>
 
 ## `tsconfig.json` settings
 
@@ -45,7 +52,7 @@ console.log(increment(2));
 
 ### Convert recalcitrant collections to arrays
 
-Some annoying data structures, like `HTMLCollectionOf` don't like being converted to arrays with modern syntax like the spread operater (`[...elems]`). For these occasions, `Array.from(elems)` will usually work.
+Some annoying data structures, like `HTMLCollectionOf` don't like being converted to arrays with modern syntax like the spread operator (`[...elems]`). For these occasions, `Array.from(elems)` will usually work.
 
 ### `function` vs. arrow functions
 

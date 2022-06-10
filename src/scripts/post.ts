@@ -34,6 +34,7 @@ export abstract class Post {
   lang: string;
   slug: string;
   title: string;
+  url: string;
   date?: Date;
 
   constructor(instance: MarkdownInstance<Frontmatter>) {
@@ -44,6 +45,7 @@ export abstract class Post {
       instance.frontmatter.lang ?? this.category === "recipe" ? "nl" : "en";
     this.title = instance.frontmatter.title;
     this.slug = slugify(this.title, { lower: true, strict: true });
+    this.url = `/${this.category}/${this.slug}`;
   }
 
   getCategory(instance: MarkdownInstance<Frontmatter>): PostCategory {
@@ -80,8 +82,8 @@ export abstract class Post {
 
 export class FullPost extends Post {
   authors: string[];
-
   component: AstroComponentFactory;
+  file: string;
 
   constructor(instance: MarkdownInstance<Frontmatter>) {
     super(instance);
@@ -89,9 +91,15 @@ export class FullPost extends Post {
     this.authors.push(...(instance.frontmatter.authors ?? []));
 
     this.component = instance.Content;
+
+    this.file = instance.file;
   }
 
   authorsToString(): string {
     return this.authors.join(", ");
   }
+}
+
+export function getUrl(instance: MarkdownInstance<Frontmatter>): string {
+  return new FullPost(instance).url;
 }
