@@ -1,5 +1,5 @@
 ---
-title: 'skorporaal.com'
+title: "skorporaal.com"
 date: 2022-05-17
 ---
 

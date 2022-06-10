@@ -1,19 +1,26 @@
 ---
-import { SITE_DATA } from '@scripts/data'
-import { dateTimeToString } from '@scripts/common';
-import ThemeToggle from './ThemeToggle.svelte';
+import { SITE_DATA } from "@scripts/data";
+import { dateTimeToString } from "@scripts/common";
+import ThemeToggle from "./ThemeToggle.svelte";
 
-const dateString = dateTimeToString(SITE_DATA.builtAt)
+const dateString = dateTimeToString(SITE_DATA.builtAt);
 ---
 
 <footer
-  class="relative flex flex-row justify-between bg-gray-100 py-8 px-4 text-gray-400 dark:bg-gray-700 dark:text-gray-400 md:justify-end md:px-8">
-  <div class="mr-2 flex flex-col md:mr-0">
+  class="relative flex flex-row justify-between px-4 py-8 text-gray-400 bg-gray-100 dark:bg-gray-700 dark:text-gray-400 md:justify-end md:px-8"
+>
+  <div class="flex flex-col mr-2 md:mr-0">
     <div class="font-bold">
       Copyright © 2022
-      <a href="mailto:{{ site.email }}" class="fancy-external-link">{ SITE_DATA.name }</a>
+      <a href="mailto:{{ site.email }}" class="fancy-external-link"
+        >{SITE_DATA.name}
+      </a>
     </div>
-    <div>Last updated on <time datetime={SITE_DATA.builtAt.toISOString()}>{dateString}</time></div>
+    <div>
+      Last updated on <time datetime={SITE_DATA.builtAt.toISOString()}
+        >{dateString}
+      </time>
+    </div>
   </div>
   <ThemeToggle client:load />
 </footer>

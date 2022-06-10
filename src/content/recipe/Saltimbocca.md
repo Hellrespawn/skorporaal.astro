@@ -8,26 +8,26 @@ Dit recept is oorspronkelijk gebaseerd op een verspakket van de Albert Heijn wat
 
 ## Ingrediënten voor twee personen
 
-| #:                | Ingredient:          | kcal: |
-| ----------------- | -------------------- | ----: |
-| 400g (2 filets)   | kipfilet óf          |   440 |
-| 400g (4 filets)   | kiphaasjes óf        |   440 |
-| 260 (2 filets)    | kabeljauw            |   100 |
-|                   |                      |       |
-| 250g              | verse pasta óf       |   700 |
-| 200g              | gedroogde pasta      |   700 |
-|                   |                      |       |
-| 4 plakken (60g)   | rauwe ham[^1]        |   120 |
-| 200g              | doperwten            |   130 |
-| 250g              | champignons          |    40 |
-| 2 teen            | knoflook             |    16 |
-| 250ml             | kookroom             |   512 |
-| 20g               | harde italiaane kaas |   120 |
-| 2 el              | olie                 |   160 |
+| #:               | Ingredient:          | kcal: |
+| ---------------- | -------------------- | ----: |
+| 400g (2 filets)  | kipfilet óf          |   440 |
+| 400g (4 filets)  | kiphaasjes óf        |   440 |
+| 260 (2 filets)   | kabeljauw            |   100 |
+|                  |                      |       |
+| 250g             | verse pasta óf       |   700 |
+| 200g             | gedroogde pasta      |   700 |
+|                  |                      |       |
+| 4 plakken (60g)  | rauwe ham[^1]        |   120 |
+| 200g             | doperwten            |   130 |
+| 250g             | champignons          |    40 |
+| 2 teen           | knoflook             |    16 |
+| 250ml            | kookroom             |   512 |
+| 20g              | harde italiaane kaas |   120 |
+| 2 el             | olie                 |   160 |
 | $${1 \over 2 }$$ | citroen              |       |
-|                   | salie                |       |
-|                   | totaal kip:          |  2238 |
-|                   | totaal kabeljauw:    |  1898 |
+|                  | salie                |       |
+|                  | totaal kip:          |  2238 |
+|                  | totaal kabeljauw:    |  1898 |
 
 [^1]: Prosciutto crudo is de traditionele manier om saltimbocca te maken, maar jamon serrano werkt ook goed. Er kan ook spek of Coburger ham gebruikt worden, maar deze smaken wel erg anders.
 

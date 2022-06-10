@@ -11,7 +11,7 @@
 
 <button
   tabindex="0"
-  class="static bottom-8 left-4 cursor-pointer rounded-full md:fixed md:bottom-4"
+  class="static rounded-full cursor-pointer bottom-8 left-4 md:fixed md:bottom-4"
   aria-label="toggle theme"
 >
   <span class="hidden dark:inline" on:click={toggle}>

@@ -1,22 +1,22 @@
 ---
-title: 'Champignon-roomsaus'
+title: "Champignon-roomsaus"
 ---
 
 ## Ingrediënten
 
-| #:               | Ingredient:        | kcal: |
-| ---------------- | ------------------ | ----: |
-| 250ml            | kookroom           |   520 |
-| 200ml            | rundvleesbouillon  |     4 |
-| 1                | sjalot             |    12 |
-| 1 teen           | knoflook           |     8 |
-| 400g             | champignons        |    80 |
-| 1 el             | bloem              |    35 |
-| 2 el             | peterselie         |    10 |
-| 10g              | roomboter          |    75 |
-| 1 tl             | worcestershiresaus |     5 |
+| #:              | Ingredient:        | kcal: |
+| --------------- | ------------------ | ----: |
+| 250ml           | kookroom           |   520 |
+| 200ml           | rundvleesbouillon  |     4 |
+| 1               | sjalot             |    12 |
+| 1 teen          | knoflook           |     8 |
+| 400g            | champignons        |    80 |
+| 1 el            | bloem              |    35 |
+| 2 el            | peterselie         |    10 |
+| 10g             | roomboter          |    75 |
+| 1 tl            | worcestershiresaus |     5 |
 | $${1 \over 4}$$ | citroen            |     5 |
-|                  | totaal:            |   754 |
+|                 | totaal:            |   754 |
 
 ## Bereiding
 

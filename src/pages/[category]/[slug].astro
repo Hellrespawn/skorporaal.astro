@@ -5,18 +5,19 @@ import PostLayout from "@layouts/PostLayout.astro";
 const { post } = Astro.props as { post: FullPost };
 
 export async function getStaticPaths() {
-  const instances = await Astro.glob<Frontmatter>('../../content/**/*.md')
+  const instances = await Astro.glob<Frontmatter>("../../content/**/*.md");
 
-  const posts = instances.map(instance => new FullPost(instance))
+  const posts = instances.map((instance) => new FullPost(instance));
 
-  return posts.map(post => {
+  return posts.map((post) => {
     return {
       params: {
-        category: post.category, slug: post.slug
+        category: post.category,
+        slug: post.slug,
       },
-      props: { post }
-    }
-  })
+      props: { post },
+    };
+  });
 }
 ---
 

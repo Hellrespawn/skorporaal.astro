@@ -22,7 +22,7 @@
   <div class="flex flex-row">
     <button
       on:click={sort.cycle}
-      class="button button-medium whitespace-nowrap font-semibold"
+      class="font-semibold button button-medium whitespace-nowrap"
       >{$sort.display}</button
     >
   </div>

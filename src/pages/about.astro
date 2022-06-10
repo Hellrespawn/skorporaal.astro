@@ -2,35 +2,22 @@
 import DefaultLayout from "@layouts/DefaultLayout.astro";
 import Home from "@components/Icons/Home.astro";
 import Quote from "@components/Quote.svelte";
-import photoReference from "@src/images/photograph.jpg";
+import Photograph from "@components/Photograph.astro";
+import Links from "@components/Links.astro";
 import { Content as About } from "@src/about.md";
-import { SITE_DATA } from "@scripts/data";
-import GitHub from "../components/Icons/GitHub.astro";
 ---
 
 <DefaultLayout title="404 - Page not found!">
   <div class="w-full h-full py-8 md:py-0">
     <div class="flex flex-row justify-center my-4">
-      <a class="button rounded-full" href="/">
+      <a class="rounded-full button" href="/">
         <Home />
       </a>
     </div>
 
-
-    <div class="flex flex-col items-end gap-4 flex-shrink-0 float-right ml-4 mb-4">
-      <div class="w-40 relative rounded-l-full overflow-hidden">
-        <img alt={SITE_DATA.name} src={photoReference} class="object-cover saturate-[25%]">
-        <div
-          class="absolute top-0 right-0 bottom-0 left-0 bg-secondary-500 dark:bg-primary-500 opacity-[5%] rounded-l-full">
-        </div>
-      </div>
-      <a class="button pr-0 w-full rounded-l-full" href="/">
-        <div
-          class="w-full rounded-l-full bg-gray-700 text-gray-50 dark:bg-gray-200 dark:text-gray-800 text-center flex flex-row items-center ">
-          <GitHub />
-          Hellrespawn
-        </div>
-      </a>
+    <div class="flex flex-col items-end flex-shrink-0 float-right gap-4 mb-4 ml-4">
+      <Photograph />
+      <Links />
     </div>
 
     <div class="mx-3 prose-full prose-ul:w-fit prose-ul:mx-auto prose-h3:text-center">

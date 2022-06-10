@@ -1,5 +1,5 @@
 ---
-title: 'Deconstructed Gevulde Paprika'
+title: "Deconstructed Gevulde Paprika"
 authors:
   - TheKitchn
 ---

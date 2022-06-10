@@ -10,16 +10,16 @@ De saus is een aangepaste versie van [dit recept](https://www.youtube.com/watch?
 
 ### Saus
 
-| #:                  | Ingredient:     | kcal: |
-| ------------------- | --------------- | ----: |
+| #:                 | Ingredient:     | kcal: |
+| ------------------ | --------------- | ----: |
 | $${1 \over 2}$$    | ui              |    12 |
-| 2 tenen             | knoflook        |    10 |
-| 1 blik              | gepelde tomaten |   100 |
-| 100ml               | kippenbouillon  |     4 |
-| 1 el                | bruine suiker   |    50 |
-| 1 el                | oregano         |     1 |
+| 2 tenen            | knoflook        |    10 |
+| 1 blik             | gepelde tomaten |   100 |
+| 100ml              | kippenbouillon  |     4 |
+| 1 el               | bruine suiker   |    50 |
+| 1 el               | oregano         |     1 |
 | $${1 \over 2}$$ el | olijfolie       |    40 |
-|                     | totaal:         |   217 |
+|                    | totaal:         |   217 |
 
 ### Schnitzel
 

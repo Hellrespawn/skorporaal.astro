@@ -6,7 +6,7 @@ import PostHeading from "@components/PostHeading.astro";
 import { type FullPost } from "@scripts/post";
 
 export interface Props {
-  post: FullPost
+  post: FullPost;
 }
 
 const { post } = Astro.props as Props;
@@ -18,8 +18,8 @@ const { post } = Astro.props as Props;
       <TopNav />
       <article lang={post.lang} class="w-full">
         <PostHeading post={post} />
-        <div class="prose-full py-8">
-          <h1 class="text-3xl">{ post.title }</h1>
+        <div class="py-8 prose-full">
+          <h1 class="text-3xl">{post.title}</h1>
 
           <post.component />
         </div>

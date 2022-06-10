@@ -1,5 +1,19 @@
-<script>
-  export let classes = "";
+<script lang="ts">
+  export let classes: string = "";
+  export let size: "small" | "medium" | "large" = "medium";
+  switch (size) {
+    case "small":
+      classes += " h-10 w-10";
+      break;
+    case "medium":
+      classes += " h-12 w-12";
+      break;
+    case "large":
+      classes += " h-16 w-16";
+      break;
+    default:
+      throw new Error(`Invalid icon size '${size}'`);
+  }
 </script>
 
 <span

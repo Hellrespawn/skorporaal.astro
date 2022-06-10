@@ -5,14 +5,16 @@ import Footer from "@components/Footer.astro";
 ---
 
 <BaseLayout>
-    <main class="flex flex-grow flex-col md:min-h-screen md:flex-row">
-        <section class="flex flex-col items-center justify-center py-8 px-4 md:h-screen md:w-1/2 md:flex-none md:px-8">
-            <Bio />
-        </section>
+  <main class="flex flex-col flex-grow md:min-h-screen md:flex-row">
+    <section
+      class="flex flex-col items-center justify-center px-4 py-8 md:h-screen md:w-1/2 md:flex-none md:px-8"
+    >
+      <Bio />
+    </section>
 
-        <section class="flex-none md:w-1/2">
-            <slot />
-        </section>
-    </main>
-    <Footer />
+    <section class="flex-none md:w-1/2">
+      <slot></slot>
+    </section>
+  </main>
+  <Footer />
 </BaseLayout>

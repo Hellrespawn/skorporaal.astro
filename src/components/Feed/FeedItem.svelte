@@ -25,18 +25,18 @@
 <!-- Same px as filter -->
 <a
   href={feedItem.url}
-  class="button postUrl flex flex-col items-baseline md:flex-row"
+  class="flex flex-col items-baseline button postUrl md:flex-row"
 >
-  <span class="flex flex-grow flex-row items-baseline">
+  <span class="flex flex-row items-baseline flex-grow">
     <!-- Colored Dot -->
     <Dot bg={feedItem.dot} />
     <!-- Title -->
-    <p class="postTitle px-2">{title}</p>
+    <p class="px-2 postTitle">{title}</p>
   </span>
 
   <!-- Date -->
   <div
-    class="postDate w-full whitespace-nowrap text-right text-sm text-gray-400 dark:text-gray-500 md:w-auto md:text-left"
+    class="w-full text-sm text-right text-gray-400 postDate whitespace-nowrap dark:text-gray-500 md:w-auto md:text-left"
   >
     {feedItem.formattedDate}
   </div>

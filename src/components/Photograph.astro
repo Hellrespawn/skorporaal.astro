@@ -1,0 +1,10 @@
+---
+import { SITE_DATA } from "@scripts/data";
+import photoReference from "@src/images/photograph.jpg";
+---
+
+<div class="relative w-40 overflow-hidden rounded-l-full">
+  <img alt={SITE_DATA.name} src={photoReference} class="object-cover saturate-[25%]" />
+  <div class="absolute top-0 right-0 bottom-0 left-0 bg-secondary-500 dark:bg-primary-500 opacity-[5%] rounded-l-full">
+  </div>
+</div>
