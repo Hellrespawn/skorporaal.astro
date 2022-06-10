@@ -20,7 +20,7 @@
   }
 
   .prose-full {
-    @apply prose-a:reset-text-color prose prose-lg prose-zinc prose-teal dark:prose-invert;
+    @apply prose-a:reset-text-color prose prose-lg prose-zinc prose-teal dark:prose-invert prose-blockquote:dark:border-primary-700 prose-blockquote:border-secondary-200;
   }
 
   .prose-full a {
