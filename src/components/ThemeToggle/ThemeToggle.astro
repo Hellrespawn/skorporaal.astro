@@ -1,0 +1,19 @@
+---
+import Sun from "@components/Icons/Sun.astro";
+import Moon from "@components/Icons/Moon.astro";
+import Button from "@components/Button.astro";
+import ThemeToggle from "@components/ThemeToggle/_ThemeToggle.svelte";
+---
+
+<ThemeToggle client:load>
+  <Button class="static flex items-center justify-center w-12 h-12 p-2 rounded-full cursor-pointer bottom-8 left-4 md:fixed md:bottom-4">
+    <button tabindex="0" aria-label="toggle theme">
+      <span class="hidden dark:inline">
+        <Sun />
+      </span>
+      <span class="dark:hidden">
+        <Moon />
+      </span>
+    </button>
+  </Button>
+</ThemeToggle>

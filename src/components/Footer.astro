@@ -1,7 +1,7 @@
 ---
 import { SITE_DATA } from "@scripts/data";
 import { dateTimeToString } from "@scripts/common";
-import ThemeToggle from "./ThemeToggle.svelte";
+import ThemeToggle from "@components/ThemeToggle/ThemeToggle.astro";
 
 const dateString = dateTimeToString(SITE_DATA.builtAt);
 ---
@@ -22,5 +22,5 @@ const dateString = dateTimeToString(SITE_DATA.builtAt);
       </time>
     </div>
   </div>
-  <ThemeToggle client:load />
+  <ThemeToggle />
 </footer>

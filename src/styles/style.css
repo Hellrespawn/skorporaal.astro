@@ -3,12 +3,8 @@
 @tailwind utilities;
 
 @layer components {
-  .button {
-    @apply my-1 flex flex-row items-baseline rounded-sm py-2 px-2 text-gray-700 transition-colors duration-75 hover:bg-gray-100 active:bg-gray-200 dark:text-gray-200 hover:dark:bg-gray-750 active:dark:bg-gray-700;
-  }
-
-  .button.button-clip {
-    @apply m-0 p-0;
+  /* .button {
+    @apply flex flex-row items-baseline px-2 py-2 my-1 text-gray-700 transition-colors duration-100 rounded-sm hover:bg-gray-100 active:bg-gray-200 dark:text-gray-200 hover:dark:bg-gray-750 active:dark:bg-gray-700;
   }
 
   button.button-medium {
@@ -17,10 +13,10 @@
 
   button.button-dark {
     @apply text-gray-400 dark:text-gray-500;
-  }
+  } */
 
   .prose-full {
-    @apply prose-a:reset-text-color prose prose-lg prose-zinc prose-teal prose-blockquote:border-secondary-200 dark:prose-invert prose-blockquote:dark:border-primary-700;
+    @apply prose prose-lg prose-a:reset-text-color prose-zinc prose-teal prose-blockquote:border-secondary-200 dark:prose-invert prose-blockquote:dark:border-primary-700;
   }
 
   .prose-full a {
@@ -50,7 +46,6 @@
   }
 
   .theme-shadow {
-    @apply transition-shadow duration-100 md:shadow-md
-    md:shadow-gray-400 md:hover:shadow-gray-500 md:dark:shadow-gray-900 md:dark:hover:shadow-mdlg md:dark:hover:shadow-black;
+    @apply transition-shadow duration-100 md:shadow-md md:shadow-gray-400 md:hover:shadow-gray-500 md:dark:shadow-gray-900 md:dark:hover:shadow-mdlg md:dark:hover:shadow-black;
   }
 }
