@@ -53,11 +53,11 @@ export const CATEGORY_DATA: Record<PostCategory, CategoryData> = {
     text: "text-tertiary-500",
   },
   other: {
-    bg: "bg-rose-500",
-    border: "border-rose-500",
+    bg: "bg-quaternary-500",
+    border: "border-quaternary-500",
     plural: "Other",
     single: "Other",
-    text: "text-rose-500",
+    text: "text-quaternary-500",
   },
 };
 

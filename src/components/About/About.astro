@@ -1,0 +1,23 @@
+---
+import Photograph from "@components/About/Photograph.astro";
+import Links from "@components/About/Links.astro";
+import { Content as About } from "@components/About/About.md";
+import Skills from "./Skills.astro";
+---
+
+<div class="w-full h-full mx-auto flex flex-col gap-4 md:gap-8">
+  <div>
+    <div
+      class="flex flex-col items-start flex-shrink-0 float-left gap-4 my-4 mr-4"
+    >
+      <Photograph />
+      <Links />
+    </div>
+
+    <div class="px-3 md:mx-auto prose-custom">
+      <About />
+    </div>
+  </div>
+
+  <Skills />
+</div>

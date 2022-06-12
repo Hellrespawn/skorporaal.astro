@@ -33,6 +33,7 @@ function averageHexColors(color1, color2) {
   )}`;
 }
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   plugins: [require("@tailwindcss/typography")],
   content: ["./src/**/*.{astro,svelte,css,json,ts}"],
@@ -49,9 +50,6 @@ module.exports = {
       blink: "blink 530ms step-start infinite alternate",
     },
     extend: {
-      boxShadow: {
-        mdlg: "0 7px 11px -2px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
-      },
       colors: {
         transparent: "transparent",
         current: "currentColor",
@@ -60,6 +58,7 @@ module.exports = {
         primary: colors.cyan,
         secondary: colors.amber,
         tertiary: colors.emerald,
+        quaternary: colors.rose,
         gray: {
           ...gray,
           750: averageHexColors(gray[700], gray[800]),
@@ -67,6 +66,10 @@ module.exports = {
       },
       fontFamily: {
         sans: ['"Nunito"', ...defaultTheme.fontFamily.sans],
+      },
+      transitionDuration: {
+        main: "200ms",
+        photograph: "300ms",
       },
     },
   },

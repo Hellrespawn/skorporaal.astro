@@ -6,12 +6,14 @@ import ThemeToggle from "@components/ThemeToggle/_ThemeToggle.svelte";
 ---
 
 <ThemeToggle client:load>
-  <Button class="static flex items-center justify-center w-12 h-12 p-2 rounded-full cursor-pointer bottom-8 left-4 md:fixed md:bottom-4">
+  <Button
+    class="static flex items-center justify-center w-12 h-12 p-2 rounded-full cursor-pointer bottom-8 left-4 md:fixed md:bottom-4"
+  >
     <button tabindex="0" aria-label="toggle theme">
-      <span class="hidden dark:inline">
+      <span class="hidden dark:inline rounded-full">
         <Sun />
       </span>
-      <span class="dark:hidden">
+      <span class="dark:hidden rounded-full">
         <Moon />
       </span>
     </button>

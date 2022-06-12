@@ -6,28 +6,33 @@
   import { filter } from "@scripts/feed/filter";
 </script>
 
-<div class="flex flex-row items-center justify-between text-lg md:text-base">
-  <div class="flex flex-col md:flex-row">
+<div
+  class="flex flex-row items-center justify-between border-b border-gray-200 text-lg dark:border-gray-700 md:text-base"
+>
+  <div class="flex flex-row flex-wrap py-1">
     {#each Object.entries(CATEGORY_DATA) as [category, data]}
-      <FeedButton>
-        <button
-          on:click={() => filter.toggle(category)}
-          class:opacity-50={!$filter.includes(category)}
-        >
-          <Dot bg={data.bg} />
-          {data.plural}
-        </button>
-      </FeedButton>
+      <button
+        on:click={() => filter.toggle(category)}
+        class:opacity-50={!$filter.includes(category)}
+      >
+        <FeedButton class="p-2">
+          <div class="flex flex-grow flex-row items-baseline">
+            <!-- Colored Dot -->
+            <Dot bg={data.bg} />
+            <!-- Title -->
+            <p class="postTitle px-2">{data.plural}</p>
+          </div>
+        </FeedButton>
+      </button>
     {/each}
   </div>
 
   <div class="flex flex-row">
-    <FeedButton>
-      <button
-        on:click={sort.cycle}
-        class="font-semibold button button-medium whitespace-nowrap"
-        >{$sort.display}</button
-      >
-    </FeedButton>
+    <button
+      on:click={sort.cycle}
+      class="button button-medium whitespace-nowrap font-semibold"
+    >
+      <FeedButton class="p-2">{$sort.display}</FeedButton></button
+    >
   </div>
 </div>
