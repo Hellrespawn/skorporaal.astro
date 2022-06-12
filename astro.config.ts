@@ -5,6 +5,7 @@ import svelte from "@astrojs/svelte";
 export default defineConfig({
   site: "https://skorporaal.com",
   markdown: {
+    // syntaxHighlight: "prism",
     remarkPlugins: ["remark-gfm", "remark-smartypants", "remark-math"],
     rehypePlugins: [
       [
@@ -16,6 +17,9 @@ export default defineConfig({
       ],
       "rehype-katex",
     ],
+    shikiConfig: {
+      wrap: true,
+    },
   },
   integrations: [svelte()],
 });

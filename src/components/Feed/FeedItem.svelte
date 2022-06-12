@@ -25,16 +25,16 @@
 
 <a href={feedItem.url} class="flex flex-col items-baseline p-1 md:flex-row">
   <FeedButton class="w-full px-2 py-2">
-    <span class="flex flex-row items-baseline flex-grow">
+    <span class="flex flex-grow flex-row items-baseline">
       <!-- Colored Dot -->
       <Dot bg={feedItem.dot} />
       <!-- Title -->
-      <p class="px-2 postTitle">{title}</p>
+      <p class="postTitle px-2">{title}</p>
     </span>
 
     <!-- Date -->
     <div
-      class="w-full text-sm text-right text-gray-400 postDate whitespace-nowrap dark:text-gray-500 md:w-auto md:text-left"
+      class="postDate w-full whitespace-nowrap text-right text-sm text-gray-400 dark:text-gray-500 md:w-auto md:text-left"
     >
       {feedItem.formattedDate}
     </div>

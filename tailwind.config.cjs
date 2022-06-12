@@ -60,6 +60,7 @@ module.exports = {
         primary: colors.cyan,
         secondary: colors.amber,
         tertiary: colors.emerald,
+        quaternary: colors.rose,
         gray: {
           ...gray,
           750: averageHexColors(gray[700], gray[800]),

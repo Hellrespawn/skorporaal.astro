@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "clean": "del-cli dist",
-    "dev": "astro dev",
-    "start": "astro dev",
+    "dev": "astro dev --host",
+    "start": "astro dev --host",
     "build": "astro build",
     "preview": "astro preview",
     "lint": "eslint ./src",

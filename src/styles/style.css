@@ -3,18 +3,14 @@
 @tailwind utilities;
 
 @layer components {
-  .prose-full {
-    @apply prose prose-lg prose-a:reset-text-color prose-zinc prose-teal prose-blockquote:border-secondary-200 dark:prose-invert prose-blockquote:dark:border-primary-700;
-  }
-
-  .prose-full a {
-    @apply fancy-link;
+  .prose-custom {
+    @apply prose-a:fancy-link prose-a:reset-text-color prose prose-lg prose-zinc prose-teal prose-blockquote:border-secondary-200 prose-pre:whitespace-pre-wrap dark:prose-invert prose-blockquote:dark:border-primary-700;
   }
 }
 
 @layer utilities {
   .fancy-link {
-    @apply bg-gradient-to-r bg-[length:auto_36%] bg-[center_bottom_1px] bg-no-repeat from-tertiary-200 to-tertiary-200 dark:from-tertiary-900 dark:to-tertiary-900;
+    @apply bg-gradient-to-r from-quaternary-200 to-quaternary-200 bg-[length:auto_36%] bg-[center_bottom_1px] bg-no-repeat dark:from-tertiary-900 dark:to-tertiary-900;
   }
 
   .fancy-link[target="_blank"],
