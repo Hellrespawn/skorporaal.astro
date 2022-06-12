@@ -5,7 +5,7 @@
   onMount(fillQuote);
 </script>
 
-<figure id="quote" class="prose-full sm:mx-12">
+<figure id="quote" class="prose-full">
   <!-- Whitespace is preserved here, so the placeholder quote needs to all be
   on one line. -->
   <!-- prettier-ignore -->

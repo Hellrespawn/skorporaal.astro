@@ -1,19 +1,8 @@
 ---
 import DefaultLayout from "@layouts/DefaultLayout.astro";
-import Home from "@components/Icons/Home.astro";
-import { Content as About } from "@src/about.md";
+import NotFound from "@components/404.astro";
 ---
 
 <DefaultLayout title="404 - Page not found!">
-  <div class="w-full h-full md:py-8">
-    <div class="flex flex-row justify-center my-4">
-      <a class="rounded-full button" href="/">
-        <Home />
-      </a>
-    </div>
-
-    <div class="mx-3 md:mx-auto prose-full prose-ul:w-fit prose-ul:mx-auto prose-h3:text-center">
-      <About />
-    </div>
-  </div>
+  <NotFound />
 </DefaultLayout>

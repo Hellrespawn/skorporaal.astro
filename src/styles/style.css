@@ -3,42 +3,23 @@
 @tailwind utilities;
 
 @layer components {
-  /* .button {
-    @apply flex flex-row items-baseline px-2 py-2 my-1 text-gray-700 transition-colors duration-100 rounded-sm hover:bg-gray-100 active:bg-gray-200 dark:text-gray-200 hover:dark:bg-gray-750 active:dark:bg-gray-700;
-  }
-
-  button.button-medium {
-    @apply text-gray-600 dark:text-gray-300;
-  }
-
-  button.button-dark {
-    @apply text-gray-400 dark:text-gray-500;
-  } */
-
   .prose-full {
     @apply prose prose-lg prose-a:reset-text-color prose-zinc prose-teal prose-blockquote:border-secondary-200 dark:prose-invert prose-blockquote:dark:border-primary-700;
   }
 
   .prose-full a {
-    @apply fancy-link fancy-internal-link;
-  }
-
-  .prose-full a[target="_blank"] {
-    @apply fancy-external-link;
+    @apply fancy-link;
   }
 }
 
 @layer utilities {
   .fancy-link {
-    @apply bg-gradient-to-r bg-[length:auto_36%] bg-[center_bottom_1px] bg-no-repeat;
+    @apply bg-gradient-to-r bg-[length:auto_36%] bg-[center_bottom_1px] bg-no-repeat from-tertiary-200 to-tertiary-200 dark:from-tertiary-900 dark:to-tertiary-900;
   }
 
-  .fancy-internal-link {
-    @apply fancy-link from-tertiary-200 to-tertiary-200 dark:from-tertiary-900 dark:to-tertiary-900;
-  }
-
-  .fancy-external-link {
-    @apply fancy-link from-secondary-200 to-secondary-200 dark:from-primary-700 dark:to-primary-700;
+  .fancy-link[target="_blank"],
+  .fancy-link[href^="mailto"] {
+    @apply from-secondary-200 to-secondary-200 dark:from-primary-700 dark:to-primary-700;
   }
 
   .reset-text-color {

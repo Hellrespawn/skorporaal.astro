@@ -1,22 +1,8 @@
 ---
 import DefaultLayout from "@layouts/DefaultLayout.astro";
-import Photograph from "@components/About/Photograph.astro";
-import Links from "@components/About/Links.astro";
-import TopNav from "@components/TopNav.astro";
-import { Content as About } from "@src/about.md";
+import About from "../components/About/About.astro";
 ---
 
-<DefaultLayout title="About me">
-  <div class="w-full h-full">
-    <TopNav />
-
-    <div class="flex flex-col items-end flex-shrink-0 float-right gap-4 mb-4 ml-4">
-      <Photograph />
-      <Links />
-    </div>
-
-    <div class="mx-3 md:mx-auto prose-full prose-ul:w-fit prose-ul:mx-auto prose-h3:text-center">
-      <About />
-    </div>
-  </div>
+<DefaultLayout title="About Me">
+  <About />
 </DefaultLayout>

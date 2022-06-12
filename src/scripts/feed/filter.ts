@@ -22,7 +22,6 @@ function createFilter() {
           activeCategories.push(category);
         }
 
-        console.log(activeCategories);
         return activeCategories;
       });
     },

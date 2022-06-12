@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Dot from "@components/Feed/Dot.svelte";
   import { onMount } from "svelte";
-  import { LANGUAGE_DATA } from "../../scripts/data";
-  import FeedButton from "./FeedButton.svelte";
+  import Dot from "@components/Feed/Dot.svelte";
+  import FeedButton from "@components/Feed/FeedButton.svelte";
+  import { LANGUAGE_DATA } from "@scripts/data";
 
   export let feedItem: {
     dot: string;
@@ -23,12 +23,8 @@
   });
 </script>
 
-<FeedButton>
-  <!-- Same px as filter -->
-  <a
-    href={feedItem.url}
-    class="flex flex-col items-baseline w-full postUrl md:flex-row"
-  >
+<a href={feedItem.url} class="flex flex-col items-baseline p-1 md:flex-row">
+  <FeedButton class="w-full px-2 py-2">
     <span class="flex flex-row items-baseline flex-grow">
       <!-- Colored Dot -->
       <Dot bg={feedItem.dot} />
@@ -42,5 +38,5 @@
     >
       {feedItem.formattedDate}
     </div>
-  </a>
-</FeedButton>
+  </FeedButton>
+</a>

@@ -29,11 +29,11 @@
 <ul id="postFeed" class="text-xl md:text-base">
   {#if filteredItems.length}
     {#each filteredItems as feedItem (feedItem.slug)}
-      <li class="border-t border-gray-200 dark:border-gray-700">
+      <li class="border-b border-gray-200 dark:border-gray-700">
         <FeedItemComponent {feedItem} />
       </li>{/each}
   {:else}
-    <li class="border-t border-gray-200 dark:border-gray-700">
+    <li class="border-b border-gray-200 dark:border-gray-700">
       <FeedItemComponent feedItem={emptyItem} />
     </li>
   {/if}
