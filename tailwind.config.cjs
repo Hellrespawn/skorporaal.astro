@@ -50,9 +50,6 @@ module.exports = {
       blink: "blink 530ms step-start infinite alternate",
     },
     extend: {
-      boxShadow: {
-        mdlg: "0 7px 11px -2px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
-      },
       colors: {
         transparent: "transparent",
         current: "currentColor",
@@ -72,7 +69,7 @@ module.exports = {
       },
       transitionDuration: {
         main: "200ms",
-        photograph: "300ms"
+        photograph: "300ms",
       },
     },
   },

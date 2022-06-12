@@ -5,25 +5,18 @@ import { Content as About } from "@components/About/About.md";
 import Skills from "./Skills.astro";
 ---
 
-<div class="w-full h-full mx-auto">
-  <h1
-    class="my-8 font-mono text-4xl font-bold text-center md:my-16 whitespace-nowrap"
-  >
-    <a href="/" class="fancy-link">skorporaal.com</a><span
-      class="inline-block -translate-x-1 animate-blink"
-      >|
-    </span>
-  </h1>
+<div class="w-full h-full mx-auto flex flex-col gap-4 md:gap-8">
+  <div>
+    <div
+      class="flex flex-col items-start flex-shrink-0 float-left gap-4 my-4 mr-4"
+    >
+      <Photograph />
+      <Links />
+    </div>
 
-  <div
-    class="flex flex-col items-start flex-shrink-0 float-left gap-4 my-4 mr-4"
-  >
-    <Photograph />
-    <Links />
-  </div>
-
-  <div class="px-3 md:mx-auto prose-custom">
-    <About />
+    <div class="px-3 md:mx-auto prose-custom">
+      <About />
+    </div>
   </div>
 
   <Skills />
