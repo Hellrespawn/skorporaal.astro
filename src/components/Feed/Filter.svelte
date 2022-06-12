@@ -15,7 +15,7 @@
         on:click={() => filter.toggle(category)}
         class:opacity-50={!$filter.includes(category)}
       >
-        <FeedButton class="px-2 py-2">
+        <FeedButton class="p-2">
           <div class="flex flex-grow flex-row items-baseline">
             <!-- Colored Dot -->
             <Dot bg={data.bg} />
@@ -32,7 +32,7 @@
       on:click={sort.cycle}
       class="button button-medium whitespace-nowrap font-semibold"
     >
-      <FeedButton class="px-2 py-2">{$sort.display}</FeedButton></button
+      <FeedButton class="p-2">{$sort.display}</FeedButton></button
     >
   </div>
 </div>

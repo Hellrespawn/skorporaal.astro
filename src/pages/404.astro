@@ -1,8 +1,14 @@
 ---
-import DefaultLayout from "@layouts/DefaultLayout.astro";
+import ColumnLayout from "@layouts/ColumnLayout.astro";
+import About from "@components/About/About.astro";
 import NotFound from "@components/404.astro";
 ---
 
-<DefaultLayout title="404 - Page not found!">
-  <NotFound />
-</DefaultLayout>
+<ColumnLayout title="404 - Page not found!">
+  <Fragment slot="left">
+    <About />
+  </Fragment>
+  <Fragment slot="right">
+    <NotFound />
+  </Fragment>
+</ColumnLayout>

@@ -1,6 +1,7 @@
 ---
-import DefaultLayout from "@layouts/DefaultLayout.astro";
+import ColumnLayout from "@layouts/ColumnLayout.astro";
 import Feed from "@components/Feed/Feed.svelte";
+import About from "@components/About/About.astro";
 import { FeedItem } from "@scripts/feed/feedItem";
 import { type Frontmatter } from "@scripts/post";
 
@@ -9,6 +10,11 @@ const instances = await Astro.glob<Frontmatter>("../content/**/*.md");
 const feedItems = instances.map((instance) => new FeedItem(instance));
 ---
 
-<DefaultLayout>
-  <Feed client:load feedItems={feedItems} />
-</DefaultLayout>
+<ColumnLayout title="Home">
+  <Fragment slot="left">
+    <About />
+  </Fragment>
+  <Fragment slot="right">
+    <Feed client:load feedItems={feedItems} />
+  </Fragment>
+</ColumnLayout>

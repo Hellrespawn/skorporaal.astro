@@ -33,6 +33,7 @@ function averageHexColors(color1, color2) {
   )}`;
 }
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   plugins: [require("@tailwindcss/typography")],
   content: ["./src/**/*.{astro,svelte,css,json,ts}"],
@@ -68,6 +69,10 @@ module.exports = {
       },
       fontFamily: {
         sans: ['"Nunito"', ...defaultTheme.fontFamily.sans],
+      },
+      transitionDuration: {
+        main: "200ms",
+        photograph: "300ms"
       },
     },
   },

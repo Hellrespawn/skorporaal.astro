@@ -24,7 +24,7 @@
 </script>
 
 <a href={feedItem.url} class="flex flex-col items-baseline p-1 md:flex-row">
-  <FeedButton class="w-full px-2 py-2">
+  <FeedButton class="w-full p-2">
     <span class="flex flex-grow flex-row items-baseline">
       <!-- Colored Dot -->
       <Dot bg={feedItem.dot} />
@@ -34,7 +34,7 @@
 
     <!-- Date -->
     <div
-      class="postDate w-full whitespace-nowrap text-right text-sm text-gray-400 dark:text-gray-500 md:w-auto md:text-left"
+      class="postDate whitespace-nowrap text-right text-sm text-gray-400 dark:text-gray-500 md:w-auto md:text-left"
     >
       {feedItem.formattedDate}
     </div>
