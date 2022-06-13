@@ -11,7 +11,7 @@
     "lint": "eslint ./src",
     "format": "prettier -w ./src --plugin-search-dir=.",
     "ftp": "node -r @swc-node/register deploy.ts",
-    "deploy": "npm-run-all build ftp"
+    "deploy": "npm-run-all clean build ftp"
   },
   "devDependencies": {
     "@astrojs/svelte": "^0.1.4",
