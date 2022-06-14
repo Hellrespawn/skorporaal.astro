@@ -1,0 +1,17 @@
+---
+export interface Props {
+  src: string
+  name: string
+}
+
+const { src, name } = Astro.props as Props;
+---
+
+<div class="flex flex-row items-center gap-8">
+  <img src={src}
+    class="w-24 h-24 bg-gray-100 border border-gray-200 rounded-r-full dark:border-gray-700 dark:border-none" />
+  <div class="flex-grow">
+    <h3 class="text-lg font-semibold">{name}</h3>
+    <slot />
+  </div>
+</div>
