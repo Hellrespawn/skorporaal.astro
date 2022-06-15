@@ -2,7 +2,7 @@
 title: "JavaScript & TypeScript Tips & Tricks"
 date: 2021-12-19
 setup: |
-  import { getUrl } from "@scripts/post";
+  import { getUrl } from "@s:post";
   import * as html from "./HTML CSS Tips & Tricks.md";
   import * as jsTs from "./JavaScript TypeScript Tips & Tricks.md";
 

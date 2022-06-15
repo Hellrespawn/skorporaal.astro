@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { sort } from "@scripts/feed/sort";
-  import { filter } from "@scripts/feed/filter";
-  import { type FeedItem } from "@scripts/feed/feedItem";
-  import Filter from "@components/Feed/Filter.svelte";
-  import FeedItemComponent from "@components/Feed/FeedItem.svelte";
+  import { sort } from "@s:feed/sort";
+  import { filter } from "@s:feed/filter";
+  import { type FeedItem } from "@s:feed/feedItem";
+  import Filter from "@c:Feed/Filter.svelte";
+  import FeedItemComponent from "@c:Feed/FeedItem.svelte";
   import { onMount } from "svelte";
 
   let emptyItem: FeedItem;
