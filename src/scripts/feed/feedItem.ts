@@ -1,6 +1,6 @@
 import { type MarkdownInstance } from "astro";
-import { CATEGORY_DATA } from "@scripts/data";
-import { type Frontmatter, Post } from "@scripts/post";
+import { CATEGORY_DATA } from "@s:data";
+import { type Frontmatter, Post } from "@s:post";
 
 export class FeedItem extends Post {
   dot: string;

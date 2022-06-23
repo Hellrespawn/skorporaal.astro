@@ -2,7 +2,7 @@
 title: "JavaScript & TypeScript Tips & Tricks"
 date: 2021-12-19
 setup: |
-  import { getUrl } from "@scripts/post";
+  import { getUrl } from "@s:post";
   import * as html from "./HTML CSS Tips & Tricks.md";
   import * as jsTs from "./JavaScript TypeScript Tips & Tricks.md";
 
@@ -33,6 +33,12 @@ This enables a slightly slower but more accurate transpilation of modern iterati
 
 ## Code
 
+### Falsy Values
+
+The of values that are considered false in a boolean context can be found [here](https://developer.mozilla.org/en-US/docs/Glossary/Falsy).
+
+Notably, it does not include the empty array `[]` or empty object `{}`, which is a common misunderstanding for people coming from, say, Python.
+
 ### Default imports don't have a fixed name
 
 Conventionally, one uses the same name as the export when using a default import (and your IDE usually does this automatically), but this is not required.
@@ -48,6 +54,18 @@ import increment from "File1";
 
 console.log(increment(2));
 // Prints '3'
+```
+
+### `type` imports
+
+You can import something as a `type` only with the following syntax:
+
+```ts
+import { type FeedItem } from "@s:feed/feedItem";
+
+let items: FeedItem[] = []; // This is fine
+let item = new FeedItem(); // TypeScript shows an error message:
+// 'FeedItem' cannot be used as a value because it was imported using 'import type'
 ```
 
 ### Convert recalcitrant collections to arrays

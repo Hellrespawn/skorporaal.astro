@@ -2,4 +2,4 @@ Hello! My name is Stef Korporaal. I am currently a student of Software Developme
 
 My goal is not just to improve what programming skills I already have, but to learn what programming as part of team is like and to how to contribute to creating a product for someone else instead of just myself.
 
-As a part of that, this site will have some posts detailing aspects of my learning process. I can't guarantee that these are best practices, or even make sense outside of the specific courses I'm following, but they were useful to me at the time of writing.
+Also, I needed somewhere to store my recipes.

@@ -1,9 +1,9 @@
 <script lang="ts">
-  import Dot from "@components/Feed/Dot.svelte";
-  import FeedButton from "@components/Feed/FeedButton.svelte";
-  import { CATEGORY_DATA } from "@scripts/data";
-  import { sort } from "@scripts/feed/sort";
-  import { filter } from "@scripts/feed/filter";
+  import Dot from "@c:Feed/Dot.svelte";
+  import FeedButton from "@c:Feed/FeedButton.svelte";
+  import { CATEGORY_DATA } from "@s:data";
+  import { sort } from "@s:feed/sort";
+  import { filter } from "@s:feed/filter";
 </script>
 
 <div
