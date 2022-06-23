@@ -69,7 +69,6 @@ module.exports = {
       },
       transitionDuration: {
         main: "200ms",
-        photograph: "300ms",
       },
     },
   },
