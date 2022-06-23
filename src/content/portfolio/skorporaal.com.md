@@ -32,7 +32,7 @@ The developers have, in fact, delayed the `1.0` release by almost two months, sp
 
 Which, to me, feel like the right priorities.
 
-There are some limitations, of course. If I had a main issue that's still unresolved, it's that there is no easy way to quickly in-line the contents of a file into a component.
+If I had to pick one issue that's still unresolved, it's that there is no easy way to quickly in-line the contents of a file into a component.
 
 The main limitation of Astro components is, of course, that they are entirely static. All code is executed at compile time. You could simply add JavaScript, like for any static HTML, but Astro allows you to [hydrate](https://docs.astro.build/en/core-concepts/partial-hydration/) framework components!
 
@@ -49,6 +49,8 @@ Svelte promises:
 Which seems in line with Astro's core values, so I've been using Svelte to add frontend functionality to the site. The sorting and filtering by categories of posts is driven by Svelte stores.
 
 One interesting side effect is that while Astro components can import all different kinds of framework components, those framework components can only import their own kind of framework component. This means that any component which I need within a Svelte component must also be Svelte component. You cannot import static Astro components from within Svelte.
+
+The main challenge was transferring objects across the build-time Astro/run-time Svelte boundary, which is not trivial. I use `Astro.glob` to read all posts, but the resulting `MarkdownInstance[]` turns `undefined` when passed as a prop to a Svelte component. Currently I transform the `MarkdownInstance`s to my own class, `FeedItem`, which calculates all the necessary values at build-time.
 
 ### Tailwind
 
