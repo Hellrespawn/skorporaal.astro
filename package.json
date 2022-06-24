@@ -14,13 +14,13 @@
     "deploy": "npm-run-all clean build ftp"
   },
   "devDependencies": {
-    "@astrojs/svelte": "^0.1.4",
+    "@astrojs/svelte": "^0.1.5",
     "@fontsource/nunito": "^4.5.9",
     "@swc-node/register": "^1.5.1",
     "@tailwindcss/typography": "^0.5.2",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
-    "astro": "1.0.0-beta.52",
+    "astro": "1.0.0-beta.53",
     "autoprefixer": "^10.4.7",
     "basic-ftp": "^4.6.6",
     "cssnano": "^5.1.12",
