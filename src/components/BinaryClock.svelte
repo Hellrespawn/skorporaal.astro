@@ -6,6 +6,8 @@
   export let bg: string | undefined;
   const finalBg = bg ?? "bg-secondary-500 dark:bg-primary-500";
 
+  const size = "h-2 w-2";
+
   type Bits = string;
 
   let now = new Date();
@@ -55,31 +57,12 @@
   }
 </script>
 
-<div class="flex flex-col">
-  <!-- Orders of magnitude -->
-  <div class="flex flex-row">
-    {#each { length: 6 } as _, i}
-      <span
-        class="flex h-3 w-3 items-end justify-center text-right font-mono text-[9px]"
-        >{2 ** (5 - i)}</span
-      >
-    {/each}
-  </div>
-
+<div class="flex flex-col font-mono text-[10px]">
   {#each time as { value, bits }}
     <div class="flex flex-row">
-      <!-- Dots -->
       {#each bits as bit}
-        <Dot
-          bg={+bit ? finalBg : "bg-gray-200 dark:bg-gray-800"}
-          size="h-3 w-3"
-        />
+        <Dot bg={+bit ? finalBg : "bg-gray-200 dark:bg-gray-800"} {size} />
       {/each}
-      <!-- Value -->
-      <span
-        class="flex h-3 w-3 items-center justify-end text-center font-mono text-[10px]"
-        >{value}</span
-      >
     </div>
   {/each}
 </div>
