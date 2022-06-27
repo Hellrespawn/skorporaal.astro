@@ -1,20 +1,20 @@
 ---
+import { type CategoryData } from "@s:data";
 import { type FullPost } from "@s:post";
-import { CATEGORY_DATA } from "@s:data";
 
 export interface Props {
   post: FullPost;
+  accent: CategoryData;
 }
 
-const { post } = Astro.props as Props;
-const data = CATEGORY_DATA[post.category];
+const { accent, post } = Astro.props as Props;
 ---
 
 <!-- Category name -->
-<div class={`text-sm ${data.text}`}>{data.single}</div>
+<div class={`text-sm ${accent.text}`}>{accent.single}</div>
 <!-- Heading with border -->
 <div
-  class={`${data.border} flex flex-row flex-wrap-reverse items-center justify-between border-t-2 gap-x-4`}
+  class={`${accent.border} flex flex-row flex-wrap-reverse items-center justify-between border-t-2 gap-x-4`}
 >
   <!-- Date -->
   <span class="text-gray-400 dark:text-gray-500">{post.formattedDate}</span>

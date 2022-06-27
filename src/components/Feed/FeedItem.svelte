@@ -1,8 +1,10 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import Dot from "@c:Feed/Dot.svelte";
-  import FeedButton from "@c:Feed/FeedButton.svelte";
+
   import { LANGUAGE_DATA } from "@s:data";
+
+  import Dot from "@c:Dot.svelte";
+  import FeedButton from "@c:Feed/FeedButton.svelte";
 
   export let feedItem: {
     dot: string;

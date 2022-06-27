@@ -1,9 +1,11 @@
 ---
-import GridLayout from "@l:GridLayout.astro";
-import Feed from "@c:Feed/Feed.svelte";
-import About from "@c:About/About.astro";
 import { FeedItem } from "@s:feed/feedItem";
 import { type Frontmatter } from "@s:post";
+
+import GridLayout from "@l:GridLayout.astro";
+
+import About from "@c:About/About.astro";
+import Feed from "@c:Feed/Feed.svelte";
 
 const instances = await Astro.glob<Frontmatter>("../content/**/*.md");
 

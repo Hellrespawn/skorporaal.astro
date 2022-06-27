@@ -1,10 +1,12 @@
 <script lang="ts">
-  import { sort } from "@s:feed/sort";
-  import { filter } from "@s:feed/filter";
-  import { type FeedItem } from "@s:feed/feedItem";
-  import Filter from "@c:Feed/Filter.svelte";
-  import FeedItemComponent from "@c:Feed/FeedItem.svelte";
   import { onMount } from "svelte";
+
+  import { type FeedItem } from "@s:feed/feedItem";
+  import { filter } from "@s:feed/filter";
+  import { sort } from "@s:feed/sort";
+
+  import FeedItemComponent from "@c:Feed/FeedItem.svelte";
+  import Filter from "@c:Feed/Filter.svelte";
 
   let emptyItem: FeedItem;
 
