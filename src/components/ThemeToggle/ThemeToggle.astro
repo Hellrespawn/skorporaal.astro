@@ -4,20 +4,21 @@ import ThemeToggle from "@c:ThemeToggle/_ThemeToggle.svelte";
 
 import Sun from "@c:Icons/Sun.astro";
 import Moon from "@c:Icons/Moon.astro";
+
+export interface Props {
+  class?: string;
+}
+
+const { class: initialClasses } = Astro.props as Props;
 ---
 
 <ThemeToggle client:load>
-  <Button interactive class="rounded-r-3xl">
-    <button
-      class="flex flex-row items-center gap-3 p-2"
-      aria-label="toggle theme"
-    >
-      <span class="hidden rounded-3xl dark:inline">
-        <Sun />
-      </span>
-      <span class="rounded-3xl dark:hidden">
-        <Moon />
-      </span>
-    </button>
+  <Button interactive class={initialClasses}>
+    <span class="hidden rounded-3xl dark:inline">
+      <Sun />
+    </span>
+    <span class="rounded-3xl dark:hidden">
+      <Moon />
+    </span>
   </Button>
 </ThemeToggle>

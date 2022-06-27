@@ -14,19 +14,24 @@ const { accent } = Astro.props as Props;
 const dateString = dateTimeToString(SITE_DATA.builtAt);
 ---
 
-<footer class="flex flex-col items-center text-gray-400 bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
-  <div class="w-full flex flex-col md:flex-row items-center justify-between px-4 gap-2 py-8">
+<footer
+  class="flex flex-col items-center text-gray-400 bg-gray-100 dark:bg-gray-700 dark:text-gray-400"
+>
+  <div
+    class="w-full flex flex-col md:flex-row items-center justify-between px-4 gap-2 py-8"
+  >
     <div class="font-bold">
       Copyright © 2022
-      <a href={`mailto:${SITE_DATA.email}`} class="fancy-link">{SITE_DATA.name}
+      <a href={`mailto:${SITE_DATA.email}`} class="fancy-link"
+        >{SITE_DATA.name}
       </a>
     </div>
 
     <div>
-      Last updated on <time datetime={SITE_DATA.builtAt.toISOString()}>{dateString}
+      Last updated on <time datetime={SITE_DATA.builtAt.toISOString()}
+        >{dateString}
       </time>
     </div>
-
   </div>
 
   <Button class="rounded-t-xl px-2 py-1 w-fit">

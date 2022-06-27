@@ -8,8 +8,12 @@
   }
 
   /* prose-a */
-  .prose-custom {
-    @apply prose-a:fancy-link prose-a:text-gray-700 prose-a:no-underline prose-a:dark:text-gray-300;
+  .prose-custom a {
+    @apply text-gray-700 no-underline dark:text-gray-300;
+  }
+
+  .prose-custom a:not([class*="footnote"]) {
+    @apply fancy-link;
   }
 
   /* prose-blockquote */

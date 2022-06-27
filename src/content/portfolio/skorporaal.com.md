@@ -3,7 +3,7 @@ title: "skorporaal.com"
 date: 2022-05-17
 ---
 
-This site is powered by [Astro](https://astro.build/), [Svelte](https://svelte.dev/), and [Tailwind](https://tailwindcss.com/)
+This site is powered by [Astro](https://astro.build/), [Svelte](https://svelte.dev/), and [Tailwind](https://tailwindcss.com/).
 
 ## Why
 
@@ -59,6 +59,12 @@ Tailwind is a CSS framework that lets you compose styles directly in your markup
 ## a11y
 
 I have tried to make this site at least somewhat accessible, having applied a lot of the items on [the A11Y Project](https://www.a11yproject.com/checklist/).
+
+## Components
+
+### Binary Clock
+
+The binary clock (can you read it?) doesn't particularly add anything to the site, but it was a nice way of practicing with Svelte's reactivity. The `setInterval` used to advance the clock was also the first time I encountered component destructors. I'm not sure those are actually necessary with Astro, but it's seems like good practice to do it properly.
 
 ## Attribution
 

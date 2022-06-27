@@ -12,31 +12,9 @@
 
   let now = new Date();
 
-  $: hours = now.getHours();
-  $: minutes = now.getMinutes();
-  $: seconds = now.getSeconds();
-
-  $: hourBits = numberToBits(hours, 6);
-  $: minuteBits = numberToBits(minutes, 6);
-  $: secondBits = numberToBits(seconds, 6);
-
-  $: time = [
-    {
-      name: "hours",
-      value: leadingZeros(hours.toString(), 2),
-      bits: hourBits,
-    },
-    {
-      name: "minutes",
-      value: leadingZeros(minutes.toString(), 2),
-      bits: minuteBits,
-    },
-    {
-      name: "seconds",
-      value: leadingZeros(seconds.toString(), 2),
-      bits: secondBits,
-    },
-  ];
+  $: hours = numberToBits(now.getHours(), 5);
+  $: minutes = numberToBits(now.getMinutes(), 6);
+  $: seconds = numberToBits(now.getSeconds(), 6);
 
   onMount(() => {
     const interval = setInterval(() => {
@@ -49,6 +27,9 @@
   });
 
   function leadingZeros(string: string, length: number): string {
+    if (string.length > length) {
+      throw new Error("String longer than desired length!");
+    }
     return ("0".repeat(length) + string).slice(-length);
   }
 
@@ -57,10 +38,17 @@
   }
 </script>
 
-<div class="flex flex-col font-mono text-[10px]">
-  {#each time as { value, bits }}
-    <div class="flex flex-row">
-      {#each bits as bit}
+<div class="flex flex-col">
+  {#each [hours, minutes, seconds] as bits, i}
+    <div class="flex flex-row justify-end">
+      {#each bits as bit, j}
+        {#if !i && !j}
+          <span
+            class={`${size} flex justify-center items-center text-xs text-gray-600 dark:text-gray-300`}
+          >
+            ※
+          </span>
+        {/if}
         <Dot bg={+bit ? finalBg : "bg-gray-200 dark:bg-gray-800"} {size} />
       {/each}
     </div>
