@@ -1,8 +1,10 @@
 import { MarkdownInstance } from "astro";
 import { AstroComponentFactory } from "astro/dist/types/runtime/server";
+
 import slugify from "slugify";
+
 import { dateToString } from "./common";
-import { PostCategory, POST_CATEGORIES, SITE_DATA } from "./data";
+import { type PostCategory, POST_CATEGORIES, SITE_DATA } from "./data";
 
 /**
  * Type guard that checks whether or not a string is a PostCategory

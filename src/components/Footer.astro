@@ -1,22 +1,35 @@
 ---
-import { SITE_DATA } from "@s:data";
 import { dateTimeToString } from "@s:common";
+import { type CategoryData, SITE_DATA } from "@s:data";
+
+import BinaryClock from "@c:BinaryClock.svelte";
+
+export interface Props {
+  accent?: CategoryData;
+}
+
+const { accent } = Astro.props as Props;
 
 const dateString = dateTimeToString(SITE_DATA.builtAt);
 ---
 
 <footer
-  class="relative flex flex-col md:flex-row items-center justify-between px-4 py-8 text-gray-400 bg-gray-100 dark:bg-gray-700 dark:text-gray-400"
+  class="relative flex flex-col md:flex-row items-center justify-between px-4 gap-2 py-8 text-gray-400 bg-gray-100 dark:bg-gray-700 dark:text-gray-400"
 >
-  <div class="font-bold">
+  <div class="font-bold md:order-1">
     Copyright © 2022
     <a href={`mailto:${SITE_DATA.email}`} class="fancy-link"
       >{SITE_DATA.name}
     </a>
   </div>
-  <div>
+
+  <div class="md:order-3">
     Last updated on <time datetime={SITE_DATA.builtAt.toISOString()}
       >{dateString}
     </time>
+  </div>
+
+  <div class="md:order-2">
+    <BinaryClock client:load bg={accent?.bg} />
   </div>
 </footer>

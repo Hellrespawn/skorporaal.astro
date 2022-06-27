@@ -20,18 +20,18 @@ Dit is een aangepaste versie van [dit recept](https://www.youtube.com/watch?v=E_
 
 ## Ingrediënten Overig
 
-| #:                    | Ingredient:      | kcal: |
-| --------------------- | ---------------- | ----: |
-| 2 stuks               | baby romaine     |    20 |
-| $${1 \over 2}$$       | ui               |    24 |
-| 2 stuks à ~500g       | kippenpoot       |   480 |
-| 2 stuks               | pistolets        |   260 |
-| 10 g                  | parmezaanse kaas |    40 |
-| $$ 1{1 \over 2} $$ el | olie             |    80 |
-| $$ 1{1 \over 2} $$ el | boter            |    80 |
-|                       | citroenrasp      |       |
-|                       | salie            |       |
-|                       | totaal :         |   984 |
+| #:                      | Ingredient:      | kcal: |
+| ----------------------- | ---------------- | ----: |
+| 2 stuks                 | baby romaine     |    20 |
+| $${1 \over 2}$$         | ui               |    24 |
+| 2 stuks à ~500g         | kippenpoot       |   480 |
+| 2 stuks                 | pistolets        |   260 |
+| 10 g                    | parmezaanse kaas |    40 |
+| $$ 1{1 \over 2} $$ el   | olie             |    80 |
+| $$ 1{1 \over 2} $$ el   | boter            |    80 |
+| $${1 \over 2}$$ citroen | citroenrasp      |       |
+|                         | salie            |       |
+|                         | totaal :         |   984 |
 
 Calorieën per portie: $${1574 \over 2} = 787 kcal$$
 

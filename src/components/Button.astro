@@ -1,14 +1,28 @@
 ---
 export interface Props {
   class?: string;
+  interactive?: boolean;
 }
 
-const { class: classes } = Astro.props as Props;
+const classes: string[] = [];
+
+let { class: initialClasses, interactive = false } = Astro.props as Props;
+
+if (initialClasses) {
+  classes.push(initialClasses);
+}
+
+classes.push(
+  "bg-gray-700 text-gray-50 dark:bg-gray-200 dark:text-gray-800 border-gray-200 dark:border-gray-900"
+);
+
+if (interactive) {
+  classes.push(
+    "transition-[outline-color] duration-main outline outline-[6px] hover:outline-gray-100 active:outline-gray-200 hover:dark:outline-gray-750 outline-transparent active:dark:outline-gray-700"
+  );
+}
 ---
 
-<div
-  class={"transition-[outline-color] duration-main bg-gray-700 outline outline-[6px] text-gray-50 dark:bg-gray-200 dark:text-gray-800 hover:outline-gray-100 active:outline-gray-200 hover:dark:outline-gray-750 outline-transparent active:dark:outline-gray-700 border-gray-200 dark:border-gray-900 " +
-    classes}
->
+<div class={classes.join(" ")}>
   <slot></slot>
 </div>

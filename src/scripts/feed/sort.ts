@@ -1,4 +1,5 @@
 import { writable } from "svelte/store";
+
 import { type FeedItem } from "./feedItem";
 
 interface SortState {
