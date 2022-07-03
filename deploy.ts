@@ -37,6 +37,13 @@ async function rename404(): Promise<void> {
   await fs.rename(src, tgt);
 }
 
+async function undo404(): Promise<void> {
+  console.log("Renaming '404.shtml' to '404.html'");
+  const src = path.join(LOCAL_DIR!, "404.shtml");
+  const tgt = path.join(LOCAL_DIR!, "404.html");
+  await fs.rename(src, tgt);
+}
+
 async function main(): Promise<void> {
   const client = new ftp.Client(60000);
 
@@ -66,6 +73,9 @@ async function main(): Promise<void> {
     console.error((error as Error).message);
   } finally {
     client.close();
+    console.log("Running post-build tasks...");
+    await undo404();
+
     console.log("Done.");
   }
 }
