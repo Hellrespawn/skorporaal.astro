@@ -12,7 +12,7 @@
 
   let now = new Date();
 
-  $: hours = numberToBits(now.getHours(), 5);
+  $: hours = numberToBits(now.getHours(), 6);
   $: minutes = numberToBits(now.getMinutes(), 6);
   $: seconds = numberToBits(now.getSeconds(), 6);
 
@@ -39,16 +39,9 @@
 </script>
 
 <div class="flex flex-col">
-  {#each [hours, minutes, seconds] as bits, i}
+  {#each [hours, minutes, seconds] as bits}
     <div class="flex flex-row justify-end">
-      {#each bits as bit, j}
-        {#if !i && !j}
-          <span
-            class={`${size} flex justify-center items-center text-xs text-gray-600 dark:text-gray-300`}
-          >
-            ※
-          </span>
-        {/if}
+      {#each bits as bit}
         <Dot bg={+bit ? finalBg : "bg-gray-200 dark:bg-gray-800"} {size} />
       {/each}
     </div>
