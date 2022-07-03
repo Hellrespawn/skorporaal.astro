@@ -8,20 +8,32 @@ import Skill from "./Skill.astro";
   <div>
     <h3 class="text-xl text-center">Languages & Frameworks</h3>
 
-    <Skill src="html" name="HTML" dark>
+    <Skill src="html" name="HTML" dark class="p-2">
       Modern HTML with semantic elements.
     </Skill>
 
-    <Skill src="css" name="CSS" dark>
+    <Skill src="css" name="CSS" dark class="p-2">
       Modern CSS including Grid and FlexBox
     </Skill>
 
-    <Skill src="typescript" name="TypeScript">
+    <Skill src="tailwindcss" name="Tailwind CSS" class="p-2">
+      A utility-first CSS framework, directly in your markup
+    </Skill>
+
+    <Skill
+      src="typescript"
+      name="TypeScript"
+      class="p-2 bg-[#3178c6] dark:bg-[#3178c6]"
+    >
       Safe, sane and consensual JavaScript
     </Skill>
 
-    <Skill src="angular" name="Angular" dark>
+    <Skill src="angular" name="Angular" dark class="p-1">
       Enterprise-grade frontend framework
+    </Skill>
+
+    <Skill src="astro" name="Astro" dark class="p-2">
+      A new kind of static site builder for the modern web
     </Skill>
 
     <Skill src="rust" name="Rust" dark>Fast and correct</Skill>
@@ -30,13 +42,15 @@ import Skill from "./Skill.astro";
   <div>
     <h3 class="text-xl text-center">Technologies</h3>
 
-    <Skill src="linux" name="Linux" dark>Free as in speech</Skill>
+    <Skill src="linux" name="Linux" class="p-3">Free as in speech</Skill>
 
-    <Skill src="git" name="Git & GitLab" dark>Version control and CI/CD</Skill>
+    <Skill src="git" name="Git & GitLab" dark png class="p-2"
+      >Version control and CI/CD
+    </Skill>
 
-    <Skill src="mysql" name="MySQL">My SQL could be your SQL</Skill>
+    <Skill src="mysql" name="MySQL" png>My SQL could be your SQL</Skill>
 
-    <Skill src="docker" name="Docker">
+    <Skill src="docker" name="Docker" png>
       Portable development and deployment
     </Skill>
 
