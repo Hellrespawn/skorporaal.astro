@@ -2,5 +2,13 @@
   "trailingComma": "es5",
   "tabWidth": 2,
   "semi": true,
-  "singleQuote": false
+  "singleQuote": false,
+  "plugins": [
+    "./node_modules/prettier-plugin-astro",
+    "./node_modules/prettier-plugin-tailwindcss"
+  ],
+  "overrides": [
+    { "files": "*.astro", "options": { "parser": "astro" } },
+    { "files": "*.svelte", "options": { "parser": "svelte" } }
+  ]
 }

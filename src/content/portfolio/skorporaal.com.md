@@ -66,6 +66,10 @@ I have tried to make this site at least somewhat accessible, having applied a lo
 
 The binary clock (can you read it?) doesn't particularly add anything to the site, but it was a nice way of practicing with Svelte's reactivity. The `setInterval` used to advance the clock was also the first time I encountered component destructors. I'm not sure those are actually necessary with Astro, but it's seems like good practice to do it properly.
 
+### Navigation
+
+I like having the buttons on both sides of the page, but this extending an element for the full width means it blocks links and buttons that are covered by the element. Furthermore, I need to set a positive z-index to keep the buttons from disappearing behind images. I've solved this by using `pointer events: none` on the wrapping `<nav>` elment and then setting `pointer-events: auto` on the buttons themselves. `pointers-events` is supported in modern browsers, and this particular use case should be supported on older ones too.
+
 ## Attribution
 
 - General design was imitated from [Fuck I Wish I Knew That](https://fuckiwishiknewth.at/).

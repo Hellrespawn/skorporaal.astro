@@ -4,6 +4,7 @@ import { type FullPost } from "@s:post";
 
 import BaseLayout from "@l:BaseLayout.astro";
 import PostHeading from "@c:PostHeading.astro";
+import Navigation from "../components/Navigation.astro";
 
 export interface Props {
   post: FullPost;
@@ -14,6 +15,7 @@ const accent = CATEGORY_DATA[post.category];
 ---
 
 <BaseLayout title={post.title} accent={accent}>
+  <Navigation showHome />
   <main class="flex flex-col items-center">
     <div class="px-3 md:px-0 w-full max-w-[65ch]">
       <article lang={post.lang} class="py-8 md:pt-16">

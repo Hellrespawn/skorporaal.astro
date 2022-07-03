@@ -1,0 +1,29 @@
+---
+import Button from "@c:Button.astro";
+import Home from "@c:Icons/Home.astro";
+import ThemeToggle from "@c:ThemeToggle/ThemeToggle.astro";
+
+export interface Props {
+  showHome?: boolean;
+}
+
+const { showHome = false } = Astro.props as Props;
+const buttonClass =
+  "flex flex-row items-center gap-3 py-2 md:shadow-sm md:shadow-gray-500 md:dark:shadow-black";
+---
+
+<nav
+  class="flex flex-row justify-between md:fixed md:left-0 mt-4 md:mt-0 md:top-4 z-10 w-full pointer-events-none "
+>
+  <ThemeToggle
+    class={`${buttonClass} pl-1 pr-2 rounded-r-full pointer-events-auto`}
+  />
+
+  {showHome && (
+    <a class="pointer-events-auto" href="/">
+      <Button interactive class={`${buttonClass} rounded-l-full pl-2 pr-1`}>
+        <Home />
+      </Button>
+    </a>
+  )}
+</nav>
