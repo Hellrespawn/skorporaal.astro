@@ -3,8 +3,8 @@ import { AstroComponentFactory } from "astro/dist/types/runtime/server";
 
 import slugify from "slugify";
 
-import { dateToString } from "./common";
 import { type PostCategory, POST_CATEGORIES, SITE_DATA } from "./data";
+import { type DateFormat, DateFormatter } from "./date";
 
 /**
  * Type guard that checks whether or not a string is a PostCategory
@@ -38,11 +38,15 @@ export abstract class Post {
   title: string;
   url: string;
   date?: Date;
+  updated?: Date;
+  sortDate?: Date;
 
-  constructor(instance: MarkdownInstance<Frontmatter>) {
+  constructor(instance: MarkdownInstance<Frontmatter>, format: DateFormat) {
     this.category = this.getCategory(instance);
     this.date = this.getDate(instance);
-    this.formattedDate = this.getFormattedDate();
+    this.updated = this.getUpdatedDate(instance);
+    this.sortDate = this.getSortDate();
+    this.formattedDate = this.getFormattedDate(format);
     this.lang =
       instance.frontmatter.lang ?? this.category === "recipe" ? "nl" : "en";
     this.title = instance.frontmatter.title;
@@ -67,18 +71,23 @@ export abstract class Post {
   }
 
   getDate(instance: MarkdownInstance<Frontmatter>): Date | undefined {
-    const date = instance.frontmatter.updated ?? instance.frontmatter.date;
-
-    if (date) {
-      return new Date(date);
+    if (instance.frontmatter.date) {
+      return new Date(instance.frontmatter.date);
     }
   }
 
-  getFormattedDate(): string {
-    if (this.date) {
-      return dateToString(this.date);
+  getUpdatedDate(instance: MarkdownInstance<Frontmatter>): Date | undefined {
+    if (instance.frontmatter.updated) {
+      return new Date(instance.frontmatter.updated);
     }
-    return "A long time ago...";
+  }
+
+  getSortDate(): Date | undefined {
+    return this.updated ?? this.date;
+  }
+
+  getFormattedDate(format: DateFormat): string {
+    return DateFormatter.getFormatter(format).formatDate(this);
   }
 }
 
@@ -87,8 +96,11 @@ export class FullPost extends Post {
   component: AstroComponentFactory;
   file: string;
 
-  constructor(instance: MarkdownInstance<Frontmatter>) {
-    super(instance);
+  constructor(
+    instance: MarkdownInstance<Frontmatter>,
+    format: DateFormat = "long"
+  ) {
+    super(instance, format);
     this.authors = [SITE_DATA.name];
     this.authors.push(...(instance.frontmatter.authors ?? []));
 

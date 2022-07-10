@@ -37,14 +37,14 @@ function sortByAlphaDescending(left: FeedItem, right: FeedItem): number {
 function sortByDateAscending(left: FeedItem, right: FeedItem): number {
   let sort: number;
 
-  if (!left.date && !right.date) {
+  if (!left.sortDate && !right.sortDate) {
     sort = sortByAlphaAscending(left, right);
-  } else if (!left.date) {
+  } else if (!left.sortDate) {
     sort = -1;
-  } else if (!right.date) {
+  } else if (!right.sortDate) {
     sort = 1;
   } else {
-    sort = left.date.getTime() - right.date.getTime();
+    sort = left.sortDate.getTime() - right.sortDate.getTime();
   }
 
   return sort;
@@ -53,14 +53,14 @@ function sortByDateAscending(left: FeedItem, right: FeedItem): number {
 function sortByDateDescending(left: FeedItem, right: FeedItem): number {
   let sort: number;
 
-  if (!left.date && !right.date) {
+  if (!left.sortDate && !right.sortDate) {
     sort = sortByAlphaAscending(left, right);
-  } else if (!left.date) {
+  } else if (!left.sortDate) {
     sort = 1;
-  } else if (!right.date) {
+  } else if (!right.sortDate) {
     sort = -1;
   } else {
-    sort = right.date.getTime() - left.date.getTime();
+    sort = right.sortDate.getTime() - left.sortDate.getTime();
   }
 
   return sort;

@@ -1,9 +1,9 @@
 ---
-import { dateTimeToString } from "@s:common";
 import { type CategoryData, SITE_DATA } from "@s:data";
 
 import BinaryClock from "@c:BinaryClock.svelte";
 import Button from "@c:Button.astro";
+import { DateFormatter } from "../scripts/date";
 
 export interface Props {
   accent?: CategoryData;
@@ -11,7 +11,9 @@ export interface Props {
 
 const { accent } = Astro.props as Props;
 
-const dateString = dateTimeToString(SITE_DATA.builtAt);
+const formatter = DateFormatter.getFormatter("long");
+
+const dateString = formatter.formatDate({ date: SITE_DATA.builtAt });
 ---
 
 <footer

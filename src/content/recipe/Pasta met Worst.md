@@ -21,7 +21,7 @@ Geïnspireerd door de [Bloke Pasta](https://sortedfood.com/recipe/12543) van Sor
 | 1 tl            | knoflookpoeder |     5 |
 | $${1 \over 2}$$ | citroen        |     5 |
 | 1 el            | olijfolie      |    80 |
-|                 |                |  1512 |
+|                 | totaal:        |  1512 |
 
 [^1]: Als je gedroogde pasta hebt, gebruik dan 200g voor dezelfde hoeveelheid.
 
