@@ -25,11 +25,13 @@ const extension = png ? "png" : "svg";
     <img
       src={`/assets/skills/${src}${dark ? "-light" : ""}.${extension}`}
       class={`${dark ? " dark:hidden" : ""} w-full h-full`}
+      alt={`${name} logo`}
     />
     {dark && (
       <img
         src={`/assets/skills/${src}-dark.${extension}`}
-        class="hidden dark:block h-full w-full"
+        class="hidden h-full w-full dark:block"
+        alt={`${name} logo`}
       />
     )}
   </div>

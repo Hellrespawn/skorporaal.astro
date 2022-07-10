@@ -20,7 +20,6 @@ specifiers:
   postcss: ^8.4.14
   prettier: ^2.7.1
   prettier-plugin-astro: ^0.1.1
-  prettier-plugin-svelte: ^2.7.0
   prettier-plugin-tailwindcss: ^0.1.11
   rehype-external-links: ^1.0.1
   rehype-katex: ^6.0.2
@@ -50,7 +49,6 @@ devDependencies:
   postcss: 8.4.14
   prettier: 2.7.1
   prettier-plugin-astro: 0.1.1
-  prettier-plugin-svelte: 2.7.0_nakrehnrzdf7fdea5k3a4dfy4m
   prettier-plugin-tailwindcss: 0.1.11_prettier@2.7.1
   rehype-external-links: 1.0.1
   rehype-katex: 6.0.2
@@ -4635,16 +4633,6 @@ packages:
       prettier: 2.7.1
       sass-formatter: 0.7.5
       synckit: 0.7.2
-    dev: true
-
-  /prettier-plugin-svelte/2.7.0_nakrehnrzdf7fdea5k3a4dfy4m:
-    resolution: {integrity: sha512-fQhhZICprZot2IqEyoiUYLTRdumULGRvw0o4dzl5jt0jfzVWdGqeYW27QTWAeXhoupEZJULmNoH3ueJwUWFLIA==}
-    peerDependencies:
-      prettier: ^1.16.4 || ^2.0.0
-      svelte: ^3.2.0
-    dependencies:
-      prettier: 2.7.1
-      svelte: 3.48.0
     dev: true
 
   /prettier-plugin-tailwindcss/0.1.11_prettier@2.7.1:
