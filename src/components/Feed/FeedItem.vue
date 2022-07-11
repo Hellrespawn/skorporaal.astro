@@ -21,7 +21,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <a href="{feedItem.url}" class="flex flex-col items-baseline p-1 md:flex-row">
+  <a :href="feedItem.url" class="flex flex-col items-baseline p-1 md:flex-row">
     <FeedButton class="w-full p-2">
       <span class="flex flex-grow flex-row items-baseline">
         <!-- Colored Dot -->
@@ -34,7 +34,7 @@ onMounted(() => {
       <div
         class="postDate whitespace-nowrap text-right text-sm text-gray-400 dark:text-gray-500 md:w-auto md:text-left"
       >
-        {{ feedItem.formattedDate }}
+        {{ feedItem.getFormattedDate("short") }}
       </div>
     </FeedButton>
   </a>

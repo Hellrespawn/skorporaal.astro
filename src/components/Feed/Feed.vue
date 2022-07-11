@@ -1,24 +1,26 @@
 <script setup lang="ts">
+import { MarkdownInstance } from "astro";
 import { computed } from "vue";
 
 import { FeedItem } from "@s:feed/feedItem";
-import { filterStore } from "@s:feed/filter";
-import { sortStore } from "@s:feed/sort";
+import { filterStore } from "@s:feed/filter.vue";
+import { sortStore } from "@s:feed/sort.vue";
+import { Frontmatter } from "@s:post";
 
 import FeedItemComponent from "@c:Feed/FeedItem.vue";
 import Filter from "@c:Feed/Filter.vue";
-import { MarkdownInstance } from "astro";
-import { Frontmatter } from "../../scripts/post";
 
 const emptyItem = {
   dot: "bg-gray-500",
-  formattedDate: "Someday...",
+  getFormattedDate() {
+    return "Someday...";
+  },
   get lang() {
     return document.documentElement.lang;
   },
   title: "There are no posts.",
   url: "",
-} as FeedItem;
+} as unknown as FeedItem;
 
 const { instances } = defineProps<{
   instances: MarkdownInstance<Frontmatter>[];
@@ -45,7 +47,7 @@ const filteredItems = computed(() =>
     </li>
 
     <li
-      v-if="emptyItem && filteredItems.length === 0"
+      v-if="!filteredItems.length"
       class="border-b border-gray-200 dark:border-gray-700"
     >
       <FeedItemComponent :feedItem="emptyItem" />

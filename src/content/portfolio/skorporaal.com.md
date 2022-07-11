@@ -3,7 +3,7 @@ title: "skorporaal.com"
 date: 2022-05-17
 ---
 
-This site is powered by [Astro](https://astro.build/), [Svelte](https://svelte.dev/), and [Tailwind](https://tailwindcss.com/).
+This site is powered by [Astro](https://astro.build/), [Vue](https://vuejs.org/), and [Tailwind](https://tailwindcss.com/).
 
 ## Why
 
@@ -36,21 +36,59 @@ If I had to pick one issue that's still unresolved, it's that there is no easy w
 
 The main limitation of Astro components is, of course, that they are entirely static. All code is executed at compile time. You could simply add JavaScript, like for any static HTML, but Astro allows you to [hydrate](https://docs.astro.build/en/core-concepts/partial-hydration/) framework components!
 
-### Svelte
+### Vue
 
-Svelte promises:
+Vue promises:
 
-> No virtual DOM
+> An approachable, performant and versatile framework for building web user interfaces.
 >
-> Svelte compiles your code to tiny, framework-less vanilla JS — your app starts fast and stays fast
->
-> -- <cite>[svelte.dev](https://svelte.dev/)</cite>
+> -- <cite>[vuejs.org](https://vuejs.org/)</cite>
 
-Which seems in line with Astro's core values, so I've been using Svelte to add frontend functionality to the site. The sorting and filtering by categories of posts is driven by Svelte stores.
+Vue's composition API resembles Astro's syntax and feels quite logical to me, so I've been using Vue to add frontend functionality to the site. This includes:
 
-One interesting side effect is that while Astro components can import all different kinds of framework components, those framework components can only import their own kind of framework component. This means that any component which I need within a Svelte component must also be Svelte component. You cannot import static Astro components from within Svelte.
+- Sorting posts
+- Filtering posts
+- Toggling light/dark mode
 
-The main challenge was transferring objects across the build-time Astro/run-time Svelte boundary, which is not trivial. I use `Astro.glob` to read all posts, but the resulting `MarkdownInstance[]` turns `undefined` when passed as a prop to a Svelte component. Currently I transform the `MarkdownInstance`s to my own class, `FeedItem`, which calculates all the necessary values at build-time.
+One interesting side effect is that while Astro components can import all different kinds of framework components, those framework components can only import their own kind of framework component. This means that any component which I need within a Vue component must also be Vue component. You cannot import static Astro components from within Vue.
+
+One challenge I ran into was passing class instances across the build-time Astro/run-time Vue boundary. I was passing the `MarkdownInstance`s returned by `Astro.glob` as a property of a `Post` class, but passing this as a prop to an Astro component hydrated with `client:load` doesn't work. As far as I can tell, the prototype of the object gets reset to `Object`.
+
+```astro
+---
+// This won't work.
+
+const feedItems = (await Astro.glob<Frontmatter>("../content/**/*.md")).map(
+  (mdInstance) => new FeedItem(mdInstance)
+);
+---
+
+<Feed client:load feedItems={feedItems} />
+```
+
+The (unexpectedly simple) solution is to pass the `MarkdownInstance`s directly to the hydrated component, and then transform them there.
+
+```astro
+---
+// index.page
+// This works!
+
+const instances = await Astro.glob<Frontmatter>("../content/**/*.md");
+---
+
+<Feed client:load feedItems={feedItems} />
+```
+
+```vue
+<script setup lang="ts">
+// Feed.vue
+const { instances } = defineProps<{
+  instances: MarkdownInstance<Frontmatter>[];
+}>();
+
+const feedItems = instance.map((instance) => new FeedItem(instance));
+</script>
+```
 
 ### Tailwind
 
@@ -64,7 +102,7 @@ I have tried to make this site at least somewhat accessible, having applied a lo
 
 ### Binary Clock
 
-The binary clock (can you read it?) doesn't particularly add anything to the site, but it was a nice way of practicing with Svelte's reactivity. The `setInterval` used to advance the clock was also the first time I encountered component destructors. I'm not sure those are actually necessary with Astro, but it's seems like good practice to do it properly.
+The binary clock (can you read it?) doesn't particularly add anything to the site, but it was a nice way of practicing with Vue's reactivity. Typing was a bit tricky. In VSCode `setInterval()` is assigned the type `NodeJS.Timer`, but this code runs in the browser! The solution was to explicitly call this on the `window` global, which returns the expected `number`.
 
 ### Navigation
 

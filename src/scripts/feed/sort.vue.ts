@@ -2,6 +2,8 @@ import { ref, computed } from "vue";
 
 import { type FeedItem } from "./feedItem";
 
+// TODO Persist sort to localStorage
+
 interface SortState {
   display: string;
   function: (left: FeedItem, right: FeedItem) => number;

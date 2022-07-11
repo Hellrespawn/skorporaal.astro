@@ -1,17 +1,8 @@
-import { type MarkdownInstance } from "astro";
-
 import { CATEGORY_DATA } from "@s:data";
-import { type Frontmatter, Post } from "@s:post";
-import { type DateFormat } from "../date";
+import { Post } from "@s:post";
 
 export class FeedItem extends Post {
-  dot: string;
-
-  constructor(
-    instance: MarkdownInstance<Frontmatter>,
-    format: DateFormat = "short"
-  ) {
-    super(instance, format);
-    this.dot = CATEGORY_DATA[this.category].bg;
+  get dot(): string {
+    return CATEGORY_DATA[this.category].bg;
   }
 }

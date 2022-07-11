@@ -17,10 +17,12 @@ const { accent, post } = Astro.props as Props;
   class={`${accent.border} flex flex-row flex-wrap-reverse items-center justify-between border-t-2 gap-x-4`}
 >
   <!-- Date -->
-  <span class="text-gray-400 dark:text-gray-500">{post.formattedDate}</span>
+  <span class="text-gray-400 dark:text-gray-500"
+    >{post.getFormattedDate("long")}
+  </span>
 
   <span class="italic">
     <!-- Authors -->
-    {post.authorsToString()}
+    {post.authors}
   </span>
 </div>

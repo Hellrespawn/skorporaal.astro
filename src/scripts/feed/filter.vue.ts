@@ -2,6 +2,8 @@ import { ref } from "vue";
 
 import { type PostCategory } from "../data";
 
+// TODO Persist filter to localStorage
+
 function createFilterStore() {
   const defaultCategories: PostCategory[] = ["article", "portfolio", "other"];
   const activeCategories = ref([...defaultCategories]);

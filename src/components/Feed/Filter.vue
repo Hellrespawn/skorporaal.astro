@@ -3,8 +3,8 @@ import Dot from "@c:Dot.vue";
 import FeedButton from "@c:Feed/FeedButton.vue";
 
 import { CATEGORY_DATA } from "@s:data";
-import { filterStore } from "@s:feed/filter";
-import { sortStore } from "@s:feed/sort";
+import { filterStore } from "@s:feed/filter.vue";
+import { sortStore } from "@s:feed/sort.vue";
 </script>
 
 <template>

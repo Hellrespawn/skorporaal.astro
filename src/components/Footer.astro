@@ -13,7 +13,7 @@ const { accent } = Astro.props as Props;
 
 const formatter = DateFormatter.getFormatter("long");
 
-const dateString = formatter.formatDate({ date: SITE_DATA.builtAt });
+const dateString = formatter.formatDateTime({ date: SITE_DATA.builtAt });
 ---
 
 <footer
