@@ -3,7 +3,7 @@ title: "skorporaal.com"
 date: 2022-05-17
 ---
 
-This site is powered by [Astro](https://astro.build/), [Vue](https://vuejs.org/), and [Tailwind](https://tailwindcss.com/).
+This site is powered by [Astro](https://astro.build/), [Vue](https://vuejs.org/), and [Tailwind](https://tailwindcss.com/). The source code can be found [here](https://github.com/Hellrespawn/skorporaal.astro).
 
 ## Why
 
@@ -112,7 +112,7 @@ I like having the buttons on both sides of the page, but this extending an eleme
 
 - General design was imitated from [Fuck I Wish I Knew That](https://fuckiwishiknewth.at/).
 
-- Fancy links and source code structure inspired by [chrissy.dev](https://www.chrissy.dev/)
+- Fancy links inspired by [chrissy.dev](https://www.chrissy.dev/)
 
 - Sun-, moon- and home-icons from [Hero Icons](https://heroicons.com/)
 
