@@ -1,21 +1,10 @@
-<script lang="ts">
+<script setup lang="ts">
+import Dot from "@c:Dot.vue";
+import FeedButton from "@c:Feed/FeedButton.vue";
+
 import { CATEGORY_DATA } from "@s:data";
 import { filterStore } from "@s:feed/filter";
 import { sortStore } from "@s:feed/sort";
-
-import Dot from "@c:Dot.svelte";
-import FeedButton from "@c:Feed/FeedButton.svelte";
-
-export default {
-  props: { Dot, FeedButton },
-  data() {
-    return {
-      CATEGORY_DATA,
-      filterStore,
-      sortStore,
-    };
-  },
-};
 </script>
 
 <template>
@@ -32,9 +21,9 @@ export default {
         <FeedButton class="p-2">
           <div class="flex flex-grow flex-row items-baseline">
             <!-- Colored Dot -->
-            <Dot bg="{data.bg}" />
+            <Dot :bg="data.bg" />
             <!-- Title -->
-            <p class="postTitle px-2">{{ (data as CategoryData).plural }}</p>
+            <p class="postTitle px-2">{{ data.plural }}</p>
           </div>
         </FeedButton>
       </button>
@@ -43,10 +32,10 @@ export default {
     <div class="flex flex-row">
       <button
         type="button"
-        @click="sort.cycle()"
+        @click="sortStore.cycle()"
         class="button button-medium whitespace-nowrap font-semibold"
       >
-        <FeedButton class="p-2">{{ sortStore.state.display }}</FeedButton>
+        <FeedButton class="p-2">{{ sortStore.state.value.display }}</FeedButton>
       </button>
     </div>
   </div>

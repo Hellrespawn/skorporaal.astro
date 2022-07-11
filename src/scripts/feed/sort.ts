@@ -1,5 +1,4 @@
-import { writable } from "svelte/store";
-import { reactive, ref } from "vue";
+import { ref, computed } from "vue";
 
 import { type FeedItem } from "./feedItem";
 
@@ -67,33 +66,16 @@ function sortByDateDescending(left: FeedItem, right: FeedItem): number {
   return sort;
 }
 
-function createSort() {
-  let index = 0;
-
-  const { subscribe, set } = writable(STATES[index]);
-
-  return {
-    subscribe,
-    cycle(): void {
-      index = (index + 1) % STATES.length;
-      set(STATES[index]);
-    },
-  };
-}
-
 function createSortStore() {
   const index = ref(0);
-  const state = ref(STATES[index.value]);
+  const state = computed(() => STATES[index.value]);
 
-  return reactive({
+  return {
     state,
     cycle(): void {
       index.value = (index.value + 1) % STATES.length;
-      state.value = STATES[index.value];
     },
-  });
+  };
 }
-
-export const sort = createSort();
 
 export const sortStore = createSortStore();

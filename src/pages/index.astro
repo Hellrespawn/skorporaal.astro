@@ -5,11 +5,9 @@ import { type Frontmatter } from "@s:post";
 import GridLayout from "@l:GridLayout.astro";
 
 import About from "@c:About/About.astro";
-import Feed from "@c:Feed/Feed.svelte";
+import Feed from "@c:Feed/Feed.vue";
 
 const instances = await Astro.glob<Frontmatter>("../content/**/*.md");
-
-const feedItems = instances.map((instance) => new FeedItem(instance));
 ---
 
 <GridLayout title="Home">
@@ -17,6 +15,6 @@ const feedItems = instances.map((instance) => new FeedItem(instance));
     <About />
   </Fragment>
   <Fragment slot="right">
-    <Feed client:load feedItems={feedItems} />
+    <Feed client:load instances={instances} />
   </Fragment>
 </GridLayout>

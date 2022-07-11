@@ -9,6 +9,6 @@
   ],
   "overrides": [
     { "files": "*.astro", "options": { "parser": "astro" } },
-    { "files": "*.svelte", "options": { "parser": "svelte" } }
+    { "files": "*.vue", "options": { "parser": "vue" } }
   ]
 }

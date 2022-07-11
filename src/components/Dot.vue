@@ -1,8 +1,8 @@
 <script setup lang="ts">
-const { bg, size } = defineProps({
-  bg: { type: String, required: true },
-  size: { type: String, default: "h-2 w-2" },
-});
+const props = defineProps<{ bg: string; size?: string }>();
+
+const bg = props.bg;
+const size = props.size ?? "h-2 w-2";
 </script>
 
 <template>

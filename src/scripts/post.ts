@@ -39,19 +39,21 @@ export abstract class Post {
   url: string;
   date?: Date;
   updated?: Date;
-  sortDate?: Date;
 
   constructor(instance: MarkdownInstance<Frontmatter>, format: DateFormat) {
     this.category = this.getCategory(instance);
     this.date = this.getDate(instance);
     this.updated = this.getUpdatedDate(instance);
-    this.sortDate = this.getSortDate();
     this.formattedDate = this.getFormattedDate(format);
     this.lang =
       instance.frontmatter.lang ?? this.category === "recipe" ? "nl" : "en";
     this.title = instance.frontmatter.title;
     this.slug = slugify(this.title, { lower: true, strict: true });
     this.url = `/${this.category}/${this.slug}`;
+  }
+
+  get sortDate(): Date | undefined {
+    return this.updated ?? this.date;
   }
 
   getCategory(instance: MarkdownInstance<Frontmatter>): PostCategory {
@@ -80,10 +82,6 @@ export abstract class Post {
     if (instance.frontmatter.updated) {
       return new Date(instance.frontmatter.updated);
     }
-  }
-
-  getSortDate(): Date | undefined {
-    return this.updated ?? this.date;
   }
 
   getFormattedDate(format: DateFormat): string {
