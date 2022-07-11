@@ -1,4 +1,5 @@
 import { writable } from "svelte/store";
+import { reactive, ref } from "vue";
 
 import { type FeedItem } from "./feedItem";
 
@@ -80,4 +81,19 @@ function createSort() {
   };
 }
 
+function createSortStore() {
+  const index = ref(0);
+  const state = ref(STATES[index.value]);
+
+  return reactive({
+    state,
+    cycle(): void {
+      index.value = (index.value + 1) % STATES.length;
+      state.value = STATES[index.value];
+    },
+  });
+}
+
 export const sort = createSort();
+
+export const sortStore = createSortStore();
