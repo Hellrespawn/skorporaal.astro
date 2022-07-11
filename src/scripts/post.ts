@@ -31,34 +31,13 @@ export interface Frontmatter {
  * Base Markdown wrapper class
  */
 export abstract class Post {
-  category: PostCategory;
-  formattedDate: string;
-  lang: string;
-  slug: string;
-  title: string;
-  url: string;
-  date?: Date;
-  updated?: Date;
-  sortDate?: Date;
+  constructor(protected instance: MarkdownInstance<Frontmatter>) {}
 
-  constructor(instance: MarkdownInstance<Frontmatter>, format: DateFormat) {
-    this.category = this.getCategory(instance);
-    this.date = this.getDate(instance);
-    this.updated = this.getUpdatedDate(instance);
-    this.sortDate = this.getSortDate();
-    this.formattedDate = this.getFormattedDate(format);
-    this.lang =
-      instance.frontmatter.lang ?? this.category === "recipe" ? "nl" : "en";
-    this.title = instance.frontmatter.title;
-    this.slug = slugify(this.title, { lower: true, strict: true });
-    this.url = `/${this.category}/${this.slug}`;
-  }
-
-  getCategory(instance: MarkdownInstance<Frontmatter>): PostCategory {
-    let { category } = instance.frontmatter;
+  get category(): PostCategory {
+    let { category } = this.frontmatter;
 
     if (!category) {
-      const { file } = instance;
+      const { file } = this.instance;
       const segments = file.split("/");
       category = segments[segments.length - 2];
     }
@@ -70,20 +49,40 @@ export abstract class Post {
     return "other";
   }
 
-  getDate(instance: MarkdownInstance<Frontmatter>): Date | undefined {
-    if (instance.frontmatter.date) {
-      return new Date(instance.frontmatter.date);
-    }
-  }
-
-  getUpdatedDate(instance: MarkdownInstance<Frontmatter>): Date | undefined {
-    if (instance.frontmatter.updated) {
-      return new Date(instance.frontmatter.updated);
-    }
-  }
-
-  getSortDate(): Date | undefined {
+  get sortDate(): Date | undefined {
     return this.updated ?? this.date;
+  }
+
+  get lang(): string {
+    return this.frontmatter.lang ?? this.category === "recipe" ? "nl" : "en";
+  }
+
+  get title(): string {
+    return this.frontmatter.title;
+  }
+
+  get slug(): string {
+    return slugify(this.title, { lower: true, strict: true });
+  }
+
+  get url(): string {
+    return `/${this.category}/${this.slug}`;
+  }
+
+  get date(): Date | undefined {
+    if (this.frontmatter.date) {
+      return new Date(this.frontmatter.date);
+    }
+  }
+
+  get updated(): Date | undefined {
+    if (this.frontmatter.updated) {
+      return new Date(this.frontmatter.updated);
+    }
+  }
+
+  protected get frontmatter(): Frontmatter {
+    return this.instance.frontmatter;
   }
 
   getFormattedDate(format: DateFormat): string {
@@ -92,25 +91,21 @@ export abstract class Post {
 }
 
 export class FullPost extends Post {
-  authors: string[];
-  component: AstroComponentFactory;
-  file: string;
+  get authors(): string {
+    const authors = this.frontmatter.authors ?? [];
+    if (!authors.includes(SITE_DATA.name)) {
+      authors.unshift(SITE_DATA.name);
+    }
 
-  constructor(
-    instance: MarkdownInstance<Frontmatter>,
-    format: DateFormat = "long"
-  ) {
-    super(instance, format);
-    this.authors = [SITE_DATA.name];
-    this.authors.push(...(instance.frontmatter.authors ?? []));
-
-    this.component = instance.Content;
-
-    this.file = instance.file;
+    return authors.join(", ");
   }
 
-  authorsToString(): string {
-    return this.authors.join(", ");
+  get component(): AstroComponentFactory {
+    return this.instance.Content;
+  }
+
+  get file(): string {
+    return this.instance.file;
   }
 }
 

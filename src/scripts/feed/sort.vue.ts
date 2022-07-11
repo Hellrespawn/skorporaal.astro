@@ -1,6 +1,8 @@
-import { writable } from "svelte/store";
+import { ref, computed } from "vue";
 
 import { type FeedItem } from "./feedItem";
+
+// TODO Persist sort to localStorage
 
 interface SortState {
   display: string;
@@ -66,18 +68,16 @@ function sortByDateDescending(left: FeedItem, right: FeedItem): number {
   return sort;
 }
 
-function createSort() {
-  let index = 0;
-
-  const { subscribe, set } = writable(STATES[index]);
+function createSortStore() {
+  const index = ref(0);
+  const state = computed(() => STATES[index.value]);
 
   return {
-    subscribe,
+    state,
     cycle(): void {
-      index = (index + 1) % STATES.length;
-      set(STATES[index]);
+      index.value = (index.value + 1) % STATES.length;
     },
   };
 }
 
-export const sort = createSort();
+export const sortStore = createSortStore();
