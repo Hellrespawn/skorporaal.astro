@@ -27,7 +27,6 @@ const seconds = computed(() => numberToBits(now.value.getSeconds(), 6));
 onMounted(() => {
   interval = window.setInterval(() => {
     now.value = new Date();
-    console.log(now.value);
   }, 1000);
 });
 

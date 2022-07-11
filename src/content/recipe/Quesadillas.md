@@ -37,7 +37,7 @@ Calorieën per quesadilla: $${1840 \over 6} = 360 kcal$$
 
 1. Voeg de paprika toe en bak mee.
 
-1. Voeg eventueel nog meer kruiden toe.
+1. Breng op smaak met peper, zout en (indien van toepassing) kruiden.
 
 ## Vullen "Quesadilla"
 
