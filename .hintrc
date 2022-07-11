@@ -1,0 +1,14 @@
+{
+  "connector": "puppeteer",
+  "extends": [
+    "development"
+  ],
+  "formatters": [
+    "html",
+    "summary"
+  ],
+  "hints": {
+    "compat-api/css": "off", // For Tailwind
+    "no-inline-styles": "off" // For KaTeX
+  }
+}

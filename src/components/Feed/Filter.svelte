@@ -13,6 +13,7 @@
   <div class="flex flex-row flex-wrap py-1">
     {#each Object.entries(CATEGORY_DATA) as [category, data]}
       <button
+        type="button"
         on:click={() => filter.toggle(category)}
         class:opacity-50={!$filter.includes(category)}
       >
@@ -30,6 +31,7 @@
 
   <div class="flex flex-row">
     <button
+      type="button"
       on:click={sort.cycle}
       class="button button-medium whitespace-nowrap font-semibold"
     >
