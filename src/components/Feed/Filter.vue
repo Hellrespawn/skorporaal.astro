@@ -35,7 +35,7 @@ import { sortStore } from "@s:feed/sort.vue";
         @click="sortStore.cycle()"
         class="button button-medium whitespace-nowrap font-semibold"
       >
-        <FeedButton class="p-2">{{ sortStore.state.value.display }}</FeedButton>
+        <FeedButton class="p-2">{{ sortStore.display }}</FeedButton>
       </button>
     </div>
   </div>

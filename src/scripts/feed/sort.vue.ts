@@ -1,30 +1,28 @@
-import { ref, computed } from "vue";
+import { ref, computed, reactive } from "vue";
 
 import { type FeedItem } from "./feedItem";
 
-// TODO Persist sort to localStorage
-
 interface SortState {
+  callback: (left: FeedItem, right: FeedItem) => number;
   display: string;
-  function: (left: FeedItem, right: FeedItem) => number;
 }
 
 const STATES: SortState[] = [
   {
+    callback: sortByDateDescending,
     display: "Date ↓",
-    function: sortByDateDescending,
   },
   {
+    callback: sortByDateAscending,
     display: "Date ↑",
-    function: sortByDateAscending,
   },
   {
+    callback: sortByAlphaAscending,
     display: "A-Z ↑",
-    function: sortByAlphaAscending,
   },
   {
+    callback: sortByAlphaDescending,
     display: "Z-A ↓",
-    function: sortByAlphaDescending,
   },
 ];
 
@@ -68,16 +66,24 @@ function sortByDateDescending(left: FeedItem, right: FeedItem): number {
   return sort;
 }
 
-function createSortStore() {
+export function createSortStore() {
+  // Ref
   const index = ref(0);
+
+  // Computed Refs
   const state = computed(() => STATES[index.value]);
 
-  return {
-    state,
+  const callback = computed(() => state.value.callback);
+
+  const display = computed(() => state.value.display);
+
+  return reactive({
+    callback,
+    display,
     cycle(): void {
       index.value = (index.value + 1) % STATES.length;
     },
-  };
+  });
 }
 
 export const sortStore = createSortStore();
