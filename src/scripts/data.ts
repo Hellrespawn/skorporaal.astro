@@ -61,7 +61,7 @@ export const CATEGORY_DATA: Record<PostCategory, CategoryData> = {
   },
 };
 
-export const LANGUAGE_DATA = {
+export const LANGUAGE_DATA: Record<string, Record<string, string>> = {
   en: {
     nl: "Dutch",
     en: "English",
