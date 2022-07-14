@@ -1,23 +1,12 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
-
 import Dot from "@c:Dot.vue";
 import FeedButton from "@c:Feed/FeedButton.vue";
 
-import { LANGUAGE_DATA } from "@s:data";
 import { type FeedItem } from "@s:feed/feedItem";
 
 const { feedItem } = defineProps<{ feedItem: FeedItem }>();
 
-let title = feedItem.title;
-
-onMounted(() => {
-  if (feedItem.lang !== document.documentElement.lang) {
-    title += ` [${
-      LANGUAGE_DATA[document.documentElement.lang][feedItem.lang]
-    }]`;
-  }
-});
+const documentLang = document.documentElement.lang;
 </script>
 
 <template>
@@ -27,7 +16,9 @@ onMounted(() => {
         <!-- Colored Dot -->
         <Dot :bg="feedItem.dot" />
         <!-- Title -->
-        <p class="postTitle px-2">{{ title }}</p>
+        <p class="postTitle px-2">
+          {{ feedItem.getFormattedTitle(documentLang) }}
+        </p>
       </span>
 
       <!-- Date -->
