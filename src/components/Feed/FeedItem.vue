@@ -10,7 +10,7 @@ const documentLang = document.documentElement.lang;
 </script>
 
 <template>
-  <a :href="feedItem.url" class="flex flex-col items-baseline p-1 md:flex-row">
+  <a :href="feedItem.url" class="flex flex-col items-baseline py-1 md:flex-row">
     <FeedButton class="w-full p-2">
       <span class="flex flex-grow flex-row items-baseline">
         <!-- Colored Dot -->
