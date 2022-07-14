@@ -4,6 +4,8 @@ This repo holds my personal site and cookbook. More information about the site, 
 
 This repository is public for the purposes of demonstration and education. Much of it is geared specifically to my personal use case and it should not be considered a template or a starter.
 
+- TODO Hide more quotes
+
 ## License & Copyright
 
 © 2022 Stef Korporaal
