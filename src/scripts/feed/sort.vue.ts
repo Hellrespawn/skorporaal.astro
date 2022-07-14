@@ -1,4 +1,4 @@
-import { ref, computed, reactive } from "vue";
+import { ref, computed, reactive, watch } from "vue";
 
 import { type FeedItem } from "./feedItem";
 
@@ -25,6 +25,8 @@ const STATES: SortState[] = [
     display: "Z-A ↓",
   },
 ];
+
+const STORAGE_KEY = "sort";
 
 function sortByAlphaAscending(left: FeedItem, right: FeedItem): number {
   return left.title.localeCompare(right.title);
@@ -66,9 +68,41 @@ function sortByDateDescending(left: FeedItem, right: FeedItem): number {
   return sort;
 }
 
-export function createSortStore() {
+function isValidIndex(index: number): boolean {
+  if (isNaN(index) || index < 0 || index >= STATES.length) {
+    return false;
+  }
+
+  return true;
+}
+
+function loadSortIndex(): number {
+  let index = 0;
+
+  const storedIndex = localStorage.getItem(STORAGE_KEY);
+
+  if (storedIndex) {
+    const parsedIndex = parseInt(storedIndex);
+
+    if (isValidIndex(parsedIndex)) {
+      index = parsedIndex;
+    } else {
+      console.error(`Invalid sort index: ${storedIndex}`);
+    }
+  }
+
+  return index;
+}
+
+function saveSortIndex(index: number): void {
+  localStorage.setItem(STORAGE_KEY, index.toString());
+}
+
+function createSortStore() {
   // Ref
-  const index = ref(0);
+  const index = ref(loadSortIndex());
+
+  watch(index, saveSortIndex);
 
   // Computed Refs
   const state = computed(() => STATES[index.value]);

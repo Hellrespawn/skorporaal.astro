@@ -45,12 +45,5 @@ const filteredItems = computed(() =>
     >
       <FeedItemComponent :feedItem="feedItem" />
     </li>
-
-    <li
-      v-if="!filteredItems.length"
-      class="border-b border-gray-200 dark:border-gray-700"
-    >
-      <FeedItemComponent :feedItem="emptyItem" />
-    </li>
   </ul>
 </template>
