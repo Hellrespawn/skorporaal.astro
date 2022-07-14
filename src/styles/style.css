@@ -24,7 +24,7 @@
 
 @layer utilities {
   .fancy-link {
-    @apply bg-gradient-to-r bg-[length:auto_36%] bg-[center_bottom_1px] bg-no-repeat  transition-[background-size] duration-main hover:bg-[length:auto_100%];
+    @apply bg-gradient-to-r bg-[length:auto_36%] bg-[center_bottom_1px] bg-no-repeat transition-[background-size] hover:bg-[length:auto_100%];
   }
 
   .fancy-link {

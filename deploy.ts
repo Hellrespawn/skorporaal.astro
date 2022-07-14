@@ -9,6 +9,7 @@ const { HOSTNAME, USERNAME, PASSWORD, REMOTE_DIR } = process.env;
 
 const LOCAL_DIR =
   process.env.LOCAL_DIR && path.join(__dirname, process.env.LOCAL_DIR);
+
 if (!HOSTNAME || !USERNAME || !PASSWORD || !LOCAL_DIR || !REMOTE_DIR) {
   console.error("Environment variables not properly configured!");
   process.exit(1);
