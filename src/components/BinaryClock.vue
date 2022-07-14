@@ -8,8 +8,8 @@ const props = defineProps<{ bg?: string }>();
 const bg = props.bg ?? "bg-secondary-500 dark:bg-primary-500";
 const size = "h-2 w-2";
 
-const expectedBits = 6;
-const refreshRate = 30;
+const expectedBits = Math.ceil(Math.max(Math.log2(24), Math.log2(60)));
+const fps = 24;
 
 // Set up interval
 let interval: number;
@@ -24,16 +24,12 @@ const seconds = computed(() => now.value.getSeconds());
 onMounted(() => {
   interval = window.setInterval(() => {
     now.value = new Date();
-  }, 1000 / refreshRate);
+  }, 1000 / fps);
 });
 
 onUnmounted(() => {
   window.clearInterval(interval);
 });
-
-function active(number: number, bit: number): boolean {
-  return Boolean(number & (1 << bit));
-}
 </script>
 
 <template>
@@ -47,7 +43,8 @@ function active(number: number, bit: number): boolean {
         v-for="bit in expectedBits"
         :key="[number, index, bit].join()"
         :bg="`${
-          active(number, expectedBits - bit)
+          // largest to smallest
+          number & (1 << (expectedBits - bit))
             ? bg
             : 'bg-gray-200 dark:bg-gray-800'
         } ${size}`"
