@@ -3,33 +3,29 @@ import { reactive, watch } from "vue";
 import { CATEGORY_DATA, type PostCategory } from "../data";
 
 const DEFAULT_CATEGORIES: PostCategory[] = ["article", "portfolio", "other"];
-Object.freeze(DEFAULT_CATEGORIES);
+
 const STORAGE_KEY = "filter";
+
 const SEPARATOR = ";";
 
-function validateCategories(strings: string[]): strings is PostCategory[] {
-  const invalidCategories = strings.filter(
-    (string) => !(string in CATEGORY_DATA)
-  );
-
-  if (invalidCategories.length) {
-    console.error(`Found invalid categories: ${invalidCategories}`);
-    return false;
-  }
-
-  return true;
+function getInvalidCategories(strings: string[]): string[] {
+  return strings.filter((string) => !(string in CATEGORY_DATA));
 }
 
 function loadActiveCategories(): PostCategory[] {
-  let activeCategories: string[] = [...DEFAULT_CATEGORIES];
+  let activeCategories: PostCategory[] = [...DEFAULT_CATEGORIES];
 
   const storedCategoriesString = localStorage.getItem(STORAGE_KEY);
 
   if (storedCategoriesString) {
     const storedCategories = storedCategoriesString.split(SEPARATOR);
 
-    if (validateCategories(storedCategories)) {
-      activeCategories = storedCategories;
+    const invalidCategories = getInvalidCategories(storedCategories);
+
+    if (invalidCategories.length) {
+      console.error(`Found invalid categories: ${invalidCategories}`);
+    } else {
+      activeCategories = storedCategories as PostCategory[];
     }
   }
 
@@ -45,7 +41,7 @@ function createFilterStore() {
 
   watch(activeCategories, saveActiveCategories);
 
-  return reactive({
+  return {
     activeCategories,
     toggle(category: PostCategory): void {
       const index = activeCategories.indexOf(category);
@@ -62,7 +58,7 @@ function createFilterStore() {
     includes(category: PostCategory): boolean {
       return activeCategories.includes(category);
     },
-  });
+  };
 }
 
 export const filterStore = createFilterStore();
