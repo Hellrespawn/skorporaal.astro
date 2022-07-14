@@ -11,7 +11,7 @@ Having spent time learning about Angular, a full-fledged frontend framework, I w
 
 I was not looking to build a SPA however, so using a static site generator seemed like the obvious answer.
 
-### Astro
+## Astro
 
 > One option that seemed promising was [Astro](https://astro.build/), which is a component-based static site generator, however the oft-changing API, poor TypeScript support and poor error reporting made me put it aside.
 >
@@ -36,7 +36,7 @@ If I had to pick one issue that's still unresolved, it's that there is no easy w
 
 The main limitation of Astro components is, of course, that they are entirely static. All code is executed at compile time. You could simply add JavaScript, like for any static HTML, but Astro allows you to [hydrate](https://docs.astro.build/en/core-concepts/partial-hydration/) framework components!
 
-### Vue
+## Vue
 
 Vue promises:
 
@@ -52,45 +52,7 @@ Vue's composition API resembles Astro's syntax and feels quite logical to me, so
 
 One interesting side effect is that while Astro components can import all different kinds of framework components, those framework components can only import their own kind of framework component. This means that any component which I need within a Vue component must also be Vue component. You cannot import static Astro components from within Vue.
 
-One challenge I ran into was passing class instances across the build-time Astro/run-time Vue boundary. I was passing the `MarkdownInstance`s returned by `Astro.glob` as a property of a `Post` class, but passing this as a prop to an Astro component hydrated with `client:load` doesn't work. As far as I can tell, the prototype of the object gets reset to `Object`.
-
-```astro
----
-// This won't work.
-
-const feedItems = (await Astro.glob<Frontmatter>("../content/**/*.md")).map(
-  (mdInstance) => new FeedItem(mdInstance)
-);
----
-
-<Feed client:load feedItems={feedItems} />
-```
-
-The (unexpectedly simple) solution is to pass the `MarkdownInstance`s directly to the hydrated component, and then transform them there.
-
-```astro
----
-// index.page
-// This works!
-
-const instances = await Astro.glob<Frontmatter>("../content/**/*.md");
----
-
-<Feed client:load feedItems={feedItems} />
-```
-
-```vue
-<script setup lang="ts">
-// Feed.vue
-const { instances } = defineProps<{
-  instances: MarkdownInstance<Frontmatter>[];
-}>();
-
-const feedItems = instance.map((instance) => new FeedItem(instance));
-</script>
-```
-
-### Tailwind
+## Tailwind
 
 Tailwind is a CSS framework that lets you compose styles directly in your markup. It comes with great defaults and is just close enough to regular CSS that I'm never worried about not being able to translate one to the other. Combined with the sane defaults, it makes it really easy to create some nice looking CSS.
 
