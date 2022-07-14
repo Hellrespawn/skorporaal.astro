@@ -12,7 +12,7 @@ import { type DateFormat, DateFormatter } from "./date";
  * @returns
  */
 export function isPostCategory(str: string): str is PostCategory {
-  return POST_CATEGORIES.includes(str);
+  return POST_CATEGORIES.includes(str as PostCategory);
 }
 
 /**
@@ -21,7 +21,7 @@ export function isPostCategory(str: string): str is PostCategory {
 export interface Frontmatter {
   title: string;
   authors?: string[];
-  category?: PostCategory;
+  category?: string;
   date?: string;
   lang?: string;
   updated?: string;

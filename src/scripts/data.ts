@@ -15,7 +15,12 @@ export const SITE_DATA = {
  * All valid post categories.
  * NOTE: Must be manually alphabetized.
  */
-export const POST_CATEGORIES = ["article", "portfolio", "recipe", "other"];
+export const POST_CATEGORIES = [
+  "article",
+  "portfolio",
+  "recipe",
+  "other",
+] as const;
 
 export type PostCategory = typeof POST_CATEGORIES[number];
 
