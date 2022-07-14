@@ -2,7 +2,7 @@
 import { onMounted, onUnmounted, ref, computed, type Ref } from "vue";
 
 import { filterStore } from "@s:feed/filter.vue";
-import Dot from "@c:Dot.vue";
+import Dot from "@c:Feed/Dot.vue";
 
 const props = defineProps<{ bg?: string }>();
 

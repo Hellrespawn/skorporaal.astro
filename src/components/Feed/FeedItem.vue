@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Dot from "@c:Dot.vue";
+import Dot from "@c:Feed/Dot.vue";
 import FeedButton from "@c:Feed/FeedButton.vue";
 
 import { type FeedItem } from "@s:feed/feedItem";
