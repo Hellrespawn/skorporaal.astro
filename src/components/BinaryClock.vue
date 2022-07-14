@@ -7,7 +7,6 @@ import Dot from "@c:Feed/Dot.vue";
 const props = defineProps<{ bg?: string }>();
 
 const bg = props.bg ?? "bg-secondary-500 dark:bg-primary-500";
-const size = "h-2 w-2";
 
 const expectedBits = Math.ceil(Math.max(Math.log2(24), Math.log2(60)));
 const fps = 24;
@@ -43,12 +42,12 @@ onUnmounted(() => {
       <Dot
         v-for="bit in expectedBits"
         :key="[number, index, bit].join()"
-        :bg="`${
+        :bg="
           // largest to smallest
           number & (1 << (expectedBits - bit))
             ? bg
             : 'bg-gray-200 dark:bg-gray-800'
-        } ${size}`"
+        "
       />
     </div>
   </div>
