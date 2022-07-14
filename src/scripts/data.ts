@@ -28,6 +28,7 @@ export interface CategoryData {
   plural: string;
   single: string;
   text: string;
+  hidden?: boolean;
 }
 
 export const CATEGORY_DATA: Record<PostCategory, CategoryData> = {
@@ -51,6 +52,7 @@ export const CATEGORY_DATA: Record<PostCategory, CategoryData> = {
     plural: "Recipes",
     single: "Recipe",
     text: "text-tertiary-500",
+    hidden: true,
   },
   other: {
     bg: "bg-quaternary-500",

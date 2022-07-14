@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref, computed, type Ref } from "vue";
 
+import { filterStore } from "@s:feed/filter.vue";
 import Dot from "@c:Dot.vue";
 
 const props = defineProps<{ bg?: string }>();
@@ -33,7 +34,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col" @click="filterStore.toggle('recipe')">
     <div
       v-for="(number, index) in [hours, minutes, seconds]"
       :key="[number, index].join()"

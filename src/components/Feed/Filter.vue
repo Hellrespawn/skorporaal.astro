@@ -5,6 +5,10 @@ import FeedButton from "@c:Feed/FeedButton.vue";
 import { CATEGORY_DATA } from "@s:data";
 import { filterStore } from "@s:feed/filter.vue";
 import { sortStore } from "@s:feed/sort.vue";
+
+const categories = Object.entries(CATEGORY_DATA).filter(
+  ([_, data]) => !data.hidden
+);
 </script>
 
 <template>
@@ -13,7 +17,7 @@ import { sortStore } from "@s:feed/sort.vue";
   >
     <div class="flex flex-row flex-wrap py-1">
       <button
-        v-for="[category, data] in Object.entries(CATEGORY_DATA)"
+        v-for="[category, data] in categories"
         type="button"
         @click="() => filterStore.toggle(category)"
         :class="{ 'opacity-50': !filterStore.includes(category) }"
