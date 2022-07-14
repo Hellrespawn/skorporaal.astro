@@ -26,9 +26,10 @@ const { instances } = defineProps<{
   instances: MarkdownInstance<Frontmatter>[];
 }>();
 
+const feedItems = instances.map((instance) => new FeedItem(instance));
+
 const filteredItems = computed(() =>
-  instances
-    .map((instance) => new FeedItem(instance))
+  feedItems
     .filter((item) => filterStore.includes(item.category))
     .sort(sortStore.callback)
 );
