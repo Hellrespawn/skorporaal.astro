@@ -21,7 +21,7 @@
     "@tailwindcss/typography": "^0.5.4",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
-    "astro": "1.0.0-beta.70",
+    "astro": "1.0.0-beta.72",
     "autoprefixer": "^10.4.7",
     "basic-ftp": "^4.6.6",
     "cssnano": "^5.1.12",
