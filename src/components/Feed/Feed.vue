@@ -8,7 +8,6 @@ import { filterStore } from "@s:feed/filter.vue";
 import { sortStore } from "@s:feed/sort.vue";
 
 import FeedItemComponent from "@c:Feed/FeedItem.vue";
-import Filter from "@c:Feed/Filter.vue";
 
 const { instances } = defineProps<{
   instances: MarkdownInstance<Frontmatter>[];
@@ -24,8 +23,6 @@ const filteredItems = computed(() =>
 </script>
 
 <template>
-  <Filter />
-
   <ul v-if="filteredItems.length" id="postFeed" class="text-xl md:text-base">
     <li
       v-for="feedItem in filteredItems"

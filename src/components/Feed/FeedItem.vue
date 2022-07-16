@@ -5,8 +5,6 @@ import FeedButton from "@c:Feed/FeedButton.vue";
 import { type FeedItem } from "@s:feed/feedItem";
 
 const { feedItem } = defineProps<{ feedItem: FeedItem }>();
-
-const documentLang = document.documentElement.lang;
 </script>
 
 <template>
@@ -17,7 +15,7 @@ const documentLang = document.documentElement.lang;
         <Dot :bg="feedItem.dot" />
         <!-- Title -->
         <p class="postTitle px-2">
-          {{ feedItem.getFormattedTitle(documentLang) }}
+          {{ feedItem.getFormattedTitle() }}
         </p>
       </span>
 

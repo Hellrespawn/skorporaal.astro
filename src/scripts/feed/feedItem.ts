@@ -1,4 +1,4 @@
-import { CATEGORY_DATA, LANGUAGE_DATA } from "@s:data";
+import { CATEGORY_DATA, LANGUAGE_DATA, SITE_DATA } from "@s:data";
 import { Post } from "@s:post";
 
 export class FeedItem extends Post {
@@ -6,12 +6,12 @@ export class FeedItem extends Post {
     return CATEGORY_DATA[this.category].bg;
   }
 
-  getFormattedTitle(documentLang: string): string {
+  getFormattedTitle(): string {
     let { title } = this;
     const { lang } = this;
 
-    if (lang !== documentLang) {
-      title += ` [${LANGUAGE_DATA[documentLang][lang]}]`;
+    if (lang !== SITE_DATA.lang) {
+      title += ` [${LANGUAGE_DATA[SITE_DATA.lang][lang]}]`;
     }
 
     return title;

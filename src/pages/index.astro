@@ -4,7 +4,7 @@ import { type Frontmatter } from "@s:post";
 import GridLayout from "@l:GridLayout.astro";
 
 import About from "@c:About/About.astro";
-import Feed from "@c:Feed/Feed.vue";
+import Feed from "@c:Feed/Feed.astro";
 
 const instances = await Astro.glob<Frontmatter>("../content/**/*.md");
 ---
@@ -14,6 +14,7 @@ const instances = await Astro.glob<Frontmatter>("../content/**/*.md");
     <About />
   </Fragment>
   <Fragment slot="right">
-    <Feed client:only="vue" instances={instances} />
+    <!-- <Feed client:only="vue" instances={instances} /> -->
+    <Feed instances={instances} />
   </Fragment>
 </GridLayout>

@@ -9,6 +9,7 @@ export const SITE_DATA = {
   email: "stef@skorporaal.com",
   github: "https://github.com/Hellrespawn",
   builtAt: new Date(),
+  lang: "en",
 };
 
 /**
