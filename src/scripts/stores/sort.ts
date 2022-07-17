@@ -1,6 +1,7 @@
-import { ref, computed, reactive, watch } from "vue";
+import { atom, onSet, computed, action } from "nanostores";
+import { useStore } from "@nanostores/vue";
 
-import { type FeedItem } from "./feedItem";
+import { type FeedItem } from "@s:post";
 
 interface SortState {
   callback: (left: FeedItem, right: FeedItem) => number;
@@ -99,25 +100,28 @@ function saveSortIndex(index: number): void {
 }
 
 function createSortStore() {
-  // Ref
-  const index = ref(loadSortIndex());
+  const index = atom(loadSortIndex());
 
-  watch(index, saveSortIndex);
+  onSet(index, ({ newValue }) => {
+    saveSortIndex(newValue);
+  });
 
   // Computed Refs
-  const state = computed(() => STATES[index.value]);
+  const state = computed(index, (index) => STATES[index]);
 
-  const callback = computed(() => state.value.callback);
+  const callback = computed(state, (state) => state.callback);
 
-  const display = computed(() => state.value.display);
+  const display = computed(state, (state) => state.display);
 
-  return reactive({
-    callback,
-    display,
-    cycle(): void {
-      index.value = (index.value + 1) % STATES.length;
-    },
+  const cycle = action(index, "cycle", (index) => {
+    index.set((index.get() + 1) % STATES.length);
   });
+
+  return {
+    callback: useStore(callback),
+    display: useStore(display),
+    cycle,
+  };
 }
 
 export const sortStore = createSortStore();

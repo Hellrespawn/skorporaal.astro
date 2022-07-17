@@ -2,7 +2,7 @@
 import Dot from "@c:Feed/Dot.vue";
 import FeedButton from "@c:Feed/FeedButton.vue";
 
-import { type FeedItem } from "@s:feed/feedItem";
+import { type FeedItem } from "@s:post";
 
 const { feedItem } = defineProps<{ feedItem: FeedItem }>();
 </script>

@@ -1,4 +1,5 @@
-import { reactive, watch } from "vue";
+import { atom, onSet, action, computed } from "nanostores";
+import { useStore } from "@nanostores/vue";
 
 import { CATEGORY_DATA, type PostCategory } from "../data";
 
@@ -37,13 +38,22 @@ function saveActiveCategories(activeCategories: PostCategory[]): void {
 }
 
 function createFilterStore() {
-  const activeCategories: PostCategory[] = reactive(loadActiveCategories());
+  const activeCategories = atom(loadActiveCategories());
 
-  watch(activeCategories, saveActiveCategories);
+  onSet(activeCategories, ({ newValue }) => {
+    saveActiveCategories(newValue);
+  });
 
-  return {
+  const includes = computed(activeCategories, (activeCategories) => {
+    return (category: PostCategory) => activeCategories.includes(category);
+  });
+
+  const toggle = action(
     activeCategories,
-    toggle(category: PostCategory): void {
+    "toggle",
+    (store, category: PostCategory) => {
+      const activeCategories = store.get();
+
       const index = activeCategories.indexOf(category);
 
       if (index > -1) {
@@ -54,10 +64,14 @@ function createFilterStore() {
       } else {
         activeCategories.push(category);
       }
-    },
-    includes(category: PostCategory): boolean {
-      return activeCategories.includes(category);
-    },
+
+      store.set(activeCategories);
+    }
+  );
+
+  return {
+    includes: useStore(includes),
+    toggle,
   };
 }
 

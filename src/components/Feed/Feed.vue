@@ -2,10 +2,9 @@
 import { MarkdownInstance } from "astro";
 import { computed } from "vue";
 
-import { type Frontmatter } from "@s:post";
-import { FeedItem } from "@s:feed/feedItem";
-import { filterStore } from "@s:feed/filter.vue";
-import { sortStore } from "@s:feed/sort.vue";
+import { FeedItem, type Frontmatter } from "@s:post";
+import { filterStore } from "@s:stores/filter";
+import { sortStore } from "@s:stores/sort";
 
 import FeedItemComponent from "@c:Feed/FeedItem.vue";
 
@@ -17,8 +16,8 @@ const feedItems = instances.map((instance) => new FeedItem(instance));
 
 const filteredItems = computed(() =>
   feedItems
-    .filter((item) => filterStore.includes(item.category))
-    .sort(sortStore.callback)
+    .filter((item) => filterStore.includes.value(item.category))
+    .sort(sortStore.callback.value)
 );
 </script>
 

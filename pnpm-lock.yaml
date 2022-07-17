@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@astrojs/vue': ^0.4.0
   '@fontsource/nunito': ^4.5.9
+  '@nanostores/vue': ^0.5.5
   '@swc-node/register': ^1.5.1
   '@tailwindcss/typography': ^0.5.4
   '@typescript-eslint/eslint-plugin': ^5.30.6
@@ -17,6 +18,7 @@ specifiers:
   eslint-config-prettier: ^8.5.0
   hint: ^7.1.0
   katex: ^0.16.0
+  nanostores: ^0.5.12
   npm-run-all: ^4.1.5
   postcss: ^8.4.14
   prettier: ^2.7.1
@@ -33,6 +35,7 @@ specifiers:
 devDependencies:
   '@astrojs/vue': 0.4.0_vue@3.2.37
   '@fontsource/nunito': 4.5.9
+  '@nanostores/vue': 0.5.5_ympl27tda4o7w6en7idglmssei
   '@swc-node/register': 1.5.1_typescript@4.7.4
   '@tailwindcss/typography': 0.5.4_tailwindcss@3.1.6
   '@typescript-eslint/eslint-plugin': 5.30.6_2vt5mtrqleafs33qg2bhpmbaqm
@@ -47,6 +50,7 @@ devDependencies:
   eslint-config-prettier: 8.5.0_eslint@8.19.0
   hint: 7.1.0_typescript@4.7.4
   katex: 0.16.0
+  nanostores: 0.5.12
   npm-run-all: 4.1.5
   postcss: 8.4.14
   prettier: 2.7.1
@@ -1775,6 +1779,21 @@ packages:
     resolution: {integrity: sha512-EWUguj2kd7ldmrF9F+vI5hUOralPd+sdsUnYbRy33vZTuZkduC1shE9TtEMEjAQwyfyMb4ole5KtjF8MsnQOlA==}
     dev: true
     optional: true
+
+  /@nanostores/vue/0.5.5_ympl27tda4o7w6en7idglmssei:
+    resolution: {integrity: sha512-hqmTe9Fi09o94MO6dLYCMzlRMTpyXUGhYx42vYv2CxhY0lPFkyySyljXBOZk1my0bkBz2STDMVe7WILwjZiwFA==}
+    engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
+    peerDependencies:
+      '@vue/devtools-api': '>=6.0.2'
+      nanostores: '>=0.5.10'
+      vue: '>=3.2.30'
+    peerDependenciesMeta:
+      '@vue/devtools-api':
+        optional: true
+    dependencies:
+      nanostores: 0.5.12
+      vue: 3.2.37
+    dev: true
 
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -6795,6 +6814,11 @@ packages:
     resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
+    dev: true
+
+  /nanostores/0.5.12:
+    resolution: {integrity: sha512-5BccS7nNInTc7Noz2gv19gyx5h5y6m72nj6ZnCTV98GdFdwvcFJf2MMl+7VsX76E1toV1YrLqlDn+R+OF73PVg==}
+    engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
     dev: true
 
   /natural-compare/1.4.0:

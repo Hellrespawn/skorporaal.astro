@@ -3,7 +3,13 @@ import { AstroComponentFactory } from "astro/dist/types/runtime/server";
 
 import slugify from "slugify";
 
-import { type PostCategory, POST_CATEGORIES, SITE_DATA } from "./data";
+import {
+  type PostCategory,
+  POST_CATEGORIES,
+  SITE_DATA,
+  CATEGORY_DATA,
+  LANGUAGE_DATA,
+} from "./data";
 import { type DateFormat, DateFormatter } from "./date";
 
 /**
@@ -90,9 +96,27 @@ export abstract class Post {
   }
 }
 
+export class FeedItem extends Post {
+  get dot(): string {
+    return CATEGORY_DATA[this.category].bg;
+  }
+
+  getFormattedTitle(): string {
+    let { title } = this;
+    const { lang } = this;
+
+    if (lang !== SITE_DATA.lang) {
+      title += ` [${LANGUAGE_DATA[SITE_DATA.lang][lang]}]`;
+    }
+
+    return title;
+  }
+}
+
 export class FullPost extends Post {
   get authors(): string {
     const authors = this.frontmatter.authors ?? [];
+
     if (!authors.includes(SITE_DATA.name)) {
       authors.unshift(SITE_DATA.name);
     }
