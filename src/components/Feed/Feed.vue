@@ -16,8 +16,8 @@ const feedItems = instances.map((instance) => new FeedItem(instance));
 
 const filteredItems = computed(() =>
   feedItems
-    .filter((item) => filterStore.includes.value(item.category))
-    .sort(sortStore.callback.value)
+    .filter(filterStore.filterFunction.value)
+    .sort(sortStore.sortFunction.value)
 );
 </script>
 

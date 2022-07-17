@@ -61,3 +61,32 @@ Before, `localStorage` (and `window` in general) was only accessible in Vue's `o
 This had the same implication for `FeedItem`'s handling of the title.
 
 The difference in client directives is described [here](https://docs.astro.build/en/reference/directives-reference/#client-directives).
+
+## 2022-07-17
+
+### nanostores
+
+My original solution for stores was lifted straight from the [Vue docs](https://vuejs.org/guide/scaling-up/state-management.html#simple-state-management-with-reactivity-api).
+
+I recently found out that Astro [has a recommendation](https://docs.astro.build/en/core-concepts/sharing-state/) for cross-framework state management, namely [Nano Stores](https://github.com/nanostores/nanostores).
+
+So I replaced my original solution with Nano Stores. It was a fairly straightforward conversion. The main difference is functions aren't reactive.
+
+With Vue you can do the following:
+
+```ts
+const colors = reactive(["red", "blue", "green"]);
+
+return {
+  add(color: string): {
+    ...
+  }
+  includes(color: string): boolean {
+    return colors.includes(color);
+  },
+};
+```
+
+This means that anything that uses `includes()` is automatically reactive, and updates if `colors` changes. Nano Stores has so-called `action`s, which are intended to be used for updating or mutating the store, but a similar `includes`-function would not be reactive, and can't be passed to `useStore()`.
+
+The workaround I have employed here is to make `includes` a computed store that returns a function. The only slight annoyance is that `@nanostores/vue`'s `useStore()` returns reactive variables as a `Ref`, so you need to use `store.includes.value(color)` if you want to call the function directly inside your `<script setup>`. Instead, I pass the value to `filter`, as in `array.filter(includes.value)`.

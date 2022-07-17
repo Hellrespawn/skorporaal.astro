@@ -4,25 +4,25 @@ import { useStore } from "@nanostores/vue";
 import { type FeedItem } from "@s:post";
 
 interface SortState {
-  callback: (left: FeedItem, right: FeedItem) => number;
+  sortFunction: (left: FeedItem, right: FeedItem) => number;
   display: string;
 }
 
 const STATES: SortState[] = [
   {
-    callback: sortByDateDescending,
+    sortFunction: sortByDateDescending,
     display: "Date ↓",
   },
   {
-    callback: sortByDateAscending,
+    sortFunction: sortByDateAscending,
     display: "Date ↑",
   },
   {
-    callback: sortByAlphaAscending,
+    sortFunction: sortByAlphaAscending,
     display: "A-Z ↑",
   },
   {
-    callback: sortByAlphaDescending,
+    sortFunction: sortByAlphaDescending,
     display: "Z-A ↓",
   },
 ];
@@ -109,17 +109,17 @@ function createSortStore() {
   // Computed Refs
   const state = computed(index, (index) => STATES[index]);
 
-  const callback = computed(state, (state) => state.callback);
-
   const display = computed(state, (state) => state.display);
+
+  const sortFunction = computed(state, (state) => state.sortFunction);
 
   const cycle = action(index, "cycle", (index) => {
     index.set((index.get() + 1) % STATES.length);
   });
 
   return {
-    callback: useStore(callback),
     display: useStore(display),
+    sortFunction: useStore(sortFunction),
     cycle,
   };
 }

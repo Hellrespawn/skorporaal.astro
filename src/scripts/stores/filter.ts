@@ -2,12 +2,15 @@ import { atom, onSet, action, computed } from "nanostores";
 import { useStore } from "@nanostores/vue";
 
 import { CATEGORY_DATA, type PostCategory } from "../data";
+import { type FeedItem } from "@s:post";
 
 const DEFAULT_CATEGORIES: PostCategory[] = ["article", "portfolio", "other"];
 
 const STORAGE_KEY = "filter";
 
 const SEPARATOR = ";";
+
+// TODO Look at <https://vuejs.org/guide/essentials/reactivity-fundamentals.html#ref-unwrapping-in-reactive-objects>
 
 function getInvalidCategories(strings: string[]): string[] {
   return strings.filter((string) => !(string in CATEGORY_DATA));
@@ -48,6 +51,10 @@ function createFilterStore() {
     return (category: PostCategory) => activeCategories.includes(category);
   });
 
+  const filterFunction = computed(activeCategories, (activeCategories) => {
+    return (feedItem: FeedItem) => activeCategories.includes(feedItem.category);
+  });
+
   const toggle = action(
     activeCategories,
     "toggle",
@@ -70,6 +77,7 @@ function createFilterStore() {
   );
 
   return {
+    filterFunction: useStore(filterFunction),
     includes: useStore(includes),
     toggle,
   };
