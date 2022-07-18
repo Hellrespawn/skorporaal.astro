@@ -1,21 +1,23 @@
-import { atom, onSet, action, computed } from "nanostores";
+import { atom, onSet, action, computed, WritableAtom } from "nanostores";
 import { useStore } from "@nanostores/vue";
 
 import { CATEGORY_DATA, type PostCategory } from "../data";
 import { type FeedItem } from "@s:post";
 
 const DEFAULT_CATEGORIES: PostCategory[] = ["article", "portfolio", "other"];
-
 const STORAGE_KEY = "filter";
-
 const SEPARATOR = ";";
 
-// TODO Look at <https://vuejs.org/guide/essentials/reactivity-fundamentals.html#ref-unwrapping-in-reactive-objects>
-
+/**
+ * Validate that strings are PostCategories.
+ */
 function getInvalidCategories(strings: string[]): string[] {
   return strings.filter((string) => !(string in CATEGORY_DATA));
 }
 
+/**
+ * Attempts to load active categories from localStorage.
+ */
 function loadActiveCategories(): PostCategory[] {
   let activeCategories: PostCategory[] = [...DEFAULT_CATEGORIES];
 
@@ -36,10 +38,55 @@ function loadActiveCategories(): PostCategory[] {
   return activeCategories;
 }
 
+/**
+ * Saves active categories to localStorage.
+ */
 function saveActiveCategories(activeCategories: PostCategory[]): void {
   localStorage.setItem(STORAGE_KEY, activeCategories.join(SEPARATOR));
 }
 
+/**
+ * Creates `includes` function.
+ */
+function createIncludesFunction(
+  activeCategories: PostCategory[]
+): (category: PostCategory) => boolean {
+  return (category: PostCategory) => activeCategories.includes(category);
+}
+
+/**
+ * Creates filter callback function.
+ */
+function createFilterFunction(activeCategories: PostCategory[]) {
+  return (feedItem: FeedItem) => activeCategories.includes(feedItem.category);
+}
+
+/**
+ * Function that toggles category.
+ */
+function toggleFunction(
+  store: WritableAtom<PostCategory[]>,
+  category: PostCategory
+) {
+  const activeCategories = store.get();
+
+  const index = activeCategories.indexOf(category);
+
+  if (index > -1) {
+    activeCategories.splice(index, 1);
+    if (activeCategories.length === 0) {
+      activeCategories.push(...DEFAULT_CATEGORIES);
+    }
+  } else {
+    activeCategories.push(category);
+  }
+
+  store.set(activeCategories);
+}
+
+/**
+ * Create instance of filter store.
+ */
 function createFilterStore() {
   const activeCategories = atom(loadActiveCategories());
 
@@ -47,40 +94,14 @@ function createFilterStore() {
     saveActiveCategories(newValue);
   });
 
-  const includes = computed(activeCategories, (activeCategories) => {
-    return (category: PostCategory) => activeCategories.includes(category);
-  });
-
-  const filterFunction = computed(activeCategories, (activeCategories) => {
-    return (feedItem: FeedItem) => activeCategories.includes(feedItem.category);
-  });
-
-  const toggle = action(
-    activeCategories,
-    "toggle",
-    (store, category: PostCategory) => {
-      const activeCategories = store.get();
-
-      const index = activeCategories.indexOf(category);
-
-      if (index > -1) {
-        activeCategories.splice(index, 1);
-        if (activeCategories.length === 0) {
-          activeCategories.push(...DEFAULT_CATEGORIES);
-        }
-      } else {
-        activeCategories.push(category);
-      }
-
-      store.set(activeCategories);
-    }
-  );
-
   return {
-    filterFunction: useStore(filterFunction),
-    includes: useStore(includes),
-    toggle,
+    filterFunction: useStore(computed(activeCategories, createFilterFunction)),
+    includes: useStore(computed(activeCategories, createIncludesFunction)),
+    toggle: action(activeCategories, "toggle", toggleFunction),
   };
 }
 
+/**
+ * Single store instance.
+ */
 export const filterStore = createFilterStore();

@@ -1,20 +1,19 @@
-/** Site Data */
 const name = "Stef Korporaal";
 const description = `Personal website of ${name}`;
 
+/** Site Data */
 export const SITE_DATA = {
   name,
   description,
   url: "skorporaal.com",
   email: "stef@skorporaal.com",
   github: "https://github.com/Hellrespawn",
-  builtAt: new Date(),
   lang: "en",
+  builtAt: new Date(),
 };
 
 /**
  * All valid post categories.
- * NOTE: Must be manually alphabetized.
  */
 export const POST_CATEGORIES = [
   "article",
