@@ -5,13 +5,31 @@ import * as dotenv from "dotenv";
 
 dotenv.config({ override: true });
 
+const PRINTER = {
+  depth: 0,
+  log(message?: any, ...optionalParams: any[]) {
+    console.log("\t".repeat(this.depth), message, ...optionalParams);
+  },
+  error(message?: any, ...optionalParams: any[]) {
+    console.error("\t".repeat(this.depth), message, ...optionalParams);
+  },
+  heading(message?: any, ...optionalParams: any[]) {
+    this.log(message, ...optionalParams);
+    this.depth++;
+  },
+  done() {
+    this.log("Done.");
+    this.depth--;
+  },
+};
+
 const { HOSTNAME, USERNAME, PASSWORD, REMOTE_DIR } = process.env;
 
 const LOCAL_DIR =
   process.env.LOCAL_DIR && path.join(__dirname, process.env.LOCAL_DIR);
 
 if (!HOSTNAME || !USERNAME || !PASSWORD || !LOCAL_DIR || !REMOTE_DIR) {
-  console.error("Environment variables not properly configured!");
+  PRINTER.error("Environment variables not properly configured!");
   process.exit(1);
 }
 
@@ -32,14 +50,14 @@ async function checkSitePath(): Promise<void> {
 }
 
 async function rename404(): Promise<void> {
-  console.log("Renaming '404.html' to '404.shtml'");
+  PRINTER.log("Renaming '404.html' to '404.shtml'...");
   const src = path.join(LOCAL_DIR!, "404.html");
   const tgt = path.join(LOCAL_DIR!, "404.shtml");
   await fs.rename(src, tgt);
 }
 
 async function undo404(): Promise<void> {
-  console.log("Renaming '404.shtml' to '404.html'");
+  PRINTER.log("Renaming '404.shtml' to '404.html'...");
   const src = path.join(LOCAL_DIR!, "404.shtml");
   const tgt = path.join(LOCAL_DIR!, "404.html");
   await fs.rename(src, tgt);
@@ -49,10 +67,10 @@ async function main(): Promise<void> {
   const client = new ftp.Client(60000);
 
   try {
-    console.log("Running post-build tasks...");
+    PRINTER.heading("Running pre-build tasks:");
     await rename404();
 
-    console.log("Attempting to upload files...");
+    PRINTER.log("Attempting to upload files...");
     await checkSitePath();
 
     await client.access({
@@ -61,26 +79,27 @@ async function main(): Promise<void> {
       password: PASSWORD,
     });
 
-    console.log("Connected to FTP...");
+    PRINTER.log("Connected to FTP...");
 
     await client.ensureDir(REMOTE_DIR!);
 
     await client.clearWorkingDir();
-    console.log("Cleared old files...");
+    PRINTER.log("Cleared old files...");
 
     await client.uploadFromDir(LOCAL_DIR!);
-    console.log("Uploaded new files...");
+    PRINTER.log("Uploaded new files...");
   } catch (error) {
     console.error((error as Error).message);
   } finally {
     client.close();
-    console.log("Running post-build tasks...");
+    PRINTER.done();
+    PRINTER.heading("Running post-build tasks:");
     await undo404();
 
-    console.log("Done.");
+    PRINTER.done();
   }
 }
 
 main().catch((error) => {
-  console.error(error);
+  PRINTER.error(error);
 });
