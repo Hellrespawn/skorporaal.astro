@@ -1,9 +1,9 @@
 ---
-import Button from "@c:Button.astro";
-import ThemeToggle from "@c:ThemeToggle/ThemeToggle.vue";
+import Button from '@c:Button.astro';
+import ThemeToggle from '@c:ThemeToggle/ThemeToggle.vue';
 
-import Sun from "@c:Icons/Sun.astro";
-import Moon from "@c:Icons/Moon.astro";
+import Sun from '@c:Icons/Sun.astro';
+import Moon from '@c:Icons/Moon.astro';
 
 export interface Props {
   class?: string;
@@ -13,7 +13,7 @@ const { class: initialClasses } = Astro.props as Props;
 ---
 
 <ThemeToggle client:load>
-  <Button interactive class={initialClasses + " cursor-pointer"}>
+  <Button interactive class={initialClasses + ' cursor-pointer'}>
     <span class="hidden rounded-3xl dark:inline">
       <Sun />
     </span>

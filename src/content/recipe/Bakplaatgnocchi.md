@@ -1,5 +1,5 @@
 ---
-title: "Bakplaat-gnocchi"
+title: 'Bakplaat-gnocchi'
 authors:
   - Sheela Prakash
 date: 2022-07-17

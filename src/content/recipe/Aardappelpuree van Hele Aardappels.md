@@ -1,5 +1,5 @@
 ---
-title: "Aardappelpuree van Hele Aardappels"
+title: 'Aardappelpuree van Hele Aardappels'
 authors:
   - blinkpatch
 ---

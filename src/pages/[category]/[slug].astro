@@ -1,12 +1,12 @@
 ---
-import { type Frontmatter, FullPost } from "@s:post";
+import { type Frontmatter, FullPost } from '@s:post';
 
-import PostLayout from "@l:PostLayout.astro";
+import PostLayout from '@l:PostLayout.astro';
 
 const { post } = Astro.props as { post: FullPost };
 
 export async function getStaticPaths() {
-  const instances = await Astro.glob<Frontmatter>("../../content/**/*.md");
+  const instances = await Astro.glob<Frontmatter>('../../content/**/*.md');
 
   const posts = instances.map((instance) => new FullPost(instance));
 

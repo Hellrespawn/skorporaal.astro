@@ -1,5 +1,5 @@
 ---
-title: "HTML & CSS Tips & Tricks"
+title: 'HTML & CSS Tips & Tricks'
 date: 2021-12-19
 setup: |
   import { getUrl } from "@s:post";
@@ -55,7 +55,7 @@ Templates are useful elements that allow you to embed a structure in an HTML fil
 ```
 
 ```ts
-const template = document.getElementById("commentTemplate");
+const template = document.getElementById('commentTemplate');
 
 for (const post of posts) {
   const element = fillTemplate(post, template.content.cloneNode(true));

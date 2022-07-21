@@ -1,8 +1,8 @@
 <script setup lang="ts">
 function toggle() {
-  const toggled = document.documentElement.classList.toggle("dark");
+  const toggled = document.documentElement.classList.toggle('dark');
 
-  localStorage.setItem("darkMode", toggled.toString());
+  localStorage.setItem('darkMode', toggled.toString());
 }
 </script>
 

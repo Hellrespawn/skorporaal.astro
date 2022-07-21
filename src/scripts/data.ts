@@ -1,14 +1,14 @@
-const name = "Stef Korporaal";
+const name = 'Stef Korporaal';
 const description = `Personal website of ${name}`;
 
 /** Site Data */
 export const SITE_DATA = {
   name,
   description,
-  url: "skorporaal.com",
-  email: "stef@skorporaal.com",
-  github: "https://github.com/Hellrespawn",
-  lang: "en",
+  url: 'skorporaal.com',
+  email: 'stef@skorporaal.com',
+  github: 'https://github.com/Hellrespawn',
+  lang: 'en',
   builtAt: new Date(),
 };
 
@@ -16,10 +16,10 @@ export const SITE_DATA = {
  * All valid post categories.
  */
 export const POST_CATEGORIES = [
-  "article",
-  "portfolio",
-  "recipe",
-  "other",
+  'article',
+  'portfolio',
+  'recipe',
+  'other',
 ] as const;
 
 export type PostCategory = typeof POST_CATEGORIES[number];
@@ -38,43 +38,43 @@ export interface CategoryData {
 
 export const CATEGORY_DATA: Record<PostCategory, CategoryData> = {
   article: {
-    bg: "bg-secondary-500",
-    border: "border-secondary-500",
-    plural: "Articles",
-    single: "Article",
-    text: "text-secondary-500",
+    bg: 'bg-secondary-500',
+    border: 'border-secondary-500',
+    plural: 'Articles',
+    single: 'Article',
+    text: 'text-secondary-500',
   },
   portfolio: {
-    bg: "bg-primary-500",
-    border: "border-primary-500",
-    plural: "Portfolio",
-    single: "Portfolio",
-    text: "text-primary-500",
+    bg: 'bg-primary-500',
+    border: 'border-primary-500',
+    plural: 'Portfolio',
+    single: 'Portfolio',
+    text: 'text-primary-500',
   },
   recipe: {
-    bg: "bg-tertiary-500",
-    border: "border-tertiary-500",
-    plural: "Recipes",
-    single: "Recipe",
-    text: "text-tertiary-500",
+    bg: 'bg-tertiary-500',
+    border: 'border-tertiary-500',
+    plural: 'Recipes',
+    single: 'Recipe',
+    text: 'text-tertiary-500',
     hidden: true,
   },
   other: {
-    bg: "bg-quaternary-500",
-    border: "border-quaternary-500",
-    plural: "Other",
-    single: "Other",
-    text: "text-quaternary-500",
+    bg: 'bg-quaternary-500',
+    border: 'border-quaternary-500',
+    plural: 'Other',
+    single: 'Other',
+    text: 'text-quaternary-500',
   },
 };
 
 export const LANGUAGE_DATA: Record<string, Record<string, string>> = {
   en: {
-    nl: "Dutch",
-    en: "English",
+    nl: 'Dutch',
+    en: 'English',
   },
   nl: {
-    nl: "Nederlands",
-    en: "Engels",
+    nl: 'Nederlands',
+    en: 'Engels',
   },
 };

@@ -1,5 +1,5 @@
 ---
-title: "Caesar-salade met Kip"
+title: 'Caesar-salade met Kip'
 authors:
   - Adam Ragusea
 ---

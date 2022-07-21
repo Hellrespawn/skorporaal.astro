@@ -1,5 +1,5 @@
 ---
-title: "Build Log: skorporaal.com"
+title: 'Build Log: skorporaal.com'
 date: 2022-07-14
 updated: 2022-07-14
 ---
@@ -16,7 +16,7 @@ One challenge I ran into was passing class instances across the build-time Astro
 ---
 // This won't work.
 
-const feedItems = (await Astro.glob<Frontmatter>("../content/**/*.md")).map(
+const feedItems = (await Astro.glob<Frontmatter>('../content/**/*.md')).map(
   (mdInstance) => new FeedItem(mdInstance)
 );
 ---
@@ -31,7 +31,7 @@ The (unexpectedly simple) solution is to pass the `MarkdownInstance`s directly t
 // index.page
 // This works!
 
-const instances = await Astro.glob<Frontmatter>("../content/**/*.md");
+const instances = await Astro.glob<Frontmatter>('../content/**/*.md');
 ---
 
 <Feed client:load instances={instances} />

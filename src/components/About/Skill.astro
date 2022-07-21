@@ -10,12 +10,12 @@ export interface Props {
 const {
   src,
   name,
-  class: classes = "",
+  class: classes = '',
   dark = false,
   png = false,
 } = Astro.props as Props;
 
-const extension = png ? "png" : "svg";
+const extension = png ? 'png' : 'svg';
 ---
 
 <div class="my-4 flex flex-row items-center">
@@ -23,8 +23,8 @@ const extension = png ? "png" : "svg";
     class={`w-20 h-20 flex-shrink-0 bg-gray-100 border border-gray-200 rounded-r-full overflow-hidden dark:bg-gray-700 dark:border-gray-900 dark:border-none ${classes}`.trim()}
   >
     <img
-      src={`/assets/skills/${src}${dark ? "-light" : ""}.${extension}`}
-      class={`${dark ? " dark:hidden" : ""} w-full h-full`}
+      src={`/assets/skills/${src}${dark ? '-light' : ''}.${extension}`}
+      class={`${dark ? ' dark:hidden' : ''} w-full h-full`}
       alt={`${name} logo`}
     />
     {dark && (
@@ -37,6 +37,6 @@ const extension = png ? "png" : "svg";
   </div>
   <div class="flex-grow pl-4 pr-2">
     <h3 class="text-lg font-semibold">{name}</h3>
-    <slot></slot>
+    <slot />
   </div>
 </div>

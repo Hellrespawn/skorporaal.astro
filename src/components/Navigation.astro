@@ -1,7 +1,7 @@
 ---
-import Button from "@c:Button.astro";
-import Home from "@c:Icons/Home.astro";
-import ThemeToggle from "@c:ThemeToggle/ThemeToggle.astro";
+import Button from '@c:Button.astro';
+import Home from '@c:Icons/Home.astro';
+import ThemeToggle from '@c:ThemeToggle/ThemeToggle.astro';
 
 export interface Props {
   showHome?: boolean;
@@ -9,7 +9,7 @@ export interface Props {
 
 const { showHome = false } = Astro.props as Props;
 const buttonClass =
-  "flex flex-row items-center gap-3 py-2 md:shadow-sm md:shadow-gray-500 md:dark:shadow-black";
+  'flex flex-row items-center gap-3 py-2 md:shadow-sm md:shadow-gray-500 md:dark:shadow-black';
 ---
 
 <nav

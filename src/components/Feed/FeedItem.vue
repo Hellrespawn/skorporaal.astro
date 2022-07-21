@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import Dot from "@c:Feed/Dot.vue";
-import FeedButton from "@c:Feed/FeedButton.vue";
+import Dot from '@c:Feed/Dot.vue';
+import FeedButton from '@c:Feed/FeedButton.vue';
 
-import { type FeedItem } from "@s:post";
+import { type FeedItem } from '@s:post';
 
 const { feedItem } = defineProps<{ feedItem: FeedItem }>();
 </script>
@@ -23,7 +23,7 @@ const { feedItem } = defineProps<{ feedItem: FeedItem }>();
       <div
         class="postDate whitespace-nowrap text-right text-sm text-gray-400 dark:text-gray-500 md:w-auto md:text-left"
       >
-        {{ feedItem.getFormattedDate("short") }}
+        {{ feedItem.getFormattedDate('short') }}
       </div>
     </FeedButton>
   </a>

@@ -1,6 +1,6 @@
 ---
-import { type CategoryData } from "@s:data";
-import { type FullPost } from "@s:post";
+import { type CategoryData } from '@s:data';
+import { type FullPost } from '@s:post';
 
 export interface Props {
   post: FullPost;
@@ -18,7 +18,7 @@ const { accent, post } = Astro.props as Props;
 >
   <!-- Date -->
   <span class="text-gray-400 dark:text-gray-500"
-    >{post.getFormattedDate("long")}
+    >{post.getFormattedDate('long')}
   </span>
 
   <span class="italic">

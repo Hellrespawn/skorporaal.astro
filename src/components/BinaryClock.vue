@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref, computed, type Ref } from "vue";
+import { onMounted, onUnmounted, ref, computed, type Ref } from 'vue';
 
-import { filterStore } from "@s:stores/filter";
-import Dot from "@c:Feed/Dot.vue";
+import { filterStore } from '@s:stores/filter';
+import Dot from '@c:Feed/Dot.vue';
 
 const props = defineProps<{ bg?: string }>();
 
-const bg = props.bg ?? "bg-secondary-500 dark:bg-primary-500";
+const bg = props.bg ?? 'bg-secondary-500 dark:bg-primary-500';
 
 const expectedBits = Math.ceil(Math.max(Math.log2(24), Math.log2(60)));
 const fps = 24;

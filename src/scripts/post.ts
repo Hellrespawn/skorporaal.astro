@@ -1,7 +1,7 @@
-import { MarkdownInstance } from "astro";
-import { AstroComponentFactory } from "astro/dist/types/runtime/server";
+import { MarkdownInstance } from 'astro';
+import { AstroComponentFactory } from 'astro/dist/types/runtime/server';
 
-import slugify from "slugify";
+import slugify from 'slugify';
 
 import {
   type PostCategory,
@@ -9,8 +9,8 @@ import {
   SITE_DATA,
   CATEGORY_DATA,
   LANGUAGE_DATA,
-} from "./data";
-import { type DateFormat, DateFormatter } from "./date";
+} from './data';
+import { type DateFormat, DateFormatter } from './date';
 
 /**
  * Type guard that checks whether or not a string is a PostCategory
@@ -44,7 +44,7 @@ export abstract class Post {
 
     if (!category) {
       const { file } = this.instance;
-      const segments = file.split("/");
+      const segments = file.split('/');
       category = segments[segments.length - 2];
     }
 
@@ -52,7 +52,7 @@ export abstract class Post {
       return category;
     }
 
-    return "other";
+    return 'other';
   }
 
   get sortDate(): Date | undefined {
@@ -60,7 +60,7 @@ export abstract class Post {
   }
 
   get lang(): string {
-    return this.frontmatter.lang ?? this.category === "recipe" ? "nl" : "en";
+    return this.frontmatter.lang ?? this.category === 'recipe' ? 'nl' : 'en';
   }
 
   get title(): string {
@@ -121,7 +121,7 @@ export class FullPost extends Post {
       authors.unshift(SITE_DATA.name);
     }
 
-    return authors.join(", ");
+    return authors.join(', ');
   }
 
   get component(): AstroComponentFactory {

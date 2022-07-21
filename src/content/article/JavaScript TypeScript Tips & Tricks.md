@@ -1,5 +1,5 @@
 ---
-title: "JavaScript & TypeScript Tips & Tricks"
+title: 'JavaScript & TypeScript Tips & Tricks'
 date: 2021-12-19
 setup: |
   import { getUrl } from "@s:post";
@@ -50,7 +50,7 @@ export default function addOne(n: number): number {
 }
 
 // File 2
-import increment from "File1";
+import increment from 'File1';
 
 console.log(increment(2));
 // Prints '3'
@@ -61,7 +61,7 @@ console.log(increment(2));
 You can import something as a `type` only with the following syntax:
 
 ```ts
-import { type FeedItem } from "@s:feed/feedItem";
+import { type FeedItem } from '@s:feed/feedItem';
 
 let items: FeedItem[] = []; // This is fine
 let item = new FeedItem(); // TypeScript shows an error message:

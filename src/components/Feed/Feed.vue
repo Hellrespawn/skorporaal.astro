@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { MarkdownInstance } from "astro";
-import { computed } from "vue";
+import { MarkdownInstance } from 'astro';
+import { computed } from 'vue';
 
-import { FeedItem, type Frontmatter } from "@s:post";
-import { filterStore } from "@s:stores/filter";
-import { sortStore } from "@s:stores/sort";
+import { FeedItem, type Frontmatter } from '@s:post';
+import { filterStore } from '@s:stores/filter';
+import { sortStore } from '@s:stores/sort';
 
-import FeedItemComponent from "@c:Feed/FeedItem.vue";
+import FeedItemComponent from '@c:Feed/FeedItem.vue';
 
 const { instances } = defineProps<{
   instances: MarkdownInstance<Frontmatter>[];

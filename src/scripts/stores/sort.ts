@@ -1,9 +1,9 @@
-import { atom, onSet, computed, action } from "nanostores";
-import { useStore } from "@nanostores/vue";
+import { atom, onSet, computed, action } from 'nanostores';
+import { useStore } from '@nanostores/vue';
 
-import { type FeedItem } from "@s:post";
+import { type FeedItem } from '@s:post';
 
-const STORAGE_KEY = "sort";
+const STORAGE_KEY = 'sort';
 
 /**
  * Describes a state for the feed sort.
@@ -18,19 +18,19 @@ interface SortState {
  */
 const STATES: SortState[] = [
   {
-    display: "Date ↓",
+    display: 'Date ↓',
     sortFunction: sortByDateDescending,
   },
   {
-    display: "Date ↑",
+    display: 'Date ↑',
     sortFunction: sortByDateAscending,
   },
   {
-    display: "A-Z ↑",
+    display: 'A-Z ↑',
     sortFunction: sortByAlphaAscending,
   },
   {
-    display: "Z-A ↓",
+    display: 'Z-A ↓',
     sortFunction: sortByAlphaDescending,
   },
 ];
@@ -145,7 +145,7 @@ function createSortStore() {
   return {
     display: useStore(computed(state, (state) => state.display)),
     sortFunction: useStore(computed(state, (state) => state.sortFunction)),
-    cycle: action(index, "cycle", (index) => {
+    cycle: action(index, 'cycle', (index) => {
       index.set((index.get() + 1) % STATES.length);
     }),
   };

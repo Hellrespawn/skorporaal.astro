@@ -1,12 +1,12 @@
-import { atom, onSet, action, computed, WritableAtom } from "nanostores";
-import { useStore } from "@nanostores/vue";
+import { atom, onSet, action, computed, WritableAtom } from 'nanostores';
+import { useStore } from '@nanostores/vue';
 
-import { CATEGORY_DATA, type PostCategory } from "../data";
-import { type FeedItem } from "@s:post";
+import { CATEGORY_DATA, type PostCategory } from '../data';
+import { type FeedItem } from '@s:post';
 
-const DEFAULT_CATEGORIES: PostCategory[] = ["article", "portfolio", "other"];
-const STORAGE_KEY = "filter";
-const SEPARATOR = ";";
+const DEFAULT_CATEGORIES: PostCategory[] = ['article', 'portfolio', 'other'];
+const STORAGE_KEY = 'filter';
+const SEPARATOR = ';';
 
 /**
  * Validate that strings are PostCategories.
@@ -97,7 +97,7 @@ function createFilterStore() {
   return {
     filterFunction: useStore(computed(activeCategories, createFilterFunction)),
     includes: useStore(computed(activeCategories, createIncludesFunction)),
-    toggle: action(activeCategories, "toggle", toggleFunction),
+    toggle: action(activeCategories, 'toggle', toggleFunction),
   };
 }
 

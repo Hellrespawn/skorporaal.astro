@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import Dot from "@c:Feed/Dot.vue";
-import FeedButton from "@c:Feed/FeedButton.vue";
+import Dot from '@c:Feed/Dot.vue';
+import FeedButton from '@c:Feed/FeedButton.vue';
 
-import { CategoryData, CATEGORY_DATA, PostCategory } from "@s:data";
-import { filterStore } from "@s:stores/filter";
-import { sortStore } from "@s:stores/sort";
+import { CategoryData, CATEGORY_DATA, PostCategory } from '@s:data';
+import { filterStore } from '@s:stores/filter';
+import { sortStore } from '@s:stores/sort';
 
 const categories = <[PostCategory, CategoryData][]>(
   Object.entries(CATEGORY_DATA).filter(([_, data]) => !data.hidden)

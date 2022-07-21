@@ -12,7 +12,7 @@
     @apply text-gray-700 no-underline dark:text-gray-300;
   }
 
-  .prose-custom a:not([class*="footnote"]) {
+  .prose-custom a:not([class*='footnote']) {
     @apply fancy-link;
   }
 
@@ -31,8 +31,8 @@
     @apply from-secondary-200 to-secondary-200 dark:from-primary-700 dark:to-primary-700;
   }
 
-  .fancy-link[target="_blank"],
-  .fancy-link[href^="mailto"] {
+  .fancy-link[target='_blank'],
+  .fancy-link[href^='mailto'] {
     @apply from-quaternary-200 to-quaternary-200 dark:from-tertiary-900 dark:to-tertiary-900;
   }
 }

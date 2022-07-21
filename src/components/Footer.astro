@@ -1,9 +1,9 @@
 ---
-import { type CategoryData, SITE_DATA } from "@s:data";
+import { type CategoryData, SITE_DATA } from '@s:data';
 
-import BinaryClock from "@c:BinaryClock.vue";
-import Button from "@c:Button.astro";
-import { DateFormatter } from "../scripts/date";
+import BinaryClock from '@c:BinaryClock.vue';
+import Button from '@c:Button.astro';
+import { DateFormatter } from '../scripts/date';
 
 export interface Props {
   accent?: CategoryData;
@@ -11,7 +11,7 @@ export interface Props {
 
 const { accent } = Astro.props as Props;
 
-const formatter = DateFormatter.getFormatter("long");
+const formatter = DateFormatter.getFormatter('long');
 
 const dateString = formatter.formatDateTime({ date: SITE_DATA.builtAt });
 ---

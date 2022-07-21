@@ -1,4 +1,4 @@
-export type DateFormat = "short" | "long";
+export type DateFormat = 'short' | 'long';
 
 interface HasDate {
   date?: Date;
@@ -11,9 +11,9 @@ export abstract class DateFormatter {
 
   static getFormatter(format: DateFormat): DateFormatter {
     switch (format) {
-      case "short":
+      case 'short':
         return new ShortDateFormatter();
-      case "long":
+      case 'long':
         return new LongDateFormatter();
       default:
         throw new Error(`Unrecognized DateFormat: '${format}'`);
@@ -38,18 +38,18 @@ interface DateOptions {
 
 class ShortDateFormatter extends DateFormatter {
   protected dateOptions: DateOptions = {
-    lang: "en-GB",
+    lang: 'en-GB',
     options: {
-      dateStyle: "long",
+      dateStyle: 'long',
       timeStyle: undefined,
     },
   };
 
   protected dateTimeOptions: DateOptions = {
-    lang: "en-GB",
+    lang: 'en-GB',
     options: {
-      dateStyle: "long",
-      timeStyle: "short",
+      dateStyle: 'long',
+      timeStyle: 'short',
     },
   };
 
@@ -70,24 +70,24 @@ class ShortDateFormatter extends DateFormatter {
       return item.date.toLocaleString(lang, options);
     }
 
-    return "A long time ago...";
+    return 'A long time ago...';
   }
 }
 
 class LongDateFormatter extends DateFormatter {
   protected dateOptions: DateOptions = {
-    lang: "en-GB",
+    lang: 'en-GB',
     options: {
-      dateStyle: "full",
+      dateStyle: 'full',
       timeStyle: undefined,
     },
   };
 
   protected dateTimeOptions: DateOptions = {
-    lang: "en-GB",
+    lang: 'en-GB',
     options: {
-      dateStyle: "full",
-      timeStyle: "short",
+      dateStyle: 'full',
+      timeStyle: 'short',
     },
   };
 
@@ -102,12 +102,12 @@ class LongDateFormatter extends DateFormatter {
 
     const dateSegment = item.date
       ? item.date.toLocaleString(lang, options)
-      : "A long time ago...";
+      : 'A long time ago...';
 
     const updatedSegment = item.updated
       ? `[Updated on ${item.updated.toLocaleString(lang, options)}]`
-      : "";
+      : '';
 
-    return [dateSegment, updatedSegment].join(" ");
+    return [dateSegment, updatedSegment].join(' ');
   }
 }
