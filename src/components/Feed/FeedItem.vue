@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import Dot from '@c:Feed/Dot.vue';
+import Dot from '@src:components/Feed/DotComponent.vue';
 import FeedButton from '@c:Feed/FeedButton.vue';
 
 import { type FeedItem } from '@s:post';
+import { computed } from 'vue';
 
-const { feedItem } = defineProps<{ feedItem: FeedItem }>();
+const props = defineProps<{ feedItem: FeedItem }>();
+
+const feedItem = computed(() => props.feedItem);
 </script>
 
 <template>

@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import Dot from '@c:Feed/Dot.vue';
+import Dot from '@src:components/Feed/DotComponent.vue';
 import FeedButton from '@c:Feed/FeedButton.vue';
 
-import { CategoryData, CATEGORY_DATA, PostCategory } from '@s:data';
+import { POST_CATEGORIES, CATEGORY_DATA, PostCategory } from '@s:data';
 import { filterStore } from '@s:stores/filter';
 import { sortStore } from '@s:stores/sort';
 
-const categories = <[PostCategory, CategoryData][]>(
-  Object.entries(CATEGORY_DATA).filter(([_, data]) => !data.hidden)
+const categories: PostCategory[] = POST_CATEGORIES.filter(
+  (category: PostCategory) => !CATEGORY_DATA[category].hidden
 );
 </script>
 
@@ -17,17 +17,18 @@ const categories = <[PostCategory, CategoryData][]>(
   >
     <div class="flex flex-row flex-wrap py-1">
       <button
-        v-for="[category, data] in categories"
+        v-for="category in categories"
+        :key="category"
         type="button"
-        @click="() => filterStore.toggle(category)"
         :class="{ 'opacity-50': !filterStore.includes.value(category) }"
+        @click="() => filterStore.toggle(category)"
       >
         <FeedButton class="p-2">
           <div class="flex flex-grow flex-row items-baseline">
             <!-- Colored Dot -->
-            <Dot :bg="data.bg" />
+            <Dot :bg="CATEGORY_DATA[category].bg" />
             <!-- Title -->
-            <p class="postTitle px-2">{{ data.plural }}</p>
+            <p class="postTitle px-2">{{ CATEGORY_DATA[category].plural }}</p>
           </div>
         </FeedButton>
       </button>
@@ -36,8 +37,8 @@ const categories = <[PostCategory, CategoryData][]>(
     <div class="flex flex-row">
       <button
         type="button"
-        @click="sortStore.cycle()"
         class="button button-medium whitespace-nowrap font-semibold"
+        @click="sortStore.cycle()"
       >
         <FeedButton class="p-2">{{ sortStore.display.value }}</FeedButton>
       </button>

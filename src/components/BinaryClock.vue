@@ -2,7 +2,7 @@
 import { onMounted, onUnmounted, ref, computed, type Ref } from 'vue';
 
 import { filterStore } from '@s:stores/filter';
-import Dot from '@c:Feed/Dot.vue';
+import Dot from '@src:components/Feed/DotComponent.vue';
 
 const props = defineProps<{ bg?: string }>();
 
@@ -13,7 +13,7 @@ const fps = 24;
 
 // Set up interval
 let interval: number;
-let now: Ref<Date> = ref(new Date());
+const now: Ref<Date> = ref(new Date());
 
 const hours = computed(() => now.value.getHours());
 

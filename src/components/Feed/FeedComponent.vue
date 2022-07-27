@@ -8,14 +8,16 @@ import { sortStore } from '@s:stores/sort';
 
 import FeedItemComponent from '@c:Feed/FeedItem.vue';
 
-const { instances } = defineProps<{
+const props = defineProps<{
   instances: MarkdownInstance<Frontmatter>[];
 }>();
 
-const feedItems = instances.map((instance) => new FeedItem(instance));
+const feedItems = computed(() =>
+  props.instances.map((instance) => new FeedItem(instance))
+);
 
 const filteredItems = computed(() =>
-  feedItems
+  feedItems.value
     .filter(filterStore.filterFunction.value)
     .sort(sortStore.sortFunction.value)
 );
@@ -28,7 +30,7 @@ const filteredItems = computed(() =>
       :key="feedItem.slug"
       class="border-b border-gray-200 dark:border-gray-700"
     >
-      <FeedItemComponent :feedItem="feedItem" />
+      <FeedItemComponent :feed-item="feedItem" />
     </li>
   </ul>
 
