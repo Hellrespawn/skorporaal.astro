@@ -27,13 +27,15 @@ const extension = png ? 'png' : 'svg';
       class={`${dark ? ' dark:hidden' : ''} w-full h-full`}
       alt={`${name} logo`}
     />
-    {dark && (
-      <img
-        src={`/assets/skills/${src}-dark.${extension}`}
-        class="hidden h-full w-full dark:block"
-        alt={`${name} logo`}
-      />
-    )}
+    {
+      dark && (
+        <img
+          src={`/assets/skills/${src}-dark.${extension}`}
+          class="hidden h-full w-full dark:block"
+          alt={`${name} logo`}
+        />
+      )
+    }
   </div>
   <div class="flex-grow pl-4 pr-2">
     <h3 class="text-lg font-semibold">{name}</h3>

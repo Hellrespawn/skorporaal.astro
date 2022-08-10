@@ -3,6 +3,7 @@ import { Content as About } from '@c:About/About.md';
 import Links from '@c:About/Links.astro';
 import Photograph from '@c:About/Photograph.astro';
 import Skills from '@c:/About/Skills.astro';
+import RecipeMessageWrapper from '@c:/About/RecipeMessageWrapper.vue';
 ---
 
 <div class="flex flex-col w-full h-full mx-auto md:gap-8">
@@ -15,7 +16,9 @@ import Skills from '@c:/About/Skills.astro';
     </div>
 
     <div class="px-3 md:mx-auto prose-custom">
-      <About />
+      <RecipeMessageWrapper client:load>
+        <About />
+      </RecipeMessageWrapper>
     </div>
   </div>
 
