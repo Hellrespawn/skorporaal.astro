@@ -1,11 +1,11 @@
 ---
 import Feed from './FeedComponent.vue';
 import Filter from '@c:Feed/FilterComponent.vue';
-import { MarkdownInstance } from 'astro';
+import { MarkdownInstance, MDXInstance } from 'astro';
 import { Frontmatter } from '../../scripts/post';
 
 export interface Props {
-  instances: MarkdownInstance<Frontmatter>[];
+  instances: (MarkdownInstance<Frontmatter> | MDXInstance<Frontmatter>)[];
 }
 
 const { instances } = Astro.props as Props;
