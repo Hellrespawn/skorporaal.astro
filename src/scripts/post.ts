@@ -1,5 +1,5 @@
-import { MarkdownInstance, MDXInstance } from 'astro';
-import { AstroComponentFactory } from 'astro/dist/types/runtime/server';
+import { MarkdownInstance } from 'astro';
+import { AstroComponentFactory } from 'astro/dist/runtime/server';
 
 import slugify from 'slugify';
 
@@ -37,9 +37,7 @@ export interface Frontmatter {
  * Base Markdown wrapper class
  */
 export abstract class Post {
-  constructor(
-    protected instance: MarkdownInstance<Frontmatter> | MDXInstance<Frontmatter>
-  ) {}
+  constructor(protected instance: MarkdownInstance<Frontmatter>) {}
 
   get category(): PostCategory {
     let { category } = this.frontmatter;
@@ -133,10 +131,4 @@ export class FullPost extends Post {
   get file(): string {
     return this.instance.file;
   }
-}
-
-export function getUrl(
-  instance: MarkdownInstance<Frontmatter> | MDXInstance<Frontmatter>
-): string {
-  return new FullPost(instance).url;
 }

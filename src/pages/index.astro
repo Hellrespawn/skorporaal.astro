@@ -6,10 +6,7 @@ import GridLayout from '@l:GridLayout.astro';
 import About from '@c:About/About.astro';
 import Feed from '@c:Feed/Feed.astro';
 
-const instances = [
-  ...(await Astro.glob<Frontmatter>('../content/**/*.md')),
-  ...(await Astro.glob<Frontmatter>('../content/**/*.mdx')),
-];
+const instances = await Astro.glob<Frontmatter>('../content/**/*.md');
 ---
 
 <GridLayout title="Home">

@@ -3,15 +3,6 @@ title: 'HTML & CSS Tips & Tricks'
 date: 2021-12-19
 ---
 
-import * as html from './HTML CSS Tips & Tricks.mdx';
-import * as jsTs from './JavaScript TypeScript Tips & Tricks.mdx';
-import { getUrl } from '@s:post';
-
-Tips & Tricks Index:
-
-- <a href={getUrl(html)}>HTML & CSS</a>
-- <a href={getUrl(jsTs)}>JS & TS</a>
-
 ## Anchor tags `<a>`
 
 Besides `href`, `<a>` has some more interesting attributes.

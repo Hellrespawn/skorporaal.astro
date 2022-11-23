@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { MarkdownInstance, MDXInstance } from 'astro';
+import { MarkdownInstance } from 'astro';
 import { computed } from 'vue';
 
 import { FeedItem, type Frontmatter } from '@s:post';
@@ -9,7 +9,7 @@ import { sortStore } from '@s:stores/sort';
 import FeedItemComponent from '@c:Feed/FeedItem.vue';
 
 const props = defineProps<{
-  instances: (MarkdownInstance<Frontmatter> | MDXInstance<Frontmatter>)[];
+  instances: MarkdownInstance<Frontmatter>[];
 }>();
 
 const feedItems = computed(() =>

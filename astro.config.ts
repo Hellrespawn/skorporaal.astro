@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 import vue from '@astrojs/vue';
-import mdx from '@astrojs/mdx';
 
 import remarkMath from 'remark-math';
 import rehypeExternalLinks from 'rehype-external-links';
@@ -27,5 +26,5 @@ export default defineConfig({
       wrap: true,
     },
   },
-  integrations: [vue(), mdx()],
+  integrations: [vue()],
 });
