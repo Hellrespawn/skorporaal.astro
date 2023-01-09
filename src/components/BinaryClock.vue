@@ -33,7 +33,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col" @click="filterStore.toggle('recipe')">
+  <div class="flex flex-col" @dblclick="filterStore.toggle('recipe')">
     <div
       v-for="(number, index) in [hours, minutes, seconds]"
       :key="[number, index].join()"
