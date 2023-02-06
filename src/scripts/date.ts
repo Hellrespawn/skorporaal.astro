@@ -1,8 +1,8 @@
 export type DateFormat = 'short' | 'long';
 
-interface HasDate {
-  date?: Date;
-  updated?: Date;
+export interface HasDate {
+  date?: Date | undefined;
+  updated?: Date | undefined;
 }
 
 export abstract class DateFormatter {

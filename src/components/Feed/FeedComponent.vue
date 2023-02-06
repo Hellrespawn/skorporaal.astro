@@ -1,19 +1,17 @@
 <script setup lang="ts">
-import { MarkdownInstance } from 'astro';
 import { computed } from 'vue';
-
-import { FeedItem, type Frontmatter } from '@s:post';
-import { filterStore } from '@s:stores/filter';
-import { sortStore } from '@s:stores/sort';
-
-import FeedItemComponent from '@c:Feed/FeedItem.vue';
+import type { EntryWithCategory } from '../../collection';
+import { FeedItem } from '../../scripts/post';
+import { filterStore } from '../../stores/filter';
+import { sortStore } from '../../stores/sort';
+import FeedItemComponent from './FeedItem.vue';
 
 const props = defineProps<{
-  instances: MarkdownInstance<Frontmatter>[];
+  entriesWithCategory: EntryWithCategory[];
 }>();
 
 const feedItems = computed(() =>
-  props.instances.map((instance) => new FeedItem(instance))
+  props.entriesWithCategory.map((instance) => new FeedItem(instance))
 );
 
 const filteredItems = computed(() =>

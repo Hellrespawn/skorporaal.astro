@@ -1,25 +1,23 @@
 ---
-import { type Frontmatter, FullPost } from '@s:post';
-
-import PostLayout from '@l:PostLayout.astro';
-
-const { post } = Astro.props as { post: FullPost };
+import type { CollectionEntry } from 'astro:content';
+import PostLayout from '../../layouts/PostLayout.astro';
+import type { PostCategory } from '../../scripts/data';
+import { getStaticPaths as getEntriesStaticPaths } from '../../collection';
 
 export async function getStaticPaths() {
-  const instances = await Astro.glob<Frontmatter>('../../posts/**/*.md');
-
-  const posts = instances.map((instance) => new FullPost(instance));
-
-  return posts.map((post) => {
-    return {
-      params: {
-        category: post.category,
-        slug: post.slug,
-      },
-      props: { post },
-    };
-  });
+  return await getEntriesStaticPaths();
 }
+
+interface Props {
+  entry: CollectionEntry<any>;
+  category: PostCategory;
+}
+
+const { entry, category } = Astro.props;
+
+const { Content } = await entry.render();
 ---
 
-<PostLayout post={post} />
+<PostLayout post={entry.data} category={category}>
+  <Content />
+</PostLayout>

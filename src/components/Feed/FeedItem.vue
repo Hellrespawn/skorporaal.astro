@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import Dot from '@src:components/Feed/DotComponent.vue';
-import FeedButton from '@c:Feed/FeedButton.vue';
-
-import { type FeedItem } from '@s:post';
 import { computed } from 'vue';
+import type { FeedItem } from '../../scripts/post';
+import Dot from './DotComponent.vue';
+import FeedButton from './FeedButton.vue';
 
 const props = defineProps<{ feedItem: FeedItem }>();
 

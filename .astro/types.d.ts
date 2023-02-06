@@ -66,175 +66,171 @@ declare module 'astro:content' {
 	};
 
 	const entryMap: {
-		"article": {
-"HTML CSS Tips & Tricks.md": {
-  id: "HTML CSS Tips & Tricks.md",
-  slug: "html-css-tips--tricks",
+		"post": {
+"article/HTML CSS Tips & Tricks.md": {
+  id: "article/HTML CSS Tips & Tricks.md",
+  slug: "article/html-css-tips--tricks",
   body: string,
-  collection: "article",
-  data: any
+  collection: "post",
+  data: InferEntrySchema<"post">
 },
-"JavaScript TypeScript Tips & Tricks.md": {
-  id: "JavaScript TypeScript Tips & Tricks.md",
-  slug: "javascript-typescript-tips--tricks",
+"article/JavaScript TypeScript Tips & Tricks.md": {
+  id: "article/JavaScript TypeScript Tips & Tricks.md",
+  slug: "article/javascript-typescript-tips--tricks",
   body: string,
-  collection: "article",
-  data: any
+  collection: "post",
+  data: InferEntrySchema<"post">
 },
-},
-"portfolio": {
-"Resume.md": {
-  id: "Resume.md",
-  slug: "resume",
+"portfolio/Resume.md": {
+  id: "portfolio/Resume.md",
+  slug: "portfolio/resume",
   body: string,
-  collection: "portfolio",
-  data: any
+  collection: "post",
+  data: InferEntrySchema<"post">
 },
-"skorporaal.com Build Log.md": {
-  id: "skorporaal.com Build Log.md",
-  slug: "skorporaalcom-build-log",
+"portfolio/skorporaal.com Build Log.md": {
+  id: "portfolio/skorporaal.com Build Log.md",
+  slug: "portfolio/skorporaalcom-build-log",
   body: string,
-  collection: "portfolio",
-  data: any
+  collection: "post",
+  data: InferEntrySchema<"post">
 },
-"skorporaal.com.md": {
-  id: "skorporaal.com.md",
-  slug: "skorporaalcom",
+"portfolio/skorporaal.com.md": {
+  id: "portfolio/skorporaal.com.md",
+  slug: "portfolio/skorporaalcom",
   body: string,
-  collection: "portfolio",
-  data: any
+  collection: "post",
+  data: InferEntrySchema<"post">
 },
-},
-"recipe": {
-"Aardappelpuree van Hele Aardappels.md": {
-  id: "Aardappelpuree van Hele Aardappels.md",
-  slug: "aardappelpuree-van-hele-aardappels",
+"recipe/Aardappelpuree van Hele Aardappels.md": {
+  id: "recipe/Aardappelpuree van Hele Aardappels.md",
+  slug: "recipe/aardappelpuree-van-hele-aardappels",
   body: string,
-  collection: "recipe",
-  data: any
+  collection: "post",
+  data: InferEntrySchema<"post">
 },
-"Andijvie-spek Stamppot.md": {
-  id: "Andijvie-spek Stamppot.md",
-  slug: "andijvie-spek-stamppot",
+"recipe/Andijvie-spek Stamppot.md": {
+  id: "recipe/Andijvie-spek Stamppot.md",
+  slug: "recipe/andijvie-spek-stamppot",
   body: string,
-  collection: "recipe",
-  data: any
+  collection: "post",
+  data: InferEntrySchema<"post">
 },
-"Andijvie-zalm Stamppot.md": {
-  id: "Andijvie-zalm Stamppot.md",
-  slug: "andijvie-zalm-stamppot",
+"recipe/Andijvie-zalm Stamppot.md": {
+  id: "recipe/Andijvie-zalm Stamppot.md",
+  slug: "recipe/andijvie-zalm-stamppot",
   body: string,
-  collection: "recipe",
-  data: any
+  collection: "post",
+  data: InferEntrySchema<"post">
 },
-"Bakplaatgnocchi.md": {
-  id: "Bakplaatgnocchi.md",
-  slug: "bakplaatgnocchi",
+"recipe/Bakplaatgnocchi.md": {
+  id: "recipe/Bakplaatgnocchi.md",
+  slug: "recipe/bakplaatgnocchi",
   body: string,
-  collection: "recipe",
-  data: any
+  collection: "post",
+  data: InferEntrySchema<"post">
 },
-"Caesar-salade met Kip.md": {
-  id: "Caesar-salade met Kip.md",
-  slug: "caesar-salade-met-kip",
+"recipe/Caesar-salade met Kip.md": {
+  id: "recipe/Caesar-salade met Kip.md",
+  slug: "recipe/caesar-salade-met-kip",
   body: string,
-  collection: "recipe",
-  data: any
+  collection: "post",
+  data: InferEntrySchema<"post">
 },
-"Champignonroomsaus.md": {
-  id: "Champignonroomsaus.md",
-  slug: "champignonroomsaus",
+"recipe/Champignonroomsaus.md": {
+  id: "recipe/Champignonroomsaus.md",
+  slug: "recipe/champignonroomsaus",
   body: string,
-  collection: "recipe",
-  data: any
+  collection: "post",
+  data: InferEntrySchema<"post">
 },
-"Champignonsoep.md": {
-  id: "Champignonsoep.md",
-  slug: "champignonsoep",
+"recipe/Champignonsoep.md": {
+  id: "recipe/Champignonsoep.md",
+  slug: "recipe/champignonsoep",
   body: string,
-  collection: "recipe",
-  data: any
+  collection: "post",
+  data: InferEntrySchema<"post">
 },
-"Gevulde Paprika Deconstructed.md": {
-  id: "Gevulde Paprika Deconstructed.md",
-  slug: "gevulde-paprika-deconstructed",
+"recipe/Gevulde Paprika Deconstructed.md": {
+  id: "recipe/Gevulde Paprika Deconstructed.md",
+  slug: "recipe/gevulde-paprika-deconstructed",
   body: string,
-  collection: "recipe",
-  data: any
+  collection: "post",
+  data: InferEntrySchema<"post">
 },
-"Moderne Hutspot.md": {
-  id: "Moderne Hutspot.md",
-  slug: "moderne-hutspot",
+"recipe/Moderne Hutspot.md": {
+  id: "recipe/Moderne Hutspot.md",
+  slug: "recipe/moderne-hutspot",
   body: string,
-  collection: "recipe",
-  data: any
+  collection: "post",
+  data: InferEntrySchema<"post">
 },
-"Parmigiana.md": {
-  id: "Parmigiana.md",
-  slug: "parmigiana",
+"recipe/Parmigiana.md": {
+  id: "recipe/Parmigiana.md",
+  slug: "recipe/parmigiana",
   body: string,
-  collection: "recipe",
-  data: any
+  collection: "post",
+  data: InferEntrySchema<"post">
 },
-"Pasta Carbonara.md": {
-  id: "Pasta Carbonara.md",
-  slug: "pasta-carbonara",
+"recipe/Pasta Carbonara.md": {
+  id: "recipe/Pasta Carbonara.md",
+  slug: "recipe/pasta-carbonara",
   body: string,
-  collection: "recipe",
-  data: any
+  collection: "post",
+  data: InferEntrySchema<"post">
 },
-"Pasta met Worst.md": {
-  id: "Pasta met Worst.md",
-  slug: "pasta-met-worst",
+"recipe/Pasta met Worst.md": {
+  id: "recipe/Pasta met Worst.md",
+  slug: "recipe/pasta-met-worst",
   body: string,
-  collection: "recipe",
-  data: any
+  collection: "post",
+  data: InferEntrySchema<"post">
 },
-"Quesadillas.md": {
-  id: "Quesadillas.md",
-  slug: "quesadillas",
+"recipe/Quesadillas.md": {
+  id: "recipe/Quesadillas.md",
+  slug: "recipe/quesadillas",
   body: string,
-  collection: "recipe",
-  data: any
+  collection: "post",
+  data: InferEntrySchema<"post">
 },
-"Saltimbocca.md": {
-  id: "Saltimbocca.md",
-  slug: "saltimbocca",
+"recipe/Saltimbocca.md": {
+  id: "recipe/Saltimbocca.md",
+  slug: "recipe/saltimbocca",
   body: string,
-  collection: "recipe",
-  data: any
+  collection: "post",
+  data: InferEntrySchema<"post">
 },
-"Schnitzel met Komkommersalade.md": {
-  id: "Schnitzel met Komkommersalade.md",
-  slug: "schnitzel-met-komkommersalade",
+"recipe/Schnitzel met Komkommersalade.md": {
+  id: "recipe/Schnitzel met Komkommersalade.md",
+  slug: "recipe/schnitzel-met-komkommersalade",
   body: string,
-  collection: "recipe",
-  data: any
+  collection: "post",
+  data: InferEntrySchema<"post">
 },
-"Simpele Katsu.md": {
-  id: "Simpele Katsu.md",
-  slug: "simpele-katsu",
+"recipe/Simpele Katsu.md": {
+  id: "recipe/Simpele Katsu.md",
+  slug: "recipe/simpele-katsu",
   body: string,
-  collection: "recipe",
-  data: any
+  collection: "post",
+  data: InferEntrySchema<"post">
 },
-"Simpele Teriyaki.md": {
-  id: "Simpele Teriyaki.md",
-  slug: "simpele-teriyaki",
+"recipe/Simpele Teriyaki.md": {
+  id: "recipe/Simpele Teriyaki.md",
+  slug: "recipe/simpele-teriyaki",
   body: string,
-  collection: "recipe",
-  data: any
+  collection: "post",
+  data: InferEntrySchema<"post">
 },
-"Tomatensaus met Stoofvlees.md": {
-  id: "Tomatensaus met Stoofvlees.md",
-  slug: "tomatensaus-met-stoofvlees",
+"recipe/Tomatensaus met Stoofvlees.md": {
+  id: "recipe/Tomatensaus met Stoofvlees.md",
+  slug: "recipe/tomatensaus-met-stoofvlees",
   body: string,
-  collection: "recipe",
-  data: any
+  collection: "post",
+  data: InferEntrySchema<"post">
 },
 },
 
 	};
 
-	type ContentConfig = never;
+	type ContentConfig = typeof import("../src/content/config");
 }

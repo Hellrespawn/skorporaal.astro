@@ -2,7 +2,7 @@ import { atom, onSet, action, computed, WritableAtom } from 'nanostores';
 import { useStore } from '@nanostores/vue';
 
 import { CATEGORY_DATA, type PostCategory } from '../data';
-import { type FeedItem } from '@s:post';
+import type { FeedItem } from '../post';
 
 const DEFAULT_CATEGORIES: PostCategory[] = ['article', 'portfolio', 'other'];
 const STORAGE_KEY = 'filter';

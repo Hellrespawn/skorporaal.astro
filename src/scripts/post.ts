@@ -1,5 +1,5 @@
-import { MarkdownInstance } from 'astro';
-import { AstroComponentFactory } from 'astro/dist/runtime/server';
+import type { MarkdownInstance } from 'astro';
+import type { AstroComponentFactory } from 'astro/dist/runtime/server';
 
 import slugify from 'slugify';
 
@@ -10,7 +10,7 @@ import {
   CATEGORY_DATA,
   LANGUAGE_DATA,
 } from './data';
-import { type DateFormat, DateFormatter } from './date';
+import { type DateFormat, DateFormatter, HasDate } from './date';
 
 /**
  * Type guard that checks whether or not a string is a PostCategory
@@ -36,7 +36,7 @@ export interface Frontmatter {
 /**
  * Base Markdown wrapper class
  */
-export abstract class Post {
+export abstract class Post implements HasDate {
   constructor(protected instance: MarkdownInstance<Frontmatter>) {}
 
   get category(): PostCategory {
@@ -79,12 +79,16 @@ export abstract class Post {
     if (this.frontmatter.date) {
       return new Date(this.frontmatter.date);
     }
+
+    return undefined;
   }
 
   get updated(): Date | undefined {
     if (this.frontmatter.updated) {
       return new Date(this.frontmatter.updated);
     }
+
+    return undefined;
   }
 
   protected get frontmatter(): Frontmatter {
@@ -106,7 +110,7 @@ export class FeedItem extends Post {
     const { lang } = this;
 
     if (lang !== SITE_DATA.lang) {
-      title += ` [${LANGUAGE_DATA[SITE_DATA.lang][lang]}]`;
+      title += ` [${LANGUAGE_DATA[SITE_DATA.lang]![lang]}]`;
     }
 
     return title;

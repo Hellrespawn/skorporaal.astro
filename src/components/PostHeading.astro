@@ -1,13 +1,13 @@
 ---
-import { type CategoryData } from '@s:data';
-import { type FullPost } from '@s:post';
+import type { CategoryData } from '../scripts/data';
 
 export interface Props {
-  post: FullPost;
   accent: CategoryData;
+  authors: string[];
+  date: Date | string;
 }
 
-const { accent, post } = Astro.props as Props;
+const { accent, authors, date } = Astro.props as Props;
 ---
 
 <!-- Category name -->
@@ -17,12 +17,10 @@ const { accent, post } = Astro.props as Props;
   class={`${accent.border} flex flex-row flex-wrap-reverse items-center justify-between border-t-2 gap-x-4`}
 >
   <!-- Date -->
-  <span class="text-gray-400 dark:text-gray-500"
-    >{post.getFormattedDate('long')}
-  </span>
+  <span class="text-gray-400 dark:text-gray-500">{date}</span>
 
   <span class="italic">
     <!-- Authors -->
-    {post.authors}
+    {authors}
   </span>
 </div>

@@ -1,12 +1,11 @@
 ---
-import { type CategoryData, SITE_DATA } from '@s:data';
-
-import BinaryClock from '@c:BinaryClock.vue';
-import Button from '@c:Button.astro';
+import { CategoryData, SITE_DATA } from '../scripts/data';
 import { DateFormatter } from '../scripts/date';
+import BinaryClock from './BinaryClock.vue';
+import Button from './Button.astro';
 
 export interface Props {
-  accent?: CategoryData;
+  accent: CategoryData | undefined;
 }
 
 const { accent } = Astro.props as Props;

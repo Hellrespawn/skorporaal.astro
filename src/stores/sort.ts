@@ -1,7 +1,6 @@
 import { atom, onSet, computed, action } from 'nanostores';
 import { useStore } from '@nanostores/vue';
-
-import { type FeedItem } from '@s:post';
+import type { FeedItem } from '../post';
 
 const STORAGE_KEY = 'sort';
 
@@ -143,8 +142,8 @@ function createSortStore() {
   const state = computed(index, (index) => STATES[index]);
 
   return {
-    display: useStore(computed(state, (state) => state.display)),
-    sortFunction: useStore(computed(state, (state) => state.sortFunction)),
+    display: useStore(computed(state, (state) => state!.display)),
+    sortFunction: useStore(computed(state, (state) => state!.sortFunction)),
     cycle: action(index, 'cycle', (index) => {
       index.set((index.get() + 1) % STATES.length);
     }),

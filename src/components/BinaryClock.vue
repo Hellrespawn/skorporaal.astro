@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref, computed, type Ref } from 'vue';
 
-import { filterStore } from '@s:stores/filter';
-import Dot from '@src:components/Feed/DotComponent.vue';
+import { filterStore } from '../stores/filter';
+import Dot from './Feed/DotComponent.vue';
 
-const props = defineProps<{ bg?: string }>();
+const props = defineProps<{ bg?: string | undefined }>();
 
 const bg = props.bg ?? 'bg-secondary-500 dark:bg-primary-500';
 

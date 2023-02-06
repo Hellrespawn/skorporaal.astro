@@ -11,7 +11,7 @@ My goal is not just to improve what programming skills I already have, but to le
 
 ## Skills
 
-<p align=center>
+<p align="center">
 HTML • CSS • TypeScript • Angular • Vue • Astro • Laravel • Tailwind • Rust
 <br /><br />
 Linux • Git • MySQL • Docker • Shell Scripting

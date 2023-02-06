@@ -1,12 +1,10 @@
 ---
-import { type Frontmatter } from '@s:post';
+import { getEntriesWithCategory } from '../collection';
+import About from '../components/About/About.astro';
+import Feed from '../components/Feed/Feed.astro';
+import GridLayout from '../layouts/GridLayout.astro';
 
-import GridLayout from '@l:GridLayout.astro';
-
-import About from '@c:About/About.astro';
-import Feed from '@c:Feed/Feed.astro';
-
-const instances = await Astro.glob<Frontmatter>('../posts/**/*.md');
+const entriesWithCategory = await getEntriesWithCategory();
 ---
 
 <GridLayout title="Home">
@@ -14,7 +12,6 @@ const instances = await Astro.glob<Frontmatter>('../posts/**/*.md');
     <About />
   </Fragment>
   <Fragment slot="right">
-    <!-- <Feed client:only="vue" instances={instances} /> -->
-    <Feed instances={instances} />
+    <Feed entriesWithCategory={entriesWithCategory} />
   </Fragment>
 </GridLayout>
