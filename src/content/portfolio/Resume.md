@@ -13,6 +13,8 @@ My goal is not just to improve what programming skills I already have, but to le
 
 - Linux • Git • MySQL • Docker • Shell Scripting
 
+- Dutch • English
+
 ## Portfolio
 
 - [skorporaal.com](https://github.com/Hellrespawn/skorporaal.astro) - My personal website.
