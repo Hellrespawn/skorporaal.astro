@@ -7,10 +7,8 @@ import rehypeKatex from 'rehype-katex';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://skorporaal.com',
+  site: 'https://skorporaal.com/',
   markdown: {
-    // syntaxHighlight: "prism",
-    extendDefaultPlugins: true,
     remarkPlugins: [remarkMath],
     rehypePlugins: [
       [
