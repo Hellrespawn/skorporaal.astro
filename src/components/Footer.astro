@@ -1,14 +1,8 @@
 ---
-import { CategoryData, SITE_DATA } from '../data';
+import { SITE_DATA } from '../data';
 import { DateFormatter } from '../date';
 import BinaryClock from './BinaryClock.vue';
 import Button from './Button.astro';
-
-export interface Props {
-  accent: CategoryData | undefined;
-}
-
-const { accent } = Astro.props as Props;
 
 const formatter = DateFormatter.getFormatter('long');
 
@@ -36,6 +30,6 @@ const dateString = formatter.formatDateTime({ date: SITE_DATA.builtAt });
   </div>
 
   <Button class="rounded-t-xl px-2 py-1 w-fit">
-    <BinaryClock client:load bg={accent?.bg} />
+    <BinaryClock client:load />
   </Button>
 </footer>

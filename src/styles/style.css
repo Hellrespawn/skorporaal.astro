@@ -35,4 +35,8 @@
   .fancy-link[href^='mailto'] {
     @apply from-quaternary-200 to-quaternary-200 dark:from-tertiary-900 dark:to-tertiary-900;
   }
+
+  .frontpage-heading {
+    @apply text-center font-mono text-2xl font-semibold;
+  }
 }

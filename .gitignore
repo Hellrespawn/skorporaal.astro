@@ -19,4 +19,4 @@ yarn-error.log*
 
 hint-report
 
-.astro
+.astro/

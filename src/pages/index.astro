@@ -1,17 +1,37 @@
 ---
-import { getEntries } from '../collection';
 import About from '../components/About/About.astro';
-import FeedWrapper from '../components/Feed/FeedWrapper.astro';
-import GridLayout from '../layouts/GridLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Portfolio from '../components/Portfolio/Portfolio.astro';
+import Timeline from '../components/Timeline/Timeline.astro';
+import Title from '../components/Title.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-const entries = await getEntries();
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props as Props;
 ---
 
-<GridLayout title="Home">
-  <Fragment slot="left">
-    <About />
-  </Fragment>
-  <Fragment slot="right">
-    <FeedWrapper entries={entries} />
-  </Fragment>
-</GridLayout>
+<BaseLayout title={title}>
+  <main
+    class="grid grid-rows-[repeat(3,auto)] md:grid-rows-[auto_1fr_1fr] grid-cols-[1fr_1fr] md:min-h-screen gap-x-8"
+  >
+    <Navigation />
+    <section
+      class="col-span-2 md:col-span-1 md:row-span-1 md:col-start-1 flex flex-col items-center my-8 md:my-24"
+    >
+      <Title />
+    </section>
+    <section class="col-span-2 md:col-span-1 md:row-span-2 md:col-start-1">
+      <About />
+    </section>
+    <section class="col-span-2 md:col-span-1 md:row-start-1 md:col-start-2">
+      <Portfolio />
+    </section>
+
+    <section class="col-span-2 md:col-span-1">
+      <Timeline />
+    </section>
+  </main>
+</BaseLayout>

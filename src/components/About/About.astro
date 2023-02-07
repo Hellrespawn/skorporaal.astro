@@ -1,5 +1,4 @@
 ---
-import ShowIfRecipeSelected from '../ShowIfRecipeSelected.vue';
 import Links from './Links.astro';
 import Photograph from './Photograph.astro';
 import Skills from './Skills.astro';
@@ -8,18 +7,13 @@ import { Content as About } from './About.md';
 
 <div class="flex flex-col w-full h-full mx-auto md:gap-8">
   <div>
-    <div
-      class="flex flex-col items-start flex-shrink-0 float-left my-4 mr-4"
-    >
+    <div class="flex flex-col items-start flex-shrink-0 float-left my-4 mr-4">
       <Photograph />
       <Links />
     </div>
 
     <div class="px-3 md:mx-auto prose-custom">
       <About />
-      <ShowIfRecipeSelected client:only="vue">
-        Also, I needed somewhere to store my recipes.
-      </ShowIfRecipeSelected>
     </div>
   </div>
 

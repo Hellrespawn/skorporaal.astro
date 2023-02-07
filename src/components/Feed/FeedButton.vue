@@ -1,7 +1,0 @@
-<template>
-  <div
-    class="duration-main flex flex-row items-baseline rounded-sm text-gray-700 transition-[background-color] hover:bg-gray-100 active:bg-gray-200 dark:text-gray-200 hover:dark:bg-gray-750 active:dark:bg-gray-700"
-  >
-    <slot />
-  </div>
-</template>

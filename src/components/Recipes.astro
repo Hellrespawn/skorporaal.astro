@@ -1,0 +1,17 @@
+---
+import { getEntries } from '../collection';
+
+const entries = await getEntries();
+---
+
+<section class="prose-custom">
+  <ul>
+    {
+      entries.map((entry) => (
+        <li>
+          <a href={'/posts/' + entry.slug}>{entry.data.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</section>
