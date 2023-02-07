@@ -2,7 +2,7 @@
 import { type PostCategory, POST_CATEGORIES, CATEGORY_DATA } from '../../data';
 import { filterStore } from '../../stores/filter';
 import { sortStore } from '../../stores/sort';
-import Dot from './DotComponent.vue';
+import Dot from '../DotComponent.vue';
 import FeedButton from './FeedButton.vue';
 
 const categories: PostCategory[] = POST_CATEGORIES.filter(

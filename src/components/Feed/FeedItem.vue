@@ -3,7 +3,7 @@ import { formatTitleFromPost, Post } from '../../collection';
 import { CATEGORY_DATA, PostCategory } from '../../data';
 import { DateFormatter } from '../../date';
 
-import Dot from './DotComponent.vue';
+import Dot from '../DotComponent.vue';
 import FeedButton from './FeedButton.vue';
 
 interface Props {
