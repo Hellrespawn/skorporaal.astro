@@ -2,9 +2,10 @@ import { atom, onSet, action, computed, WritableAtom } from 'nanostores';
 import { useStore } from '@nanostores/vue';
 
 import { CATEGORY_DATA, type PostCategory } from '../data';
-import type { FeedItem } from '../post';
+import type { CollectionEntry } from 'astro:content';
+import { getCategoryFromEntry } from '../collection';
 
-const DEFAULT_CATEGORIES: PostCategory[] = ['article', 'portfolio', 'other'];
+const DEFAULT_CATEGORIES = ['article', 'portfolio', 'other'] as const;
 const STORAGE_KEY = 'filter';
 const SEPARATOR = ';';
 
@@ -58,7 +59,8 @@ function createIncludesFunction(
  * Creates filter callback function.
  */
 function createFilterFunction(activeCategories: PostCategory[]) {
-  return (feedItem: FeedItem) => activeCategories.includes(feedItem.category);
+  return (entry: CollectionEntry<'post'>) =>
+    activeCategories.includes(getCategoryFromEntry(entry));
 }
 
 /**

@@ -22,7 +22,7 @@ export const POST_CATEGORIES = [
   'other',
 ] as const;
 
-export type PostCategory = typeof POST_CATEGORIES[number];
+export type PostCategory = (typeof POST_CATEGORIES)[number];
 
 /**
  * Data associated with categories.

@@ -1,53 +1,46 @@
 import { CollectionEntry, getCollection, z } from 'astro:content';
-import { PostCategory, POST_CATEGORIES } from './scripts/data';
+import {
+  LANGUAGE_DATA,
+  PostCategory,
+  POST_CATEGORIES,
+  SITE_DATA,
+} from './data';
 
 export const postSchema = z.object({
   title: z.string(),
   authors: z.array(z.string()).default(['Stef Korporaal']),
-  date: z.union([z.date(), z.string()]).default('A long time ago...'),
+  date: z.date().optional(),
   updated: z.date().optional(),
   lang: z.enum(['en', 'nl']).default('en'),
 });
 
 export type Post = z.infer<typeof postSchema>;
 
-export interface EntryWithCategory {
-  entry: CollectionEntry<'post'>;
-  category: PostCategory;
+export async function getEntries(): Promise<CollectionEntry<'post'>[]> {
+  const promises = POST_CATEGORIES.map((category) => {
+    return getCollection('post', ({ id }: { id: string }) =>
+      id.startsWith(category)
+    );
+  });
+
+  const collections = await Promise.all(promises);
+
+  return collections.flat();
 }
 
-export async function getEntriesWithCategory() {
-  const entries: EntryWithCategory[] = [];
+export function formatTitleFromPost(post: Post): string {
+  let { title } = post;
+  const { lang } = post;
 
-  for (const category of POST_CATEGORIES) {
-    const categoryEntries = await getCollection(
-      'post',
-      ({ id }: { id: string }) => id.startsWith(category)
-    );
-
-    entries.push(
-      ...categoryEntries.map((entry) => {
-        return {
-          entry,
-          category,
-        };
-      })
-    );
+  if (lang !== SITE_DATA.lang) {
+    title += ` [${LANGUAGE_DATA[SITE_DATA.lang]![lang]}]`;
   }
 
-  return entries;
+  return title;
 }
 
-export async function getStaticPaths() {
-  const entriesWithCategory = await getEntriesWithCategory();
-
-  const paths = entriesWithCategory.map((entryWithCategory) => ({
-    params: {
-      slug: entryWithCategory.entry.slug,
-      category: entryWithCategory.category,
-    },
-    props: { entry: entryWithCategory.entry },
-  }));
-
-  return paths;
+export function getCategoryFromEntry(
+  entry: CollectionEntry<'post'>
+): PostCategory {
+  return entry.slug.split('/')[0] as PostCategory;
 }

@@ -1,16 +1,20 @@
 ---
 import Navigation from '../components/Navigation.astro';
 import PostHeading from '../components/PostHeading.astro';
-import type { Post } from '../collection';
-import { CATEGORY_DATA, PostCategory } from '../scripts/data';
+import { CATEGORY_DATA } from '../data';
 import BaseLayout from './BaseLayout.astro';
+import type { CollectionEntry } from 'astro:content';
+import { getCategoryFromEntry } from '../collection';
 
 export interface Props {
-  category: PostCategory;
-  post: Post;
+  entry: CollectionEntry<'post'>;
 }
 
-const { post, category } = Astro.props as Props;
+const { entry } = Astro.props as Props;
+
+const post = entry.data;
+const category = getCategoryFromEntry(entry);
+
 const accent = CATEGORY_DATA[category];
 ---
 
@@ -19,7 +23,7 @@ const accent = CATEGORY_DATA[category];
   <main class="flex flex-col items-center">
     <div class="px-3 md:px-0 w-full max-w-[65ch]">
       <article lang={post.lang} class="py-8 md:pt-16">
-        <PostHeading accent={accent} authors={post.authors} date={post.date} />
+        <PostHeading accent={accent} post={post} />
         <div class="pt-8 prose-custom">
           <h1 class="text-3xl">{post.title}</h1>
 

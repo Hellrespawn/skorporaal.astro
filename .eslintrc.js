@@ -90,6 +90,7 @@ module.exports = {
         '@typescript-eslint/member-ordering': 'warn',
         '@typescript-eslint/no-confusing-void-expression': 'warn',
         '@typescript-eslint/restrict-template-expressions': 'off',
+        '@typescript-eslint/triple-slash-reference': 'off',
       },
     },
   ],

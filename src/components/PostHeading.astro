@@ -1,13 +1,18 @@
 ---
-import type { CategoryData } from '../scripts/data';
+import type { Post } from '../collection';
+import type { CategoryData } from '../data';
+import { DateFormatter } from '../date';
 
 export interface Props {
   accent: CategoryData;
-  authors: string[];
-  date: Date | string;
+  post: Post;
 }
 
-const { accent, authors, date } = Astro.props as Props;
+const { accent, post } = Astro.props as Props;
+
+const dateFormatter = DateFormatter.getFormatter('long');
+
+const formattedDate = dateFormatter.formatDate(post);
 ---
 
 <!-- Category name -->
@@ -17,10 +22,10 @@ const { accent, authors, date } = Astro.props as Props;
   class={`${accent.border} flex flex-row flex-wrap-reverse items-center justify-between border-t-2 gap-x-4`}
 >
   <!-- Date -->
-  <span class="text-gray-400 dark:text-gray-500">{date}</span>
+  <span class="text-gray-400 dark:text-gray-500">{formattedDate}</span>
 
   <span class="italic">
     <!-- Authors -->
-    {authors}
+    {post.authors}
   </span>
 </div>

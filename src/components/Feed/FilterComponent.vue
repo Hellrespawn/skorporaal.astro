@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import {
-  type PostCategory,
-  POST_CATEGORIES,
-  CATEGORY_DATA,
-} from '../../scripts/data';
+import { type PostCategory, POST_CATEGORIES, CATEGORY_DATA } from '../../data';
 import { filterStore } from '../../stores/filter';
 import { sortStore } from '../../stores/sort';
 import Dot from './DotComponent.vue';

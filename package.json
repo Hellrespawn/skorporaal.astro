@@ -9,15 +9,13 @@
     "deploy:ftp": "node -r @swc-node/register deploy.ts",
     "format:lint": "eslint ./src --fix",
     "format:prettier": "prettier -w ./src --plugin-search-dir=.",
-    "webhint:webhint": "hint http://localhost:3000",
     "build": "npm-run-all clean build:*",
     "clean": "del-cli dist",
-    "check": "npm-run-all --parallel check:*",
+    "check": "npm-run-all --continue --parallel check:*",
     "deploy": "npm-run-all build deploy:*",
     "dev": "astro dev --host",
-    "format": "npm-run-all format:*",
-    "preview": "astro preview",
-    "webhint": "npm-run-all --parallel dev --race webhint:*"
+    "format": "npm-run-all --continue format:*",
+    "preview": "astro preview"
   },
   "devDependencies": {
     "@astrojs/vue": "^2.0.1",

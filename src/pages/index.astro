@@ -1,10 +1,10 @@
 ---
-import { getEntriesWithCategory } from '../collection';
+import { getEntries } from '../collection';
 import About from '../components/About/About.astro';
-import Feed from '../components/Feed/Feed.astro';
+import FeedWrapper from '../components/Feed/FeedWrapper.astro';
 import GridLayout from '../layouts/GridLayout.astro';
 
-const entriesWithCategory = await getEntriesWithCategory();
+const entries = await getEntries();
 ---
 
 <GridLayout title="Home">
@@ -12,6 +12,6 @@ const entriesWithCategory = await getEntriesWithCategory();
     <About />
   </Fragment>
   <Fragment slot="right">
-    <Feed entriesWithCategory={entriesWithCategory} />
+    <FeedWrapper entries={entries} />
   </Fragment>
 </GridLayout>

@@ -1,6 +1,6 @@
 import { atom, onSet, computed, action } from 'nanostores';
 import { useStore } from '@nanostores/vue';
-import type { FeedItem } from '../post';
+import type { Post } from '../collection';
 
 const STORAGE_KEY = 'sort';
 
@@ -9,7 +9,7 @@ const STORAGE_KEY = 'sort';
  */
 interface SortState {
   display: string;
-  sortFunction: (left: FeedItem, right: FeedItem) => number;
+  sortFunction: (left: Post, right: Post) => number;
 }
 
 /**
@@ -34,11 +34,18 @@ const STATES: SortState[] = [
   },
 ];
 
+function getSortingDates(
+  left: Post,
+  right: Post
+): [Date | undefined, Date | undefined] {
+  return [left.updated ?? left.date, right.updated ?? right.date];
+}
+
 /**
  * Callback function for Array.prototype.sort that sorts by alphabet,
  * ascending.
  */
-function sortByAlphaAscending(left: FeedItem, right: FeedItem): number {
+function sortByAlphaAscending(left: Post, right: Post): number {
   return left.title.localeCompare(right.title);
 }
 
@@ -46,7 +53,7 @@ function sortByAlphaAscending(left: FeedItem, right: FeedItem): number {
  * Callback function for Array.prototype.sort that sorts by alphabet,
  * descending.
  */
-function sortByAlphaDescending(left: FeedItem, right: FeedItem): number {
+function sortByAlphaDescending(left: Post, right: Post): number {
   return -sortByAlphaAscending(left, right);
 }
 
@@ -54,17 +61,19 @@ function sortByAlphaDescending(left: FeedItem, right: FeedItem): number {
  * Callback function for Array.prototype.sort that sorts by date,
  * ascending. Falls back to alphabet, ascending for same dates.
  */
-function sortByDateAscending(left: FeedItem, right: FeedItem): number {
+function sortByDateAscending(left: Post, right: Post): number {
   let sort: number;
 
-  if (!left.sortDate && !right.sortDate) {
+  const [leftDate, rightDate] = getSortingDates(left, right);
+
+  if (!leftDate && !rightDate) {
     sort = sortByAlphaAscending(left, right);
-  } else if (!left.sortDate) {
+  } else if (!leftDate) {
     sort = -1;
-  } else if (!right.sortDate) {
+  } else if (!rightDate) {
     sort = 1;
   } else {
-    sort = left.sortDate.getTime() - right.sortDate.getTime();
+    sort = leftDate.getTime() - rightDate.getTime();
   }
 
   return sort;
@@ -74,17 +83,19 @@ function sortByDateAscending(left: FeedItem, right: FeedItem): number {
  * Callback function for Array.prototype.sort that sorts by date,
  * descending. Falls back to alphabet, ascending for same dates.
  */
-function sortByDateDescending(left: FeedItem, right: FeedItem): number {
+function sortByDateDescending(left: Post, right: Post): number {
   let sort: number;
 
-  if (!left.sortDate && !right.sortDate) {
+  const [leftDate, rightDate] = getSortingDates(left, right);
+
+  if (!leftDate && !rightDate) {
     sort = sortByAlphaAscending(left, right);
-  } else if (!left.sortDate) {
+  } else if (!leftDate) {
     sort = 1;
-  } else if (!right.sortDate) {
+  } else if (!rightDate) {
     sort = -1;
   } else {
-    sort = right.sortDate.getTime() - left.sortDate.getTime();
+    sort = rightDate.getTime() - leftDate.getTime();
   }
 
   return sort;

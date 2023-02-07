@@ -31,6 +31,8 @@ Dutch • English
 
 ### Amsterdam University of Applied Sciences
 
+<!-- TODO Timeline -->
+
 Associate Degree in Software Development, consisting of:
 
 - TypeScript

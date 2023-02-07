@@ -1,34 +1,34 @@
 <script setup lang="ts">
+import type { CollectionEntry } from 'astro:content';
 import { computed } from 'vue';
-import type { EntryWithCategory } from '../../collection';
-import { FeedItem } from '../../scripts/post';
 import { filterStore } from '../../stores/filter';
 import { sortStore } from '../../stores/sort';
 import FeedItemComponent from './FeedItem.vue';
+import { getCategoryFromEntry } from '../../collection';
 
 const props = defineProps<{
-  entriesWithCategory: EntryWithCategory[];
+  entries: CollectionEntry<'post'>[];
 }>();
 
-const feedItems = computed(() =>
-  props.entriesWithCategory.map((instance) => new FeedItem(instance))
-);
-
-const filteredItems = computed(() =>
-  feedItems.value
-    .filter(filterStore.filterFunction.value)
-    .sort(sortStore.sortFunction.value)
+const filteredEntries = computed(() =>
+  props.entries
+    .filter((entry) => filterStore.filterFunction.value(entry))
+    .sort((left, right) => sortStore.sortFunction.value(left.data, right.data))
 );
 </script>
 
 <template>
-  <ul v-if="filteredItems.length" id="postFeed" class="text-xl md:text-base">
+  <ul v-if="filteredEntries.length" id="postFeed" class="text-xl md:text-base">
     <li
-      v-for="feedItem in filteredItems"
-      :key="feedItem.slug"
+      v-for="entry in filteredEntries"
+      :key="entry.id"
       class="border-b border-gray-200 dark:border-gray-700"
     >
-      <FeedItemComponent :feed-item="feedItem" />
+      <FeedItemComponent
+        :slug="entry.slug"
+        :post="entry.data"
+        :category="getCategoryFromEntry(entry)"
+      />
     </li>
   </ul>
 

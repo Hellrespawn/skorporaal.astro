@@ -1,11 +1,24 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import PostLayout from '../../layouts/PostLayout.astro';
-import type { PostCategory } from '../../scripts/data';
-import { getStaticPaths as getEntriesStaticPaths } from '../../collection';
+import type { PostCategory } from '../../data';
+import { getEntries } from '../../collection';
 
 export async function getStaticPaths() {
-  return await getEntriesStaticPaths();
+  const entries = await getEntries();
+
+  const paths = entries.map((entry) => {
+    const [category, slug] = entry.slug.split('/');
+    return {
+      params: {
+        slug,
+        category: category,
+      },
+      props: { entry },
+    };
+  });
+
+  return paths;
 }
 
 interface Props {
@@ -13,11 +26,11 @@ interface Props {
   category: PostCategory;
 }
 
-const { entry, category } = Astro.props;
+const { entry } = Astro.props;
 
 const { Content } = await entry.render();
 ---
 
-<PostLayout post={entry.data} category={category}>
+<PostLayout entry={entry}>
   <Content />
 </PostLayout>
