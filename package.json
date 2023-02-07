@@ -11,10 +11,10 @@
     "format:prettier": "prettier -w ./src --plugin-search-dir=.",
     "build": "npm-run-all clean build:*",
     "clean": "del-cli dist",
-    "check": "npm-run-all --continue --parallel check:*",
+    "check": "npm-run-all --continue-on-error --parallel check:*",
     "deploy": "npm-run-all build deploy:*",
     "dev": "astro dev --host",
-    "format": "npm-run-all --continue format:*",
+    "format": "npm-run-all --continue-on-error format:*",
     "preview": "astro preview"
   },
   "devDependencies": {

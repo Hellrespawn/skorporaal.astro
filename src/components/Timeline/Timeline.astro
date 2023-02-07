@@ -1,50 +1,58 @@
 ---
-import Recipes from '../Recipes.astro';
+import CardBody from '../Card/CardBody.astro';
+import CardHeading from '../Card/CardHeading.astro';
 import TimelineEntry from './TimelineEntry.astro';
 ---
 
-<div class="prose-custom">
-  <h3>Amsterdam University of Applied Sciences</h3>
+<!-- <h3>Amsterdam University of Applied Sciences</h3>
 
-  <p>Associate Degree in Software Development, consisting of:</p>
+<p>Associate Degree in Software Development, consisting of:</p>
 
-  <ul>
-    <li>TypeScript</li>
-    <li>MySQL</li>
-    <li>Unit and integration testing</li>
-    <li>Angular</li>
-    <li>Express</li>
-    <li>Laravel</li>
-    <li>Agile and SCRUM</li>
-  </ul>
+<ul>
+  <li>TypeScript</li>
+  <li>MySQL</li>
+  <li>Unit and integration testing</li>
+  <li>Angular</li>
+  <li>Express</li>
+  <li>Laravel</li>
+  <li>Agile and SCRUM</li>
+</ul> -->
+<div class="mx-auto">
+  <h2 class="frontpage-heading">Timeline</h2>
+
+  <div class="w-full">
+    <TimelineEntry>
+      <CardHeading>Amsterdam University of Applied Sciences</CardHeading>
+      <CardBody>
+        <p>Associate Degree in Software Development, consisting of:</p>
+
+        <ul>
+          <li>TypeScript</li>
+          <li>MySQL</li>
+          <li>Unit and integration testing</li>
+          <li>Angular</li>
+          <li>Express</li>
+          <li>Laravel</li>
+          <li>Agile and SCRUM</li>
+        </ul>
+      </CardBody>
+    </TimelineEntry>
+    <TimelineEntry>
+      Poterat autem inpune; Quod autem principium officii quaerunt, melius quam
+      Pyrrho; Non autem hoc: igitur ne illud quidem. Nam et complectitur verbis,
+      quod vult, et dicit plane, quod intellegam; Et hi quidem ita non sola
+      virtute finem bonorum contineri putant, ut rebus tamen omnibus virtutem
+      anteponant; Quid autem habent admirationis, cum prope accesseris? Easdemne
+      res?
+    </TimelineEntry>
+    <TimelineEntry>
+      Illi enim inter se dissentiunt. Audi, ne longe abeam, moriens quid dicat
+      Epicurus, ut intellegas facta eius cum dictis discrepare: Epicurus
+      Hermarcho salutem. Certe non potest. Respondeat totidem verbis.
+    </TimelineEntry>
+  </div>
 </div>
 
+<!-- <h2 class="frontpage-heading">Recipes</h2>
 
-<h2 class="frontpage-heading">Timeline</h2>
-
-<div class="flex flex-col">
-  <TimelineEntry>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. An, partus ancillae
-    sitne in fructu habendus, disseretur inter principes civitatis, P. Nemo
-    igitur esse beatus potest. Apud imperitos tum illa dicta sunt, aliquid etiam
-    coronae datum; Bonum patria: miserum exilium. Ut alios omittam, hunc
-    appello, quem ille unum secutus est. Duo Reges: constructio interrete.
-  </TimelineEntry>
-  <TimelineEntry>
-    Poterat autem inpune; Quod autem principium officii quaerunt, melius quam
-    Pyrrho; Non autem hoc: igitur ne illud quidem. Nam et complectitur verbis,
-    quod vult, et dicit plane, quod intellegam; Et hi quidem ita non sola
-    virtute finem bonorum contineri putant, ut rebus tamen omnibus virtutem
-    anteponant; Quid autem habent admirationis, cum prope accesseris? Easdemne
-    res?
-  </TimelineEntry>
-  <TimelineEntry>
-    Illi enim inter se dissentiunt. Audi, ne longe abeam, moriens quid dicat
-    Epicurus, ut intellegas facta eius cum dictis discrepare: Epicurus Hermarcho
-    salutem. Certe non potest. Respondeat totidem verbis.
-  </TimelineEntry>
-</div>
-
-<h2 class="frontpage-heading">Recipes</h2>
-
-<Recipes />
+<Recipes /> -->
