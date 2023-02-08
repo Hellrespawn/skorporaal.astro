@@ -1,6 +1,12 @@
-<h1 class="font-mono text-4xl font-bold text-center whitespace-nowrap">
-  <a href="/" class="fancy-link">skorporaal.com</a><span
-    class="inline-block -translate-x-1 animate-blink"
-    >|
-  </span>
-</h1>
+---
+import { SITE_DATA } from '../data';
+---
+
+<section class="flex flex-col items-center my-8 md:my-24">
+  <h1 class="font-mono text-4xl font-bold text-center whitespace-nowrap">
+    <a href="/" class="fancy-link">{SITE_DATA.url}</a><span
+      class="inline-block -translate-x-1 animate-blink"
+      >|
+    </span>
+  </h1>
+</section>

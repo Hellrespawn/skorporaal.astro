@@ -1,6 +1,5 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import type { PostCategory } from '../../data';
 import { getEntries } from '../../collection';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navigation from '../../components/Navigation.astro';
@@ -23,7 +22,6 @@ export async function getStaticPaths() {
 
 interface Props {
   entry: CollectionEntry<'post'>;
-  category: PostCategory;
 }
 
 const { entry } = Astro.props;
@@ -37,7 +35,7 @@ const { Content } = await entry.render();
   <Navigation showHome />
   <main class="flex flex-col items-center">
     <div class="px-3 lg:px-0 w-full max-w-[65ch]">
-      <article lang={post.lang} class="py-8 lg:pt-16">
+      <article class="py-8 lg:pt-16">
         <PostHeading post={post} />
         <div class="pt-8 prose-custom">
           <h1 class="text-3xl">{post.title}</h1>

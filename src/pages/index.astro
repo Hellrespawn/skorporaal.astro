@@ -1,7 +1,9 @@
 ---
+import { getEntries } from '../collection';
 import About from '../components/About/About.astro';
 import Navigation from '../components/Navigation.astro';
 import Portfolio from '../components/Portfolio/Portfolio.astro';
+import RecipesComponent from '../components/RecipesComponent.vue';
 import Skills from '../components/Skills/Skills.astro';
 import Timeline from '../components/Timeline/Timeline.astro';
 import Title from '../components/Title.astro';
@@ -12,15 +14,16 @@ export interface Props {
 }
 
 const { title } = Astro.props as Props;
+
+const entries = await getEntries();
 ---
 
 <BaseLayout title={title}>
   <main class="hidden lg:flex lg:flex-row lg:justify-between">
     <div class="w-1/2 pr-4">
       <Navigation />
-      <section class="flex flex-col items-center my-24">
-        <Title />
-      </section>
+
+      <Title />
 
       <About />
 
@@ -31,14 +34,15 @@ const { title } = Astro.props as Props;
       <Portfolio />
 
       <Timeline />
+
+      <RecipesComponent entries={entries} client:only="vue" />
     </div>
   </main>
 
   <main class="lg:hidden flex flex-col w-full">
     <Navigation />
-    <section class="flex flex-col items-center my-8">
-      <Title />
-    </section>
+
+    <Title />
 
     <About />
 
@@ -47,5 +51,7 @@ const { title } = Astro.props as Props;
     <Portfolio />
 
     <Skills />
+
+    <RecipesComponent entries={entries} client:only="vue" />
   </main>
 </BaseLayout>

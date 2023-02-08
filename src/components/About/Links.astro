@@ -4,41 +4,25 @@ import Envelope from '../Icons/Envelope.astro';
 import GitHub from '../Icons/GitHub.astro';
 import LinkedIn from '../Icons/LinkedIn.astro';
 import Twitter from '../Icons/Twitter.astro';
+import Link from './Link.astro';
 ---
 
 <div
   class="w-40 flex flex-row justify-around items-center p-0.5 rounded-br-xl bg-gray-700 text-gray-50 dark:bg-gray-200 dark:text-gray-800 border-gray-200 dark:border-gray-900"
 >
-  <a
-    href="https://github.com/Hellrespawn"
-    target="_blank"
-    rel="nofollow noopener noreferrer"
-    class="rounded-full dark:hover:bg-gray-300 hover:bg-gray-600 p-1.5 flex items-center justify-center"
-  >
+  <Link href={SITE_DATA.github}>
     <GitHub />
-  </a>
-  <a
-    href="#"
-    target="_blank"
-    rel="nofollow noopener noreferrer"
-    class="rounded-full dark:hover:bg-gray-300 hover:bg-gray-600 p-1.5 flex items-center justify-center"
-  >
+  </Link>
+
+  <Link href={SITE_DATA.linkedin}>
     <LinkedIn />
-  </a>
-  <a
-    href="https://twitter.com/StefKorporaal"
-    target="_blank"
-    rel="nofollow noopener noreferrer"
-    class="rounded-full dark:hover:bg-gray-300 hover:bg-gray-600 p-1.5 flex items-center justify-center"
-  >
+  </Link>
+
+  <Link href={SITE_DATA.twitter}>
     <Twitter />
-  </a>
-  <a
-    href={`mailto:${SITE_DATA.email}`}
-    target="_blank"
-    rel="nofollow noopener noreferrer"
-    class="rounded-full dark:hover:bg-gray-300 hover:bg-gray-600 p-1.5 flex items-center justify-center"
-  >
+  </Link>
+
+  <Link href={`mailto:${SITE_DATA.email}`}>
     <Envelope />
-  </a>
+  </Link>
 </div>

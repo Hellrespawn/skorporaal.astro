@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref, computed, type Ref } from 'vue';
-
+import { useStore } from '@nanostores/vue';
+import { showRecipes } from '../stores/recipe.store';
 import Dot from './DotComponent.vue';
+
+const $showRecipes = useStore(showRecipes);
 
 const expectedBits = Math.ceil(Math.max(Math.log2(24), Math.log2(60)));
 const fps = 24;
@@ -28,7 +31,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col" @dblclick="showRecipes.set(!$showRecipes)">
     <div
       v-for="(number, index) in [hours, minutes, seconds]"
       :key="[number, index].join()"
