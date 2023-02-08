@@ -1,4 +1,5 @@
 ---
+import Image from '../Image.astro';
 import Card from '../Card/Card.astro';
 
 export interface Props {
@@ -16,30 +17,17 @@ const {
   dark = false,
   png = false,
 } = Astro.props as Props;
-
-const extension = png ? 'png' : 'svg';
 ---
 
 <div class="my-4 flex flex-row items-center">
-  <Card class={`w-20 h-20 ${classes}`}>
-    <img
-      src={`/assets/skills/${src}${dark ? '-light' : ''}.${extension}`}
-      class={`${dark ? ' dark:hidden' : ''} w-full h-full`}
-      alt={`${name} logo`}
-    />
-    {
-      dark && (
-        <img
-          src={`/assets/skills/${src}-dark.${extension}`}
-          class="hidden h-full w-full dark:block"
-          alt={`${name} logo`}
-        />
-      )
-    }
+  <Card class={`w-20 h-20 flex-shrink-0 ${classes}`}>
+    <Image src={src} name={name} dark={dark} png={png} class="w-full h-full" />
   </Card>
 
   <div class="flex-grow pl-4 pr-2">
     <h3 class="text-lg font-semibold">{name}</h3>
-    <slot />
+    <div class="text-gray-700 dark:text-gray-200">
+      <slot />
+    </div>
   </div>
 </div>

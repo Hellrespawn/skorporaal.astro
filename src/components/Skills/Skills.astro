@@ -2,68 +2,70 @@
 import Skill from './Skill.astro';
 ---
 
-<div class="flex flex-col gap-8 my-8">
+<div class="flex flex-col gap-8 lg:my-8">
   <h2 class="frontpage-heading">My skills</h2>
 
   <div>
-    <h3 class="text-xl text-center">Languages & Frameworks</h3>
+    <h3 class="text-xl text-center font-semibold">Languages & Frameworks</h3>
 
-    <Skill src="html" name="HTML" dark class="p-2">
+    <Skill src="skills/html" name="HTML" dark class="p-2">
       Modern HTML with semantic elements.
     </Skill>
 
-    <Skill src="css" name="CSS" dark class="p-2">
+    <Skill src="skills/css" name="CSS" dark class="p-2">
       Modern CSS including Grid and FlexBox.
     </Skill>
 
     <Skill
-      src="typescript"
+      src="skills/typescript"
       name="TypeScript"
       class="p-2 bg-[#3178c6] dark:bg-[#3178c6]"
     >
       Safe, sane and consensual JavaScript.
     </Skill>
 
-    <Skill src="angular" name="Angular" dark class="p-1">
+    <Skill src="skills/angular" name="Angular" dark class="p-1">
       Enterprise-grade frontend framework.
     </Skill>
 
-    <Skill src="astro" name="Astro" dark class="p-2">
+    <Skill src="skills/astro" name="Astro" dark class="p-2">
       A new kind of static site builder for the modern web.
     </Skill>
 
-    <Skill src="tailwindcss" name="Tailwind CSS" class="p-2">
+    <Skill src="skills/tailwindcss" name="Tailwind CSS" class="p-2">
       A utility-first CSS framework, directly in your markup.
     </Skill>
 
-    <Skill src="vue" name="Vue" class="p-4">
+    <Skill src="skills/vue" name="Vue" class="p-4">
       An approachable, performant and versatile framework for building web user
       interfaces.
     </Skill>
 
-    <Skill src="laravel" name="Laravel" class="p-4">
+    <Skill src="skills/laravel" name="Laravel" class="p-4">
       The PHP Framework For Web Artisans.
     </Skill>
 
-    <Skill src="rust" name="Rust" dark>Fast and correct.</Skill>
+    <Skill src="skills/rust" name="Rust" dark>Fast and correct.</Skill>
   </div>
 
   <div>
-    <h3 class="text-xl text-center">Technologies</h3>
+    <h3 class="text-xl text-center font-semibold">Technologies</h3>
 
-    <Skill src="linux" name="Linux" class="p-3">Free as in speech.</Skill>
+    <Skill src="skills/linux" name="Linux" class="p-3">
+      Free as in speech.
+    </Skill>
 
-    <Skill src="git" name="Git & GitLab" dark png class="p-2">
+    <Skill src="skills/git" name="Git & GitLab" dark png class="p-2">
       Version control and CI/CD
     </Skill>
 
-    <Skill src="mysql" name="MySQL" png>My SQL could be your SQL.</Skill>
+    <Skill src="skills/mysql" name="MySQL" png>My SQL could be your SQL.</Skill>
 
-    <Skill src="docker" name="Docker" png>
+    <Skill src="skills/docker" name="Docker" png>
       Portable development and deployment.
     </Skill>
 
-    <Skill src="shell" name="Shell scripting" dark>
+    <Skill src="skills/shell" name="Shell scripting" dark>
       Like herding <code>cat</code>s.
     </Skill>
   </div>

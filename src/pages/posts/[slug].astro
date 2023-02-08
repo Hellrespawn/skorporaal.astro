@@ -36,8 +36,8 @@ const { Content } = await entry.render();
 <BaseLayout title={post.title}>
   <Navigation showHome />
   <main class="flex flex-col items-center">
-    <div class="px-3 md:px-0 w-full max-w-[65ch]">
-      <article lang={post.lang} class="py-8 md:pt-16">
+    <div class="px-3 lg:px-0 w-full max-w-[65ch]">
+      <article lang={post.lang} class="py-8 lg:pt-16">
         <PostHeading post={post} />
         <div class="pt-8 prose-custom">
           <h1 class="text-3xl">{post.title}</h1>

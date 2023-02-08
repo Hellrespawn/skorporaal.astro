@@ -1,0 +1,15 @@
+---
+import Image from '../Image.astro';
+
+export interface Props {
+  src: string;
+  name: string;
+  class?: string;
+  dark?: boolean;
+  png?: boolean;
+}
+
+const { src, name, dark = false, png = false } = Astro.props;
+---
+
+<Image src={src} name={name} dark={dark} png={png} class="w-full max-w-md" />

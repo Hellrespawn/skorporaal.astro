@@ -15,18 +15,37 @@ const { title } = Astro.props as Props;
 ---
 
 <BaseLayout title={title}>
-  <main class="flex flex-col">
+  <main class="hidden lg:flex lg:flex-row lg:justify-between">
+    <div class="w-1/2 pr-4">
+      <Navigation />
+      <section class="flex flex-col items-center my-24">
+        <Title />
+      </section>
+
+      <About />
+
+      <Skills />
+    </div>
+
+    <div class="w-1/2 pl-4">
+      <Portfolio />
+
+      <Timeline />
+    </div>
+  </main>
+
+  <main class="lg:hidden flex flex-col w-full">
     <Navigation />
-    <section class="flex flex-col items-center my-8 md:my-24">
+    <section class="flex flex-col items-center my-8">
       <Title />
     </section>
 
     <About />
 
-    <Skills />
+    <Timeline />
 
     <Portfolio />
 
-    <Timeline />
+    <Skills />
   </main>
 </BaseLayout>

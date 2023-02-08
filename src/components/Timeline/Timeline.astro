@@ -1,54 +1,33 @@
 ---
-import CardBody from '../Card/CardBody.astro';
-import CardHeading from '../Card/CardHeading.astro';
+import CardLogo from '../Card/CardLogo.astro';
 import TimelineEntry from './TimelineEntry.astro';
 ---
 
-<!-- <h3>Amsterdam University of Applied Sciences</h3>
-
-<p>Associate Degree in Software Development, consisting of:</p>
-
-<ul>
-  <li>TypeScript</li>
-  <li>MySQL</li>
-  <li>Unit and integration testing</li>
-  <li>Angular</li>
-  <li>Express</li>
-  <li>Laravel</li>
-  <li>Agile and SCRUM</li>
-</ul> -->
-<div class="mx-auto">
+<div class="w-full lg:my-8">
   <h2 class="frontpage-heading">Timeline</h2>
 
-  <div class="w-full">
+  <div class="w-full float-right">
     <TimelineEntry>
-      <CardHeading>Amsterdam University of Applied Sciences</CardHeading>
-      <CardBody>
-        <p>Associate Degree in Software Development, consisting of:</p>
+      <div class="flex flex-col items-center">
+        <CardLogo src="timeline/auas" name="AUAS" dark png />
 
-        <ul>
-          <li>TypeScript</li>
-          <li>MySQL</li>
-          <li>Unit and integration testing</li>
-          <li>Angular</li>
-          <li>Express</li>
-          <li>Laravel</li>
-          <li>Agile and SCRUM</li>
-        </ul>
-      </CardBody>
-    </TimelineEntry>
-    <TimelineEntry>
-      Poterat autem inpune; Quod autem principium officii quaerunt, melius quam
-      Pyrrho; Non autem hoc: igitur ne illud quidem. Nam et complectitur verbis,
-      quod vult, et dicit plane, quod intellegam; Et hi quidem ita non sola
-      virtute finem bonorum contineri putant, ut rebus tamen omnibus virtutem
-      anteponant; Quid autem habent admirationis, cum prope accesseris? Easdemne
-      res?
-    </TimelineEntry>
-    <TimelineEntry>
-      Illi enim inter se dissentiunt. Audi, ne longe abeam, moriens quid dicat
-      Epicurus, ut intellegas facta eius cum dictis discrepare: Epicurus
-      Hermarcho salutem. Certe non potest. Respondeat totidem verbis.
+        <h3 class="text-xl font-semibold mx-auto mt-4">2021-2023</h3>
+
+        <div class="prose-timeline">
+          <p>Associate Degree in Software Development, consisting of:</p>
+
+          <ul>
+            <li>TypeScript</li>
+            <li>MySQL</li>
+            <li>Unit and integration testing</li>
+            <li>NodeJS</li>
+            <li>Express</li>
+            <li>Angular</li>
+            <li>Laravel</li>
+            <li>Agile and SCRUM</li>
+          </ul>
+        </div>
+      </div>
     </TimelineEntry>
   </div>
 </div>
