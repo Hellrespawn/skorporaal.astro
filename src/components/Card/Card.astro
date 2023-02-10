@@ -6,11 +6,12 @@ export interface Props {
 
 const { class: classes = '', side = 'left' } = Astro.props as Props;
 
-const roundedClass = side === 'left' ? 'rounded-r-xl' : 'rounded-l-xl';
+const sideClass =
+  side === 'left' ? 'rounded-r-xl border-r' : 'rounded-l-xl border-l';
 ---
 
 <div
-  class={`bg-gray-100 border border-gray-200 overflow-hidden dark:bg-gray-700 dark:border-gray-900 ${roundedClass} ${classes}`.trim()}
+  class={`bg-gray-100 border-y border-gray-200 overflow-hidden dark:bg-gray-700 dark:border-gray-900 ${sideClass} ${classes}`.trim()}
 >
   <slot />
 </div>

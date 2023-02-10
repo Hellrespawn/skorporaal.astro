@@ -1,16 +1,16 @@
 ---
-import type { Post } from '../collection';
+import type { Recipe } from '../collection';
 import { DateFormatter } from '../date';
 
 export interface Props {
-  post: Post;
+  recipe: Recipe;
 }
 
-const { post } = Astro.props as Props;
+const { recipe } = Astro.props as Props;
 
 const dateFormatter = DateFormatter.getFormatter('long');
 
-const formattedDate = dateFormatter.formatDate(post);
+const formattedDate = dateFormatter.formatDate(recipe);
 ---
 
 <div class="text-sm text-secondary-500">Recipe</div>
@@ -23,6 +23,6 @@ const formattedDate = dateFormatter.formatDate(post);
 
   <span class="italic">
     <!-- Authors -->
-    {post.authors}
+    {recipe.authors}
   </span>
 </div>

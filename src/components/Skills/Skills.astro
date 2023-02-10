@@ -1,51 +1,45 @@
 ---
+import type { CollectionEntry } from 'astro:content';
+import { getSkillEntries } from '../../collection';
 import Skill from './Skill.astro';
+
+const { langEntries, techEntries, otherEntries } = await getSkillEntries();
+
+const langDataWithContent = await getDataWithContent(langEntries);
+
+const techDataWithContent = await getDataWithContent(techEntries);
+
+const otherDataWithContent = await getDataWithContent(otherEntries);
+
+async function getDataWithContent(entries: CollectionEntry<'skill'>[]) {
+  return Promise.all(
+    entries.map(async (entry) => ({
+      ...entry.data,
+      content: (await entry.render()).Content,
+    }))
+  );
+}
 ---
 
-<div class="flex flex-col gap-8 lg:my-8">
+<div class="flex flex-col gap-8 md:my-8">
   <h2 class="frontpage-heading">My skills</h2>
 
   <div>
     <h3 class="text-xl text-center font-semibold">Languages & Frameworks</h3>
 
-    <Skill src="skills/html" name="HTML" dark class="p-2">
-      Modern HTML with semantic elements.
-    </Skill>
-
-    <Skill src="skills/css" name="CSS" dark class="p-2">
-      Modern CSS including Grid and FlexBox.
-    </Skill>
-
-    <Skill
-      src="skills/typescript"
-      name="TypeScript"
-      class="p-2 bg-[#3178c6] dark:bg-[#3178c6]"
-    >
-      Safe, sane and consensual JavaScript.
-    </Skill>
-
-    <Skill src="skills/angular" name="Angular" dark class="p-1">
-      Enterprise-grade frontend framework.
-    </Skill>
-
-    <Skill src="skills/astro" name="Astro" dark class="p-2">
-      A new kind of static site builder for the modern web.
-    </Skill>
-
-    <Skill src="skills/tailwindcss" name="Tailwind CSS" class="p-2">
-      A utility-first CSS framework, directly in your markup.
-    </Skill>
-
-    <Skill src="skills/vue" name="Vue" class="p-4">
-      An approachable, performant and versatile framework for building web user
-      interfaces.
-    </Skill>
-
-    <Skill src="skills/laravel" name="Laravel" class="p-4">
-      The PHP Framework For Web Artisans.
-    </Skill>
-
-    <Skill src="skills/rust" name="Rust" dark>Fast and correct.</Skill>
+    {
+      langDataWithContent.map((dwc) => (
+        <Skill
+          src={dwc.logo}
+          name={dwc.name}
+          dark={dwc.dark}
+          png={dwc.png}
+          class={dwc.padding}
+        >
+          <dwc.content />
+        </Skill>
+      ))
+    }
   </div>
 
   <div>

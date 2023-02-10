@@ -15,11 +15,12 @@ const { title } = Astro.props as Props;
     <Head title={title} />
   </head>
 
-  <body
-    class="flex flex-col text-gray-900 bg-gray-50 dark:bg-gray-800 dark:text-gray-50"
-  >
-    <slot />
-
+  <body class="flex flex-col background-pattern">
+    <main
+      class="flex flex-col w-full mx-auto max-w-screen-md text-gray-900 bg-gray-50 dark:bg-gray-800 dark:text-gray-50 border-x border-gray-200 dark:border-gray-900"
+    >
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>

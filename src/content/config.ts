@@ -1,8 +1,28 @@
 import { defineCollection } from 'astro:content';
-import { postSchema } from '../collection';
+import {
+  portfolioSchema,
+  recipeSchema,
+  timelineSchema,
+  skillSchema,
+} from '../collection';
 
-const postCollection = defineCollection({ schema: postSchema });
+const recipeCollection = defineCollection({ schema: recipeSchema });
+
+const portfolioCollection = defineCollection({
+  schema: portfolioSchema,
+});
+
+const timelineCollection = defineCollection({
+  schema: timelineSchema,
+});
+
+const skillCollection = defineCollection({
+  schema: skillSchema,
+});
 
 export const collections = {
-  post: postCollection,
+  recipe: recipeCollection,
+  portfolio: portfolioCollection,
+  timeline: timelineCollection,
+  skill: skillCollection,
 };

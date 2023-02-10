@@ -1,11 +1,17 @@
 ---
-import { Content as Portfolio } from './Portfolio.md';
+import { getPortfolioEntries } from '../../collection';
+
+const entries = await getPortfolioEntries();
+
+const content = await Promise.all(
+  entries.map(async (entry) => (await entry.render()).Content)
+);
 ---
 
-<div class="w-full lg:my-8">
+<div class="w-full md:my-8">
   <h2 class="frontpage-heading">Portfolio</h2>
 
   <div class="prose-portfolio mx-auto">
-    <Portfolio />
+    {content.map((Content) => <Content />)}
   </div>
 </div>

@@ -1,12 +1,12 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { getEntries } from '../../collection';
+import { getRecipes } from '../../collection';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navigation from '../../components/Navigation.astro';
-import PostHeading from '../../components/PostHeading.astro';
+import RecipeHeading from '../../components/RecipeHeading.astro';
 
 export async function getStaticPaths() {
-  const entries = await getEntries();
+  const entries = await getRecipes();
 
   const paths = entries.map((entry) => {
     return {
@@ -21,24 +21,24 @@ export async function getStaticPaths() {
 }
 
 interface Props {
-  entry: CollectionEntry<'post'>;
+  entry: CollectionEntry<'recipe'>;
 }
 
 const { entry } = Astro.props;
 
-const post = entry.data;
+const recipe = entry.data;
 
 const { Content } = await entry.render();
 ---
 
-<BaseLayout title={post.title}>
+<BaseLayout title={recipe.title}>
   <Navigation showHome />
   <main class="flex flex-col items-center">
-    <div class="px-3 lg:px-0 w-full max-w-[65ch]">
-      <article class="py-8 lg:pt-16">
-        <PostHeading post={post} />
+    <div class="px-3 md:px-0 w-full max-w-[65ch]">
+      <article class="py-8 md:pt-16">
+        <RecipeHeading recipe={recipe} />
         <div class="pt-8 prose-custom">
-          <h1 class="text-3xl">{post.title}</h1>
+          <h1 class="text-3xl">{recipe.title}</h1>
 
           <Content />
         </div>

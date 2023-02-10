@@ -1,34 +1,46 @@
 ---
+import { getTimelineEntries } from '../../collection';
 import CardLogo from '../Card/CardLogo.astro';
 import TimelineEntry from './TimelineEntry.astro';
+
+const entries = await getTimelineEntries();
+
+const dataWithContent = await Promise.all(
+  entries.map(async (entry) => ({
+    ...entry.data,
+    content: (await entry.render()).Content,
+  }))
+);
 ---
 
-<div class="w-full lg:my-8">
+<div class="w-full md:my-8">
   <h2 class="frontpage-heading">Timeline</h2>
 
   <div class="w-full float-right">
-    <TimelineEntry>
-      <div class="flex flex-col items-center">
-        <CardLogo src="timeline/auas" name="AUAS" dark png />
+    {
+      dataWithContent.map((dwc) => (
+        <TimelineEntry>
+          <div class="flex flex-col items-center">
+            {dwc.logo && (
+              <CardLogo
+                src={dwc.logo}
+                name={dwc.name!}
+                dark={dwc.dark}
+                png={dwc.png}
+              />
+            )}
 
-        <h3 class="text-xl font-semibold mx-auto mt-4">2021-2023</h3>
+            <h3 class="mx-auto mt-4 text-xl font-semibold">
+              {dwc.dateStart} - {dwc.dateEnd ?? 'Now'}
+            </h3>
 
-        <div class="prose-timeline">
-          <p>Associate Degree in Software Development, consisting of:</p>
-
-          <ul>
-            <li>TypeScript</li>
-            <li>MySQL</li>
-            <li>Unit and integration testing</li>
-            <li>NodeJS</li>
-            <li>Express</li>
-            <li>Angular</li>
-            <li>Laravel</li>
-            <li>Agile and SCRUM</li>
-          </ul>
-        </div>
-      </div>
-    </TimelineEntry>
+            <div class="prose-timeline">
+              <dwc.content />
+            </div>
+          </div>
+        </TimelineEntry>
+      ))
+    }
   </div>
 </div>
 

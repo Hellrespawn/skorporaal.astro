@@ -4,20 +4,20 @@ import type { CollectionEntry } from 'astro:content';
 import { showRecipes } from '../stores/recipe.store';
 
 defineProps<{
-  entries: CollectionEntry<'post'>[];
+  entries: CollectionEntry<'recipe'>[];
 }>();
 
 const $showRecipes = useStore(showRecipes);
 </script>
 
 <template>
-  <section v-if="$showRecipes" class="w-full lg:my-8">
+  <section v-if="$showRecipes" class="md:my-8">
     <h2 class="frontpage-heading">Recipes</h2>
 
-    <div class="prose-custom">
+    <div class="prose-custom mx-auto">
       <ul>
         <li v-for="entry of entries" :key="entry.id">
-          <a :href="`/posts/${entry.slug}`">{{ entry.data.title }}</a>
+          <a :href="`/recipe/${entry.slug}`">{{ entry.data.title }}</a>
         </li>
       </ul>
     </div>
