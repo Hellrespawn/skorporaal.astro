@@ -16,6 +16,8 @@ export const recipeSchema = draftSchema.merge(
 
 export const portfolioSchema = draftSchema.merge(
   z.object({
+    name: z.string(),
+    source: z.string(),
     weight: z.number().default(0),
   })
 );
@@ -75,11 +77,11 @@ export async function getTimelineEntries(): Promise<
 }
 
 export async function getSkillEntries(): Promise<{
-  langEntries: CollectionEntry<'skill'>[];
-  techEntries: CollectionEntry<'skill'>[];
-  otherEntries: CollectionEntry<'skill'>[];
+  langEntries: CollectionEntry<'skills'>[];
+  techEntries: CollectionEntry<'skills'>[];
+  otherEntries: CollectionEntry<'skills'>[];
 }> {
-  let entries = await getCollection('skill', defaultFilter);
+  let entries = await getCollection('skills', defaultFilter);
 
   entries = entries.sort((left, right) => left.data.weight - right.data.weight);
 

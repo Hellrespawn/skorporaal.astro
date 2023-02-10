@@ -10,5 +10,5 @@ export const collections = {
   recipe: defineCollection({ schema: recipeSchema }),
   portfolio: defineCollection({ schema: portfolioSchema }),
   timeline: defineCollection({ schema: timelineSchema }),
-  skill: defineCollection({ schema: skillSchema }),
+  skills: defineCollection({ schema: skillSchema }),
 };

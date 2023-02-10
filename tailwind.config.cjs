@@ -4,7 +4,10 @@ const colors = require('tailwindcss/colors');
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   plugins: [require('@tailwindcss/typography')],
-  content: ['./src/**/*.{astro,vue,css,json,ts}'],
+  content: [
+    './src/**/*.{astro,vue,css,json,ts}',
+    './src/content/skills/**/*.md',
+  ],
   darkMode: 'class',
   theme: {
     keyframes: {

@@ -1,11 +1,11 @@
 ---
 import Image from '../Image.astro';
-import Card from '../Card/Card.astro';
+import Card from '../Card.astro';
 import type { CollectionEntry } from 'astro:content';
 
 export interface Props {
   side?: 'left' | 'right';
-  entry: CollectionEntry<'skill'>;
+  entry: CollectionEntry<'skills'>;
 }
 
 const { entry, side = 'left' } = Astro.props as Props;

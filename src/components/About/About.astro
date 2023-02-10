@@ -1,18 +1,22 @@
 ---
 import Links from './Links.astro';
-import Photograph from './Photograph.astro';
 import { Content as About } from './About.md';
+import { SITE_DATA } from '../../data';
 ---
 
 <div>
   <div
-    class="flex flex-col items-start flex-shrink-0 float-left mr-4 md:mr-8 border-y border-r border-gray-200 dark:border-gray-900 rounded-r-xl overflow-hidden"
+    class="w-36 md:w-48 flex flex-col float-left mt-8 md:mt-0 mr-4 md:mr-8 border-y border-r border-gray-200 dark:border-gray-900 rounded-r-xl overflow-hidden"
   >
-    <Photograph />
+    <img
+      alt={SITE_DATA.name}
+      src="/assets/photograph.jpg"
+      class="object-cover contrast-125 brightness-90"
+    />
     <Links />
   </div>
 
-  <div class="prose-custom mx-auto">
+  <div class="prose-custom mx-auto px-2 md:px-0">
     <About />
   </div>
 </div>

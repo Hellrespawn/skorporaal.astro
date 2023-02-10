@@ -5,12 +5,10 @@ import TimelineEntry from './TimelineEntry.astro';
 const entries = await getTimelineEntries();
 ---
 
-<div class="w-full md:my-8">
+<div class="w-full my-4 md:my-8">
   <h2 class="frontpage-heading">Timeline</h2>
 
-  <div class="w-full float-right">
-    {entries.map((entry) => <TimelineEntry entry={entry} />)}
-  </div>
+  {entries.map((entry) => <TimelineEntry entry={entry} />)}
 </div>
 
 <!-- <h2 class="frontpage-heading">Recipes</h2>

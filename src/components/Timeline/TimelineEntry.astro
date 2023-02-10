@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import Card from '../Card/Card.astro';
-import CardLogo from '../Card/CardLogo.astro';
+import Card from '../Card.astro';
+import Image from '../Image.astro';
 import Line from './Line.astro';
 
 interface Props {
@@ -18,7 +18,7 @@ const dateStart = data.dateStart ?? 'A long time ago';
 const dateEnd = data.dateEnd ?? 'Now';
 ---
 
-<div class="flex flex-row items-stretch justify-between">
+<div class="flex flex-row justify-between w-full">
   <Line />
 
   <Card side="right" class="w-full my-8 p-4">
@@ -28,11 +28,12 @@ const dateEnd = data.dateEnd ?? 'Now';
       >
         {
           data.logo && (
-            <CardLogo
+            <Image
               src={data.logo}
-              name={data.name!}
+              name={data.name}
               dark={data.dark}
               png={data.png}
+              class="h-full max-h-12"
             />
           )
         }

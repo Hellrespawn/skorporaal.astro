@@ -1,7 +1,7 @@
 ---
+name: MarkOTD
+source: https://github.com/Hellrespawn/markotd
 weight: 1
 ---
 
-- [MarkOTD](https://github.com/Hellrespawn/markotd)
-
-  A MarkDown inspired MOTD for the command line. Built with [Rust](https://www.rust-lang.org/).
+A MarkDown inspired MOTD for the command line. Built with [Rust](https://www.rust-lang.org/).

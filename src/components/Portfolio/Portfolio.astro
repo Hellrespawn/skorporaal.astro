@@ -1,17 +1,12 @@
 ---
 import { getPortfolioEntries } from '../../collection';
+import PortfolioEntry from './PortfolioEntry.astro';
 
 const entries = await getPortfolioEntries();
-
-const content = await Promise.all(
-  entries.map(async (entry) => (await entry.render()).Content)
-);
 ---
 
-<div class="w-full md:my-8">
+<div class="w-full my-4 md:my-8">
   <h2 class="frontpage-heading">Portfolio</h2>
 
-  <div class="prose-portfolio mx-auto">
-    {content.map((Content) => <Content />)}
-  </div>
+  {entries.map((entry) => <PortfolioEntry entry={entry} />)}
 </div>

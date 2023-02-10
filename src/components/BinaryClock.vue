@@ -43,8 +43,8 @@ onUnmounted(() => {
         :bg="
           // largest to smallest
           number & (1 << (expectedBits - bit))
-            ? 'bg-secondary-500 dark:bg-primary-500'
-            : 'bg-gray-200 dark:bg-gray-800'
+            ? 'bg-secondary-300 dark:bg-primary-500'
+            : 'bg-gray-400 dark:bg-gray-800'
         "
       />
     </div>
