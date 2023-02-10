@@ -1,49 +1,65 @@
 import { CollectionEntry, getCollection, z } from 'astro:content';
 import partition from 'lodash-es/partition';
 
-export const recipeSchema = z.object({
-  title: z.string(),
-  authors: z.array(z.string()).default(['Stef Korporaal']),
-  date: z.date().optional(),
-  updated: z.date().optional(),
+export const draftSchema = z.object({
+  draft: z.boolean().default(false),
 });
 
-export const portfolioSchema = z.object({
-  weight: z.number().default(0),
-});
+export const recipeSchema = draftSchema.merge(
+  z.object({
+    title: z.string(),
+    authors: z.array(z.string()).default(['Stef Korporaal']),
+    date: z.date().optional(),
+    updated: z.date().optional(),
+  })
+);
 
-export const timelineSchema = z.object({
-  dateStart: z.number(),
-  dateEnd: z.number().optional(),
-  logo: z
-    .string()
-    .transform((logo) => 'timeline/' + logo)
-    .optional(),
-  name: z.string().optional(),
-  dark: z.boolean().default(false),
-  png: z.boolean().default(false),
-});
+export const portfolioSchema = draftSchema.merge(
+  z.object({
+    weight: z.number().default(0),
+  })
+);
 
-export const skillSchema = z.object({
-  logo: z.string().transform((logo) => 'skills/' + logo),
-  name: z.string(),
-  category: z.enum(['lang', 'tech', 'other']),
-  padding: z.enum(['p-0', 'p-1', 'p-2', 'p-4']).default('p-2'),
-  dark: z.boolean().default(false),
-  png: z.boolean().default(false),
-  weight: z.number().default(0),
-});
+export const timelineSchema = draftSchema.merge(
+  z.object({
+    dateStart: z.number().optional(),
+    dateEnd: z.number().optional(),
+    logo: z
+      .string()
+      .transform((logo) => 'timeline/' + logo)
+      .optional(),
+    name: z.string(),
+    dark: z.boolean().default(false),
+    png: z.boolean().default(false),
+  })
+);
+
+export const skillSchema = draftSchema.merge(
+  z.object({
+    logo: z.string().transform((logo) => 'skills/' + logo),
+    name: z.string(),
+    category: z.enum(['lang', 'tech', 'other']),
+    padding: z.enum(['p-0', 'p-1', 'p-2', 'p-3', 'p-4']).default('p-2'),
+    dark: z.boolean().default(false),
+    png: z.boolean().default(false),
+    weight: z.number().default(0),
+  })
+);
 
 export type Recipe = z.infer<typeof recipeSchema>;
 
+function defaultFilter(entry: { data: { draft: boolean } }): boolean {
+  return !entry.data.draft;
+}
+
 export function getRecipes(): Promise<CollectionEntry<'recipe'>[]> {
-  return getCollection('recipe');
+  return getCollection('recipe', defaultFilter);
 }
 
 export async function getPortfolioEntries(): Promise<
   CollectionEntry<'portfolio'>[]
 > {
-  const entries = await getCollection('portfolio');
+  const entries = await getCollection('portfolio', defaultFilter);
 
   return entries.sort((left, right) => left.data.weight - right.data.weight);
 }
@@ -51,11 +67,11 @@ export async function getPortfolioEntries(): Promise<
 export async function getTimelineEntries(): Promise<
   CollectionEntry<'timeline'>[]
 > {
-  const entries = await getCollection('timeline');
+  const entries = await getCollection('timeline', defaultFilter);
 
-  // TODO sort timeline entries
-
-  return entries;
+  return entries.sort(
+    (left, right) => (left.data.dateStart ?? 0) - (right.data.dateStart ?? 0)
+  );
 }
 
 export async function getSkillEntries(): Promise<{
@@ -63,7 +79,7 @@ export async function getSkillEntries(): Promise<{
   techEntries: CollectionEntry<'skill'>[];
   otherEntries: CollectionEntry<'skill'>[];
 }> {
-  let entries = await getCollection('skill');
+  let entries = await getCollection('skill', defaultFilter);
 
   entries = entries.sort((left, right) => left.data.weight - right.data.weight);
 

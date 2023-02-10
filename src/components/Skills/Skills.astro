@@ -1,24 +1,8 @@
 ---
-import type { CollectionEntry } from 'astro:content';
 import { getSkillEntries } from '../../collection';
 import Skill from './Skill.astro';
 
-const { langEntries, techEntries, otherEntries } = await getSkillEntries();
-
-const langDataWithContent = await getDataWithContent(langEntries);
-
-const techDataWithContent = await getDataWithContent(techEntries);
-
-const otherDataWithContent = await getDataWithContent(otherEntries);
-
-async function getDataWithContent(entries: CollectionEntry<'skill'>[]) {
-  return Promise.all(
-    entries.map(async (entry) => ({
-      ...entry.data,
-      content: (await entry.render()).Content,
-    }))
-  );
-}
+const { langEntries, techEntries } = await getSkillEntries();
 ---
 
 <div class="flex flex-col gap-8 md:my-8">
@@ -27,40 +11,12 @@ async function getDataWithContent(entries: CollectionEntry<'skill'>[]) {
   <div>
     <h3 class="text-xl text-center font-semibold">Languages & Frameworks</h3>
 
-    {
-      langDataWithContent.map((dwc) => (
-        <Skill
-          src={dwc.logo}
-          name={dwc.name}
-          dark={dwc.dark}
-          png={dwc.png}
-          class={dwc.padding}
-        >
-          <dwc.content />
-        </Skill>
-      ))
-    }
+    {langEntries.map((entry) => <Skill entry={entry} />)}
   </div>
 
   <div>
     <h3 class="text-xl text-center font-semibold">Technologies</h3>
 
-    <Skill src="skills/linux" name="Linux" class="p-3">
-      Free as in speech.
-    </Skill>
-
-    <Skill src="skills/git" name="Git & GitLab" dark png class="p-2">
-      Version control and CI/CD
-    </Skill>
-
-    <Skill src="skills/mysql" name="MySQL" png>My SQL could be your SQL.</Skill>
-
-    <Skill src="skills/docker" name="Docker" png>
-      Portable development and deployment.
-    </Skill>
-
-    <Skill src="skills/shell" name="Shell scripting" dark>
-      Like herding <code>cat</code>s.
-    </Skill>
+    {techEntries.map((entry) => <Skill side="right" entry={entry} />)}
   </div>
 </div>

@@ -1,5 +1,6 @@
 ---
 import Footer from '../components/Footer.astro';
+import Glow from '../components/Glow.astro';
 import Head from '../components/Head.astro';
 
 export interface Props {
@@ -22,5 +23,6 @@ const { title } = Astro.props as Props;
       <slot />
     </main>
     <Footer />
+    <Glow />
   </body>
 </html>

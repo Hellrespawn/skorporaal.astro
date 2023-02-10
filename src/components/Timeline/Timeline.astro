@@ -1,46 +1,15 @@
 ---
 import { getTimelineEntries } from '../../collection';
-import CardLogo from '../Card/CardLogo.astro';
 import TimelineEntry from './TimelineEntry.astro';
 
 const entries = await getTimelineEntries();
-
-const dataWithContent = await Promise.all(
-  entries.map(async (entry) => ({
-    ...entry.data,
-    content: (await entry.render()).Content,
-  }))
-);
 ---
 
 <div class="w-full md:my-8">
   <h2 class="frontpage-heading">Timeline</h2>
 
   <div class="w-full float-right">
-    {
-      dataWithContent.map((dwc) => (
-        <TimelineEntry>
-          <div class="flex flex-col items-center">
-            {dwc.logo && (
-              <CardLogo
-                src={dwc.logo}
-                name={dwc.name!}
-                dark={dwc.dark}
-                png={dwc.png}
-              />
-            )}
-
-            <h3 class="mx-auto mt-4 text-xl font-semibold">
-              {dwc.dateStart} - {dwc.dateEnd ?? 'Now'}
-            </h3>
-
-            <div class="prose-timeline">
-              <dwc.content />
-            </div>
-          </div>
-        </TimelineEntry>
-      ))
-    }
+    {entries.map((entry) => <TimelineEntry entry={entry} />)}
   </div>
 </div>
 

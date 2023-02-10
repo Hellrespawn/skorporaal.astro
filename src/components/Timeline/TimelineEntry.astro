@@ -1,12 +1,52 @@
 ---
+import type { CollectionEntry } from 'astro:content';
 import Card from '../Card/Card.astro';
+import CardLogo from '../Card/CardLogo.astro';
 import Line from './Line.astro';
+
+interface Props {
+  entry: CollectionEntry<'timeline'>;
+}
+
+const { entry } = Astro.props;
+
+const data = entry.data;
+const { Content } = await entry.render();
+
+const dateStart = data.dateStart ?? 'A long time ago';
+
+const dateEnd = data.dateEnd ?? 'Now';
 ---
 
 <div class="flex flex-row items-stretch justify-between">
   <Line />
 
-  <Card side="right" class="w-full my-8 px-4 py-8">
-    <slot />
+  <Card side="right" class="w-full my-8 p-4">
+    <div class="flex flex-col items-center w-full">
+      <div
+        class="flex flex-col md:flex-row justify-between items-center w-full gap-6 md:gap-0"
+      >
+        {
+          data.logo && (
+            <CardLogo
+              src={data.logo}
+              name={data.name!}
+              dark={data.dark}
+              png={data.png}
+            />
+          )
+        }
+
+        {!data.logo && <h3 class="font-mono text-2xl">{data.name}</h3>}
+
+        <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300">
+          {dateStart} - {dateEnd}
+        </h3>
+      </div>
+
+      <div class="prose-timeline">
+        <Content />
+      </div>
+    </div>
   </Card>
 </div>

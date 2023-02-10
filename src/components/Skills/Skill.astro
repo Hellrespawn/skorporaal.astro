@@ -1,33 +1,36 @@
 ---
 import Image from '../Image.astro';
 import Card from '../Card/Card.astro';
+import type { CollectionEntry } from 'astro:content';
 
 export interface Props {
-  src: string;
-  name: string;
-  class?: string;
-  dark?: boolean;
-  png?: boolean;
+  side?: 'left' | 'right';
+  entry: CollectionEntry<'skill'>;
 }
 
-const {
-  src,
-  name,
-  class: classes = '',
-  dark = false,
-  png = false,
-} = Astro.props as Props;
+const { entry, side = 'left' } = Astro.props as Props;
+
+const data = entry.data;
+const { Content } = await entry.render();
+
+const direction = side === 'left' ? 'flex-row' : 'flex-row-reverse';
 ---
 
-<div class="my-4 flex flex-row items-center">
-  <Card class={`w-20 h-20 flex-shrink-0 ${classes}`}>
-    <Image src={src} name={name} dark={dark} png={png} class="w-full h-full" />
+<div class={`my-4 flex items-center ${direction}`}>
+  <Card side={side} class={`w-20 h-20 flex-shrink-0 ${data.padding}`}>
+    <Image
+      src={data.logo}
+      name={data.name}
+      dark={data.dark}
+      png={data.png}
+      class="w-full h-full"
+    />
   </Card>
 
   <div class="flex-grow pl-4 pr-2">
-    <h3 class="text-lg font-semibold">{name}</h3>
+    <h3 class="text-lg font-semibold">{data.name}</h3>
     <div class="text-gray-700 dark:text-gray-200">
-      <slot />
+      <Content />
     </div>
   </div>
 </div>

@@ -7,11 +7,14 @@
     @apply prose prose-lg prose-zinc prose-teal dark:prose-invert prose-blockquote:border-secondary-200 prose-pre:whitespace-pre-wrap dark:prose-blockquote:border-primary-700;
   }
 
-  .prose-custom a {
-    @apply text-gray-700 no-underline dark:text-gray-300;
+  .prose-custom {
+    @apply prose-a:text-gray-700 prose-a:no-underline prose-a:dark:text-gray-300;
   }
 
-  .prose-custom a:not([class*='footnote']) {
+  .prose-custom
+    :where(a):not(:where([class~='not-prose'] *)):not(
+      :where([class*='footnote'] *)
+    ) {
     @apply fancy-link;
   }
 
