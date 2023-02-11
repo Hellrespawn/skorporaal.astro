@@ -28,7 +28,7 @@ module.exports = {
         secondary: colors.amber,
         tertiary: colors.emerald,
         quaternary: colors.rose,
-        gray: colors.zinc,
+        gray: colors.neutral,
       },
       fontFamily: {
         sans: ['"Nunito"', ...defaultTheme.fontFamily.sans],

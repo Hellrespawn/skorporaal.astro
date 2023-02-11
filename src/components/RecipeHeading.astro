@@ -13,10 +13,12 @@ const dateFormatter = DateFormatter.getFormatter('long');
 const formattedDate = dateFormatter.formatDate(recipe);
 ---
 
-<div class="text-sm text-secondary-500">Recipe</div>
+<div class="text-sm font-semibold text-tertiary-500 dark:text-primary-500">
+  Recipe
+</div>
 <!-- Heading with border -->
 <div
-  class="border-secondary-500 flex flex-row flex-wrap-reverse items-center justify-between border-t-2 gap-x-4"
+  class="border-tertiary-500 dark:border-primary-500 flex flex-row flex-wrap-reverse items-center justify-between border-t-2 gap-x-4"
 >
   <!-- Date -->
   <span class="text-gray-400 dark:text-gray-500">{formattedDate}</span>
