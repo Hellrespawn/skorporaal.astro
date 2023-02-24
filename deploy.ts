@@ -52,17 +52,17 @@ async function checkSitePath(): Promise<void> {
 }
 
 async function rename404(): Promise<void> {
-  PRINTER.log("Renaming '404.html' to '404.shtml'...");
-  const src = path.join(LOCAL_DIR!, '404.html');
-  const tgt = path.join(LOCAL_DIR!, '404.shtml');
-  await fs.rename(src, tgt);
+  // PRINTER.log("Renaming '404.html' to '404.shtml'...");
+  // const src = path.join(LOCAL_DIR!, '404.html');
+  // const tgt = path.join(LOCAL_DIR!, '404.shtml');
+  // await fs.rename(src, tgt);
 }
 
 async function undo404(): Promise<void> {
-  PRINTER.log("Renaming '404.shtml' to '404.html'...");
-  const src = path.join(LOCAL_DIR!, '404.shtml');
-  const tgt = path.join(LOCAL_DIR!, '404.html');
-  await fs.rename(src, tgt);
+  // PRINTER.log("Renaming '404.shtml' to '404.html'...");
+  // const src = path.join(LOCAL_DIR!, '404.shtml');
+  // const tgt = path.join(LOCAL_DIR!, '404.html');
+  // await fs.rename(src, tgt);
 }
 
 async function main(): Promise<void> {
@@ -78,9 +78,9 @@ async function main(): Promise<void> {
     await checkSitePath();
 
     await client.access({
-      host: HOSTNAME,
-      user: USERNAME,
-      password: PASSWORD,
+      host: HOSTNAME!,
+      user: USERNAME!,
+      password: PASSWORD!,
     });
 
     PRINTER.log('Connected to FTP...');
