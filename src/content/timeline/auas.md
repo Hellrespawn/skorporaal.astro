@@ -11,6 +11,6 @@ Associate Degree in Software Development, consisting of:
 
 - Full-stack web development with TypeScript, NodeJS/Express, Angular, MySQL and GitLab
 - Backend development with PHP, Laravel, MySQL and Docker
-- Learning about interpreters/compiles with Rust (elective)
+- Learning about and building interpreters/compilers with Rust (elective)
 - Unit and integration testing
 - Agile and SCRUM
