@@ -44,4 +44,4 @@ Calorieën per kom: $${1761 \over 8} = 220 {1 \over 8} kcal$$
 
 1. Voeg de room, melk, en basilicum toe. Laat de soep nog 10 minuten pruttelen zonder te koken.
 
-1. Voeg fijngehakte peterselie toe. Voeg de madeira en peper en zout naar smaak toe. Voeg indien nodig melk toe om te verdunnen.
+1. Voeg fijngehakte peterselie toe. Voeg peper en zout naar smaak toe. Voeg indien nodig melk toe om te verdunnen.
