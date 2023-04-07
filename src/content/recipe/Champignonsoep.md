@@ -19,7 +19,8 @@ Dit is een aangepaste versie van [dit recept](https://coelasquid.tumblr.com/post
 | 250ml     | kookroom           |   512 |
 | 150ml     | melk               |   135 |
 | 400ml     | rundvleesbouillon  |       |
-| handjevol | peterselie         |       |
+|           | droge basilicum    |       |
+| handjevol | platte peterselie  |       |
 | 1 tl      | worcestershiresaus |       |
 |           | totaal:            |  1761 |
 
@@ -41,6 +42,6 @@ Calorieën per kom: $${1761 \over 8} = 220 {1 \over 8} kcal$$
 
 1. Breng aan de kook, verlaag de hitte en laat het 5 tot 10 minuten pruttelen om in te dikken.
 
-1. Voeg de room, melk, basilicum. Laat de soep nog 10 minuten pruttelen zonder te koken.
+1. Voeg de room, melk, en basilicum toe. Laat de soep nog 10 minuten pruttelen zonder te koken.
 
 1. Voeg fijngehakte peterselie toe. Voeg de madeira en peper en zout naar smaak toe. Voeg indien nodig melk toe om te verdunnen.
