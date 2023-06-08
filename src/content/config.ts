@@ -7,8 +7,8 @@ import {
 } from '../collection';
 
 export const collections = {
-  recipe: defineCollection({ schema: recipeSchema }),
-  portfolio: defineCollection({ schema: portfolioSchema }),
-  timeline: defineCollection({ schema: timelineSchema }),
-  skills: defineCollection({ schema: skillSchema }),
+  recipe: defineCollection({ type: 'content', schema: recipeSchema }),
+  portfolio: defineCollection({ type: 'content', schema: portfolioSchema }),
+  timeline: defineCollection({ type: 'content', schema: timelineSchema }),
+  skills: defineCollection({ type: 'content', schema: skillSchema }),
 };
