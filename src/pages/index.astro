@@ -13,6 +13,8 @@ export interface Props {
   title: string;
 }
 
+// TODO Check changes since astro 2.0
+
 const { title } = Astro.props as Props;
 
 const entries = await getRecipes();

@@ -11,6 +11,7 @@ Associate Degree in Software Development, consisting of:
 
 - Full-stack web development with TypeScript, NodeJS/Express, Angular, MySQL and GitLab
 - Backend development with PHP, Laravel, MySQL and Docker
-- Learning about and building interpreters/compilers with Rust (elective)
 - Unit and integration testing
 - Agile and SCRUM
+- Learning about building interpreters/compilers with Rust (elective)
+- Internship at [IRP](https://irp.nl/), working full-stack on [BIMKeeper](https://bimkeeper.com/)
