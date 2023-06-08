@@ -5,7 +5,7 @@ const colors = require('tailwindcss/colors');
 module.exports = {
   plugins: [require('@tailwindcss/typography')],
   content: [
-    './src/**/*.{astro,vue,css,json,ts}',
+    './src/**/*.{astro,css,json,ts,tsx}',
     './src/content/skills/**/*.md',
   ],
   darkMode: 'class',

@@ -8,7 +8,6 @@
     "./node_modules/prettier-plugin-tailwindcss"
   ],
   "overrides": [
-    { "files": "*.astro", "options": { "parser": "astro" } },
-    { "files": "*.vue", "options": { "parser": "vue" } }
+    { "files": "*.astro", "options": { "parser": "astro" } }
   ]
 }

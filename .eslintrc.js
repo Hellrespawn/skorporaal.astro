@@ -5,17 +5,6 @@ module.exports = {
   },
   overrides: [
     {
-      files: './src/**/*.vue',
-      extends: [
-        'plugin:vue/vue3-essential',
-        'plugin:vue/vue3-strongly-recommended',
-        'plugin:vue/vue3-recommended',
-        'eslint:recommended',
-        '@vue/eslint-config-typescript/recommended',
-        '@vue/eslint-config-prettier',
-      ],
-    },
-    {
       files: './src/**/*.ts',
       extends: [
         'eslint:recommended',
@@ -24,6 +13,8 @@ module.exports = {
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
         'eslint-config-prettier',
         'plugin:@typescript-eslint/strict',
+        'plugin:react-hooks/recommended',
+        'prettier',
       ],
       parser: '@typescript-eslint/parser',
       parserOptions: {

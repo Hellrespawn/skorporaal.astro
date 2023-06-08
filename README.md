@@ -2,7 +2,7 @@
 
 This repo holds my personal site and cookbook. More information about the site, including attribution, can be found in `./src/content/portfolio/skorporaal.com.md` or on the live version on [skorporaal.com](https://skorporaal.com/portfolio/skorporaalcom/).
 
-This repository is public for the purposes of demonstration and education. Much of it is geared specifically to my personal use case and it should not be considered a template or a starter.
+This repository is public for the purposes of demonstration and education. Much of it is geared specifically to my personal use case and it should not be considered a template or a project starter.
 
 ## License & Copyright
 

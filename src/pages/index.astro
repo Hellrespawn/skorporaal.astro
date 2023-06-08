@@ -3,7 +3,7 @@ import { getRecipes } from '../collection';
 import About from '../components/About/About.astro';
 import Navigation from '../components/Navigation.astro';
 import Portfolio from '../components/Portfolio/Portfolio.astro';
-import RecipesComponent from '../components/RecipesComponent.vue';
+import RecipesWrapper from '../components/RecipesWrapper';
 import Skills from '../components/Skills/Skills.astro';
 import Timeline from '../components/Timeline/Timeline.astro';
 import Title from '../components/Title.astro';
@@ -31,5 +31,5 @@ const entries = await getRecipes();
 
   <Skills />
 
-  <RecipesComponent entries={entries} client:only="vue" />
+  <RecipesWrapper entries={entries} client:only="react" />
 </BaseLayout>

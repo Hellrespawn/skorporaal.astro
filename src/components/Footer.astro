@@ -1,7 +1,7 @@
 ---
 import { SITE_DATA } from '../data';
 import { DateFormatter } from '../date';
-import BinaryClock from './BinaryClock.vue';
+import BinaryClock from './BinaryClock';
 import Button from './Button.astro';
 
 const formatter = DateFormatter.getFormatter('long');
@@ -30,6 +30,6 @@ const dateString = formatter.formatDateTime({ date: SITE_DATA.builtAt });
   </div>
 
   <Button interactive class="rounded-t-xl px-2 py-1 w-fit">
-    <BinaryClock client:load />
+    <BinaryClock client:only="react" />
   </Button>
 </footer>

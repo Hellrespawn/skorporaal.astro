@@ -1,9 +1,8 @@
 import { defineConfig } from 'astro/config';
-import vue from '@astrojs/vue';
-
 import rehypeExternalLinks from 'rehype-external-links';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
@@ -24,5 +23,5 @@ export default defineConfig({
       wrap: true,
     },
   },
-  integrations: [vue()],
+  integrations: [react()],
 });
