@@ -5,4 +5,4 @@ weight: 1
 draft: true
 ---
 
-TODO: A lightweight calorie-tracker.
+A lightweight calorie-tracker used as a vehicle to work with [Laravel](https://laravel.com/) on the backend and [React](https://react.dev/) on the frontend, as well as learning about [NGINX](https://www.nginx.com/) and deploy applications.

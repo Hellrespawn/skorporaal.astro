@@ -58,14 +58,16 @@ build_project() {
 }
 
 remove_old_files() {
+  echo "Removing old files..."
   ssh "$DESTINATION" rm -rf "$REMOTE_DIR/*"
 
-  echo "Removed old files..."
+  echo "Removed old files."
 }
 
 copy_new_files() {
+  echo "Copying new files..."
   scp -qr "$LOCAL_DIR"/* "$DESTINATION:$REMOTE_DIR/"
-  echo "Copied new files..."
+  echo "Copied new files."
 }
 
 check_environment_variables "DESTINATION LOCAL_DIR REMOTE_DIR"
@@ -83,5 +85,3 @@ fi
 remove_old_files
 
 copy_new_files
-
-echo "Done."
