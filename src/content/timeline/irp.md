@@ -5,4 +5,6 @@ name: 'IRP'
 png: true
 ---
 
-After my internship, I was offered a job and am now working as a developer at [IRP](https://irp.nl/).
+As part of my Associate Degree I did an internship at [IRP](https://irp.nl/), working full-stack with Java, Spring and React on administrative dashboards.
+
+After my internship, I was offered a job and am now working full-time as a developer at on [BIMKeeper](https://bimkeeper.com/), a web-based building management system with advanced 3D IFC viewer.

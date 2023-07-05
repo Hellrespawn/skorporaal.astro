@@ -14,4 +14,3 @@ Associate Degree in Software Development, consisting of:
 - Unit and integration testing
 - Agile and SCRUM
 - Learning about building interpreters/compilers with Rust (elective)
-- Internship at [IRP](https://irp.nl/), working full-stack on [BIMKeeper](https://bimkeeper.com/) using Java, Spring and React
