@@ -7,7 +7,7 @@ dark: true
 png: true
 ---
 
-Associate Degree in Software Development, consisting of:
+Associate Degree in Software Development (cum laude), consisting of:
 
 - Full-stack web development with TypeScript, NodeJS/Express, Angular, MySQL and GitLab
 - Backend development with PHP, Laravel, MySQL and Docker
