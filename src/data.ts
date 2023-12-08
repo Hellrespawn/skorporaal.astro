@@ -8,7 +8,6 @@ export const SITE_DATA = {
   url: 'skorporaal.com',
   email: 'stef@skorporaal.com',
   github: 'https://github.com/Hellrespawn',
-  linkedin: 'https://linkedin.com',
-  twitter: 'https://twitter.com/StefKorporaal',
+  linkedin: 'https://www.linkedin.com/in/stef-korporaal-52b412168/',
   builtAt: new Date(),
 };
