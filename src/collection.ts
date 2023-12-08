@@ -1,4 +1,4 @@
-import { CollectionEntry, getCollection, z } from 'astro:content';
+import { type CollectionEntry, getCollection, z } from 'astro:content';
 import partition from 'lodash-es/partition';
 
 export const draftSchema = z.object({
