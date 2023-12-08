@@ -5,17 +5,17 @@ import Skill from './Skill.astro';
 const { langEntries, techEntries } = await getSkillEntries();
 ---
 
-<div class="flex flex-col gap-8 my-4 md:my-8">
+<div class="my-4 flex flex-col gap-8 md:my-8">
   <h2 class="frontpage-heading">My skills</h2>
 
   <div>
-    <h3 class="text-xl text-center font-semibold">Languages & Frameworks</h3>
+    <h3 class="text-center text-xl font-semibold">Languages & Frameworks</h3>
 
     {langEntries.map((entry) => <Skill entry={entry} />)}
   </div>
 
   <div>
-    <h3 class="text-xl text-center font-semibold">Technologies</h3>
+    <h3 class="text-center text-xl font-semibold">Technologies</h3>
 
     {techEntries.map((entry) => <Skill side="right" entry={entry} />)}
   </div>

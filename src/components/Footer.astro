@@ -10,10 +10,10 @@ const dateString = formatter.formatDateTime({ date: SITE_DATA.builtAt });
 ---
 
 <footer
-  class="flex flex-col items-center text-gray-400 bg-gray-100 dark:bg-gray-700 dark:text-gray-400"
+  class="flex flex-col items-center bg-gray-100 text-gray-400 dark:bg-gray-700 dark:text-gray-400"
 >
   <div
-    class="w-full flex flex-col md:flex-row items-center justify-between px-4 gap-2 py-8"
+    class="flex w-full flex-col items-center justify-between gap-2 px-4 py-8 md:flex-row"
   >
     <div class="font-bold">
       Copyright © 2022
@@ -29,7 +29,7 @@ const dateString = formatter.formatDateTime({ date: SITE_DATA.builtAt });
     </div>
   </div>
 
-  <Button interactive class="rounded-t-xl px-2 py-1 w-fit">
+  <Button interactive class="w-fit rounded-t-xl px-2 py-1">
     <BinaryClock client:only="react" />
   </Button>
 </footer>

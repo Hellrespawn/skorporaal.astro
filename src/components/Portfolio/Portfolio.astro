@@ -5,7 +5,7 @@ import PortfolioEntry from './PortfolioEntry.astro';
 const entries = await getPortfolioEntries();
 ---
 
-<div class="w-full my-4 md:my-8">
+<div class="my-4 w-full md:my-8">
   <h2 class="frontpage-heading">Portfolio</h2>
 
   {entries.map((entry) => <PortfolioEntry entry={entry} />)}

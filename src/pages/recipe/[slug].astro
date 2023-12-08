@@ -34,10 +34,10 @@ const { Content } = await entry.render();
 <BaseLayout title={recipe.title}>
   <Navigation showHome />
   <main class="flex flex-col items-center">
-    <div class="px-3 md:px-0 w-full max-w-[65ch]">
+    <div class="w-full max-w-[65ch] px-3 md:px-0">
       <article class="py-3 md:pt-16">
         <RecipeHeading recipe={recipe} />
-        <div class="pt-8 prose-custom">
+        <div class="prose-custom pt-8">
           <h1 class="text-3xl">{recipe.title}</h1>
 
           <Content />
