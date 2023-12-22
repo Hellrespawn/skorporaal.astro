@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "astro": "astro",
+    "deploy": "./deploy.sh",
     "build:astro": "astro build",
     "check:lint": "eslint ./src",
     "check:prettier": "prettier -c ./src",
-    "deploy:ftp": "./deploy.sh",
     "format:lint": "eslint ./src --fix",
     "format:prettier": "prettier -w ./src",
     "build": "npm-run-all clean build:*",

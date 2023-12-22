@@ -8,6 +8,8 @@ export interface Props {
 
 const { recipe } = Astro.props as Props;
 
+const authors = recipe.authors.join(", ");
+
 const dateFormatter = DateFormatter.getFormatter('long');
 
 const formattedDate = dateFormatter.formatDate(recipe);
@@ -25,6 +27,6 @@ const formattedDate = dateFormatter.formatDate(recipe);
 
   <span class="italic">
     <!-- Authors -->
-    {recipe.authors}
+    {authors}
   </span>
 </div>

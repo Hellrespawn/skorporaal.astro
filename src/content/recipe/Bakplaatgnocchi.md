@@ -28,7 +28,7 @@ Calorieën per portie: $$2 {2142 \over 5} = 856.8 kcal$$
 
 ## Bereiding
 
-1. Verwarm de oven voor op 220/230 graden. Leg een vel bakpapier op een bakplaat.
+1. Verwarm de oven voor op 220/230 °C. Leg een vel bakpapier op een bakplaat.
 
 1. Snij de ui en paprika in grove plakken. Snij de champignons in vier of zes stukken. Plet en schil de knoflook. Snij (indien nodig) de cherrytomaten doormidden.
 
