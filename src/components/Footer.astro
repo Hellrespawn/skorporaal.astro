@@ -7,6 +7,8 @@ import Button from './Button.astro';
 const formatter = DateFormatter.getFormatter('long');
 
 const dateString = formatter.formatDateTime({ date: SITE_DATA.builtAt });
+
+const currentYear = SITE_DATA.builtAt.getFullYear();
 ---
 
 <footer
@@ -16,10 +18,11 @@ const dateString = formatter.formatDateTime({ date: SITE_DATA.builtAt });
     class="flex w-full flex-col items-center justify-between gap-2 px-4 py-8 md:flex-row"
   >
     <div class="font-bold">
-      Copyright © 2022
+      Copyright ©
       <a href={`mailto:${SITE_DATA.email}`} class="fancy-link"
         >{SITE_DATA.name}
       </a>
+      2022-{currentYear}
     </div>
 
     <div>
