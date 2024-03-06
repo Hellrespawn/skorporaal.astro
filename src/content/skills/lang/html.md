@@ -1,5 +1,5 @@
 ---
-category: 'lang'
+category: "lang"
 logo: html
 name: HTML
 dark: true

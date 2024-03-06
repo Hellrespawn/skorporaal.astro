@@ -1,23 +1,23 @@
 ---
-import Button from '../Button.astro';
-import Moon from '../Icons/Moon.astro';
-import Sun from '../Icons/Sun.astro';
-import ThemeToggleWrapper from './ThemeToggle';
+import Button from "../Button.astro";
+import Moon from "../Icons/Moon.astro";
+import Sun from "../Icons/Sun.astro";
+import ThemeToggleWrapper from "./ThemeToggle";
 
 export interface Props {
-  class?: string;
+    class?: string;
 }
 
 const { class: initialClasses } = Astro.props as Props;
 ---
 
 <ThemeToggleWrapper client:load>
-  <Button interactive class={initialClasses + ' cursor-pointer'}>
-    <span class="hidden rounded-3xl dark:inline">
-      <Sun />
-    </span>
-    <span class="rounded-3xl dark:hidden">
-      <Moon />
-    </span>
-  </Button>
+    <Button interactive class={initialClasses + " cursor-pointer"}>
+        <span class="hidden rounded-3xl dark:inline">
+            <Sun />
+        </span>
+        <span class="rounded-3xl dark:hidden">
+            <Moon />
+        </span>
+    </Button>
 </ThemeToggleWrapper>

@@ -1,5 +1,5 @@
 ---
-category: 'lang'
+category: "lang"
 logo: astro
 name: Astro
 dark: true

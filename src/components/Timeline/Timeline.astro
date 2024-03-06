@@ -1,13 +1,13 @@
 ---
-import { getTimelineEntries } from '../../collection';
-import TimelineEntry from './TimelineEntry.astro';
+import { getTimelineEntries } from "../../collection";
+import TimelineEntry from "./TimelineEntry.astro";
 
 const entries = await getTimelineEntries();
 ---
 
 <!-- TODO Pulse current entry in timeline -->
 <div class="my-4 w-full md:my-8">
-  <h2 class="frontpage-heading">Timeline</h2>
+    <h2 class="frontpage-heading">Timeline</h2>
 
-  {entries.map((entry) => <TimelineEntry entry={entry} />)}
+    {entries.map((entry) => <TimelineEntry entry={entry} />)}
 </div>

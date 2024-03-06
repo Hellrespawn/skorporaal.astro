@@ -1,7 +1,7 @@
 ---
 export interface Props {
-  class?: string;
-  interactive?: boolean;
+    class?: string;
+    interactive?: boolean;
 }
 
 const classes: string[] = [];
@@ -9,20 +9,20 @@ const classes: string[] = [];
 let { class: initialClasses, interactive = false } = Astro.props as Props;
 
 if (initialClasses) {
-  classes.push(initialClasses);
+    classes.push(initialClasses);
 }
 
 classes.push(
-  'bg-gray-700 text-gray-50 dark:bg-gray-200 dark:text-gray-800 border-gray-200 dark:border-gray-900'
+    "bg-gray-700 text-gray-50 dark:bg-gray-200 dark:text-gray-800 border-gray-200 dark:border-gray-900"
 );
 
 if (interactive) {
-  classes.push(
-    'hover:bg-gray-600 active:bg-gray-500 hover:dark:bg-gray-300 active:dark:bg-gray-400'
-  );
+    classes.push(
+        "hover:bg-gray-600 active:bg-gray-500 hover:dark:bg-gray-300 active:dark:bg-gray-400"
+    );
 }
 ---
 
-<div class={classes.join(' ')}>
-  <slot />
+<div class={classes.join(" ")}>
+    <slot />
 </div>

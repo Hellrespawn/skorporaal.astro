@@ -1,12 +1,12 @@
 ---
-import { getPortfolioEntries } from '../../collection';
-import PortfolioEntry from './PortfolioEntry.astro';
+import { getPortfolioEntries } from "../../collection";
+import PortfolioEntry from "./PortfolioEntry.astro";
 
 const entries = await getPortfolioEntries();
 ---
 
 <div class="my-4 w-full md:my-8">
-  <h2 class="frontpage-heading">Portfolio</h2>
+    <h2 class="frontpage-heading">Portfolio</h2>
 
-  {entries.map((entry) => <PortfolioEntry entry={entry} />)}
+    {entries.map((entry) => <PortfolioEntry entry={entry} />)}
 </div>

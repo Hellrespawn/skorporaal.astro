@@ -1,7 +1,7 @@
 ---
-title: 'Andijvie-spek Stamppot'
+title: "Andijvie-spek Stamppot"
 authors:
-  - Oma Leijen
+    - Oma Leijen
 ---
 
 ## Ingrediënten

@@ -1,22 +1,22 @@
 ---
-import Links from './Links.astro';
-import { Content as About } from './About.md';
-import { SITE_DATA } from '../../data';
+import Links from "./Links.astro";
+import { Content as About } from "./About.md";
+import { SITE_DATA } from "../../data";
 ---
 
 <div>
-  <div
-    class="float-left mr-4 mt-8 flex w-36 flex-col overflow-hidden rounded-r-xl border-y border-r border-gray-200 dark:border-gray-900 md:mr-8 md:mt-0 md:w-48"
-  >
-    <img
-      alt={SITE_DATA.name}
-      src="/assets/photograph.jpg"
-      class="object-cover brightness-90 contrast-125"
-    />
-    <Links />
-  </div>
+    <div
+        class="float-left mr-4 mt-8 flex w-36 flex-col overflow-hidden rounded-r-xl border-y border-r border-gray-200 dark:border-gray-900 md:mr-8 md:mt-0 md:w-48"
+    >
+        <img
+            alt={SITE_DATA.name}
+            src="/assets/photograph.jpg"
+            class="object-cover brightness-90 contrast-125"
+        />
+        <Links />
+    </div>
 
-  <div class="prose-custom mx-auto px-2 md:px-0">
-    <About />
-  </div>
+    <div class="prose-custom mx-auto px-2 md:px-0">
+        <About />
+    </div>
 </div>

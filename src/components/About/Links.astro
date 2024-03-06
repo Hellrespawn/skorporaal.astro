@@ -1,23 +1,23 @@
 ---
-import { SITE_DATA } from '../../data';
-import Envelope from '../Icons/Envelope.astro';
-import GitHub from '../Icons/GitHub.astro';
-import LinkedIn from '../Icons/LinkedIn.astro';
-import Link from './Link.astro';
+import { SITE_DATA } from "../../data";
+import Envelope from "../Icons/Envelope.astro";
+import GitHub from "../Icons/GitHub.astro";
+import LinkedIn from "../Icons/LinkedIn.astro";
+import Link from "./Link.astro";
 ---
 
 <div
-  class="flex flex-row items-center justify-around bg-gray-700 p-0.5 text-gray-50 dark:bg-gray-200 dark:text-gray-800"
+    class="flex flex-row items-center justify-around bg-gray-700 p-0.5 text-gray-50 dark:bg-gray-200 dark:text-gray-800"
 >
-  <Link href={SITE_DATA.github}>
-    <GitHub />
-  </Link>
+    <Link href={SITE_DATA.github}>
+        <GitHub />
+    </Link>
 
-  <Link href={SITE_DATA.linkedin}>
-    <LinkedIn />
-  </Link>
+    <Link href={SITE_DATA.linkedin}>
+        <LinkedIn />
+    </Link>
 
-  <Link href={`mailto:${SITE_DATA.email}`}>
-    <Envelope />
-  </Link>
+    <Link href={`mailto:${SITE_DATA.email}`}>
+        <Envelope />
+    </Link>
 </div>

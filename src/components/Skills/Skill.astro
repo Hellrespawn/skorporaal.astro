@@ -1,36 +1,36 @@
 ---
-import Image from '../Image.astro';
-import Card from '../Card.astro';
-import type { CollectionEntry } from 'astro:content';
+import Image from "../Image.astro";
+import Card from "../Card.astro";
+import type { CollectionEntry } from "astro:content";
 
 export interface Props {
-  side?: 'left' | 'right';
-  entry: CollectionEntry<'skills'>;
+    side?: "left" | "right";
+    entry: CollectionEntry<"skills">;
 }
 
-const { entry, side = 'left' } = Astro.props as Props;
+const { entry, side = "left" } = Astro.props as Props;
 
 const data = entry.data;
 const { Content } = await entry.render();
 
-const direction = side === 'left' ? 'flex-row' : 'flex-row-reverse';
+const direction = side === "left" ? "flex-row" : "flex-row-reverse";
 ---
 
 <div class={`my-4 flex items-center ${direction}`}>
-  <Card side={side} class={`w-20 h-20 flex-shrink-0 ${data.padding}`}>
-    <Image
-      src={data.logo}
-      name={data.name}
-      dark={data.dark}
-      png={data.png}
-      class="h-full w-full"
-    />
-  </Card>
+    <Card side={side} class={`w-20 h-20 flex-shrink-0 ${data.padding}`}>
+        <Image
+            src={data.logo}
+            name={data.name}
+            dark={data.dark}
+            png={data.png}
+            class="h-full w-full"
+        />
+    </Card>
 
-  <div class="flex-grow pl-4 pr-2">
-    <h3 class="text-lg font-semibold">{data.name}</h3>
-    <div class="text-gray-700 dark:text-gray-200">
-      <Content />
+    <div class="flex-grow pl-4 pr-2">
+        <h3 class="text-lg font-semibold">{data.name}</h3>
+        <div class="text-gray-700 dark:text-gray-200">
+            <Content />
+        </div>
     </div>
-  </div>
 </div>

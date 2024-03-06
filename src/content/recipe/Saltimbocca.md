@@ -1,7 +1,7 @@
 ---
 title: Saltimbocca met Kip of Kabeljauw
 authors:
-  - Albert Heijn
+    - Albert Heijn
 ---
 
 Dit recept is oorspronkelijk gebaseerd op een verspakket van de Albert Heijn wat niet meer verkocht wordt.
@@ -43,8 +43,8 @@ Calorieën per portie (kabeljauw): $${1898 \over  2 {1 \over 2}} = 759 \\frac{1}
 
 1. Bestrooi de filets met peper en een beetje zout.
 
-   - Bij gedroogde salie: bestrooi met salie.
-   - Bij verse salie: bedek 1 kant met hele blaadjes salie.
+    - Bij gedroogde salie: bestrooi met salie.
+    - Bij verse salie: bedek 1 kant met hele blaadjes salie.
 
 1. Wikkel ieder stuk kip in een plak rauwe ham, of elke kabeljauwfilet in twee plakken.
 

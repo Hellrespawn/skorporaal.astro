@@ -1,5 +1,5 @@
 ---
-category: 'tech'
+category: "tech"
 logo: git
 name: Git
 dark: true

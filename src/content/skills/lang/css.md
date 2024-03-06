@@ -1,5 +1,5 @@
 ---
-category: 'lang'
+category: "lang"
 logo: css
 name: CSS
 dark: true

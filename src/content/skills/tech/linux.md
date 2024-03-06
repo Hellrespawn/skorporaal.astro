@@ -1,8 +1,8 @@
 ---
-category: 'tech'
+category: "tech"
 logo: linux
 name: Linux
-padding: 'p-3'
+padding: "p-3"
 ---
 
 Free as in speech.

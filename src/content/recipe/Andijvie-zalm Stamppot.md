@@ -1,7 +1,7 @@
 ---
-title: 'Andijvie-zalm Stamppot'
+title: "Andijvie-zalm Stamppot"
 authors:
-  - Albert Heijn
+    - Albert Heijn
 ---
 
 Dit recept is een aangepaste versie van [dit recept](https://www.ah.nl/allerhande/recept/R-R1194541/andijviestamppot-met-zalm) van Albert Heijn.

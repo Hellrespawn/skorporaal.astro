@@ -1,7 +1,7 @@
 ---
 dateStart: 2023
-logo: 'irp'
-name: 'IRP'
+logo: "irp"
+name: "IRP"
 png: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Tomatensaus met Stoofvlees
 authors:
-  - SortedFood
+    - SortedFood
 ---
 
 Dit recept is geïnspireerd door verschillende recepten die ik heb gezien, maar is begonnen met een recept dat niet langer op het internet te vinden is. De aflevering "Homemade Pasta" van "SortedFood @ The Table", een samenwerking tussen Sorted en Tastemade.
@@ -14,11 +14,11 @@ Indien het gerecht in een slowcooker/snelkookpan wordt gemaakt, let dan op dat d
 
 Bijvoorbeeld:
 
-- Gebruik minder of geen bouillon
-- Vervang de bliktomaten voor nog 500g gezeefde tomaten.
-- Bestrooi het vlees voor het bakken ruimer met bloem.
-- Gebruik room in plaats van melk.
-- Dik de saus later in met bijvoorbeeld maizena of allesbinder.
+-   Gebruik minder of geen bouillon
+-   Vervang de bliktomaten voor nog 500g gezeefde tomaten.
+-   Bestrooi het vlees voor het bakken ruimer met bloem.
+-   Gebruik room in plaats van melk.
+-   Dik de saus later in met bijvoorbeeld maizena of allesbinder.
 
 ### Groenten
 

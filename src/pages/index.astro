@@ -1,16 +1,16 @@
 ---
-import { getRecipes } from '../collection';
-import About from '../components/About/About.astro';
-import Navigation from '../components/Navigation.astro';
-import Portfolio from '../components/Portfolio/Portfolio.astro';
-import RecipesWrapper from '../components/RecipesWrapper';
-import Skills from '../components/Skills/Skills.astro';
-import Timeline from '../components/Timeline/Timeline.astro';
-import Title from '../components/Title.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import { getRecipes } from "../collection";
+import About from "../components/About/About.astro";
+import Navigation from "../components/Navigation.astro";
+import Portfolio from "../components/Portfolio/Portfolio.astro";
+import RecipesWrapper from "../components/RecipesWrapper";
+import Skills from "../components/Skills/Skills.astro";
+import Timeline from "../components/Timeline/Timeline.astro";
+import Title from "../components/Title.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 export interface Props {
-  title: string;
+    title: string;
 }
 
 const { title } = Astro.props as Props;
@@ -19,17 +19,17 @@ const entries = await getRecipes();
 ---
 
 <BaseLayout title={title}>
-  <Navigation />
+    <Navigation />
 
-  <Title />
+    <Title />
 
-  <About />
+    <About />
 
-  <Timeline />
+    <Timeline />
 
-  <Portfolio />
+    <Portfolio />
 
-  <Skills />
+    <Skills />
 
-  <RecipesWrapper entries={entries} client:only="react" />
+    <RecipesWrapper entries={entries} client:only="react" />
 </BaseLayout>

@@ -1,11 +1,11 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import Card from '../Card.astro';
-import Image from '../Image.astro';
-import Line from './Line.astro';
+import type { CollectionEntry } from "astro:content";
+import Card from "../Card.astro";
+import Image from "../Image.astro";
+import Line from "./Line.astro";
 
 interface Props {
-  entry: CollectionEntry<'timeline'>;
+    entry: CollectionEntry<"timeline">;
 }
 
 const { entry } = Astro.props;
@@ -13,41 +13,43 @@ const { entry } = Astro.props;
 const data = entry.data;
 const { Content } = await entry.render();
 
-const dateStart = data.dateStart ?? 'A long time ago';
+const dateStart = data.dateStart ?? "A long time ago";
 
-const dateEnd = data.dateEnd ?? 'Now';
+const dateEnd = data.dateEnd ?? "Now";
 ---
 
 <div class="flex w-full flex-row justify-between">
-  <Line />
+    <Line />
 
-  <Card side="right" class="my-8 w-full p-4">
-    <div class="flex w-full flex-col items-center">
-      <div
-        class="flex w-full flex-col items-center justify-between gap-6 md:flex-row md:gap-0"
-      >
-        {
-          data.logo && (
-            <Image
-              src={data.logo}
-              name={data.name}
-              dark={data.dark}
-              png={data.png}
-              class="h-full max-h-12"
-            />
-          )
-        }
+    <Card side="right" class="my-8 w-full p-4">
+        <div class="flex w-full flex-col items-center">
+            <div
+                class="flex w-full flex-col items-center justify-between gap-6 md:flex-row md:gap-0"
+            >
+                {
+                    data.logo && (
+                        <Image
+                            src={data.logo}
+                            name={data.name}
+                            dark={data.dark}
+                            png={data.png}
+                            class="h-full max-h-12"
+                        />
+                    )
+                }
 
-        {!data.logo && <h3 class="font-mono text-2xl">{data.name}</h3>}
+                {!data.logo && <h3 class="font-mono text-2xl">{data.name}</h3>}
 
-        <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300">
-          {dateStart} - {dateEnd}
-        </h3>
-      </div>
+                <h3
+                    class="text-xl font-semibold text-gray-700 dark:text-gray-300"
+                >
+                    {dateStart} - {dateEnd}
+                </h3>
+            </div>
 
-      <div class="prose-timeline">
-        <Content />
-      </div>
-    </div>
-  </Card>
+            <div class="prose-timeline">
+                <Content />
+            </div>
+        </div>
+    </Card>
 </div>

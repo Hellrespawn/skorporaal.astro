@@ -1,7 +1,7 @@
 ---
-title: 'Caesar-salade met Kip'
+title: "Caesar-salade met Kip"
 authors:
-  - Adam Ragusea
+    - Adam Ragusea
 ---
 
 Dit is een aangepaste versie van [dit recept](https://www.youtube.com/watch?v=E_CFYtwk1zE) van Adam Ragusea.

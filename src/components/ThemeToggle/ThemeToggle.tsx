@@ -1,11 +1,11 @@
-import type { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from "react";
 
 export default function ThemeToggleWrapper({ children }: PropsWithChildren) {
-  return <div onClick={toggle}>{children}</div>;
+    return <div onClick={toggle}>{children}</div>;
 }
 
 function toggle() {
-  const toggled = document.documentElement.classList.toggle('dark');
+    const toggled = document.documentElement.classList.toggle("dark");
 
-  localStorage.setItem('darkMode', toggled.toString());
+    localStorage.setItem("darkMode", toggled.toString());
 }

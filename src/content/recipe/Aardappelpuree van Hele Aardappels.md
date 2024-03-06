@@ -1,7 +1,7 @@
 ---
-title: 'Aardappelpuree van Hele Aardappels'
+title: "Aardappelpuree van Hele Aardappels"
 authors:
-  - blinkpatch
+    - blinkpatch
 ---
 
 Dit is een aangepaste versie van [dit recept](https://weaselle.tumblr.com/post/189359419975/my-perfect-mashed-potatoes) van Tumblr.
@@ -24,11 +24,11 @@ Dit is een aangepaste versie van [dit recept](https://weaselle.tumblr.com/post/1
 
 3. Bak één laag aardappels (donker)bruin, met gewenste kruiden en smaakmakers. Bijvoorbeeld:
 
-   - peper en zout
-   - knoflook (geperst aan het eind)
-   - uienpoeder en knoflookpoeder
-   - paprikapoeder
-   - peterselie
+    - peper en zout
+    - knoflook (geperst aan het eind)
+    - uienpoeder en knoflookpoeder
+    - paprikapoeder
+    - peterselie
 
 4. Doe de rest van de aardappelblokjes in de pan en voeg water toe tot de aardappels nét onder staan.
 

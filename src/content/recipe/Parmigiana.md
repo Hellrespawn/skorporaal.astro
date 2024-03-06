@@ -1,7 +1,7 @@
 ---
 title: Kip Parmigiana met Pasta al Burro
 authors:
-  - SortedFood
+    - SortedFood
 ---
 
 De saus is een aangepaste versie van [dit recept](https://www.youtube.com/watch?v=MCSTiPtGSUA) van SortedFood.

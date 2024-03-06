@@ -1,5 +1,5 @@
 ---
-category: 'lang'
+category: "lang"
 logo: tailwindcss
 name: Tailwind CSS
 ---
