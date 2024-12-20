@@ -20,7 +20,9 @@ Geïnspireerd door de [Chef's Pasta Carbonara](https://sortedfood.com/2022/02/10
 |      | totaal               |  1530 |
 
 [^1]: Gedroogde pasta zonder ei is traditioneel. Als je verse pasta gebruikt, neem dan 250g.
+
 [^2]: Traditioneel Pecorino Romano, alternatieven zijn Parmiggiano Reggiano, Grana Padano en gelijksoortige kazen.
+
 [^3]: Bij grote eieren, gebruik dan twee eieren en één eierdooier.
 
 Calorieën per portie: $${1530 \over 2} = 765 kcal$$

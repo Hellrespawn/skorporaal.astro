@@ -17,14 +17,12 @@ const { title } = Astro.props as Props;
     </head>
 
     <body class="background-pattern relative flex flex-col">
-        <!-- <div transition:animate="fade"> -->
         <main
             class="mx-auto flex w-full max-w-screen-md flex-col bg-gray-50 text-gray-900 dark:bg-gray-800 dark:text-gray-50 md:border-x md:border-gray-200 md:dark:border-gray-900"
         >
             <slot />
         </main>
         <Footer />
-        <!-- </div> -->
         <Glow />
     </body>
 </html>

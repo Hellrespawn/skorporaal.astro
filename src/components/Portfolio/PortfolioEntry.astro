@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
 
 interface Props {
     entry: CollectionEntry<"portfolio">;
@@ -9,7 +10,7 @@ const { entry } = Astro.props;
 
 const data = entry.data;
 
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <div class="prose-portfolio mx-auto flex flex-col px-2">

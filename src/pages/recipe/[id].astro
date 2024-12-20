@@ -1,5 +1,5 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import { render, type CollectionEntry } from "astro:content";
 import { getRecipes } from "../../collection";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Navigation from "../../components/Navigation.astro";
@@ -11,7 +11,7 @@ export async function getStaticPaths() {
     const paths = entries.map((entry) => {
         return {
             params: {
-                slug: entry.slug,
+                id: entry.id,
             },
             props: { entry },
         };
@@ -28,7 +28,7 @@ const { entry } = Astro.props;
 
 const recipe = entry.data;
 
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <BaseLayout title={recipe.title}>

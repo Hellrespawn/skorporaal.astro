@@ -14,11 +14,11 @@ Indien het gerecht in een slowcooker/snelkookpan wordt gemaakt, let dan op dat d
 
 Bijvoorbeeld:
 
--   Gebruik minder of geen bouillon
--   Vervang de bliktomaten voor nog 500g gezeefde tomaten.
--   Bestrooi het vlees voor het bakken ruimer met bloem.
--   Gebruik room in plaats van melk.
--   Dik de saus later in met bijvoorbeeld maizena of allesbinder.
+- Gebruik minder of geen bouillon
+- Vervang de bliktomaten voor nog 500g gezeefde tomaten.
+- Bestrooi het vlees voor het bakken ruimer met bloem.
+- Gebruik room in plaats van melk.
+- Dik de saus later in met bijvoorbeeld maizena of allesbinder.
 
 ### Groenten
 
@@ -37,6 +37,7 @@ Bijvoorbeeld:
 |                | totaal:              |   796 |
 
 [^1]: Zelf gebruik ik het liefst witte wijn, maar rode wijn kan ook.
+
 [^2]: Gezeefde tomaten is ook wel bekend als passata di pomodoro of, in het Engels, "tomato puree". Dit is niet te verwarren met tomatenpuree, wat in het Engels "tomato paste" wordt genoemd.
 
 ### Vlees

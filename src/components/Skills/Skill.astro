@@ -2,6 +2,7 @@
 import Image from "../Image.astro";
 import Card from "../Card.astro";
 import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
 
 export interface Props {
     side?: "left" | "right";
@@ -11,7 +12,7 @@ export interface Props {
 const { entry, side = "left" } = Astro.props as Props;
 
 const data = entry.data;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 
 const direction = side === "left" ? "flex-row" : "flex-row-reverse";
 ---

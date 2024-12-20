@@ -21,7 +21,7 @@ export default function RecipesWrapper({ entries }: RecipesWrapperProps) {
                 <ul>
                     {entries.map((entry) => (
                         <li key={entry.id}>
-                            <a href={`/recipe/${entry.slug}`}>
+                            <a href={`/recipe/${entry.id}`}>
                                 {entry.data.title}
                             </a>
                         </li>

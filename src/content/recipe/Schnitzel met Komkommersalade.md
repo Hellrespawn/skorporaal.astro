@@ -20,6 +20,7 @@ Dit is een licht aangepaste versie van [dit recept](https://www.youtube.com/watc
 |                | totaal:         |   865 |
 
 [^1]: Filetlapjes à la minute kunnen ook gebruikt worden, snij ze dan niet doormidden. Kipfilet is ook een optie.
+
 [^2]: Panko of beschuit aanbevolen.
 
 ## Komkommersalade
