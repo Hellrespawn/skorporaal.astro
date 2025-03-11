@@ -103,7 +103,7 @@
 }
 
 @utility fancy-link {
-    @apply bg-linear-to-r bg-[length:auto_36%] bg-[center_bottom_1px] bg-no-repeat transition-[background-size] hover:bg-[length:auto_100%];
+    @apply bg-linear-to-l bg-[length:auto_36%] bg-[left_50%_bottom_1px] bg-no-repeat transition-[background-size] hover:bg-[length:auto_100%];
     @apply from-secondary-200 to-secondary-200 dark:from-primary-700 dark:to-primary-700;
 
     &[target="_blank"] {
