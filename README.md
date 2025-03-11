@@ -9,3 +9,9 @@ This repository is public for the purposes of demonstration and education. Much 
 © 2022 Stef Korporaal
 
 Made available under the [The 3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause).
+
+<!--
+## TODO
+
+- Refactor timeline
+-->
