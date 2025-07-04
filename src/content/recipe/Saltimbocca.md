@@ -42,7 +42,6 @@ Calorieën per portie (kabeljauw): $${1898 \over  2 {1 \over 2}} = 759 \\frac{1}
 1. Indien er gebruik wordt gemaakt van hele kipfilets, snij deze kipfilets doormidden in twee platte helften.
 
 1. Bestrooi de filets met peper en een beetje zout.
-
     - Bij gedroogde salie: bestrooi met salie.
     - Bij verse salie: bedek 1 kant met hele blaadjes salie.
 

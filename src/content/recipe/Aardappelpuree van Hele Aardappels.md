@@ -23,7 +23,6 @@ Dit is een aangepaste versie van [dit recept](https://weaselle.tumblr.com/post/1
 2. Smelt wat boter in de pan op middelhoog vuur.
 
 3. Bak één laag aardappels (donker)bruin, met gewenste kruiden en smaakmakers. Bijvoorbeeld:
-
     - peper en zout
     - knoflook (geperst aan het eind)
     - uienpoeder en knoflookpoeder
