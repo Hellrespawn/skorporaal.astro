@@ -58,7 +58,7 @@ handle_args() {
 }
 
 install_deps() {
-  npm ci
+  npm ci --no-audit
 }
 
 build_project() {
@@ -84,20 +84,20 @@ NODE_MODULES_DIR=$(dirname $LOCAL_DIR/node_modules);
 
 handle_args "$@"
 
-if [ -z "$skip_build" ]; then
-  build_project
-elif [ -d "$LOCAL_DIR" ]; then
-  echo "Using existing build..."
-else
-  error "Attempted to use existing build, but $LOCAL_DIR doesn't exist."
-fi
-
 if [ -z "$skip_install" ]; then
   install_deps
 elif [ -d "$NODE_MODULES_DIR" ]; then
   echo "Using existing deps..."
 else
   error "Attempted to use existing deps, but $NODE_MODULES_DIR doesn't exist."
+fi
+
+if [ -z "$skip_build" ]; then
+  build_project
+elif [ -d "$LOCAL_DIR" ]; then
+  echo "Using existing build..."
+else
+  error "Attempted to use existing build, but $LOCAL_DIR doesn't exist."
 fi
 
 remove_old_files
