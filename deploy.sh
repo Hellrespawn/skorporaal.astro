@@ -9,6 +9,7 @@ if [ -f "./.env" ]; then
 fi
 
 skip_build=
+skip_install=
 
 error() {
   echo "$0: $1" 1>&2
@@ -37,10 +38,13 @@ check_environment_variables() {
 }
 
 handle_args() {
-  while getopts :s opt; do
+  while getopts :sd opt; do
     case $opt in
     s)
       skip_build="true"
+      ;;
+    d)
+      skip_install="true"
       ;;
 
     '?')
@@ -51,6 +55,10 @@ handle_args() {
   done
 
   shift $((OPTIND - 1))
+}
+
+install_deps() {
+  npm ci
 }
 
 build_project() {
@@ -72,6 +80,8 @@ copy_new_files() {
 
 check_environment_variables "DESTINATION LOCAL_DIR REMOTE_DIR"
 
+NODE_MODULES_DIR=$(dirname $LOCAL_DIR/node_modules);
+
 handle_args "$@"
 
 if [ -z "$skip_build" ]; then
@@ -80,6 +90,14 @@ elif [ -d "$LOCAL_DIR" ]; then
   echo "Using existing build..."
 else
   error "Attempted to use existing build, but $LOCAL_DIR doesn't exist."
+fi
+
+if [ -z "$skip_install" ]; then
+  install_deps
+elif [ -d "$NODE_MODULES_DIR" ]; then
+  echo "Using existing deps..."
+else
+  error "Attempted to use existing deps, but $NODE_MODULES_DIR doesn't exist."
 fi
 
 remove_old_files
