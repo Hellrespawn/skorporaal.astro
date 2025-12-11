@@ -6,30 +6,40 @@ import react from "@astrojs/react";
 
 import tailwindcss from "@tailwindcss/vite";
 
+const compilerConfig = {
+  target: '19' // can be '17' | '18' | '19', default is 19
+};
+
 // https://astro.build/config
 export default defineConfig({
-  site: "https://skorporaal.com/",
+    site: "https://skorporaal.com/",
 
-  markdown: {
-      remarkPlugins: [remarkMath],
-      rehypePlugins: [
-          rehypeKatex,
-          [
-              rehypeExternalLinks,
-              {
-                  rel: ["nofollow", "noopener", "noreferrer"],
-                  target: "_blank",
-              },
-          ],
-      ],
-      shikiConfig: {
-          wrap: true,
-      },
-  },
+    markdown: {
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [
+            rehypeKatex,
+            [
+                rehypeExternalLinks,
+                {
+                    rel: ["nofollow", "noopener", "noreferrer"],
+                    target: "_blank",
+                },
+            ],
+        ],
+        shikiConfig: {
+            wrap: true,
+        },
+    },
 
-  integrations: [react()],
+    integrations: [
+        react({
+            babel: {
+                plugins: [["babel-plugin-react-compiler", compilerConfig]],
+            },
+        }),
+    ],
 
-  vite: {
-    plugins: [tailwindcss()],
-  },
+    vite: {
+        plugins: [tailwindcss()],
+    },
 });
