@@ -5,6 +5,12 @@ export default function ThemeToggleWrapper({ children }: PropsWithChildren) {
 }
 
 function toggle() {
+    document.documentElement.classList.add("transitioning");
+
+    setTimeout(() => {
+        document.documentElement.classList.remove("transitioning");
+    }, 200);
+
     const toggled = document.documentElement.classList.toggle("dark");
 
     localStorage.setItem("darkMode", toggled.toString());

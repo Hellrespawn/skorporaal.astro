@@ -103,7 +103,7 @@
 }
 
 @utility fancy-link {
-    @apply bg-linear-to-l bg-[length:auto_36%] bg-[left_50%_bottom_1px] bg-no-repeat transition-[background-size] hover:bg-[length:auto_100%];
+    @apply bg-linear-to-l bg-size-[auto_36%] bg-position-[left_50%_bottom_1px] bg-no-repeat transition-[background-size] hover:bg-size-[auto_100%];
     @apply from-secondary-200 to-secondary-200 dark:from-primary-700 dark:to-primary-700;
 
     &[target="_blank"] {
@@ -134,4 +134,14 @@
         @apply bg-gray-900;
         background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
+}
+
+:root {
+    --transition-duration: 200ms;
+}
+
+:where(.transitioning, .transitioning *) {
+    transition-property: all !important;
+    transition-duration: var(--transition-duration) !important;
+    transition-timing-function: ease-in-out !important;
 }
