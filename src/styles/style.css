@@ -153,18 +153,18 @@
 @utility skill-carousel-gradient {
     background: linear-gradient(
         to right,
-        rgb(from var(--color-gradient) r g b) 0%,
-        rgb(from var(--color-gradient) r g b / 90%) 5%,
+        rgb(from var(--carousel-gradient) r g b) 0%,
+        rgb(from var(--carousel-gradient) r g b / 90%) 5%,
         transparent 10%,
         transparent 90%,
-        rgb(from var(--color-gradient) r g b / 90%) 95%,
-        rgb(from var(--color-gradient) r g b) 100%
+        rgb(from var(--carousel-gradient) r g b / 90%) 95%,
+        rgb(from var(--carousel-gradient) r g b) 100%
     );
 
-    --color-gradient: var(--color-gray-50);
+    --carousel-gradient: var(--color-gray-50);
 
     &:where(.dark, .dark *) {
-        --color-gradient: var(--color-gray-800);
+        --carousel-gradient: var(--color-gray-800);
     }
 }
 

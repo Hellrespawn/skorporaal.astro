@@ -10,6 +10,15 @@ interface SkillsProps {
 export default function Skills({ skills }: SkillsProps) {
     const [isPlaying, setPlaying] = useState(true);
     const [tagline, setTagline] = useState<string | null>(null);
+    const [selectedSkill, setSelectedSkill] =
+        useState<CollectionEntry<"skills"> | null>(null);
+
+    const ref = useRef<HTMLDivElement>(null);
+
+    useOnClickOutside(
+        ref as RefObject<HTMLDivElement>,
+        () => selectedSkill && handleClick(selectedSkill)
+    );
 
     function handleMouseEnter(skill: CollectionEntry<"skills">) {
         setPlaying(false);
@@ -21,12 +30,22 @@ export default function Skills({ skills }: SkillsProps) {
         setTagline(null);
     }
 
+    function handleClick(skill: CollectionEntry<"skills">) {
+        if (selectedSkill === skill) {
+            setSelectedSkill(null);
+            setPlaying(true);
+        } else {
+            setSelectedSkill(skill);
+            setPlaying(false);
+        }
+    }
+
     return (
         <div className="mt-4 md:mt-4 md:mb-4">
             <h2 className="frontpage-heading transition-all">
                 Discover my skills
             </h2>
-            <div className="relative overflow-hidden">
+            <div ref={ref} className="relative overflow-hidden">
                 <ul
                     className="animate-scroll flex h-28 w-max flex-row items-center"
                     style={{
@@ -37,6 +56,8 @@ export default function Skills({ skills }: SkillsProps) {
                         <Skill
                             key={i}
                             skill={skill}
+                            isSelected={skill == selectedSkill}
+                            onClick={() => handleClick(skill)}
                             onMouseEnter={() => handleMouseEnter(skill)}
                             onMouseLeave={() => handleMouseLeave(skill)}
                         />
@@ -45,7 +66,7 @@ export default function Skills({ skills }: SkillsProps) {
                 <div className="skill-carousel-gradient pointer-events-none absolute top-0 right-0 bottom-0 left-0 z-10"></div>
             </div>
             <div className="my-2 flex justify-center-safe">
-                {tagline ?? <>&nbsp;</>}
+                {selectedSkill?.data.tagline ?? tagline ?? <>&nbsp;</>}
             </div>
         </div>
     );

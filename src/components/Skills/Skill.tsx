@@ -2,16 +2,20 @@ import type { CollectionEntry } from "astro:content";
 import clsx from "clsx";
 import { useState } from "react";
 
-const DURATION_CLASS = "duration-75";
+const DURATION_CLASS = "duration-100";
 
 interface SkillProps {
     skill: CollectionEntry<"skills">;
+    isSelected: boolean;
+    onClick: () => void;
     onMouseEnter: () => void;
     onMouseLeave: () => void;
 }
 
 export default function Skill({
     skill,
+    isSelected,
+    onClick,
     onMouseEnter,
     onMouseLeave,
 }: SkillProps) {
@@ -27,14 +31,15 @@ export default function Skill({
         onMouseLeave();
     }
 
-    const highlight = isHovering;
+    const highlight = isHovering || isSelected;
 
     return (
         <li
+            onClick={onClick}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             title={skill.data.name}
-            className="relative flex h-24 w-28 items-center-safe justify-center-safe"
+            className="relative flex h-24 w-24 md:w-28 items-center-safe justify-center-safe"
         >
             <i
                 className={clsx(
