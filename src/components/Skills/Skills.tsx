@@ -42,7 +42,7 @@ export default function Skills({ skills }: SkillsProps) {
 
     return (
         <div className="mt-4 md:mt-4 md:mb-4">
-            <h2 className="frontpage-heading transition-all">
+            <h2 className="frontpage-heading mb-2 transition-all md:mb-4">
                 Discover my skills
             </h2>
             <div ref={ref} className="relative overflow-hidden">
@@ -65,7 +65,7 @@ export default function Skills({ skills }: SkillsProps) {
                 </ul>
                 <div className="skill-carousel-gradient pointer-events-none absolute top-0 right-0 bottom-0 left-0 z-10"></div>
             </div>
-            <div className="my-2 flex justify-center-safe">
+            <div className="my-2 flex justify-center-safe text-sm md:text-base">
                 {selectedSkill?.data.tagline ?? tagline ?? <>&nbsp;</>}
             </div>
         </div>
