@@ -1,4 +1,4 @@
-import cn from "classnames";
+import clsx from "clsx";
 
 interface DotProps {
     bg: string;
@@ -8,7 +8,7 @@ interface DotProps {
 export default function Dot({ bg, size }: DotProps) {
     return (
         <span
-            className={cn(
+            className={clsx(
                 bg,
                 size ?? "h-2 w-2",
                 "inline-block shrink-0 rounded-full"

@@ -1,5 +1,4 @@
 import { type CollectionEntry, getCollection, z } from "astro:content";
-import partition from "lodash-es/partition";
 
 export const draftSchema = z.object({
     draft: z.boolean().default(false),
@@ -38,13 +37,11 @@ export const timelineSchema = draftSchema.merge(
 
 export const skillSchema = draftSchema.merge(
     z.object({
-        logo: z.string().transform((logo) => "skills/" + logo),
         name: z.string(),
+        icon: z.string(),
         category: z.enum(["lang", "tech", "other"]),
-        padding: z.enum(["p-0", "p-1", "p-2", "p-3", "p-4"]).default("p-2"),
-        dark: z.boolean().default(false),
-        png: z.boolean().default(false),
         weight: z.number().default(0),
+        tagline: z.string(),
     })
 );
 
@@ -77,30 +74,12 @@ export async function getTimelineEntries(): Promise<
     );
 }
 
-export async function getSkillEntries(): Promise<{
-    langEntries: CollectionEntry<"skills">[];
-    techEntries: CollectionEntry<"skills">[];
-    otherEntries: CollectionEntry<"skills">[];
-}> {
+export async function getSkillEntries(): Promise<CollectionEntry<"skills">[]> {
     let entries = await getCollection("skills", defaultFilter);
 
     entries = entries.sort(
         (left, right) => left.data.weight - right.data.weight
     );
 
-    const [langEntries, rest] = partition(
-        entries,
-        (entry) => entry.data.category === "lang"
-    );
-
-    const [techEntries, otherEntries] = partition(
-        rest,
-        (entry) => entry.data.category === "tech"
-    );
-
-    return {
-        langEntries,
-        techEntries,
-        otherEntries,
-    };
+    return entries;
 }

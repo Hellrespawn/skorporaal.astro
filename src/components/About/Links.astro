@@ -1,8 +1,6 @@
 ---
 import { SITE_DATA } from "../../data";
 import Envelope from "../Icons/Envelope.astro";
-import GitHub from "../Icons/GitHub.astro";
-import LinkedIn from "../Icons/LinkedIn.astro";
 import Link from "./Link.astro";
 ---
 
@@ -10,11 +8,11 @@ import Link from "./Link.astro";
     class="flex flex-row items-center justify-around bg-gray-700 p-0.5 text-gray-50 dark:bg-gray-200 dark:text-gray-800"
 >
     <Link href={SITE_DATA.github}>
-        <GitHub />
+        <i class="text-icon-about devicon-github-plain"></i>
     </Link>
 
     <Link href={SITE_DATA.linkedin}>
-        <LinkedIn />
+        <i class="text-icon-about devicon-linkedin-plain"></i>
     </Link>
 
     <Link href={`mailto:${SITE_DATA.email}`}>

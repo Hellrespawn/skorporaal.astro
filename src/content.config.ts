@@ -1,5 +1,5 @@
 import { defineCollection } from "astro:content";
-import { glob } from "astro/loaders";
+import { file, glob } from "astro/loaders";
 
 import {
     portfolioSchema,
@@ -28,7 +28,7 @@ export const collections = {
         schema: timelineSchema,
     }),
     skills: defineCollection({
-        loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/skills" }),
+        loader: file("./src/content/skills/skills.json"),
         schema: skillSchema,
     }),
 };

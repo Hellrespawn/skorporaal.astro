@@ -1,0 +1,8 @@
+---
+import { getSkillEntries } from "../../collection";
+import Skills from "./Skills";
+
+const entries = await getSkillEntries();
+---
+
+<Skills skills={entries} client:load />

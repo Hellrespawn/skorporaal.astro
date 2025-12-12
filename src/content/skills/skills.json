@@ -1,0 +1,86 @@
+{
+    "astro": {
+        "name": "Astro",
+        "icon": "astro-plain",
+        "category": "lang",
+        "tagline": "A new kind of static site builder for the modern web."
+    },
+    "css": {
+        "name": "CSS",
+        "icon": "css3-plain",
+        "category": "lang",
+        "tagline": "Modern CSS including Grid and FlexBox."
+    },
+    "html": {
+        "name": "HTML",
+        "icon": "html5-plain",
+        "category": "lang",
+        "tagline": "Modern HTML with semantic elements."
+    },
+    "java": {
+        "name": "Java",
+        "icon": "java-plain",
+        "category": "lang",
+        "tagline": "The world's leading programming language and platform."
+    },
+    "laravel": {
+        "name": "Laravel",
+        "icon": "laravel-plain",
+        "category": "lang",
+        "tagline": "The PHP Framework For Web Artisans."
+    },
+    "react": {
+        "name": "React",
+        "icon": "react-plain",
+        "category": "lang",
+        "tagline": "The library for web and native user interfaces."
+    },
+    "rust": {
+        "name": "Rust",
+        "icon": "rust-plain",
+        "category": "lang",
+        "tagline": "A language empowering everyone to build reliable and efficient software."
+    },
+    "tailwind": {
+        "name": "Tailwind",
+        "icon": "tailwindcss-plain",
+        "category": "lang",
+        "tagline": "A utility-first CSS framework, directly in your markup."
+    },
+    "typescript": {
+        "name": "TypeScript",
+        "icon": "typescript-plain",
+        "category": "lang",
+        "tagline": "Safe, sane and consensual JavaScript."
+    },
+    "docker": {
+        "name": "Docker",
+        "icon": "docker-plain",
+        "category": "tech",
+        "tagline": "Portable development and deployment."
+    },
+    "git": {
+        "name": "Git",
+        "icon": "git-plain",
+        "category": "tech",
+        "tagline": "Designed to handle everything with speed and efficiency."
+    },
+    "linux": {
+        "name": "Linux",
+        "icon": "linux-plain",
+        "category": "tech",
+        "tagline": "Free as in speech."
+    },
+    "mariadb": {
+        "name": "MariaDB",
+        "icon": "mariadb-plain",
+        "category": "tech",
+        "tagline": "My SQL could be your SQL."
+    },
+    "shell": {
+        "name": "Shell",
+        "icon": "bash-plain",
+        "category": "tech",
+        "tagline": "Like herding `cat`s."
+    }
+}

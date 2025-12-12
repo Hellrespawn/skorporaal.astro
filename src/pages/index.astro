@@ -4,7 +4,7 @@ import About from "../components/About/About.astro";
 import Navigation from "../components/Navigation.astro";
 import Portfolio from "../components/Portfolio/Portfolio.astro";
 import RecipesWrapper from "../components/RecipesWrapper";
-import Skills from "../components/Skills/Skills.astro";
+import SkillsWrapper from "../components/Skills/SkillsWrapper.astro";
 import Timeline from "../components/Timeline/Timeline.astro";
 import Title from "../components/Title.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -25,11 +25,11 @@ const entries = await getRecipes();
 
     <About />
 
-    <Timeline />
+    <SkillsWrapper />
 
     <Portfolio />
 
-    <Skills />
+    <Timeline />
 
-    <RecipesWrapper entries={entries} client:only="react" />
+    <RecipesWrapper entries={entries} client:load />
 </BaseLayout>
