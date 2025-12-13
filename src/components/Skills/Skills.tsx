@@ -21,13 +21,17 @@ export default function Skills({ skills }: SkillsProps) {
     );
 
     function handleMouseEnter(skill: CollectionEntry<"skills">) {
-        setPlaying(false);
-        setTagline(skill.data.tagline);
+        if (!selectedSkill) {
+            setPlaying(false);
+            setTagline(skill.data.tagline);
+        }
     }
 
     function handleMouseLeave(_skill: CollectionEntry<"skills">) {
-        setPlaying(true);
-        setTagline(null);
+        if (!selectedSkill) {
+            setPlaying(true);
+            setTagline(null);
+        }
     }
 
     function handleClick(skill: CollectionEntry<"skills">) {

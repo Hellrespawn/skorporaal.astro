@@ -118,7 +118,7 @@
 
 @utility fancy-link {
     @apply bg-linear-to-l bg-size-[auto_36%] bg-position-[left_50%_bottom_1px] bg-no-repeat transition-[background-size] hover:bg-size-[auto_100%];
-    @apply from-secondary-200 to-secondary-200 dark:from-primary-700 dark:to-primary-700 duration-100;
+    @apply from-secondary-200 to-secondary-200 dark:from-primary-700 dark:to-primary-700;
 
     &[target="_blank"] {
         @apply from-quaternary-200 to-quaternary-200 dark:from-tertiary-900 dark:to-tertiary-900;

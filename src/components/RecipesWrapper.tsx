@@ -15,7 +15,7 @@ export default function RecipesWrapper({ entries }: RecipesWrapperProps) {
     }
 
     return (
-        <section className="md:my-8">
+        <section className="px-2 md:my-8">
             <h2 className="frontpage-heading">Recipes</h2>
             <div className="prose-custom mx-auto max-w-[56ch]">
                 <p>
@@ -23,9 +23,10 @@ export default function RecipesWrapper({ entries }: RecipesWrapperProps) {
                     code or have found my little secret! 😉
                 </p>
                 <p>
-                    I wanted a place to keep my cookbook, and this place serves
-                    as well as any other. Sadly, the recipes are only available
-                    in Dutch, but let me know if you try them at{" "}
+                    I wanted an easily accessible place to keep my cookbook, and
+                    this place serves as well as any other. Sadly, the recipes
+                    are only available in Dutch, but let me know if you try them
+                    at{" "}
                     <a href={`mailto:${SITE_DATA.email}`}>{SITE_DATA.email}</a>.
                 </p>
             </div>
