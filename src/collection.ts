@@ -1,4 +1,9 @@
-import { type CollectionEntry, getCollection, z } from "astro:content";
+import {
+    type CollectionEntry,
+    getCollection,
+    type SchemaContext,
+    z,
+} from "astro:content";
 
 export const draftSchema = z.object({
     draft: z.boolean().default(false),
@@ -13,13 +18,14 @@ export const recipeSchema = draftSchema.merge(
     })
 );
 
-export const portfolioSchema = draftSchema.merge(
+export const portfolioSchema = ({ image }: SchemaContext) =>
     z.object({
+        draft: z.boolean().default(false),
         name: z.string(),
         source: z.string(),
+        cover: image().optional(),
         weight: z.number().default(0),
-    })
-);
+    });
 
 export const timelineSchema = draftSchema.merge(
     z.object({

@@ -1,5 +1,6 @@
 ---
 name: MarkOTD
+cover: "./placeholder.png"
 source: https://github.com/Hellrespawn/markotd
 weight: 1
 ---

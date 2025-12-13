@@ -3,10 +3,19 @@ import { getPortfolioEntries } from "../../collection";
 import PortfolioEntry from "./PortfolioEntry.astro";
 
 const entries = await getPortfolioEntries();
+
+const positions = ["left", "right"] as const;
 ---
 
-<div class="my-4 w-full md:my-8">
+<div class="my-4 w-full md:my-8 flex flex-col gap-4 md:Sgap-8">
     <h2 class="frontpage-heading">Portfolio</h2>
 
-    {entries.map((entry) => <PortfolioEntry entry={entry} />)}
+    {
+        entries.map((entry, i) => (
+            <PortfolioEntry
+                entry={entry}
+                coverPosition={positions[i % positions.length]!}
+            />
+        ))
+    }
 </div>

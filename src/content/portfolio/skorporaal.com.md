@@ -1,5 +1,6 @@
 ---
 name: skorporaal.com
+cover: "./skorporaal.com.png"
 source: https://github.com/Hellrespawn/skorporaal.astro
 weight: 0
 ---

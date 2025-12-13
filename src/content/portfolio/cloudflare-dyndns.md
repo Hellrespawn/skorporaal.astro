@@ -1,5 +1,6 @@
 ---
 name: cloudflare-dyndns
+cover: "./placeholder.png"
 source: https://github.com/Hellrespawn/cloudflare-dyndns
 weight: 1
 ---

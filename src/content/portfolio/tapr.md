@@ -1,5 +1,6 @@
 ---
 name: TaprTools
+cover: "./placeholder.png"
 source: https://github.com/Hellrespawn/taprtools
 weight: 2
 ---

@@ -1,21 +1,56 @@
 ---
+import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import { render } from "astro:content";
 
+type CoverPosition = "left" | "right";
+
 interface Props {
     entry: CollectionEntry<"portfolio">;
+    coverPosition?: CoverPosition;
 }
 
-const { entry } = Astro.props;
+const { entry, coverPosition = "left" } = Astro.props;
 
 const data = entry.data;
+
+console.log(data.cover);
 
 const { Content } = await render(entry);
 ---
 
-<div class="prose-portfolio mx-auto flex flex-col px-2">
-    <div class="flex items-center">
-        <h3>
+<div
+    class:list={[
+        "flex justify-between overflow-hidden",
+        {
+            "flex-row": coverPosition === "left",
+            "flex-row-reverse": coverPosition === "right",
+        },
+    ]}
+>
+    {
+        data.cover && (
+            <div
+                class:list={[
+                    "min h-48 shrink-0 grow-0 basis-40 overflow-hidden border-y border-gray-900 dark:border-gray-200",
+                    {
+                        "rounded-r-xl border-r": coverPosition === "left",
+                        "rounded-l-xl border-l": coverPosition === "right",
+                    },
+                ]}
+            >
+                <Image
+                    src={data.cover}
+                    alt={data.name}
+                    fit="cover"
+                    class="h-full w-full"
+                />
+            </div>
+        )
+    }
+
+    <div class="grow px-2 py-2 md:px-4 md:py-4">
+        <h3 class="prose-portfolio">
             <a
                 class="text-xl font-semibold"
                 href={data.source}
@@ -23,7 +58,9 @@ const { Content } = await render(entry);
                 rel="nofollow noopener noreferrer">{data.name}</a
             >
         </h3>
-    </div>
 
-    <Content />
+        <div class="prose-portfolio">
+            <Content />
+        </div>
+    </div>
 </div>
