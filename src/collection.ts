@@ -51,8 +51,14 @@ function defaultFilter(entry: { data: { draft: boolean } }): boolean {
     return !entry.data.draft;
 }
 
-export function getRecipes(): Promise<CollectionEntry<"recipe">[]> {
-    return getCollection("recipe", defaultFilter);
+export async function getRecipes(): Promise<CollectionEntry<"recipe">[]> {
+    const entries = await getCollection("recipe", defaultFilter);
+
+    return entries.sort((left, right) => {
+        const leftTitle = unquote(left.data.title);
+        const rightTitle = unquote(right.data.title);
+        return leftTitle.localeCompare(rightTitle);
+    });
 }
 
 export async function getPortfolioEntries(): Promise<
@@ -82,4 +88,8 @@ export async function getSkillEntries(): Promise<CollectionEntry<"skills">[]> {
     );
 
     return entries;
+}
+
+function unquote(string: string) {
+    return string.replace(/^['"]/g, "").replace(/['"]$/g, "");
 }

@@ -39,7 +39,7 @@ export default function Skill({
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             title={skill.data.name}
-            className="relative flex h-24 w-24 md:w-28 items-center-safe justify-center-safe"
+            className="relative flex h-24 w-24 items-center-safe justify-center-safe md:w-28"
         >
             <i
                 className={clsx(
