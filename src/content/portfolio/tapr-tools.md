@@ -2,7 +2,7 @@
 name: TaprTools
 cover: "./placeholder.png"
 source: https://github.com/Hellrespawn/taprtools
-weight: 2
+weight: 3
 ---
 
 A tool to rename music files according to their tags using my own domain-specific language [tapr](https://github.com/Hellrespawn/tapr).
