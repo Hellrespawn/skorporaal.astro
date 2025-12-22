@@ -9,7 +9,7 @@ title: Moderne Hutspot
 | 1kg       | aardappel     |   850 |
 | 600g      | wortel[^1]    |   210 |
 | 400g (~6) | ui[^1]        |   148 |
-| 125ml     | creme fraiche |   363 |
+| 125ml     | creme fraîche |   363 |
 | 1 blokje  | bouillon[^2]  |       |
 | 1 tl      | mosterd       |       |
 |           | totaal:       |  1561 |
@@ -30,4 +30,4 @@ Calorieën per portie: $${1561 \over 3} = 520 {1 \over 3} kcal$$
 
 1. Bak de uien op middelhoog vuur in olijfolie totdat deze bruin zijn.
 
-1. Schep de uien uit de pan en doe ze bij de afgegoten aardappels en wortel. Stamp met een pureestamper en meng de crème fraiche en mosterd erdoor.
+1. Schep de uien uit de pan en doe ze bij de afgegoten aardappels en wortel. Stamp met een pureestamper en meng de crème fraîche en mosterd erdoor.

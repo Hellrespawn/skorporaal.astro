@@ -33,7 +33,7 @@ Calorieën per quesadilla: $${1840 \over 6} = 360 kcal$$
 
 1. Bak de ui totdat deze beginnen te kleuren.
 
-1. Voeg de champigons toe met 1 el olie en bak totdat het vocht verdreven is.
+1. Voeg de champignons toe met 1 el olie en bak totdat het vocht verdreven is.
 
 1. Voeg de paprika toe en bak mee.
 

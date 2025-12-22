@@ -33,7 +33,7 @@ Calorieën per portie: $${1512 \over 2} = 756 kcal$$
 
 1. Knijp de braadworst in kleine "gehaktballetjes" uit. Bak deze rondom in de olijfolie totdat ze goudbruin zijn. Verwijder ze uit de pan, maar probeer zoveel mogelijk vet te laten liggen.
 
-1. Snij de ui, paprike en champignons.
+1. Snij de ui, paprika en champignons.
 
 1. Bak de ui, paprika en champignons in het overgebleven vet tot het vocht ui de champignons verdreven is.
 
@@ -43,4 +43,4 @@ Calorieën per portie: $${1512 \over 2} = 756 kcal$$
 
 1. Voeg de pasta toe aan de pan. Roer om. Voeg peper, zout en het sap van de citroen toe naar smaak. Voeg pastawater toe totdat de saus de gewenste consistentie bereikt. Het zetmeel in de pasta zal de saus blijven indikken na het koken, maak het dus iets natter dan eigenlijk gewenst.
 
-1. Serveer met harde italiaanse kaas.
+1. Serveer met harde Italiaanse kaas.

@@ -64,7 +64,7 @@ Calorieën per portie: $${1455 \over 2} = 727 {1 \over 2} kcal$$
 
 1. Als de saus klaar is, meng de champignons erdoorheen en giet deze in een ovenschaal. Leg de schnitzel op de saus.
 
-1. Verdeel de jonge kaas over de schnitzels. Rasp de italiaanse kaas over de schnitzel, laat een beetje over.
+1. Verdeel de jonge kaas over de schnitzels. Rasp de Italiaanse kaas over de schnitzel, laat een beetje over.
 
 1. Leg onder de grill/in een hete oven tot de kaas smelt en begint te gratineren.
 

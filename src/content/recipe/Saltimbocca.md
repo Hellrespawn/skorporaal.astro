@@ -11,7 +11,7 @@ Dit recept is oorspronkelijk gebaseerd op een verspakket van de Albert Heijn wat
 | #:               | Ingredient:          | kcal: |
 | ---------------- | -------------------- | ----: |
 | 400g (2 filets)  | kipfilet óf          |   440 |
-| 400g (4 filets)  | kiphaasjes óf        |   440 |
+| 400g (4 filets)  | kipfilethaasjes óf   |   440 |
 | 260 (2 filets)   | kabeljauw            |   100 |
 |                  |                      |       |
 | 250g             | verse pasta óf       |   700 |
@@ -29,7 +29,7 @@ Dit recept is oorspronkelijk gebaseerd op een verspakket van de Albert Heijn wat
 |                  | totaal kip:          |  2238 |
 |                  | totaal kabeljauw:    |  1898 |
 
-[^1]: Prosciutto crudo is de traditionele manier om saltimbocca te maken, maar jamon serrano werkt ook goed. Er kan ook spek of Coburger ham gebruikt worden, maar deze smaken wel erg anders.
+[^1]: Prosciutto crudo is de traditionele manier om saltimbocca te maken, maar Jamon Serrano werkt ook goed. Er kan ook spek of Coburger ham gebruikt worden, maar deze smaken wel erg anders.
 
 Calorieën per portie (kip): $${2238  \over 2 {1 \over 2}} = 895 {1 \over 5} kcal$$
 
@@ -61,4 +61,4 @@ Calorieën per portie (kabeljauw): $${1898 \over  2 {1 \over 2}} = 759 \\frac{1}
 
 1. Voeg de pasta toe en meng goed. Voeg pastawater toe totdat de saus de gewenste consistentie bereikt. Het zetmeel in de pasta zal de saus blijven indikken na het koken, maak het dus iets natter dan eigenlijk gewenst. Peper en zout naar smaak.
 
-1. Serveer met harde italiaanse kaas.
+1. Serveer met harde Italiaanse kaas.
