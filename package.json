@@ -21,6 +21,7 @@
         "test": "vitest"
     },
     "devDependencies": {
+        "@astrojs/mdx": "4.3.13",
         "@astrojs/react": "4.4.2",
         "@eslint/compat": "2.0.0",
         "@eslint/eslintrc": "3.3.3",
@@ -34,7 +35,7 @@
         "@types/node": "24.10.3",
         "@types/react": "19.2.7",
         "@types/react-dom": "19.2.3",
-        "astro": "5.16.5",
+        "astro": "5.16.6",
         "babel-plugin-react-compiler": "1.0.0",
         "clsx": "2.1.1",
         "del-cli": "7.0.0",

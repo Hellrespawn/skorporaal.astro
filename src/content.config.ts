@@ -10,7 +10,10 @@ import {
 
 export const collections = {
     recipe: defineCollection({
-        loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/recipe" }),
+        loader: glob({
+            pattern: "**/[^_]*.md(x)?",
+            base: "./src/content/recipe",
+        }),
         schema: recipeSchema,
     }),
     portfolio: defineCollection({

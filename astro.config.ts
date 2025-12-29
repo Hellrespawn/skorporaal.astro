@@ -3,11 +3,11 @@ import rehypeExternalLinks from "rehype-external-links";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import react from "@astrojs/react";
-
 import tailwindcss from "@tailwindcss/vite";
+import mdx from "@astrojs/mdx";
 
 const compilerConfig = {
-  target: '19' // can be '17' | '18' | '19', default is 19
+    target: "19", // can be '17' | '18' | '19', default is 19
 };
 
 // https://astro.build/config
@@ -37,6 +37,7 @@ export default defineConfig({
                 plugins: [["babel-plugin-react-compiler", compilerConfig]],
             },
         }),
+        mdx(),
     ],
 
     vite: {
