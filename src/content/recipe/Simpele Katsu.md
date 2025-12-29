@@ -1,5 +1,11 @@
 ---
 title: Simpele Katsu
+tags:
+    - Japans
+    - Hoofdgerecht
+    - Kip
+    - Sojasaus
+    - Hartig
 ---
 
 ## Ingrediënten

@@ -168,6 +168,12 @@
     }
 }
 
+@utility tag-list {
+    > :nth-child(n + 2):before {
+        content: ", ";
+    }
+}
+
 :where(.transitioning, .transitioning *) {
     --transition-duration: 200ms;
 

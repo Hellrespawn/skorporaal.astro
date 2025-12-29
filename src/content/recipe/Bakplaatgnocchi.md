@@ -3,6 +3,11 @@ title: "Bakplaat-gnocchi"
 authors:
     - Sheela Prakash
 date: 2022-07-17
+tags:
+    - Italiaans
+    - Maaltijd
+    - Worst
+    - Hartig
 ---
 
 Dit is een aangepaste versie van [dit recept](https://www.thekitchn.com/recipe-crispy-sheet-pan-gnocchi-and-veggies-247360) van TheKitchn.

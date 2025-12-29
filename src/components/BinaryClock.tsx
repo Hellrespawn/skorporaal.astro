@@ -1,11 +1,7 @@
-import { useStore } from "@nanostores/react";
-import { showRecipes } from "../stores/recipe.store";
 import { useEffect, useState } from "react";
 import Dot from "./Dot";
 
 export default function BinaryClock() {
-    const $showRecipes = useStore(showRecipes);
-
     const expectedBits = Math.ceil(Math.max(Math.log2(24), Math.log2(60)));
     const fps = 24;
 
@@ -17,6 +13,10 @@ export default function BinaryClock() {
     const minutes = now.getMinutes();
     const seconds = now.getSeconds();
 
+    function handleNavigate() {
+        window.location.href = "/recipes/";
+    }
+
     useEffect(() => {
         interval = window.setInterval(() => {
             setNow(new Date());
@@ -26,10 +26,7 @@ export default function BinaryClock() {
     });
 
     return (
-        <div
-            className="flex flex-col"
-            onDoubleClick={() => showRecipes.set(!$showRecipes)}
-        >
+        <div className="flex flex-col" onDoubleClick={handleNavigate}>
             {[hours, minutes, seconds].map((number, index) => (
                 <div
                     key={[number, index].join()}

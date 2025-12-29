@@ -1,0 +1,32 @@
+---
+import { normalizeTag } from "../tag";
+
+export interface Props {
+    tags: string[];
+}
+
+const { tags } = Astro.props;
+---
+
+<section class="px-2 md:my-8">
+    <h2 class="frontpage-heading mb-4 md:mb-8">Tags</h2>
+
+    <div class="mx-auto w-fit">
+        <ul
+            class="w-fit columns-2 gap-16 text-lg text-gray-700 md:columns-3 md:gap-24 dark:text-gray-300"
+        >
+            {
+                tags.map((tag) => (
+                    <li class="mb-3 w-fit md:mb-1">
+                        <a
+                            class="fancy-link"
+                            href={`/recipes/tags/${normalizeTag(tag)}`}
+                        >
+                            {tag}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</section>

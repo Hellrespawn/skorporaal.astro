@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+export interface Props {
+    recipes: CollectionEntry<"recipe">[];
+    title?: string;
+}
+
+const { recipes, title } = Astro.props;
+---
+
+<section class="px-2 md:my-8">
+    <h2 class="frontpage-heading mb-4 md:mb-8">{title ?? "Recipes"}</h2>
+
+    <div class="mx-auto">
+        <ul
+            class="list-inside list-disc content-between text-lg text-gray-700 md:columns-2 md:gap-8 md:px-6 dark:text-gray-300"
+        >
+            {
+                recipes.map((recipe) => (
+                    <li class="mb-4">
+                        <a class="fancy-link" href={`/recipes/${recipe.id}`}>
+                            {recipe.data.title}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</section>

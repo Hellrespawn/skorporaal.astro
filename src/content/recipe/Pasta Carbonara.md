@@ -3,6 +3,12 @@ title: Pasta Carbonara
 authors:
     - SortedFood
 date: 2022-08-16
+tags:
+    - Italiaans
+    - Maaltijd
+    - Spek
+    - Pasta
+    - Hartig
 ---
 
 Geïnspireerd door de [Chef's Pasta Carbonara](https://sortedfood.com/2022/02/10/chefs-classic-carbonara-recipe/) van SortedFood, uit [deze video](https://www.youtube.com/watch?v=VeUGUxSk4D4).

@@ -4,10 +4,10 @@ import Home from "./Icons/Home.astro";
 import ThemeToggle from "./ThemeToggle/ThemeToggle.astro";
 
 export interface Props {
-    showHome?: boolean;
+    hideHome?: boolean;
 }
 
-const { showHome = false } = Astro.props as Props;
+const { hideHome = false } = Astro.props as Props;
 const buttonClass = "flex items-center justify-center p-1.5 rounded-full";
 ---
 
@@ -18,7 +18,7 @@ const buttonClass = "flex items-center justify-center p-1.5 rounded-full";
             class="flex gap-1 rounded-full bg-gray-700 p-1 shadow-xs shadow-gray-500 dark:bg-gray-200 dark:shadow-black"
         >
             {
-                showHome && (
+                !hideHome && (
                     <a href="/">
                         <Button interactive class={`${buttonClass}`}>
                             <Home />

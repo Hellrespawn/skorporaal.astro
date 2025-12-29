@@ -1,5 +1,11 @@
 ---
 title: "Champignon-roomsaus"
+tags:
+    - Saus
+    - Bijgerecht
+    - Champignons
+    - Roomsaus
+    - Hartig
 ---
 
 ## Ingrediënten

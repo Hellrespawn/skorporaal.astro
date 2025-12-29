@@ -2,6 +2,12 @@
 title: Tomatensaus met Stoofvlees
 authors:
     - SortedFood
+tags:
+    - Italiaans
+    - Saus
+    - Rundvlees
+    - Tomaat
+    - Hartig
 ---
 
 Dit recept is geïnspireerd door verschillende recepten die ik heb gezien, maar is begonnen met een recept dat niet langer op het internet te vinden is. De aflevering "Homemade Pasta" van "SortedFood @ The Table", een samenwerking tussen Sorted en Tastemade.

@@ -2,6 +2,13 @@
 title: "Andijvie-spek Stamppot"
 authors:
     - Oma Leijen
+tags:
+    - Nederlands
+    - Aardappel
+    - Spek
+    - Maaltijd
+    - Hartig
+    - Stamppot
 ---
 
 ## Ingrediënten

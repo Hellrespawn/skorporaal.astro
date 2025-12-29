@@ -1,0 +1,14 @@
+---
+import { getRecipes, getRecipeTags } from "../../collection";
+import RecipeList from "../../components/RecipeList.astro";
+import TagList from "../../components/TagList.astro";
+import RecipeListLayout from "../../layouts/RecipeListLayout.astro";
+
+const tags = await getRecipeTags();
+const recipes = await getRecipes();
+---
+
+<RecipeListLayout title="Recipes">
+    <TagList tags={tags} />
+    <RecipeList recipes={recipes} />
+</RecipeListLayout>

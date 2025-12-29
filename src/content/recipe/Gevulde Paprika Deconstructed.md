@@ -2,6 +2,10 @@
 title: "Deconstructed Gevulde Paprika"
 authors:
     - TheKitchn
+tags:
+    - Gehakt
+    - Maaltijd
+    - Hartig
 ---
 
 Dit recept is een aangepaste versie van een recept van [theKitchn](https://www.thekitchn.com/) wat ik niet meer terug kan vinden.

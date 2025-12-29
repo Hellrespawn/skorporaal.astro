@@ -3,6 +3,10 @@ title: "Aardappelpuree-topping"
 authors:
     - Molly Baz
     - Carla Lalli Music
+tags:
+    - Aardappel
+    - Bijgerecht
+    - Hartig
 ---
 
 Dit is een aangepaste versie van [dit recept](https://www.bonappetit.com/recipe/mashed-potatoes-with-crispety-cruncheties) van Bon Appetit.

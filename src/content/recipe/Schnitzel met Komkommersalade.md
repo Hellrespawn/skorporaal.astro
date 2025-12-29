@@ -2,6 +2,12 @@
 title: Schnitzel met Komkommersalade
 authors:
     - Adam Ragusea
+tags:
+    - Oostenrijks
+    - Maaltijd
+    - Varkensvlees
+    - Salade
+    - Hartig
 ---
 
 Dit is een licht aangepaste versie van [dit recept](https://www.youtube.com/watch?v=4eGNy2E7CVs) van Adam Ragusea.

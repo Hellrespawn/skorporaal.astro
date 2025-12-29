@@ -1,0 +1,35 @@
+---
+import { type CollectionEntry } from "astro:content";
+import { getRecipesByTag, getRecipeTags } from "../../../collection";
+import RecipeList from "../../../components/RecipeList.astro";
+import { normalizeTag } from "../../../tag";
+import RecipeListLayout from "../../../layouts/RecipeListLayout.astro";
+
+export async function getStaticPaths() {
+    const tags = await getRecipeTags();
+
+    const paths = tags.map((tag) => {
+        return {
+            params: {
+                tag: normalizeTag(tag),
+            },
+            props: { entries: getRecipesByTag(tag), tag },
+        };
+    });
+
+    return paths;
+}
+
+interface Props {
+    entries: Promise<CollectionEntry<"recipe">[]>;
+    tag: string;
+}
+
+const { entries, tag } = Astro.props;
+
+const recipes = await entries;
+---
+
+<RecipeListLayout title={tag}>
+    <RecipeList recipes={recipes} title={`Recipes containing '${tag}'`} />
+</RecipeListLayout>

@@ -1,5 +1,11 @@
 ---
 title: Simpele Teriyaki
+tags:
+    - Japans
+    - Maaltijd
+    - Kip
+    - Sojasaus
+    - Hartig
 ---
 
 ## Ingrediënten

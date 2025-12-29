@@ -1,5 +1,12 @@
 ---
 title: Moderne Hutspot
+tags:
+    - Nederlands
+    - Aardappel
+    - Wortel
+    - Maaltijd
+    - Hartig
+    - Stamppot
 ---
 
 ## Ingrediënten

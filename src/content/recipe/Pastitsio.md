@@ -1,6 +1,12 @@
 ---
 title: Pastitsio
 date: 2025-05-21
+tags:
+    - Grieks
+    - Maaltijd
+    - Gehakt
+    - Pasta
+    - Hartig
 ---
 
 Gebaseerd op [verschillende](https://www.tasteofhome.com/recipes/nikki-s-perfect-pastitsio/) [recepten](https://www.mygreekdish.com/recipe/pastitsio/) op het internet.

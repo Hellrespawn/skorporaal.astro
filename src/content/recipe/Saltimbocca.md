@@ -2,6 +2,13 @@
 title: Saltimbocca met Kip of Kabeljauw
 authors:
     - Albert Heijn
+tags:
+    - Italiaans
+    - Maaltijd
+    - Prosciutto
+    - Pasta
+    - Roomsaus
+    - Hartig
 ---
 
 Dit recept is oorspronkelijk gebaseerd op een verspakket van de Albert Heijn wat niet meer verkocht wordt.

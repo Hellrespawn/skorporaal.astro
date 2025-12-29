@@ -2,6 +2,13 @@
 title: Kip Parmigiana met Pasta al Burro
 authors:
     - SortedFood
+tags:
+    - Italiaans
+    - Maaltijd
+    - Kip
+    - Pasta
+    - Tomaat
+    - Hartig
 ---
 
 De saus is een aangepaste versie van [dit recept](https://www.youtube.com/watch?v=MCSTiPtGSUA) van SortedFood.

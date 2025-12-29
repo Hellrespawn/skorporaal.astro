@@ -2,6 +2,10 @@
 title: "Aardappelpuree van Hele Aardappels"
 authors:
     - blinkpatch
+tags:
+    - Aardappel
+    - Bijgerecht
+    - Hartig
 ---
 
 Dit is een aangepaste versie van [dit recept](https://weaselle.tumblr.com/post/189359419975/my-perfect-mashed-potatoes) van Tumblr.

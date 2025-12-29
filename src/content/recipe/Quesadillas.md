@@ -1,6 +1,12 @@
 ---
 title: '"Quesadillas"'
 updated: 2022-07-10
+tags:
+    - Tex-Mex
+    - Maaltijd
+    - Kip
+    - Tortilla
+    - Hartig
 ---
 
 ## Ingrediënten

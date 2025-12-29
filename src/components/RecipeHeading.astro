@@ -1,6 +1,7 @@
 ---
 import type { Recipe } from "../collection";
 import { DateFormatter } from "../date";
+import { normalizeTag } from "../tag";
 
 export interface Props {
     recipe: Recipe;
@@ -15,8 +16,23 @@ const dateFormatter = DateFormatter.getFormatter("long");
 const formattedDate = dateFormatter.formatDate(recipe);
 ---
 
-<div class="text-tertiary-500 dark:text-primary-500 text-sm font-semibold">
-    Recipe
+<div class="flex justify-between gap-4">
+    <div class="text-tertiary-500 dark:text-primary-500 text-sm font-semibold">
+        Recipe
+    </div>
+    <ul class="tag-list flex text-sm text-gray-400 dark:text-gray-500">
+        {
+            recipe.tags.map((tag) => {
+                const normalizedTag = normalizeTag(tag);
+
+                return (
+                    <li>
+                        <a href={`/recipes/tags/${normalizedTag}`}>{tag}</a>
+                    </li>
+                );
+            })
+        }
+    </ul>
 </div>
 <!-- Heading with border -->
 <div

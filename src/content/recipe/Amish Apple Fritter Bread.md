@@ -3,6 +3,11 @@ title: "Amish Apple Fritter Bread"
 authors:
     - John Mitzewich
 date: 2025-12-13
+tags:
+    - Amerikaans
+    - Bakken
+    - Appel
+    - Zoet
 ---
 
 Gebaseerd op (c.q. is) [dit recept](https://www.allrecipes.com/amish-apple-fritter-bread-recipe-11859335) van Chef John. Zie [deze video](https://www.youtube.com/watch?v=JM8lSWpkoOo) voor instructies.
