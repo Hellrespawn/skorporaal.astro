@@ -53,7 +53,7 @@ export default function Skill({
             />
             <span
                 className={clsx(
-                    "absolute bottom-0 rounded-md px-[5px] transition-[backgroundColor,color,font-size,translate]",
+                    "absolute bottom-0 rounded-md px-1.25 transition-[backgroundColor,color,font-size,translate]",
                     DURATION_CLASS,
                     {
                         "bg-secondary-300/50 dark:bg-primary-400/50 py-px text-xs text-gray-800 dark:text-gray-50":
