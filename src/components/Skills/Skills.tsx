@@ -8,41 +8,43 @@ interface SkillsProps {
 }
 
 export default function Skills({ skills }: SkillsProps) {
-    const [isPlaying, setPlaying] = useState(true);
-    const [tagline, setTagline] = useState<string | null>(null);
+    const [hoveringSkill, setHoveringSkill] =
+        useState<CollectionEntry<"skills"> | null>(null);
     const [selectedSkill, setSelectedSkill] =
         useState<CollectionEntry<"skills"> | null>(null);
 
     const ref = useRef<HTMLDivElement>(null);
 
-    useOnClickOutside(
-        ref as RefObject<HTMLDivElement>,
-        () => selectedSkill && handleClick(selectedSkill)
+    useOnClickOutside(ref as RefObject<HTMLDivElement>, () =>
+        handleClickOutside()
     );
 
     function handleMouseEnter(skill: CollectionEntry<"skills">) {
-        if (!selectedSkill) {
-            setPlaying(false);
-            setTagline(skill.data.tagline);
-        }
+        setHoveringSkill(skill);
     }
 
     function handleMouseLeave(_skill: CollectionEntry<"skills">) {
-        if (!selectedSkill) {
-            setPlaying(true);
-            setTagline(null);
-        }
+        setHoveringSkill(null);
     }
 
     function handleClick(skill: CollectionEntry<"skills">) {
         if (selectedSkill === skill) {
             setSelectedSkill(null);
-            setPlaying(true);
         } else {
             setSelectedSkill(skill);
-            setPlaying(false);
         }
     }
+
+    function handleClickOutside() {
+        setSelectedSkill(null);
+    }
+
+    const isHovering = Boolean(hoveringSkill);
+    const isSelected = Boolean(selectedSkill);
+
+    const isPlaying = !(isHovering || isSelected);
+
+    const tagline = selectedSkill?.data.tagline ?? hoveringSkill?.data.tagline;
 
     return (
         <div className="mt-4 md:mt-4 md:mb-4">
@@ -60,6 +62,7 @@ export default function Skills({ skills }: SkillsProps) {
                         <Skill
                             key={i}
                             skill={skill}
+                            isHovering={skill == hoveringSkill}
                             isSelected={skill == selectedSkill}
                             onClick={() => handleClick(skill)}
                             onMouseEnter={() => handleMouseEnter(skill)}
@@ -70,7 +73,7 @@ export default function Skills({ skills }: SkillsProps) {
                 <div className="skill-carousel-gradient pointer-events-none absolute top-0 right-0 bottom-0 left-0 z-10"></div>
             </div>
             <div className="my-2 flex justify-center-safe text-sm md:text-base">
-                {selectedSkill?.data.tagline ?? tagline ?? <>&nbsp;</>}
+                {tagline ?? <>&nbsp;</>}
             </div>
         </div>
     );

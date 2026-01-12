@@ -1,11 +1,11 @@
 import type { CollectionEntry } from "astro:content";
 import clsx from "clsx";
-import { useState } from "react";
 
 const DURATION_CLASS = "duration-100";
 
 interface SkillProps {
     skill: CollectionEntry<"skills">;
+    isHovering: boolean;
     isSelected: boolean;
     onClick: () => void;
     onMouseEnter: () => void;
@@ -14,32 +14,21 @@ interface SkillProps {
 
 export default function Skill({
     skill,
+    isHovering,
     isSelected,
     onClick,
     onMouseEnter,
     onMouseLeave,
 }: SkillProps) {
-    const [isHovering, setHovering] = useState(false);
-
-    function handleMouseEnter() {
-        setHovering(true);
-        onMouseEnter();
-    }
-
-    function handleMouseLeave() {
-        setHovering(false);
-        onMouseLeave();
-    }
-
-    const highlight = isHovering || isSelected;
+    const highlight = isHovering;
 
     return (
         <li
             onClick={onClick}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
             title={skill.data.name}
-            className="relative flex h-24 w-24 items-center-safe justify-center-safe md:w-28"
+            className="relative flex h-24 w-24 cursor-pointer items-center-safe justify-center-safe md:w-28"
         >
             <i
                 className={clsx(
@@ -57,9 +46,10 @@ export default function Skill({
                     DURATION_CLASS,
                     {
                         "bg-secondary-300/50 dark:bg-primary-400/50 py-px text-xs text-gray-800 dark:text-gray-50":
-                            !highlight,
-                        "bg-secondary-300/95 dark:bg-primary-400/95 translate-x-6 translate-y-2 text-sm text-gray-800":
-                            highlight,
+                            !isSelected,
+                        "bg-secondary-300/95 dark:bg-primary-400/95 translate-x-6 translate-y-2 text-sm font-semibold text-gray-800":
+                            isSelected,
+                        "translate-x-6 translate-y-2": highlight,
                     }
                 )}
             >
