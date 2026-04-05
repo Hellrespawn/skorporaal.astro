@@ -1,5 +1,6 @@
-import { type CollectionEntry, getCollection, z } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 import { normalizeTag } from "./tag";
+import { z } from 'astro/zod';
 
 export const draftSchema = z.object({
     draft: z.boolean().default(false),
