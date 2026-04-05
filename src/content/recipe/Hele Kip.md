@@ -33,6 +33,6 @@ tags:
 
 1. Haal de kip halverwege het braden uit de oven en lepel het bakvocht erover.
 
-1. Braad de kip in de oven totdat het diepste deel van de filet (de borst) een kerntemperatuur van 72 °C heeft bereikt. Dit duurt ongeveer 20 minuten per pond, 60 tot 70 minuten voor de gemiddelde kip.
+1. Braad de kip in de oven totdat het diepste deel van de filet (de borst) een kerntemperatuur van 72 °C heeft bereikt. Dit duurt ongeveer 20 minuten per pond, 50 tot 60 minuten voor een kip van 1.5kg. Begin met checken na 15 minuten per pond.
 
 1. Laat de kip 10 tot 15 minuten rusten.
