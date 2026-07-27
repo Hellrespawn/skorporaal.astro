@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import { unified } from "@astrojs/markdown-remark";
 import rehypeExternalLinks from "rehype-external-links";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
@@ -15,17 +16,19 @@ export default defineConfig({
     site: "https://skorporaal.com/",
 
     markdown: {
-        remarkPlugins: [remarkMath],
-        rehypePlugins: [
-            rehypeKatex,
-            [
-                rehypeExternalLinks,
-                {
-                    rel: ["nofollow", "noopener", "noreferrer"],
-                    target: "_blank",
-                },
+        processor: unified({
+            remarkPlugins: [remarkMath],
+            rehypePlugins: [
+                rehypeKatex,
+                [
+                    rehypeExternalLinks,
+                    {
+                        rel: ["nofollow", "noopener", "noreferrer"],
+                        target: "_blank",
+                    },
+                ],
             ],
-        ],
+        }),
         shikiConfig: {
             wrap: true,
         },
