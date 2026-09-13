@@ -14,18 +14,14 @@ const buttonClass = "flex items-center justify-center p-1.5 rounded-full";
 <nav class="flex w-full px-4 py-2 md:fixed md:top-4 md:right-8 md:mb-0 md:p-0">
     <div class="flex w-full justify-between gap-1">
         <div class="grow">&nbsp;</div>
-        <div
-            class="flex gap-1 rounded-full bg-gray-700 p-1 shadow-xs shadow-gray-500 dark:bg-gray-200 dark:shadow-black"
-        >
-            {
-                !hideHome && (
-                    <a href="/">
-                        <Button interactive class={`${buttonClass}`}>
-                            <Home />
-                        </Button>
-                    </a>
-                )
-            }
+        <div class="flex gap-1 rounded-full bg-gray-700 p-1 shadow-xs shadow-gray-500 dark:bg-gray-200 dark:shadow-black">
+            {!hideHome && (
+                <a href="/">
+                    <Button interactive class={`${buttonClass}`}>
+                        <Home />
+                    </Button>
+                </a>
+            )}
 
             <ThemeToggle class={buttonClass} />
         </div>

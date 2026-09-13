@@ -9,5 +9,7 @@ const entries = await getTimelineEntries();
 <div class="my-4 w-full md:my-8">
     <h2 class="frontpage-heading">Timeline</h2>
 
-    {entries.map((entry) => <TimelineEntry entry={entry} />)}
+    {entries.map((entry) => (
+        <TimelineEntry entry={entry} />
+    ))}
 </div>

@@ -21,23 +21,19 @@ const formattedDate = dateFormatter.formatDate(recipe);
         Recipe
     </div>
     <ul class="tag-list flex text-sm text-gray-400 dark:text-gray-500">
-        {
-            recipe.tags.map((tag) => {
-                const normalizedTag = normalizeTag(tag);
+        {recipe.tags.map((tag) => {
+            const normalizedTag = normalizeTag(tag);
 
-                return (
-                    <li>
-                        <a href={`/recipes/tags/${normalizedTag}`}>{tag}</a>
-                    </li>
-                );
-            })
-        }
+            return (
+                <li>
+                    <a href={`/recipes/tags/${normalizedTag}`}>{tag}</a>
+                </li>
+            );
+        })}
     </ul>
 </div>
 <!-- Heading with border -->
-<div
-    class="border-tertiary-500 dark:border-primary-500 flex flex-row flex-wrap-reverse items-center justify-between gap-x-4 border-t-2"
->
+<div class="border-tertiary-500 dark:border-primary-500 flex flex-row flex-wrap-reverse items-center justify-between gap-x-4 border-t-2">
     <!-- Date -->
     <span class="text-gray-400 dark:text-gray-500">{formattedDate}</span>
 

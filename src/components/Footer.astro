@@ -11,24 +11,19 @@ const dateString = formatter.formatDateTime({ date: SITE_DATA.builtAt });
 const currentYear = SITE_DATA.builtAt.getFullYear();
 ---
 
-<footer
-    class="flex flex-col items-center bg-gray-100 text-gray-400 dark:bg-gray-700 dark:text-gray-400"
->
-    <div
-        class="flex w-full flex-col items-center justify-between gap-2 px-4 py-8 md:flex-row"
-    >
+<footer class="flex flex-col items-center bg-gray-100 text-gray-400 dark:bg-gray-700 dark:text-gray-400">
+    <div class="flex w-full flex-col items-center justify-between gap-2 px-4 py-8 md:flex-row">
         <div class="font-bold">
             Copyright ©
-            <a href={`mailto:${SITE_DATA.email}`} class="fancy-link"
-                >{SITE_DATA.name}</a
-            >
+            <a href={`mailto:${SITE_DATA.email}`} class="fancy-link">
+                {SITE_DATA.name}
+            </a>
             2022-{currentYear}
         </div>
 
         <div>
-            Last updated on <time datetime={SITE_DATA.builtAt.toISOString()}
-                >{dateString}
-            </time>
+            Last updated on{" "}
+            <time datetime={SITE_DATA.builtAt.toISOString()}>{dateString}</time>
         </div>
     </div>
 
