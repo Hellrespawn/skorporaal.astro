@@ -16,11 +16,35 @@ export interface Props {
 }
 
 const { title } = Astro.props as Props;
+const pageTitle = `${SITE_DATA.url}${title ? ` - ${title}` : ""}`;
+const siteUrl = Astro.site ?? Astro.url;
+const pageUrl = new URL(Astro.url.pathname, siteUrl);
+const socialImageUrl = new URL("/assets/skorporaal.astro.og.png", siteUrl);
 ---
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content={SITE_DATA.description} />
+<meta property="og:site_name" content={SITE_DATA.name} />
+<meta property="og:type" content="website" />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={SITE_DATA.description} />
+<meta property="og:url" content={pageUrl.href} />
+<meta property="og:image" content={socialImageUrl.href} />
+<meta property="og:image:width" content="1202" />
+<meta property="og:image:height" content="400" />
+<meta
+    property="og:image:alt"
+    content={`Portrait of ${SITE_DATA.name} alongside ${SITE_DATA.url}`}
+/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={pageTitle} />
+<meta name="twitter:description" content={SITE_DATA.description} />
+<meta name="twitter:image" content={socialImageUrl.href} />
+<meta
+    name="twitter:image:alt"
+    content={`Portrait of ${SITE_DATA.name} alongside ${SITE_DATA.url}`}
+/>
 
 <!-- Local fonts and styles -->
 <link rel="icon" href="/assets/favicon.png" />
@@ -45,7 +69,4 @@ const { title } = Astro.props as Props;
     })();
 </script>
 
-<title>
-    {SITE_DATA.url}
-    {title && ` - ${title}`}
-</title>
+<title>{pageTitle}</title>
