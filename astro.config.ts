@@ -1,8 +1,7 @@
 import { defineConfig } from "astro/config";
-import { unified } from "@astrojs/markdown-remark";
-import rehypeExternalLinks from "rehype-external-links";
-import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
+import { satteri } from "@astrojs/markdown-satteri";
+import satteriExternalLinks from "satteri-external-links";
+import { satteriKatex } from "satteri-katex";
 import react from "@astrojs/react";
 import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
@@ -12,17 +11,14 @@ export default defineConfig({
     site: "https://skorporaal.com/",
 
     markdown: {
-        processor: unified({
-            remarkPlugins: [remarkMath],
-            rehypePlugins: [
-                rehypeKatex,
-                [
-                    rehypeExternalLinks,
-                    {
-                        rel: ["nofollow", "noopener", "noreferrer"],
-                        target: "_blank",
-                    },
-                ],
+        processor: satteri({
+            features: { math: true },
+            mdastPlugins: [satteriKatex()],
+            hastPlugins: [
+                satteriExternalLinks({
+                    rel: ["nofollow", "noopener", "noreferrer"],
+                    target: "_blank",
+                }),
             ],
         }),
         shikiConfig: {

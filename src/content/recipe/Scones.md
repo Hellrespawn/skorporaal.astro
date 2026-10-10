@@ -10,22 +10,23 @@ tags:
     - Zoet
 ---
 
-Dit is een aangepaste versie van [dit recept](https://www.bbc.co.uk/food/recipes/tea_time_scones_77839) van BBC Food en Mary Berry. Voor ongeveer 18 kleine scones van 5 cm.
+Dit is een aangepaste versie van [dit recept](https://www.bbc.co.uk/food/recipes/tea_time_scones_77839) van BBC Food en Mary Berry. Voor ongeveer 20 kleine scones van 5 cm.
 
 ## Ingrediënten
 
-| #:             | Ingredient:                             | kcal: |
-| -------------- | --------------------------------------- | ----: |
-| 500 g          | zelfrijzend bakmeel                     |  1750 |
-| 15 g (1 zakje) | bakpoeder                               |       |
-| 60 g           | fijne kristalsuiker                     |   240 |
-| een snufje     | zout                                    |       |
-| 110 g          | boter                                   |   793 |
-| 2 stuks        | eieren                                  |   160 |
-| ca. 250 ml     | melk                                    |   125 |
-| een beetje     | extra bakmeel voor het werkblad         |       |
-|                | totaal:                                 |  3068 |
-|                | totaal (per stuk):                      |   150 |
+| #:             | Ingredient:                     | kcal: |
+| -------------- | ------------------------------- | ----: |
+| 500 g          | zelfrijzend bakmeel             |  1750 |
+| 15 g (1 zakje) | bakpoeder                       |       |
+| 60 g           | fijne kristalsuiker             |   240 |
+| een snufje     | zout                            |       |
+| 110 g          | boter                           |   793 |
+| 2 stuks        | eieren                          |   160 |
+| ca. 250 ml     | melk                            |   125 |
+| een beetje     | extra bakmeel voor het werkblad |       |
+|                | totaal:                         |  3068 |
+
+Calorieën per stuk: $${3068 \over 20} = 153{,}4 kcal$$
 
 ## Bereiding
 

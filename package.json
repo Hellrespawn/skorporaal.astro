@@ -4,7 +4,6 @@
     "private": true,
     "scripts": {
         "astro": "astro",
-        "deploy": "./deploy.sh",
         "build:astro": "astro build",
         "check:eslint": "eslint",
         "check:prettier": "prettier -c ./src",
@@ -15,13 +14,13 @@
         "build": "run-s clean build:*",
         "clean": "del-cli dist",
         "check": "run-p --continue-on-error check:*",
-        "format": "run-s --continue-on-error format:*",
+        "fix": "run-s --continue-on-error fix:*",
         "dev": "astro dev --host",
         "preview": "astro preview",
         "test": "vitest"
     },
     "devDependencies": {
-        "@astrojs/markdown-remark": "7.3.2",
+        "@astrojs/markdown-satteri": "0.4.3",
         "@astrojs/mdx": "8.0.3",
         "@astrojs/react": "7.0.1",
         "@eslint/compat": "2.1.1",
@@ -51,9 +50,8 @@
         "prettier-plugin-tailwindcss": "0.8.1",
         "react": "19.3.0",
         "react-dom": "19.3.0",
-        "rehype-external-links": "3.0.0",
-        "rehype-katex": "7.0.1",
-        "remark-math": "6.0.0",
+        "satteri-external-links": "0.1.1",
+        "satteri-katex": "0.1.1",
         "slugify": "1.6.9",
         "tailwindcss": "4.3.3",
         "typescript": "6.0.3",
@@ -65,7 +63,14 @@
     "allowScripts": {
         "esbuild@0.28.2": true
     },
+    "//": {
+        "satteri-katex override": "satteri-katex declares KaTeX ^0.16.25. Use the project's KaTeX version for rendering as well as CSS so their versions stay aligned; verified with KaTeX 0.19.0.",
+        "@astrojs/react override": "@astrojs/react 7.0.1 requires oxc-transform-react ^0.145.0, but @vitejs/plugin-react 6.1.2 requires ^0.152.0. These pre-1.0 ranges do not overlap. Pin plugin-react to 6.1.1, which accepts ^0.145.0, until Astro updates its compiler requirement to a compatible range."
+    },
     "overrides": {
+        "satteri-katex": {
+            "katex": "$katex"
+        },
         "@astrojs/react": {
             "@vitejs/plugin-react": "6.1.1"
         }
