@@ -33,11 +33,11 @@ Dit is een aangepaste versie van [dit recept](https://www.bbc.co.uk/food/recipes
 
 2. Snij de boter in blokjes. Raak de boter zo weinig mogelijk aan met warme handen.
 
-3. Meng het bakmeel, bakpoeder, de suiker en het zout. Wrijf de boter er met je vingertoppen door tot je fijne kruimels hebt.
+3. Meng het bakmeel, bakpoeder en het zout. Wrijf de boter er met je vingertoppen door tot je fijne kruimels hebt. Meng daarna de suiker erdoor.
 
 4. Breek de eieren in een maatbeker. Vul met melk aan tot ~320 ml. Roer dit geleidelijk door de droge ingrediënten tot een zacht, iets plakkerig deeg ontstaat. Mogelijk heb je niet al het vocht nodig.
 
-5. Bestuif het werkblad licht met bakmeel. Breng het deeg kort samen en druk of rol het uit tot 2 cm dik. Bewerk het zo min mogelijk.
+5. Bestuif het werkblad licht met bakmeel. Breng het deeg kort samen en druk of rol het uit tot 2 cm dik[^1]. Bewerk het zo min mogelijk.
 
 6. Steek rondjes uit met een uitsteker van 5 cm. Druk recht omlaag zonder te draaien. Breng de restjes voorzichtig samen en steek opnieuw uit.
 
@@ -46,3 +46,5 @@ Dit is een aangepaste versie van [dit recept](https://www.bbc.co.uk/food/recipes
 8. Bak 12 tot 15 minuten, tot de scones gerezen en licht goudbruin zijn. Laat op een rooster iets afkoelen.
 
 9. Snij open en serveer vers met aardbeienjam en clotted cream.
+
+[^1]: Als je de scones te dik maakt, kunnen ze in de oven scheef gaan hangen.
