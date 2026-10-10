@@ -7,10 +7,6 @@ import react from "@astrojs/react";
 import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 
-const compilerConfig = {
-    target: "19", // can be '17' | '18' | '19', default is 19
-};
-
 // https://astro.build/config
 export default defineConfig({
     site: "https://skorporaal.com/",
@@ -34,14 +30,7 @@ export default defineConfig({
         },
     },
 
-    integrations: [
-        react({
-            babel: {
-                plugins: [["babel-plugin-react-compiler", compilerConfig]],
-            },
-        }),
-        mdx(),
-    ],
+    integrations: [react({ compiler: true }), mdx()],
 
     vite: {
         plugins: [tailwindcss()],
