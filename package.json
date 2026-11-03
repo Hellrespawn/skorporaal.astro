@@ -20,57 +20,53 @@
         "test": "vitest"
     },
     "devDependencies": {
-        "@astrojs/markdown-satteri": "0.4.3",
-        "@astrojs/mdx": "8.0.3",
-        "@astrojs/react": "7.0.1",
+        "@astrojs/markdown-satteri": "0.4.6",
+        "@astrojs/mdx": "8.1.2",
+        "@astrojs/react": "7.1.2",
         "@eslint/compat": "2.1.1",
         "@eslint/eslintrc": "3.3.7",
         "@eslint/js": "10.0.1",
         "@fontsource/nunito": "5.3.0",
         "@tailwindcss/typography": "0.5.20",
-        "@tailwindcss/vite": "4.3.3",
+        "@tailwindcss/vite": "4.3.4",
         "@types/lodash-es": "4.17.12",
-        "@types/node": "26.6.5",
+        "@types/node": "26.6.6",
         "@types/react": "19.3.0",
         "@types/react-dom": "19.3.0",
-        "astro": "7.3.8",
+        "astro": "7.4.5",
         "clsx": "2.1.1",
         "del-cli": "8.0.1",
-        "devicon": "2.17.0",
-        "eslint": "10.12.0",
+        "devicon": "2.18.0",
+        "eslint": "10.14.0",
         "eslint-config-prettier": "10.1.8",
         "eslint-plugin-react-hooks": "7.1.1",
-        "globals": "17.13.0",
-        "katex": "0.19.0",
+        "globals": "17.14.0",
+        "katex": "0.19.1",
         "lodash-es": "4.18.1",
-        "npm-run-all2": "9.0.3",
+        "npm-run-all2": "9.0.4",
         "oxc-transform-react": "0.145.0",
         "prettier": "3.9.10",
-        "prettier-plugin-astro": "1.1.1",
+        "prettier-plugin-astro": "1.1.2",
         "prettier-plugin-tailwindcss": "0.8.1",
-        "react": "19.3.0",
-        "react-dom": "19.3.0",
+        "react": "19.3.1",
+        "react-dom": "19.3.1",
         "satteri-external-links": "0.1.1",
-        "satteri-katex": "0.1.1",
+        "satteri-katex": "0.3.0",
         "slugify": "1.6.9",
-        "tailwindcss": "4.3.3",
+        "tailwindcss": "4.3.4",
         "typescript": "6.0.3",
-        "typescript-eslint": "8.71.1",
+        "typescript-eslint": "8.72.1",
         "usehooks-ts": "3.1.1",
-        "vite": "8.3.4",
-        "vitest": "5.0.3"
+        "vite": "8.3.5",
+        "vitest": "5.1.0"
     },
     "allowScripts": {
         "esbuild@0.28.2": true
     },
     "//": {
-        "satteri-katex override": "satteri-katex declares KaTeX ^0.16.25. Use the project's KaTeX version for rendering as well as CSS so their versions stay aligned; verified with KaTeX 0.19.0.",
         "@astrojs/react override": "@astrojs/react 7.0.1 requires oxc-transform-react ^0.145.0, but @vitejs/plugin-react 6.1.2 requires ^0.152.0. These pre-1.0 ranges do not overlap. Pin plugin-react to 6.1.1, which accepts ^0.145.0, until Astro updates its compiler requirement to a compatible range."
     },
     "overrides": {
-        "satteri-katex": {
-            "katex": "$katex"
-        },
         "@astrojs/react": {
             "@vitejs/plugin-react": "6.1.1"
         }
