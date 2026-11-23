@@ -1,0 +1,78 @@
+/* Import only the icons used by the site, rather than the full Devicon font.
+   One-em masks inherit both the current text color and animated font size. */
+[class^="devicon-"],
+[class*=" devicon-"] {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    background-color: currentColor;
+    mask-image: var(--devicon);
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+}
+
+.devicon-astro-plain {
+    --devicon: url("devicon/icons/astro/astro-plain.svg");
+}
+
+.devicon-css3-plain {
+    --devicon: url("devicon/icons/css3/css3-plain.svg");
+}
+
+.devicon-html5-plain {
+    --devicon: url("devicon/icons/html5/html5-plain.svg");
+}
+
+.devicon-java-plain {
+    --devicon: url("devicon/icons/java/java-plain.svg");
+}
+
+.devicon-laravel-plain {
+    --devicon: url("devicon/icons/laravel/laravel-original.svg");
+}
+
+.devicon-react-plain {
+    --devicon: url("devicon/icons/react/react-original.svg");
+}
+
+.devicon-rust-plain {
+    --devicon: url("devicon/icons/rust/rust-original.svg");
+}
+
+.devicon-tailwindcss-plain {
+    --devicon: url("devicon/icons/tailwindcss/tailwindcss-original.svg");
+}
+
+.devicon-typescript-plain {
+    --devicon: url("devicon/icons/typescript/typescript-plain.svg");
+}
+
+.devicon-docker-plain {
+    --devicon: url("devicon/icons/docker/docker-plain.svg");
+}
+
+.devicon-git-plain {
+    --devicon: url("devicon/icons/git/git-plain.svg");
+}
+
+.devicon-linux-plain {
+    --devicon: url("devicon/icons/linux/linux-plain.svg");
+}
+
+.devicon-mariadb-plain {
+    --devicon: url("devicon/icons/mariadb/mariadb-original.svg");
+}
+
+.devicon-bash-plain {
+    --devicon: url("devicon/icons/bash/bash-plain.svg");
+}
+
+.devicon-github-plain {
+    --devicon: url("devicon/icons/github/github-original.svg");
+}
+
+.devicon-linkedin-plain {
+    --devicon: url("devicon/icons/linkedin/linkedin-plain.svg");
+}
