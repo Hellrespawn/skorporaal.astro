@@ -8,6 +8,9 @@ if [ -f "./.env" ]; then
   . ./.env
 fi
 
+LOCAL_DIR=${LOCAL_DIR:-./dist}
+DEPLOY_OWNER=${DEPLOY_OWNER:-root:docker}
+
 skip_build=
 skip_install=
 
@@ -65,22 +68,26 @@ build_project() {
   npm run build
 }
 
-remove_old_files() {
-  echo "Removing old files..."
-  ssh "$DESTINATION" rm -rf "$REMOTE_DIR/*"
-
-  echo "Removed old files."
-}
-
 copy_new_files() {
-  echo "Copying new files..."
-  scp -qr "$LOCAL_DIR"/* "$DESTINATION:$REMOTE_DIR/"
-  echo "Copied new files."
+  echo "Syncing build files..."
+  target="${REMOTE_DIR%/}/"
+  if [ -n "${DESTINATION:-}" ]; then
+    target="$DESTINATION:$target"
+  else
+    # An absolute path also prevents colons in local names being read as hosts.
+    case "$target" in
+      /*) ;;
+      *) target="$PWD/$target" ;;
+    esac
+  fi
+  rsync -az --delete --protect-args --super --chown="$DEPLOY_OWNER" -- \
+    "${LOCAL_DIR%/}/" "$target"
+  echo "Synced build files."
 }
 
-check_environment_variables "DESTINATION LOCAL_DIR REMOTE_DIR"
+check_environment_variables "LOCAL_DIR REMOTE_DIR"
 
-NODE_MODULES_DIR=$(dirname $LOCAL_DIR/node_modules);
+NODE_MODULES_DIR=./node_modules
 
 handle_args "$@"
 
@@ -99,7 +106,5 @@ elif [ -d "$LOCAL_DIR" ]; then
 else
   error "Attempted to use existing build, but $LOCAL_DIR doesn't exist."
 fi
-
-remove_old_files
 
 copy_new_files
