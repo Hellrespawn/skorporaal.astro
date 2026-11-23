@@ -59,5 +59,28 @@ export default defineConfig({
 
     vite: {
         plugins: [tailwindcss()],
+        css: {
+            postcss: {
+                plugins: [
+                    {
+                        postcssPlugin: "woff2-only",
+                        Declaration: {
+                            src(declaration) {
+                                // Remove legacy font fallbacks before Vite emits assets.
+                                const woff2 = declaration.value
+                                    .split(",")
+                                    .filter((source) =>
+                                        /format\(["']?woff2["']?\)/.test(source)
+                                    );
+
+                                if (woff2.length > 0) {
+                                    declaration.value = woff2.join(",");
+                                }
+                            },
+                        },
+                    },
+                ],
+            },
+        },
     },
 });
