@@ -1,12 +1,13 @@
-const name = "Stef Korporaal";
-const description = `Personal website of ${name}`;
+import { SITE_EMAIL_NAME } from "astro:env/server";
 
-/** Site Data */
+const name = "Stef Korporaal";
+const siteDomain = new URL(import.meta.env.SITE).hostname;
+
 export const SITE_DATA = {
     name,
-    description,
-    url: "skorporaal.com",
-    email: "stef@skorporaal.com",
+    description: `Personal website of ${name}`,
+    url: siteDomain,
+    email: `${SITE_EMAIL_NAME}@${siteDomain}`,
     github: "https://github.com/Hellrespawn",
     linkedin: "https://www.linkedin.com/in/stef-korporaal-52b412168/",
     builtAt: new Date(),

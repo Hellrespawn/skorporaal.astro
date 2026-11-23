@@ -1,14 +1,43 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 import { satteri } from "@astrojs/markdown-satteri";
 import satteriExternalLinks from "satteri-external-links";
 import { satteriKatex } from "satteri-katex";
 import react from "@astrojs/react";
 import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
+import { loadEnv } from "vite";
+
+// Astro config runs before .env files and astro:env are available.
+const { SITE_URL } = loadEnv(
+    process.env.NODE_ENV ?? "production",
+    process.cwd(),
+    "SITE_"
+);
+const siteDomain = SITE_URL || "stefkorporaal.is";
+const siteUrl = new URL(
+    siteDomain.includes("://") ? siteDomain : `https://${siteDomain}`
+);
 
 // https://astro.build/config
 export default defineConfig({
-    site: "https://skorporaal.com/",
+    site: siteUrl.href,
+
+    env: {
+        schema: {
+            SITE_URL: envField.string({
+                context: "server",
+                access: "public",
+                default: siteUrl.hostname,
+                min: 1,
+            }),
+            SITE_EMAIL_NAME: envField.string({
+                context: "server",
+                access: "public",
+                default: "admin",
+                min: 1,
+            }),
+        },
+    },
 
     markdown: {
         processor: satteri({
