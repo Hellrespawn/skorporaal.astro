@@ -24,6 +24,64 @@ Made available under the [The 3-Clause BSD License](https://opensource.org/licen
 
 ## Deployment
 
+### Bunny Storage and CDN
+
+The complete static build is uploaded to Bunny Storage and served through
+Bunny CDN. Cache misses fetch from Bunny Storage, independently of the
+existing server. `bunny.jsonc` selects the `stefkorporaal` site and `dist/`
+output, with static routing rather than an SPA fallback.
+
+Install the Bunny CLI (`npm install -g @bunny.net/cli`), authenticate with
+`bunny login`, and install project dependencies with `npm ci`. The site
+only needs to be provisioned once:
+
+```sh
+bunny sites create stefkorporaal --region DE --output json
+```
+
+Build, upload, and publish a release with:
+
+```sh
+npm run deploy:bunny
+```
+
+Each deployment publishes immediately to the site's Bunny hostname and any
+attached custom domains. Publishing also purges the CDN cache. After a successful
+deployment, older releases are pruned, keeping the two newest releases. Bunny
+always protects the current and previous releases, even if they fall outside
+that limit. A failed deployment skips pruning. The public
+domain remains `stefkorporaal.is` in generated links (`SITE_URL`); do not
+change it to the Bunny testing hostname.
+
+To attach the production domain after verifying the Bunny hostname:
+
+```sh
+bunny sites domains add stefkorporaal.is --wait
+```
+
+This command configures the hostname and TLS and offers to update Bunny
+DNS. The production apex uses a Bunny `PullZone` DNS record linked to pull
+zone `7067512`, preserving the existing mail records and wildcard subdomains.
+The existing Caddy server can continue serving
+the site independently, but updating its copy requires `./deploy.sh`.
+
+If a previous container build left `dist/` or `node_modules/.astro/` owned
+by another user, restore those generated directories' ownership before
+building locally:
+
+```sh
+sudo chown -R "$(id -un):$(id -gn)" dist node_modules/.astro
+```
+
+List releases or roll back without rebuilding:
+
+```sh
+bunny sites deployments list stefkorporaal
+bunny sites deployments publish --previous --site stefkorporaal --force
+```
+
+### Existing server
+
 Configure `REMOTE_DIR` (destination folder) in `.env`, then run `./deploy.sh`.
 For a local deployment, leave `DESTINATION` unset or empty. For a remote
 deployment, set `DESTINATION` to an SSH host (for example, `user@server`

@@ -16,6 +16,7 @@
         "check": "run-p --continue-on-error check:*",
         "fix": "run-s --continue-on-error fix:*",
         "dev": "astro dev --host",
+        "deploy:bunny": "bunny sites deploy --build --output json && bunny sites deployments prune --keep 2 --force --output json",
         "preview": "astro preview",
         "test": "vitest"
     },

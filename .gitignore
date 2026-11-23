@@ -20,3 +20,6 @@ yarn-error.log*
 hint-report
 
 .astro/
+
+# Local Bunny resource link (deployment defaults are in bunny.jsonc).
+.bunny/
